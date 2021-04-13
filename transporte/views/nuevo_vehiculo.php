@@ -36,11 +36,11 @@
     <br>
         <div class="form-row">
             <div class="col-sm-4">
-            <label>Nombre</label>
+            <label>Marca</label>
                 <input type="text" class="form-control" placeholder="Nombre" require>
             </div>
             <div class="col-sm-4">
-            <label>Apellido</label>
+            <label>Modelo</label>
                 <input type="text" class="form-control" placeholder="Apellido"require>
             </div>
             <div class="col-sm-4">
