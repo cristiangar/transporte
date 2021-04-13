@@ -21,7 +21,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <ul class="navbar-nav ml-auto">
         <li class="navbar-item">
-            <a class="nav-link" >Lista de Vehiculos</a>
+            <a class="nav-link" >Lista de Veiculos</a>
         </li>
         <li class="navbar-item">
             <a class="nav-link" >Usuario: Secretaria</a>
@@ -34,7 +34,7 @@
 </nav>
 
 <div class="container-fluid">
-<h1>Lista de Veiculos</h1>
+<h1>Lista de Pilotos</h1>
 <br>
 <div class="container mt-3">
 <input class="form-control" id="myInput" type="text" placeholder="buscar..">
@@ -198,7 +198,7 @@
   <div class="container-fluid">
                 <br>
             <center>
-                <a href="generarchofer.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                <a href="nuevo_vehiculo.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
                 <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                 
             </center>

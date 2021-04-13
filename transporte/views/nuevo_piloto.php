@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Nuevo Piloto</title>
+    <title>Nuevo Vehiculo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <ul class="navbar-nav ml-auto">
         <li class="navbar-item">
-            <a class="nav-link" >Generar Nuevo Piloto</a>
+            <a class="nav-link" >Nuevo Vehiculo</a>
         </li>
         <li class="navbar-item">
             <a class="nav-link" >Usuario: Secretaria</a>
@@ -32,7 +32,7 @@
 </nav>
 <div class="container-fluid">
     <form action="">
-    <h1>Datos del Piloto</h1>
+    <h1>Datos del Vehiculo</h1>
     <br>
         <div class="form-row">
             <div class="col-sm-4">
