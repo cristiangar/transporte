@@ -26,8 +26,14 @@
 
 </nav>
 <div class="container-fluid">
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     <div class="row">
+
         
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
