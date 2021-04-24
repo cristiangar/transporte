@@ -62,7 +62,14 @@
                 </div>
             </div>
         </div>
-
+<div class="container-fluid">
+                <br>
+            <center>
+               
+                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                
+            </center>
+            </div>
 
     </div>
 </div>
