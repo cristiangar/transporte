@@ -30,58 +30,208 @@
     </ul>
 
 </nav>
-<div class="container-fluid">
+    <div class="container-fluid">
+    <?php
+        if(isset($_GET['P']))
+        {
+    ?>
     <form action="">
-    <h1>Datos del Vehiculo</h1>
+    <h1>Datos de la Plataforma</h1>
     <br>
         <div class="form-row">
             <div class="col-sm-4">
             <label>Marca</label>
-                <input type="text" class="form-control" placeholder="Nombre" require>
-            </div>
-            <div class="col-sm-4">
-            <label>Modelo</label>
-                <input type="text" class="form-control" placeholder="Apellido"require>
-            </div>
-            <div class="col-sm-4">
-            <label>Teléfono 1</label>
-                <input type="text" class="form-control" placeholder="Telefono 1" require>
-            </div>
-            <div class="col-sm-4">
-            <label>Teléfono 2</label>
-                <input type="text" class="form-control" placeholder="Teléfono 2" require>
-            </div>
-            <div class="col-sm-4">
-            <label>No.DPI</label>
-                <input type="text" class="form-control" placeholder="Número de DPI" require>
-            </div>
-            <div class="col-sm-4">
-            <label>Dirección</label>
-                <input type="text" class="form-control" placeholder="Dirección" require>
+                <input type="text" class="form-control" placeholder="Marca" require>
             </div>
 
             <div class="col-sm-4">
+            <label>Tamaño</label>
+                <input type="text" class="form-control" placeholder="Tamaño"require>
+            </div>
+
+            <div class="col-sm-4">
+            <label>Color</label>
+                <input type="text" class="form-control" placeholder="Color" require>
+            </div>
+
+            
+            <div class="col-sm-4">
+            <label>Placa</label>
+                <input type="text" class="form-control" placeholder="Número de placa" require>
+            </div>
+
+            <div class="col-sm-4">
+            <label>Peso</label>
+                <input type="text" class="form-control" placeholder="Peso en Kilogramos" require>
+            </div>
+
+
+            <div class="col-sm-4">
+            <label>Ejes</label>
+            <input type="text" class="form-control" placeholder="Ejes" require>
+            </div>
+
+            <div class="col-sm-4">
+            <label>Tipo de Remolque</label>
+            <select class="form-control">
+                <option>portaautomoviles</option>
+                <option>plataforma abierta</option>
+                <option>plataforma cerrada</option>
+                <option>cisterna</option>
+                <option>plataforma refigerada</option>
+            </select>
+            </div>
             <br>
-            <label>Imagen de DPI</label>
-            <div class="container-fluid">
-                <input type="file" name="imagen">
+            <br>
+
+            <div class="col-sm-4">
+            <br>
+            <label>Imagen de Tarjeta de Cirtuclación</label>
+            <input type="file" name="imagen">
             </div>
+     
+            <div class="col-sm-4">
+            <label>Otros</label>
+            <br>
+            <textarea></textarea> 
             </div>
-                
+
         </div>
 
             <div class="container-fluid">
                 <br>
                 <br>
-            <center>
-                <input type="submit" class="btn btn-success" value="Aceptar">
-                <a href="choferes.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-                <input type="submit" class="btn btn-danger" value="cancelar">
-                
-            </center>
+                <center>
+                    <input type="submit" class="btn btn-success" value="Aceptar">
+                    <a href="vehiculos.php?P"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                    <input type="submit" class="btn btn-danger" value="cancelar">
+                    
+                </center>
             </div>
     </form>
-</div>
+
+    <?php
+        }
+        else{
+            if(isset($_GET['C']))
+            {
+                ?>
+                    <form action="">
+                    <h1>Datos del Cabezal</h1>
+                    <br>
+                        <div class="form-row">
+                            <div class="col-sm-4">
+                            <label>Marca</label>
+                                <input type="text" class="form-control" placeholder="Nombre" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Modelo</label>
+                                <input type="text" class="form-control" placeholder="Apellido"require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Color</label>
+                                <input type="text" class="form-control" placeholder="Telefono 1" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Motor</label>
+                                <input type="text" class="form-control" placeholder="Teléfono 2" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>No.Placa</label>
+                                <input type="text" class="form-control" placeholder="Número de DPI" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Cilindros</label>
+                                <input type="text" class="form-control" placeholder="Dirección" require>
+                            </div>
+
+                            <div class="col-sm-4">
+                            <br>
+                            <label>Imagen Targeta Circulacion</label>
+                            <div class="container-fluid">
+                                <input type="file" name="imagen">
+                            </div>
+                            </div>
+                                
+                        </div>
+
+                            <div class="container-fluid">
+                                <br>
+                                <br>
+                            <center>
+                                <input type="submit" class="btn btn-success" value="Aceptar">
+                                <a href="vehiculos.php?C"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                                <input type="submit" class="btn btn-danger" value="cancelar">
+                                
+                            </center>
+                            </div>
+                    </form>
+
+                <?php
+            }
+            else{
+                if(isset($_GET['C2'])){
+                    ?>
+                    <form action="">
+                    <h1>Datos del Camion</h1>
+                    <br>
+                        <div class="form-row">
+                            <div class="col-sm-4">
+                            <label>Marca</label>
+                                <input type="text" class="form-control" placeholder="Nombre" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Modelo</label>
+                                <input type="text" class="form-control" placeholder="Apellido"require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Color</label>
+                                <input type="text" class="form-control" placeholder="Telefono 1" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Motor</label>
+                                <input type="text" class="form-control" placeholder="Teléfono 2" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>No.Placa</label>
+                                <input type="text" class="form-control" placeholder="Número de DPI" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Cilindros</label>
+                                <input type="text" class="form-control" placeholder="Dirección" require>
+                            </div>
+
+                            <div class="col-sm-4">
+                            <br>
+                            <label>Imagen Targeta Circulacion</label>
+                            <div class="container-fluid">
+                                <input type="file" name="imagen">
+                            </div>
+                            </div>
+                                
+                        </div>
+
+                            <div class="container-fluid">
+                                <br>
+                                <br>
+                            <center>
+                                <input type="submit" class="btn btn-success" value="Aceptar">
+                                <a href="vehiculos.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                                <input type="submit" class="btn btn-danger" value="cancelar">
+                                
+                            </center>
+                            </div>
+                    </form>
+
+                    <?php
+                }
+            }
+        }
+
+    ?>    
+    </div>
+
+
 </div>
 </body>
 </html>
