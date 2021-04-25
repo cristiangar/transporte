@@ -68,6 +68,14 @@
               <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>
             </tfoot>
           </table>
+          <div class="container-fluid">
+                <br>
+            <center>
+                <a href="nuevo_vehiculo.php?P"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                
+            </center>
+            </div>
 
     <?php
   }
@@ -103,6 +111,14 @@
                 <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>
               </tfoot>
             </table>
+            <div class="container-fluid">
+                <br>
+            <center>
+                <a href="nuevo_vehiculo.php?C"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                
+            </center>
+            </div>
       <?php
     }
     else{
@@ -136,20 +152,20 @@
                 <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>
               </tfoot>
             </table>
+
+            <div class="container-fluid">
+                <br>
+            <center>
+                <a href="nuevo_vehiculo.php?C2"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                
+            </center>
+            </div>
+</div>
       <?php
     }
   }
 ?>
-</div>
-  
-  <div class="container-fluid">
-                <br>
-            <center>
-                <a href="nuevo_vehiculo.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
-                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-                
-            </center>
-            </div>
 </div>
 </body>
 
