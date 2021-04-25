@@ -26,14 +26,20 @@
 
 </nav>
 <div class="container-fluid">
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     <div class="row">
+
         
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
                     <a href="vehiculos.php?P">
-                        <img class="conimagen" id="conimg"src="../imagenes/plataforma.png" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;"/>
+                        <img class="conimagen" id="conimg"src="../imagenes/plataforma2.jpg" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;"/>
                     </a>
                     <h1>Plataforma</h1>
                 </div>
