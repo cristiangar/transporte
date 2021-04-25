@@ -39,7 +39,7 @@
 <?php
   if(isset($_GET['P'])){
     ?>
-      <h1>Lista de Plataformas</h1>
+      <h1>Listas de Plataformas</h1>
       <input class="form-control" id="myInput" type="text" placeholder="buscar..">
       <br>
 
