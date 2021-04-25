@@ -39,7 +39,7 @@
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
                     <a href="vehiculos.php?P">
-                        <img class="conimagen" id="conimg"src="../imagenes/plataforma.png" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;"/>
+                        <img class="conimagen" id="conimg"src="../imagenes/plataforma2.jpg" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;"/>
                     </a>
                     <h1>Plataforma</h1>
                 </div>
