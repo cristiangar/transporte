@@ -105,6 +105,39 @@
             </table>
       <?php
     }
+    else{
+      ?>
+      <h1>Lista de Camiones</h1>
+        <input class="form-control" id="myInput" type="text" placeholder="buscar..">
+        <br>
+
+        <table class="table table-bordered" border="1" id="tabla_paginada">
+              <thead>
+                <td>No. Placa</td>
+                <td>Marca</td>
+                <td>Tipo</td>
+                <td>Estado</td>
+                <td>Detalle</td>
+              </thead>
+              <tbody id="myTable">
+                <tr>
+                  <td>Jorge</td>
+                  <td>Campos</td>
+                  <td>4088-1056</td>
+                  <td>Disponible</td>
+                  <td><center><a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
+                </tr> 
+              </tbody>
+              <tfoot>
+                <td><input type="button" id="cargar_primera_pagina" value="<< Primero"/></td>
+                <td><input type="button" id="cargar_anterior_pagina" value="< Anterior"/></td>
+                <td id="indicador_paginas"></td>
+                <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >"/></td>
+                <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>
+              </tfoot>
+            </table>
+      <?php
+    }
   }
 ?>
 </div>
