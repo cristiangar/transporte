@@ -256,7 +256,7 @@
   <div class="container-fluid">
                 <br>
             <center>
-                <a href="generarchofer.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
                 <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                 
             </center>
