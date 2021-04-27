@@ -29,7 +29,9 @@
 
 <div class="container-fluid">
 
-
+    <br>
+    <br>
+    <br>
     <div class="row">
         
         <div class="wrapper fadeInDown col-sm-6"><!--efecto de caida-->
@@ -57,11 +59,11 @@
         </div>
 
 
-        <div class="container-fluid">
+        <div class="container-fluid wrapper fadeInDown col-sm-5">
                 <br>
             <center>
-                <a href="choferes.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-                
+                <a href="choferes.php"><button type="button" class="btn btn-warning btn-lg">Regresar</button></a>
+                <br>  
             </center>
             </div>
 

@@ -253,7 +253,7 @@
 
 </div>
   
-  <div class="container-fluid">
+  <div class="container-fluid wrapper fadeInDown col-sm-5">
                 <br>
             <center>
                 <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>

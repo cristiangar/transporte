@@ -98,7 +98,7 @@
 
         </div>
 
-            <div class="container-fluid">
+            <div class="container-fluid wrapper fadeInDown col-sm-5">
                 <br>
                 <br>
                 <center>
@@ -155,7 +155,7 @@
                                 
                         </div>
 
-                            <div class="container-fluid">
+                            <div class="container-fluid wrapper fadeInDown col-sm-5">
                                 <br>
                                 <br>
                             <center>
@@ -211,7 +211,7 @@
                                 
                         </div>
 
-                            <div class="container-fluid">
+                            <div class="container-fluid wrapper fadeInDown col-sm-5">
                                 <br>
                                 <br>
                             <center>

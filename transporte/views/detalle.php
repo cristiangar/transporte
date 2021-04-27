@@ -53,7 +53,7 @@
   </table>
 </div>
   
-  <div class="container-fluid">
+  <div class="container-fluid wrapper fadeInDown col-sm-5">
                 <br>
             <center>
                 <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
