@@ -13,7 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
 </head>
-<body>
+<body >
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <a href="secritaria.php">
         <img src="../imagenes/logo.png" alt="HTML tutorial" style="width:52px;height:52px;">
@@ -111,8 +111,7 @@
                 </div>
             </div>
         </div>
-<br>
-<br>
+
     </div>
 </div>
 </body>
