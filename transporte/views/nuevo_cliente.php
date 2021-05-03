@@ -85,6 +85,10 @@
                     <option value="1">Guatemala</option>
                     <option value="2">México</option>
                     <option value="3">El Salvador</option>
+                    <option value="4">Honduras</option>
+                    <option value="5">Nicaragua</option>
+                    <option value="6">Costa Rica</option>
+                    <option value="7">Panamá</option>
                 </select>
             </div>
 

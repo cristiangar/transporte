@@ -17,6 +17,9 @@
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <ul class="navbar-nav ml-auto">
+      <a href="secritaria.php" class="center">
+      <img src="../imagenes/logo.png" alt="HTML tutorial" style="width:52px;height:52px;">
+      </a>
         <li class="navbar-item">
             <a class="nav-link" >Usuario: Secretaria</a>
         </li>
@@ -42,8 +45,8 @@
       </thead>
       <tbody id="myTable">
         <tr>
-          <td>Jorge</td>
-          <td>Campos</td>
+          <td>Raúl</td>
+          <td>Estrada</td>
           <td>4088-1056</td>
           <td>Cementos Progreso</td>
           <td><center><a href="detalle_cliente.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
