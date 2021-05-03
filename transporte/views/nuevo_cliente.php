@@ -16,6 +16,9 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+    <a href="secritaria.php">
+        <img src="../imagenes/logo.png" alt="HTML tutorial" style="width:52px;height:52px;">
+    </a>
     <ul class="navbar-nav ml-auto">
         <li class="navbar-item">
             <a class="nav-link" >Nuevo Cliente</a>
@@ -61,6 +64,16 @@
             </div>
 
             <div class="col-sm-4">
+            <label>No. de Cuenta</label>
+                <input type="text" class="form-control" placeholder="Número de cuenta" require>
+            </div>
+
+            <div class="col-sm-4">
+            <label>Banco</label>
+                <input type="text" class="form-control" placeholder="Nombre del banco" require>
+            </div>
+
+            <div class="col-sm-4">
             <br>
             <label>Imagen de DPI</label>
             <div class="container-fluid">
@@ -85,6 +98,10 @@
                     <option value="1">Guatemala</option>
                     <option value="2">México</option>
                     <option value="3">El Salvador</option>
+                    <option value="4">Honduras</option>
+                    <option value="5">Nicaragua</option>
+                    <option value="6">Costa Rica</option>
+                    <option value="7">Panamá</option>
                 </select>
             </div>
 
