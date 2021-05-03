@@ -33,11 +33,128 @@
 </nav>
 
 <div class="container-fluid">
-    <form id="" action="">
+    <form>
+    <h1>Datos del Piloto</h1>
+        <br>
+            <div  class="form-row">
+                <div class="col-sm-4">
+                <label>Nombre</label>
+                    <input type="text" class="form-control" placeholder="Nombre" require>
+                </div>
+                <div class="col-sm-4">
+                <label>Apellido</label>
+                    <input type="text" class="form-control" placeholder="Apellido"require>
+                </div>
+                <div class="col-sm-4">
+                <label>Teléfono 1</label>
+                    <input type="text" class="form-control" placeholder="Telefono 1" require>
+                </div>
+                <div class="col-sm-4">
+                <label>Teléfono 2</label>
+                    <input type="text" class="form-control" placeholder="Teléfono 2" require>
+                </div>
+                <div class="col-sm-4">
+                <label>No.DPI</label>
+                    <input type="text" class="form-control" placeholder="Número de DPI" require>
+                </div>
+                <div class="col-sm-4">
+                <label>Dirección</label>
+                    <input type="text" class="form-control" placeholder="Dirección" require>
+                </div>
+
+                <div class="col-sm-4">
+                <br>
+                <label>Imagen de DPI</label>
+                <div class="container-fluid">
+                    <input type="file" name="imagen">
+                </div>
+                </div>  
+            </div>
+<br>
+<h1>Datos de licencia </h1>
+            <br>
+            <div class="form-row">
+                <div class="col-sm-4">
+                    <label>No. Licencia</label>
+                    <input type="text" class="form-control" placeholder="Número Licencia" require>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Tipo Licencia</label>
+                    <select name="departamento" id="" class="form-control">
+                        <option value="1">A</option>
+                        <option value="2">B</option>
+                        <option value="3">C</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Imagen Licencia</label>
+                    <div class="container-fluid">
+                        <input type="file" name="imagen">
+                    </div>
+                </div>
+                <br>
+            </div>
+        <br>
+        <br>
+<h1>Datos de Pasaporte </h1>
+            <br>
+            <div class="form-row">
+                <div class="col-sm-4">
+                    <label>No. Pasaporte</label>
+                    <input type="text" class="form-control" placeholder="Número Licencia" require>
+                </div>
+                <div class="col-sm-4">
+                    <label>Imagen Pasaporte</label>
+                    <div class="container-fluid">
+                        <input type="file" name="imagen">
+                    </div>
+                </div>
+                <br>
+            </div>
+            <h1>Datos del Vehiculo</h1>
+                    <br>
+                        <div class="form-row">
+                            <div class="col-sm-4">
+                            <label>Marca</label>
+                                <input type="text" class="form-control" placeholder="Nombre" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Modelo</label>
+                                <input type="text" class="form-control" placeholder="Apellido"require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Color</label>
+                                <input type="text" class="form-control" placeholder="Telefono 1" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Motor</label>
+                                <input type="text" class="form-control" placeholder="Teléfono 2" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>No.Placa</label>
+                                <input type="text" class="form-control" placeholder="Número de DPI" require>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Cilindros</label>
+                                <input type="text" class="form-control" placeholder="Dirección" require>
+                            </div>
+
+                            <div class="col-sm-4">
+                            <br>
+                            <label>Imagen Targeta Circulacion</label>
+                            <div class="container-fluid">
+                                <input type="file" name="imagen">
+                            </div>
+                            </div>
+                                
+                        </div>
+
         <br>
         <h1 id="mydivR">Datos del remolque</h1>
         <br>
-        <div id="mydivDentro" class="form-row"><!--div del piloto-->
+        <div id="myDiv" class="form-row"><!--div del piloto-->
         <br>
                 <div class="col-sm-4">
                     <label>Marca</label>
@@ -76,55 +193,79 @@
                 <div class="col-sm-4">
                     <br>
                     <label>Imagen de Tarjeta de Cirtuclación</label>
-                    <input type="file" name="imagen">
+                    <input type="file" >
                 </div>
                 <div class="col-sm-4">
                     <label>Otros</label>
                     <br>
                     <textarea></textarea> 
                 </div>
-
         </div>
-
-                <button id="myboton" class="form-control btn btn-warning" onclick="Mostrarmas()">Mas</button>
-
-                <button >mas</button>
-                <button id="hide">Hide</button>
-
-                <div class="container-fluid"><!--div de los botones-->
+        <br>
+        <div class="container-fluid"><!--div de los botones-->
                     <br>
                     <br>
                     <center>
                         <input type="submit" class="btn btn-success" value="Aceptar">
                         <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-                        <input type="submit" class="btn btn-danger" value="cancelar">
-                        
+                        <input type="reset" class="btn btn-danger" value="cancelar">                
                     </center>
-                </div>
+                </div> 
+    <br>
     </form>
+    <br>
+    <label id="eti" class="etiqueta">Agregar Remolque</label><br>
+    <button type="button" id="myButton"  onclick="showHideElement()" class="boton">mas</button>
+    <script type="text/javascript">
+        $("#myDiv").hide();
+        $("#mydivR").hide();
+        function showHideElement() {
+            let = "";
+            if($("#myButton").text() === "mas"){
+                $("#mydivR").show(); 
+                $("#myDiv").show();
+                
+                text="menos"
+            }
+            else{
+                $("#myDiv").hide();
+                $("#mydivR").hide();
+                text="mas";
+            }
+            $("#myButton").html(text);
+        }
+</script> 
 
-<script>
-
-   $("#mydivR").hide();
-   $("#mydivDentro").hide();
-
-   function Mostrarmas(){
-       let text="";
-       if($("#myboton").text ==="Mas")
-       {
-           $("mydivR").show();
-           text="Menos";
-       }
-       else{
-           $("#mydivR").hide();
-           text="mas";
-       }
-       $("#myboton").html(text);
-
+<style>
+    .boton {
+        padding:10px;
+        background:#FFBF33;
+        color:black;
+        font:bold 15px/15px verdana;
+        width:100px;
+        cursor:pointer;
+        cursor:hand;
+        text-align:center;
+        border:0px;
+        top:1080px
+    }
+    
+    #myButton {
+        position:absolute;
+        left: 80%;
+        
+    }
+    .etiqueta{
+        border:0px;
+        top:1050px
     }
 
-
-</script>
+    #eti{
+        position:absolute;
+        left:80%;
+    }
+    
+</style>
 </div>
 </body>
 </html>

@@ -107,10 +107,12 @@
 
             
         </div>
+
+        
 <br>
         
         </div>
-            <div class="container-fluid wrapper fadeInDown col-sm-5">
+            <div class="container-fluid col-sm-5">
                 <br>
                 <br>
             <center>
