@@ -64,6 +64,16 @@
             </div>
 
             <div class="col-sm-4">
+            <label>No. de Cuenta</label>
+                <input type="text" class="form-control" placeholder="Número de cuenta" require>
+            </div>
+
+            <div class="col-sm-4">
+            <label>Banco</label>
+                <input type="text" class="form-control" placeholder="Nombre del banco" require>
+            </div>
+
+            <div class="col-sm-4">
             <br>
             <label>Imagen de DPI</label>
             <div class="container-fluid">
