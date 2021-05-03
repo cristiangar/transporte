@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/imagen.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../js/jquery-3.3.1.min.js"></script>
-        <script src="../js/index.js"></script>
+    <script src="../js/index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -34,7 +35,7 @@
     <form action="">
         <h1>Datos del Piloto</h1>
         <br>
-            <div class="form-row">
+            <div  class="form-row">
                 <div class="col-sm-4">
                 <label>Nombre</label>
                     <input type="text" class="form-control" placeholder="Nombre" require>
@@ -164,11 +165,13 @@
 
             </div>
 
+
+<!--datos del remolque-->
             <br>
             <h1>Datos del remolque</h1>
             <br>
             <br>
-            <div class="form-row">
+            <div id="mydivR" class="form-row">
                     
                     <div class="col-sm-4">
                     <label>Marca</label>
@@ -229,7 +232,7 @@
                     </div>
 
             </div>
-
+<!--termina datos del remolque-->
             
 
 
@@ -248,19 +251,25 @@
     </form>
 
 </div>
-<button class="btn btn-warning" onclick="myFunction()">Precione este boton si el vehiculo contiene un remolque</button>
-                <div id="myDIV" style="border:1px solid black;">
-                    Este elemento aparece y desaparece con el botón
-                </div>
-<script>
-function myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
+<button id="myboton" class="btn btn-warning" onclick="MostrarElemento()">Mas</button>
+              
+<script type="text/javascript">
+    $("#mydivR").hide();//primero a suseder
+    function MostrarElemento(){
+        let text="";
+
+        if($("#myboton")).text() === "m"){
+            $("#mydivR").show();
+            text="menos";
+        }
+        else
+        {
+            $("#mydivR").hide();
+            text="mas";
+        }
+
+        $("#myboton").html(text);
     }
-}
 </script>
 
 
