@@ -16,10 +16,10 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+        <a href="secritaria.php">
+        <img src="../imagenes/logo.png" alt="HTML tutorial" style="width:52px;height:52px;">
+        </a>
     <ul class="navbar-nav ml-auto">
-      <a href="secritaria.php" class="center">
-      <img src="../imagenes/logo.png" alt="HTML tutorial" style="width:52px;height:52px;">
-      </a>
         <li class="navbar-item">
             <a class="nav-link" >Usuario: Secretaria</a>
         </li>
