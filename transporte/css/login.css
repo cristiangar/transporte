@@ -2,12 +2,13 @@
 /* BASIC */
 
 html {
-    background-color: #56baed;
+    background-color: #080808;
+    
   }
   
   body {
     font-family: "Poppins", sans-serif;
-    height: 100vh;
+    height: 140vh;/*fondo blanco*/
   }
   
   a {
