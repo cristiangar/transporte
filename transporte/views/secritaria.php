@@ -104,6 +104,17 @@
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
+                    <a href="personal.php">
+                    <img class="img-fluid" src="../imagenes/personal.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Personal</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
                     <a href="usuarios.php">
                     <img class="img-fluid" src="../imagenes/usuario.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
                     </a>
