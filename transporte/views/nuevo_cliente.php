@@ -35,8 +35,8 @@
 </nav>
 <div class="container-fluid">
     <form action="">
-    <h1>Datos del Cliente</h1>
-    <br>
+        <h1>Datos del Cliente</h1>
+        <br>
         <div class="form-row">
             <div class="col-sm-4">
             <label>Nombre</label>
@@ -55,21 +55,21 @@
                 <input type="text" class="form-control" placeholder="Teléfono 2" require>
             </div>
             <div class="col-sm-4">
-            <label>No.DPI</label>
-                <input type="text" class="form-control" placeholder="Número de DPI" require>
+            <label>Correo electronico</label>
+                <input type="text" class="form-control" placeholder="Nombre del banco" require>
             </div>
             <div class="col-sm-4">
-            <label>Dirección</label>
-                <input type="text" class="form-control" placeholder="Dirección" require>
+            <label>Nit</label>
+                <input type="text" class="form-control" placeholder="Número de DPI" require>
             </div>
 
             <div class="col-sm-4">
-            <label>No. de Cuenta</label>
+            <label>No. de Cuenta bancaria</label>
                 <input type="text" class="form-control" placeholder="Número de cuenta" require>
             </div>
 
             <div class="col-sm-4">
-            <label>Banco</label>
+            <label>Banco del cliente</label>
                 <input type="text" class="form-control" placeholder="Nombre del banco" require>
             </div>
 
@@ -81,35 +81,8 @@
             </div>
             </div>
                 
-        </div>
-
+        </div>  
         <br>
-        <h1>Datos de La empresa </h1>
-        <br>
-        <div class="form-row">
-            <div class="col-sm-4">
-                <label>Nombre</label>
-                <input type="text" class="form-control" placeholder="Nombre de la empresa" require>
-            </div>
-
-            <div class="col-sm-4">
-                <label>Lugar de la empresa</label>
-                <select name="departamento" id="" class="form-control">
-                    <option value="1">Guatemala</option>
-                    <option value="2">México</option>
-                    <option value="3">El Salvador</option>
-                    <option value="4">Honduras</option>
-                    <option value="5">Nicaragua</option>
-                    <option value="6">Costa Rica</option>
-                    <option value="7">Panamá</option>
-                </select>
-            </div>
-
-            
-        </div>
-
-        
-<br>
         
         </div>
             <div class="container-fluid col-sm-5">
@@ -121,9 +94,8 @@
                 <input type="submit" class="btn btn-danger" value="cancelar">
                 
             </center>
-            </div>
+        </div>
     </form>
-</div>
 </div>
 </body>
 </html>
