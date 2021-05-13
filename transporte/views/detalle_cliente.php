@@ -47,7 +47,6 @@
               <label>Lugar: Guatemala</label>
               <label>No. DPI: 1234567891112</label><br>
             </div>
-            <img class="card-img-bottom" src="../imagenes/images.jpg" alt="Card image" style="width:100%">
           </div>
 
 

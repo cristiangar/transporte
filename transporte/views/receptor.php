@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Clientes</title>
+    <title>Receptor</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,11 +31,11 @@
 </nav>
 <div class="container-fluid">
 <?php
-  include_once("../controller/cliente.php");
+  include_once("../controller/receptor.php");
   $resultado=$dt2->num_rows;
   if($resultado>0){
     ?>
-      <h1>Lista de Clientes</h1>
+      <h1>Lista de Receptores</h1>
       <br>
       <div class="container mt-3">
       <input class="form-control" id="myInput" type="text" placeholder="buscar..">
@@ -43,12 +43,7 @@
       <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
             <thead>
               <td>Nombre</td>
-              <td>Nit</td>
-              <td>Telefono</td>
-              <td>Teléfono 2</td>
-              <td>Correo</td>
-              <td>No. cuenta</td>
-              <td>Banco</td>
+              <td>Apellido</td>
               <td>Modificar</td>
               <td>Eliminar</td>
             </thead>
@@ -56,12 +51,9 @@
           while ($row=mysqli_fetch_array($dt2)) {
             $id=$row['id_cliente'];
             $nombre=$row['nombre'];
+            $apellido=$row['apellido'];
             $telefono=$row['telefono'];
             $telefono2=$row['telefono2'];
-            $correo=$row['correo'];
-            $nit=$row['nit'];
-            $nocuenta=$row['no_cuenta'];
-            $nombre_cuenta=$row['nombre_cuenta'];
             ?>
                   <tbody id="myTable">
                   <tr>
@@ -72,8 +64,8 @@
                     <td><?php echo $correo?></td>
                     <td><?php echo $nocuenta?></td>
                     <td><?php echo $nombre_cuenta?></td>
-                    <td><center><a href="nuevo_cliente.php?id=<?php echo $id?>"><button type="button" class="btn btn-warning">Modificar</button></a></center></td>
-                    <td><center><a href="../controller/cliente.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
+                    <td><center><a href="nuevo_receptor.php?id=<?php echo $id?>"><button type="button" class="btn btn-warning">Modificar</button></a></center></td>
+                    <td><center><a href="../controller/receptor.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
                   </tr>
                  </tbody>
             <?php
@@ -98,7 +90,7 @@
       <br>
       <br><br><br><br>
       <h1>no hay datos ingresados</h1>
-      <a href="nuevo_cliente.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+      <a href="nuevo_receptor.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
     </center>
     <?php
   }
