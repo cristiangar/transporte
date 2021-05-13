@@ -34,43 +34,62 @@
 
 </nav>
 <div class="container-fluid">
-    <form action="">
+<?php
+if(isset($_GET['id'])){
+    //busco los datos para acatualizar
+    /*include_once("../Modelo/ClassEmpleado.php");
+    $empleado=new Empleado();
+    $dt=$empleado->VerUnEmpleado($id);
+
+    while ($row=mysqli_fetch_array($dt)) {
+       $nombre = $row['Nombre'];
+       $telefono = $row['Telefono'];
+       $direccion = $row['Direccion'];
+       $idtipo = $row['idTipoEmpleado']; 
+       $tipo= $row['Tipo'];*/
+}
+else
+{
+    ?>
+        <form ethod="POST" action="../controller/cliente.php" enctype="multipart/form-data">
+    <br>
+    <br>
         <h1>Datos del Cliente</h1>
         <br>
         <div class="form-row">
             <div class="col-sm-4">
             <label>Nombre</label>
-                <input type="text" class="form-control" placeholder="Nombre" require>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" require>
             </div>
             <div class="col-sm-4">
             <label>Apellido</label>
-                <input type="text" class="form-control" placeholder="Apellido"require>
+                <input type="text" name="apellido" class="form-control" placeholder="Apellido"require>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>
-                <input type="text" class="form-control" placeholder="Telefono 1" require>
+                <input type="text" name="telefono" class="form-control" placeholder="Telefono 1" require>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 2</label>
-                <input type="text" class="form-control" placeholder="Teléfono 2" require>
+                <input type="text" name="telefono2" class="form-control" placeholder="Teléfono 2">
             </div>
             <div class="col-sm-4">
             <label>Correo electronico</label>
-                <input type="text" class="form-control" placeholder="Nombre del banco" require>
+                <input type="text" name="correo" class="form-control" placeholder="Nombre del banco">
             </div>
             <div class="col-sm-4">
             <label>Nit</label>
-                <input type="text" class="form-control" placeholder="Número de DPI" require>
+                <input type="text" name="nit" class="form-control" placeholder="Número de DPI" require>
             </div>
 
             <div class="col-sm-4">
             <label>No. de Cuenta bancaria</label>
-                <input type="text" class="form-control" placeholder="Número de cuenta" require>
+                <input type="text" name="cuenta" class="form-control" placeholder="Número de cuenta" require>
             </div>
 
             <div class="col-sm-4">
             <label>Banco del cliente</label>
-                <input type="text" class="form-control" placeholder="Nombre del banco" require>
+                <input type="text" name="banco" class="form-control" placeholder="Nombre del banco" require>
             </div>
 
             <div class="col-sm-4">
@@ -96,6 +115,9 @@
             </center>
         </div>
     </form>
+    <?php
+}
+?>
 </div>
 </body>
 </html>
