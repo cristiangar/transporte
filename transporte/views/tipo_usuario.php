@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Clientes</title>
+    <title>Tipo de Usuario</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,7 @@
         </a>
     <ul class="navbar-nav ml-auto">
         <li class="navbar-item">
-            <a class="nav-link" >Usuario: Secretaria</a>
+            <a class="nav-link" >Usuario: Admin</a>
         </li>
         <li class="navbar-item">
             <a class="nav-link" href="../index.php">Cerrar sesión</a>
@@ -31,67 +31,46 @@
 </nav>
 <div class="container-fluid">
 <?php
-  include_once("../controller/cliente.php");
+  include_once("../controller/tipo_usuario.php");
   $resultado=$dt2->num_rows;
   if($resultado>0){
     ?>
-      <h1>Lista de Clientes</h1>
+      <h1>Roles de Usuario</h1>
       <br>
       <div class="container mt-3">
       <input class="form-control" id="myInput" type="text" placeholder="buscar..">
       <br>
       <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
+
             <thead>
-              <td>Nombre</td>
-              <td>Nit</td>
-              <td>Telefono</td>
-              <td>Teléfono 2</td>
-              <td>Correo</td>
-              <td>No. cuenta</td>
-              <td>Banco</td>
-              <td>Modificar</td>
-              <td>Eliminar</td>
+              <center><td>Nombre</td></center>
+              <center><td>Modificar</td></center>
+              <center><td>Eliminar</td></center>
             </thead>
       <?php
           while ($row=mysqli_fetch_array($dt2)) {
-            $id=$row['id_cliente'];
+            $id=$row['id_rol_usuario'];
             $nombre=$row['nombre'];
-            $telefono=$row['telefono'];
-            $telefono2=$row['telefono2'];
-            $correo=$row['correo'];
-            $nit=$row['nit'];
-            $nocuenta=$row['no_cuenta'];
-            $nombre_cuenta=$row['nombre_cuenta'];
+            
             ?>
                   <tbody id="myTable">
                   <tr>
+
                     <td><?php echo $nombre?></td>
-                    <td><?php echo $nit?></td>
-                    <td><?php echo $telefono?></td>
-                    <td><?php echo $telefono2?></td>
-                    <td><?php echo $correo?></td>
-                    <td><?php echo $nocuenta?></td>
-                    <td><?php echo $nombre_cuenta?></td>
-                    <td><center><a href="nuevo_cliente.php?id=<?php echo $id?>"><button type="button" class="btn btn-warning">Modificar</button></a></center></td>
-                    <td><center><a href="../controller/cliente.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
+                    <td><a href="nuevo_tipo_usuario.php?id=<?php echo $id?>"><button type="button" class="btn btn-warning">Modificar</button></a></td>
+                    <td><a href="../controller/tipo_usuario.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
                   </tr>
                  </tbody>
             <?php
 
           }
-               echo '<tfoot>';
-                echo  '<td><input type="button" id="cargar_primera_pagina" value="<< Primero"/></td>';
-                echo  '<td><input type="button" id="cargar_anterior_pagina" value="< Anterior"/></td>';
-                echo  '<td id="indicador_paginas"></td>';
-                echo  '<td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >"/></td>';
-                echo  '<td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>';
-                echo'</tfoot>';
+               
                 echo '</table>';
-                ?>
+            ?>
             <center>
-                 <a href="nuevo_cliente.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                 <a href="nuevo_tipo_usuario.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
                 
-                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                <a href="otros.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                 
                 
             </center>
@@ -107,7 +86,8 @@
       <br>
       <br><br><br><br>
       <h1>no hay datos ingresados</h1>
-      <a href="nuevo_cliente.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+      <a href="nuevo_tipo_usuario.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+      <a href="otros.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
     </center>
     <?php
   }
