@@ -85,6 +85,13 @@
                 echo  '<td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>';
                 echo'</tfoot>';
                 echo '</table>';
+
+                ?>
+                <center>
+                    <a href="nuevo_personal.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                    <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                </center>
+                <?php
   }
   else{
     ?> 

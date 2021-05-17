@@ -8,7 +8,7 @@ class rol_usuario
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call trasportefinal.ps_rol_usuario(0, '$nombre', 'I', @pn_respuesta);";
+		$consulta= "call ps_rol_usuario(0, '$nombre', 'I', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -31,7 +31,7 @@ class rol_usuario
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call trasportefinal.ps_rol_usuario(0,'0','S', @pn_respuesta);";
+		$consulta= "call ps_rol_usuario(0,'0','S', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -42,7 +42,7 @@ class rol_usuario
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call trasportefinal.ps_rol_usuario($id,'0','S1', @pn_respuesta);";
+		$consulta= "call ps_rol_usuario($id,'0','S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -53,7 +53,7 @@ class rol_usuario
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call trasportefinal.ps_rol_usuario($id, '0','D', @pn_respuesta);";
+		$consulta= "call ps_rol_usuario($id, '0','D', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -76,7 +76,7 @@ class rol_usuario
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call trasportefinal.ps_rol_usuario($id, '$nombre','U', @pn_respuesta);";
+		$consulta= "call ps_rol_usuario($id, '$nombre','U', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
