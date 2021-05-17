@@ -30,240 +30,72 @@
 
 </nav>
 <div class="container-fluid">
-<h1>Lista de Usuarios</h1>
-<br>
-<div class="container mt-3">
-<input class="form-control" id="myInput" type="text" placeholder="buscar..">
-<br>
-<table class="table table-bordered" border="1" id="tabla_paginada">
-      <thead>
-        <td>Nombre</td>
-        <td>Apellido</td>
-        <td>Nombre de Usuario</td>
-        <td>Contraseña</td>
-        <td>Detalle</td>
-      </thead>
-      <tbody id="myTable">
-        <tr>
-          <td>Raúl</td>
-          <td>Estrada</td>
-          <td>RaulEs</td>
-          <td>re2021</td>
-          <td><center><a href="nuevo_usuario.php"><button type="button" class="btn btn-info">Editar</button></a></center></td>
-        </tr>
-        <tr>
-          <td>Marcela</td>
-          <td>Soberanis</td>
-          <td>MarceSo</td>
-          <td>2458maso</td>
-          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
-        </tr>
-        <tr>
-          <td>Luis</td>
-          <td>Perez</td>
-          <td>LuiPe</td>
-          <td>luipe0203</td>
-          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
-        </tr>
-        <tr>
-          <td>José</td>
-          <td>Campos</td>
-          <td>4848-5486</td>
-          <td>FerroMax</td>
-          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
-        </tr>
-        <tr>
-          <td>Mario</td>
-          <td>Ruiz</td>
-          <td>2415-8974</td>
-          <td>Finca las palmas</td>
-          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
+<?php
+  include_once("../controller/usuario.php");
+  $resultado=$dt->num_rows;
+  if($resultado>0){
+    ?>
+      <h1>Lista de Usuarios</h1>
+      <br>
+      <div class="container mt-3">
+      <input class="form-control" id="myInput" type="text" placeholder="buscar..">
+      <br>
+      <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
+            <thead>
+              <td>Empleado</td>
+              <td>Rol</td>
+              <td>Usuario</td>
+              <td>Clave</td>
+              <td>Modificar</td>
+  
+            </thead>
+      <?php
+          while ($row=mysqli_fetch_array($dt)) {
+            $id=$row['id'];
+            $empleado=$row['empleado'];
+            $rol=$row['rol'];
+            $usuario=$row['nombre'];
+            $pwd=$row['clave'];
 
-        </tr>
-        <tr>
-          <td>José</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>Mixto Listo</td>
-          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
-        </tr>
-        <tr>
-          <td>José</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>Campero</td>
-          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
-        </tr>
-        <tr>
-          <td>José</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>NO Disponible</td>
-          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
-        </tr>
-        <tr>
-          <td>José</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>NO Disponible</td>
-          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
-        </tr>
-        <tr>
-          <td>José</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>NO Disponible</td>
-          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
-        </tr>
-        <tr>
-          <td>José</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>NO Disponible</td>
-          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
-        </tr>
-        <tr>
-          <td>José</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>NO Disponible</td>
-          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
-        </tr>
-        <tr>
-          <td>Jorge</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>Disponible</td>
-          <td><center><a href="detalle_cliente.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-        </tr>
-        <tr>
-          <td>Jorge</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>Disponible</td>
-          <td><center><a href="detalle_cliente.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-        </tr>
-        <tr>
-          <td>Jorge</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>Disponible</td>
-          <td><center><a href="detalle_cliente.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-        </tr>
-        <tr>
-          <td>Jorge</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>Disponible</td>
-          <td><center><a href="detalle_cliente.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-        </tr>
-        <tr>
-          <td>Jorge</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>Disponible</td>
-          <td><center><a href="detalle_cliente.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-        </tr>
-        <tr>
-          <td>Jorge</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>Disponible</td>
-          <td><center><a href="detalle_cliente.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-        </tr>
-        <tr>
-          <td>Jorge</td>
-          <td>Campos</td>
-          <td>4088-1056</td>
-          <td>Disponible</td>
-          <td><center><a href="detalle_cliente.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-        </tr>
-        <tr>
-          <td>Campo 1 - 20</td>
-          <td>Campo 2 - 20</td>
-          <td>Campo 3 - 20</td>
+            ?>
+                  <tbody id="myTable">
+                  <tr>
+                    <td><?php echo $empleado?></td>
+                    <td><?php echo $rol?></td>
+                    <td><?php echo $usuario?></td>
+                    <td><?php echo $pwd?></td>
+                    <td><center><a href="nuevo_usuario.php?id=<?php echo $id?>&em=<?php echo $empleado?>"><button type="button" class="btn btn-warning">Modificar</button></a></center></td>
+                  </tr>
+                 </tbody>
+            <?php
 
-        </tr>
-        <tr>
-          <td>Campo 1 - 21</td>
-          <td>Campo 2 - 21</td>
-          <td>Campo 3 - 21</td>
- 
-        </tr>
-        <tr>
-          <td>Campo 1 - 22</td>
-          <td>Campo 2 - 22</td>
-          <td>Campo 3 - 22</td>
-
-        </tr>
-        <tr>
-          <td>Campo 1 - 23</td>
-          <td>Campo 2 - 23</td>
-          <td>Campo 3 - 23</td>
-
-        </tr>
-        <tr>
-          <td>Campo 1 - 24</td>
-          <td>Campo 2 - 24</td>
-          <td>Campo 3 - 24</td>
-
-        </tr>
-        <tr>
-          <td>Campo 1 - 25</td>
-          <td>Campo 2 - 25</td>
-          <td>Campo 3 - 25</td>
-
-        </tr>
-        <tr>
-          <td>Campo 1 - 26</td>
-          <td>Campo 2 - 26</td>
-          <td>Campo 3 - 26</td>
-
-        </tr>
-        <tr>
-          <td>Campo 1 - 27</td>
-          <td>Campo 2 - 27</td>
-          <td>Campo 3 - 27</td>
-
-        </tr>
-        <tr>
-          <td>Campo 1 - 28</td>
-          <td>Campo 2 - 28</td>
-          <td>Campo 3 - 28</td>
-
-        </tr>
-        <tr>
-          <td>Campo 1 - 29</td>
-          <td>Campo 2 - 29</td>
-          <td>Campo 3 - 29</td>
-
-          </tr>
-        <tr>
-          <td>Campo 1 - 30</td>
-          <td>Campo 2 - 30</td>
-          <td>Campo 3 - 30</td>
-
-        </tr>
-      </tbody>
-      <tfoot>
-        <td><input type="button" id="cargar_primera_pagina" value="<< Primero"/></td>
-        <td><input type="button" id="cargar_anterior_pagina" value="< Anterior"/></td>
-        <td id="indicador_paginas"></td>
-        <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >"/></td>
-        <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>
-      </tfoot>
-    </table>
+          }
+               echo '<tfoot>';
+                echo  '<td><input type="button" id="cargar_primera_pagina" value="<< Primero"/></td>';
+                echo  '<td><input type="button" id="cargar_anterior_pagina" value="< Anterior"/></td>';
+                echo  '<td id="indicador_paginas"></td>';
+                echo  '<td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >"/></td>';
+                echo  '<td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>';
+                echo'</tfoot>';
+                echo '</table>';
+  }
+  else{
+    ?> 
+    <center>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br><br><br><br>
+      <h1>no hay datos ingresados</h1>
+      <a href="nuevo_personal.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+    </center>
+    <?php
+  }
+?>
 
 </div>
-  
-  <div class="container-fluid">
-                <br>
-            <center>
-                
-                <a href="secritaria.php"><button type="button" class="btn btn-warning btn-lg" >Regresar</button></a>
-                
-            </center>
-            </div>
 </div>
 </body>
 
