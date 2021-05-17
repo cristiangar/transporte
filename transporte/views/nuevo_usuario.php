@@ -34,42 +34,53 @@
 
 </nav>
 <div class="container-fluid">
-    <form action="">
+<?php
+if (isset($_GET['id'])){
+    $id=$_GET['id'];
+    $empleado=$_GET['em'];
+    include_once('../controller/usuario.php');
+    $usuario= new Usuario();
+    $dt=$usuario->VerUnUsuario($id);
+    while ($row=mysqli_fetch_array($dt)) {
+        $usuario=$row['nombre'];
+        $pwd=$row['clave'];
+        $idus=$row['id_usuario'];
+        $idrol=$row['id_rol_usuario'];
+    }
+
+    ?>
+    <form method="POST" action="../controller/usuario.php?id=<?php echo $idus;?>&mod">
     <h1>Datos del Usuario</h1>
     <br>
         <div class="form-row">
             <div class="col-sm-4">
-            <label>Nombre</label>
-                <input type="text" class="form-control" placeholder="Nombre" require>
+            <label>Nombre del empleado</label>
+                <input type="text" name="empleado" value="<?php echo $empleado;?>" class="form-control" placeholder="Nombre" disabled>
             </div>
-            <div class="col-sm-4">
-            <label>Apellido</label>
-                <input type="text" class="form-control" placeholder="Apellido"require>
-            </div>
+
             <div class="col-sm-4">
             <label>Usuario</label>
-                <input type="text" class="form-control" placeholder="Usuario" require>
+                <input type="text" name="us" value="<?php echo $usuario;?>" class="form-control" placeholder="Usuario" require>
             </div>
             <div class="col-sm-4">
             <label>Contraseña</label>
-                <input type="text" class="form-control" placeholder="Clave" require>
+                <input type="text" name="pwd" value="<?php echo $pwd;?>" class="form-control" placeholder="Clave" require>
             </div>
 
-             <div class="col-sm-4">
-                <label>Tipo de usuario</label>
-                <select name="departamento" id="" class="form-control">
-                    <option value="1">Administrador</option>
-                    <option value="2">Ejecutiva</option>
-                    <option value="3">Contaduria</option>
-                    <option value="4">Piloto</option>
+            <div class="col-sm-4">
+                <label>Puesto</label>
+                <select name="id_rol" id="" class="form-control">
+                <?php
+                while($row=mysqli_fetch_array($dtr)){
+                    $valor=$row['id_rol_usuario'];
+                    $texto=$row['nombre'];
+                    echo '<option  value="'.$valor.'">'.$texto.'</option>';
+                }
+                ?>
                 </select>
             </div>
                            
         </div>
-
-                
-
-            
         </div>
 <br>
         
@@ -85,7 +96,13 @@
             </center>
             </div>
     </form>
-</div>
+    <?php
+}
+else{
+
+}
+?>
+
 </div>
 </body>
 </html>

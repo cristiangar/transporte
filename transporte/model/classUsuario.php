@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 include ('../Configuracion/config.php');
-class cliente
+class Usuario
 {
 
 		public function Ingresarcliente($nombre,$apellido,$telefono,$telefono2,$correo,$nit,$cuenta,$banco)
@@ -26,23 +26,23 @@ class cliente
 
 	}
 
-		public function Verclientes()
+		public function VerUsuario()
 	{
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_cliente(0, '0', '0', '0', '0', '0', '0', '0', '0', 'S', @pn_respuesta);";
+		$consulta= "call sp_usuario('0', 0, '0', '0', 0, 0, 'S', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
 
 	}
-			public function VerUnCliente($id)
+			public function VerUnUsuario($id)
 	{
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_cliente($id, '0', '0', '0', '0', '0', '0', '0', '0', 'S1', @pn_respuesta);";
+		$consulta= "call sp_usuario('0', $id, 'nkn', 'kjnk', 0, 0, 'S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -72,11 +72,11 @@ class cliente
 
 				
 
-		public function ModificarCliente($id,$nombre,$apellido,$telefono,$telefono2,$correo,$nit,$cuenta,$banco)
+		public function ModificarUsuario($id,$us,$pwd,$rol)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_cliente($id, '$nombre', '$apellido', '$telefono', '$telefono2', '$correo', '$nit', '$cuenta', '$banco', 'U', @pn_respuesta);";
+		$consulta= "call sp_usuario('654',$id,'$us','$pwd',$rol,1,'U', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -89,11 +89,19 @@ class cliente
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/clientes.php" </script>';
+						self.location="../views/usuarios.php" </script>';
 
 
 	}
 
+    public function VerRol(){
+        $db = new datos();
+		$db->conectar();
+		$consulta= "call ps_rol_usuario(0, '0', 'S', @pn_respuesta);";
+		$dtr= mysqli_query($db->objetoconexion,$consulta);
+		$db->desconectar();
+		return $dtr;
+    }
 	
 }
 
