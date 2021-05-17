@@ -8,7 +8,7 @@ class cliente
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call trasportefinal.sp_cliente(0, '$nombre', '$apellido', '$telefono', '$telefono2', '$correo', '$nit', '$cuenta', '$banco', 'I', @pn_respuesta);";
+		$consulta= "call sp_cliente(0, '$nombre', '$apellido', '$telefono', '$telefono2', '$correo', '$nit', '$cuenta', '$banco', 'I', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -31,7 +31,7 @@ class cliente
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call trasportefinal.sp_cliente(0, '0', '0', '0', '0', '0', '0', '0', '0', 'S', @pn_respuesta);";
+		$consulta= "call sp_cliente(0, '0', '0', '0', '0', '0', '0', '0', '0', 'S', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -42,7 +42,7 @@ class cliente
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call trasportefinal.sp_cliente($id, '0', '0', '0', '0', '0', '0', '0', '0', 'S1', @pn_respuesta);";
+		$consulta= "call sp_cliente($id, '0', '0', '0', '0', '0', '0', '0', '0', 'S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -53,7 +53,7 @@ class cliente
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call trasportefinal.sp_cliente($id, '0', '0', '0', '0', '0', '0', '0', '0', 'D', @pn_respuesta);";
+		$consulta= "call sp_cliente($id, '0', '0', '0', '0', '0', '0', '0', '0', 'D', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -76,7 +76,7 @@ class cliente
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call trasportefinal.sp_cliente($id, '$nombre', '$apellido', '$telefono', '$telefono2', '$correo', '$nit', '$cuenta', '$banco', 'U', @pn_respuesta);";
+		$consulta= "call sp_cliente($id, '$nombre', '$apellido', '$telefono', '$telefono2', '$correo', '$nit', '$cuenta', '$banco', 'U', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
