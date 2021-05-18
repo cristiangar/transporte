@@ -1,14 +1,14 @@
 <?php 
 ob_start();
 include ('../Configuracion/config.php');
-class rol_usuario
+class Ruta
 {
 
-		public function IngresarRolUsuario($nombre)
+		public function Ingresar($origen,$destino)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call ps_rol_usuario(0, '$nombre', 'I', @pn_respuesta);";
+		$consulta= "call sp_ruta(0, '$origen', '$destino','no','I', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -21,28 +21,28 @@ class rol_usuario
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/tipo_usuario.php" </script>';
+						self.location="../views/Rutas.php" </script>';
 
 
 	}
 
-		public function VerRolUsuario()
+		public function Ver()
 	{
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call ps_rol_usuario(0,'0','S', @pn_respuesta);";
+		$consulta= "call sp_ruta(0, 'n', 'n', 'no','S', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
 
 	}
-			public function VerUnRolUsuario($id)
+			public function VerUno($id)
 	{
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call ps_rol_usuario($id,'0','S1', @pn_respuesta);";
+		$consulta= "call sp_ruta($id, 'n', 'n', 'no','S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -53,7 +53,7 @@ class rol_usuario
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call ps_rol_usuario($id, '0','D', @pn_respuesta);";
+		$consulta= "call sp_ruta($id, 'n', 'n', 'no','D', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -66,17 +66,17 @@ class rol_usuario
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/tipo_usuario.php" </script>';
+						self.location="../views/Rutas.php" </script>';
 
 	}
 
 				
 
-		public function ModificarRolUsuario($id,$nombre)
+		public function Modificar($id,$origen,$destino,$cond)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call ps_rol_usuario($id, '$nombre','U', @pn_respuesta);";
+		$consulta= "call sp_ruta($id, '$origen', '$destino','$cond', 'U', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -89,7 +89,7 @@ class rol_usuario
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/tipo_usuario.php" </script>';
+						self.location="../views/Rutas.php" </script>';
 
 
 	}

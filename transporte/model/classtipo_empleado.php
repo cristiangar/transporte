@@ -8,7 +8,7 @@ class tipo
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call trasportefinal.sp_tipo_empledo(0, '$cargo', 'I', @pn_respuesta);";
+		$consulta= "call sp_tipo_empledo(0, '$cargo', 'I', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -31,7 +31,7 @@ class tipo
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call trasportefinal.sp_tipo_empledo(0, '0', 'S', @pn_respuesta);";
+		$consulta= "call sp_tipo_empledo(0, '0', 'S', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -42,7 +42,7 @@ class tipo
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call trasportefinal.sp_tipo_empledo($id,'0','S1', @pn_respuesta);";
+		$consulta= "call sp_tipo_empledo($id,'0','S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -53,7 +53,7 @@ class tipo
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call trasportefinal.sp_tipo_empledo($id, '0','D', @pn_respuesta);";
+		$consulta= "call sp_tipo_empledo($id, '0','D', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -76,7 +76,7 @@ class tipo
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call trasportefinal.sp_tipo_empledo($id, '$cargo', 'U', @pn_respuesta);";
+		$consulta= "call sp_tipo_empledo($id, '$cargo', 'U', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";

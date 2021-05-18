@@ -55,7 +55,7 @@ if(isset($_GET['id'])){
         }
 
         ?>
-            <form method="POST" action="../controller/cliente.php?id=<?php echo $id?>">
+        <form method="POST" action="../controller/cliente.php?id=<?php echo $id?>">
     <br>
     <br>
         <h1>Datos del Cliente a modificar</h1>
