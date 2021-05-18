@@ -33,14 +33,14 @@
     </ul>
 
 </nav>
-<div class="container-fluid">
+<div class="container-fluid col-sm-5">
 <?php
 if(isset($_GET['id'])){
      $id= $_GET['id'];
     //busco los datos para acatualizar
     include_once("../model/classtipo_usuario.php");
     $cliente=new rol_usuario();
-    $dt=$cliente->VerRolUsuario($id);
+    $dt=$cliente->VerUnRolUsuario($id);
 
     while ($row=mysqli_fetch_array($dt)) {
             $id=$row['id_rol_usuario'];
@@ -54,7 +54,7 @@ if(isset($_GET['id'])){
         <h1>Datos del Rol a modificar</h1>
         <br>
         <div class="form-row">
-            <div class="col-sm-4">
+            <div class="col-sm-10">
             <label>Nombre del rol de usuario</label>
                 <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo $nombre?>" require>
             </div>
@@ -85,12 +85,12 @@ else
     <form method="POST" action="../controller/tipo_usuario.php" enctype="multipart/form-data">
     <br>
     <br>
-        <h1>Datos del Rol de Usuario</h1>
+        <h1>Nombre del Nuevo Rol</h1>
         <br>
         <div class="form-row">
-            <div class="col-sm-4">
+            <div class="col-sm-10">
             <label>Nombre</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre" require>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre de Rol de Usuario" require>
             </div>
             
 

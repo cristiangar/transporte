@@ -33,10 +33,11 @@
     </ul>
 
 </nav>
-<div class="container-fluid">
+<div class="container-fluid col-sm-5">
 <?php
 if(isset($_GET['id'])){
      $id= $_GET['id'];
+     echo $id;
     //busco los datos para acatualizar
     include_once("../model/classtipo_empleado.php");
     $cliente=new tipo();
@@ -53,13 +54,17 @@ if(isset($_GET['id'])){
     <br>
         <h1>Datos del Cargo a modificar</h1>
         <br>
+        
         <div class="form-row">
-            <div class="col-sm-4">
+            <div class="col-sm-10">
+
             <label>Nombre del Cargo</label>
+
                 <input type="text" name="cargo" class="form-control" placeholder="Nombre" value="<?php echo $cargo?>" require>
             </div>
-                            
+                          
         </div>  
+
         <br>
         
         </div>
@@ -74,7 +79,7 @@ if(isset($_GET['id'])){
             </center>
         </div>
     </form>
-
+    
         <?php
 
 
@@ -85,10 +90,12 @@ else
     <form method="POST" action="../controller/tipo_empleado.php" enctype="multipart/form-data">
     <br>
     <br>
+        <center>
         <h1>Datos del Cargo</h1>
         <br>
+        </center>
         <div class="form-row">
-            <div class="col-sm-4">
+            <div class="col-sm-10">
             <label>Cargo</label>
                 <input type="text" name="cargo" class="form-control" placeholder="Nombre" require>
             </div>
