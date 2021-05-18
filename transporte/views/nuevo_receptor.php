@@ -39,11 +39,11 @@ if(isset($_GET['id'])){
      $id= $_GET['id'];
     //busco los datos para acatualizar
     include_once("../model/classreceptor.php");
-    $cliente=new receptor();
-    $dt=$cliente->VerUnReceptor($id);
+    $cliente=new Receptor();
+    $dt2=$cliente->VerUnReceptor($id);
 
-    while ($row=mysqli_fetch_array($dt)) {
-            $id=$row['id_cliente'];
+    while ($row=mysqli_fetch_array($dt2)) {
+            $id=$row['id_receptor'];
             $nombre=$row['nombre'];
             $apellido=$row['apellido'];
             $telefono=$row['telefono'];
@@ -51,7 +51,7 @@ if(isset($_GET['id'])){
         }
 
         ?>
-            <form method="POST" action="../controller/cliente.php?id=<?php echo $id?>">
+            <form method="POST" action="../controller/receptor.php?id=<?php echo $id?>">
     <br>
     <br>
         <h1>Datos del Receptor a modificar</h1>
