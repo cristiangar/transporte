@@ -28,57 +28,80 @@
 
 </nav>
 <div class="container-fluid">
-<h1>Lista de choferes</h1>
-<br>
-<div class="container mt-5">
-<input class="form-control" id="myInput" type="text" placeholder="buscar..">
-<br>
-<table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Departamento</th>
-        <th>Ver municipios</th>
-      </tr>
-    </thead>
-    <tbody id="myTable">
-      <tr>
-        <td>Quetzaltenango</td>
-        <td>
-            <a href="municipios.php">
-                <button type="button" class="btn btn-primary">ver</button>
-            </a>
-        </td>
- 
-      </tr>
-      <tr>
-        <td>Guatenala</td>
-        <td>
-            <a href="municipios.php">
-                <button type="button" class="btn btn-primary">ver</button>
-            </a>
-        </td>
+<?php
+  include_once("../controller/rutas.php");
+  $resultado=$dt->num_rows;
+  if($resultado>0){
+    ?>
+      <h1>Lista de Rutas</h1>
+      <br>
+      <div class="container mt-3">
+      <input class="form-control" id="myInput" type="text" placeholder="buscar..">
+      <br>
+      <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
+            <thead>
+              <td>Origen</td>
+              <td>Destino</td>
+              <td>Codigo</td>
+              <td>Modificar</td>
+              <td>Eliminar</td>
+            </thead>
+      <?php
+          while ($row=mysqli_fetch_array($dt)) {
+            $id=$row['id_ruta'];
+            $origen=$row['pais_origen'];
+            $destino=$row['pais_destino'];
+            $cod=$row['codigo_ruta']
 
-      </tr>
-      <tr>
-        <td>San Marcos</td>
-        <td>
-            <a href="municipios.php">
-                <button type="button" class="btn btn-primary">ver</button>
-            </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-  
-  <div class="container-fluid">
-                <br>
+            ?>
+                  <tbody id="myTable">
+                  <tr>
+                    <td><?php echo $origen?></td>
+                    <td><?php echo $destino?></td>
+                    <td><?php echo $cod?></td>
+                    <td><center><a href="nueva_ruta.php?id=<?php echo $id?>"><button type="button" class="btn btn-warning">Modificar</button></a></center></td>
+                    <td><center><a href="../controller/rutas.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
+                  </tr>
+                 </tbody>
+            <?php
+
+          }
+               echo '<tfoot>';
+                echo  '<td><input type="button" id="cargar_primera_pagina" value="<< Primero"/></td>';
+                echo  '<td><input type="button" id="cargar_anterior_pagina" value="< Anterior"/></td>';
+                echo  '<td id="indicador_paginas"></td>';
+                echo  '<td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >"/></td>';
+                echo  '<td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>';
+                echo'</tfoot>';
+                echo '</table>';
+                ?>
             <center>
+                 <a href="nueva_ruta.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                
                 <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                 
+                
             </center>
-            </div>
+            <?php
+  }
+  else{
+    ?> 
+    <center>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br><br><br><br>
+      <h1>no hay datos ingresados</h1>
+      <a href="nueva_ruta.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+    </center>
+    <?php
+  }
+?>
+
 </div>
+
 </body>
 
 <script>
