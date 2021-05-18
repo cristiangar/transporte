@@ -42,7 +42,7 @@ class Receptor
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call trasportefinal.sp_receptor($id, '0', 'S1', '0', '0','0', @pn_respuesta);";
+		$consulta= "call trasportefinal.sp_receptor($id, 'S1', '0', '0', '0','0', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
