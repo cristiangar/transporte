@@ -101,7 +101,31 @@
         </div>
         <br>
 
+
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
+                    <a href="cuentas.php">
+                    <img class="img-fluid" src="../imagenes/cxc.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Cuentas por Cobrar</h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
+                    <a href="receptor.php">
+                    <img class="img-fluid" src="../imagenes/receptor.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Receptor</h1>
+                </div>
+            </div>
+        </div>
+
+                <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
                     <a href="personal.php">
@@ -119,18 +143,6 @@
                     <img class="img-fluid" src="../imagenes/usuario.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
                     </a>
                     <h1>Usuarios</h1>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
-            <div id="formContent"><!--contenedor-->
-                <div class="fadeIn first">
-                    <a href="receptor.php">
-                    <img class="img-fluid" src="../imagenes/receptor.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
-                    </a>
-                    <h1>Receptor</h1>
                 </div>
             </div>
         </div>
