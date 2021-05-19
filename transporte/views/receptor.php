@@ -44,7 +44,7 @@
 
             <thead>
               <center><td>Nombre</td></center>
-              <center><td>Apellido</td></center>
+             
               <center><td>Teléfono</td></center>
               <center><td>Teléfono 2</td></center>
               <center><td>Modificar</td></center>
@@ -54,7 +54,7 @@
           while ($row=mysqli_fetch_array($dt2)) {
             $id=$row['id_receptor'];
             $nombre=$row['nombre'];
-            $apellido=$row['apellido'];
+        
             $telefono=$row['telefono'];
             $telefono2=$row['telefono2'];
             
@@ -63,7 +63,7 @@
                   <tr>
 
                     <td><?php echo $nombre?></td>
-                    <td><?php echo $apellido?></td>
+                    
                     <td><?php echo $telefono?></td>
                     <td><?php echo $telefono2?></td>
 

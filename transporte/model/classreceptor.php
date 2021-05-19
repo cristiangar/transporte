@@ -8,7 +8,7 @@ class Receptor
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call trasportefinal.sp_receptor(0,'I', '$nombre', '$apellido', '$telefono', '$telefono2', @pn_respuesta);";
+		$consulta= "call sp_receptor(0,'I', '$nombre', '$apellido', '$telefono', '$telefono2', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -31,7 +31,7 @@ class Receptor
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call trasportefinal.sp_receptor(0, 'S', '0', '0', '0', '0', @pn_respuesta);";
+		$consulta= "call sp_receptor(0, 'S', '0', '0', '0', '0', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -42,7 +42,7 @@ class Receptor
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call trasportefinal.sp_receptor($id, 'S1', '0', '0', '0','0', @pn_respuesta);";
+		$consulta= "call sp_receptor($id, 'S1', '0', '0', '0','0', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -52,7 +52,7 @@ class Receptor
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call trasportefinal.sp_receptor($id, 'D', '0', '0', '0','0', @pn_respuesta);";
+		$consulta= "call sp_receptor($id, 'D', '0', '0', '0','0', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
