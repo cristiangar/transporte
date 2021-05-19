@@ -38,7 +38,7 @@
       <div class="container mt-3">
       <input class="form-control" id="myInput" type="text" placeholder="buscar..">
       <br>
-      <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
+      <table class="table table-dark table-striped table-hover table-responsive-sm" border="1" id="tabla_paginada">
             <thead>
               <td>Origen</td>
               <td>Destino</td>

@@ -42,7 +42,7 @@ class Personal
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call transporte.sp_empleado($id, 0, 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 0, 'n', 'n', 'S1', @pn_respuesta);";
+		$consulta= "call sp_empleado($id, 0, 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 0, 'n', 'n', 'S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;

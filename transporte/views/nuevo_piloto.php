@@ -34,102 +34,124 @@
 
 </nav>
 <div class="container-fluid">
-    <form action="">
-    <h1>Datos del Vehiculo</h1>
-    <br>
+<?php
+if(isset($_GET['id']))
+{
+    $id= $_GET['id'];
+}
+else
+{
+    ?>
+    <form method="POST" action="../controller/pilotoInterno.php" enctype="multipart/form-data">
+    <h1>Datos del piloto</h1>
+     <br>
         <div class="form-row">
             <div class="col-sm-4">
-            <label>Nombre</label>
-                <input type="text" class="form-control" placeholder="Nombre" require>
+                <label>Nombre</label>
+                <input name="nombre" type="text" class="form-control" placeholder="Nombre" require>
             </div>
             <div class="col-sm-4">
-            <label>Apellido</label>
-                <input type="text" class="form-control" placeholder="Apellido"require>
+                <label>Apellido</label>
+                <input name="apellido" type="text" class="form-control" placeholder="Apellido" require>
             </div>
             <div class="col-sm-4">
-            <label>Teléfono 1</label>
-                <input type="text" class="form-control" placeholder="Telefono 1" require>
+                <label>No.DPI</label>
+                <input name="dpi" type="text" class="form-control" placeholder="DPI" require>
             </div>
             <div class="col-sm-4">
-            <label>Teléfono 2</label>
-                <input type="text" class="form-control" placeholder="Teléfono 2" require>
+                <label>Telefono</label>
+                <input name="telefono1" type="text" class="form-control" placeholder="Telefono" require>
             </div>
             <div class="col-sm-4">
-            <label>No.DPI</label>
-                <input type="text" class="form-control" placeholder="Número de DPI" require>
+                <label>Telefono 2</label>
+                <input name="telefono2" value='N/A' type="text" class="form-control" placeholder="Telefono 2" require>
             </div>
             <div class="col-sm-4">
-            <label>Dirección</label>
-                <input type="text" class="form-control" placeholder="Dirección" require>
+                <label>Correo</label>
+                <input name="correo" value='N/A' type="text" class="form-control" placeholder="Correo" require>
             </div>
-
+            
             <div class="col-sm-4">
-            <br>
-            <label>Imagen de DPI</label>
-            <div class="container-fluid">
-                <input type="file" name="imagen">
-            </div>
-            </div>
-                
+                <br>
+                <label>Imagen de DPI</label>
+                <div class="container-fluid">
+                    <input type="file" name="imgDPI">
+                </div>
+            </div>  
         </div>
-
         <br>
-        <h1>Datos de licencia </h1>
+
+        <h1>Datos de licencia</h1>
         <br>
         <div class="form-row">
             <div class="col-sm-4">
-                <label>No. Licencia</label>
-                <input type="text" class="form-control" placeholder="Número Licencia" require>
+                <label>No. licencia</label>
+                <input name="licencia" type="text" class="form-control" placeholder="No.licencia" require>
             </div>
-
             <div class="col-sm-4">
                 <label>Tipo Licencia</label>
-                <select name="departamento" id="" class="form-control">
-                    <option value="1">A</option>
-                    <option value="2">B</option>
-                    <option value="3">C</option>
+                <select name="tlicencia" id="" class="form-control">
+                    <option value='A'>A</option>
+                    <option value='B'>B</option>
+                    <option value='C'>C</option>
                 </select>
             </div>
-
             <div class="col-sm-4">
                 <label>Imagen Licencia</label>
                 <div class="container-fluid">
-                    <input type="file" name="imagen">
+                    <input type="file" name="imglicencia">
                 </div>
             </div>
-            <br>
-
         </div>
-<br>
-        <h1>Datos de Pasaporte </h1>
+        <br>
+
+        <h1>Datos del Pasaporte</h1>
         <br>
         <div class="form-row">
             <div class="col-sm-4">
-                <label>No. Pasaporte</label>
-                <input type="text" class="form-control" placeholder="Número de Pasaporte" require>
+                <label>No.Pasaporte</label>
+                <input name="pasaporte" type="text" class="form-control" value="N/A">
             </div>
-
-
             <div class="col-sm-4">
                 <label>Imagen Pasaporte</label>
                 <div class="container-fluid">
-                    <input type="file" name="imagen">
+                    <input type="file" name="imgPasaporte">
                 </div>
             </div>
-            <br>
-
         </div>
-            <div class="container-fluid wrapper fadeInDown col-sm-5">
-                <br>
-                <br>
-            <center>
-                <input type="submit" class="btn btn-success" value="Aceptar">
-                <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-                <input type="submit" class="btn btn-danger" value="cancelar">
-                
-            </center>
+        <br>
+
+        <h1>Datos del Caat</h1>
+        <br>
+        <div class="form-row">
+            <div class="col-sm-4">
+                <label>No.Caat</label>
+                <input name="caat" type="text" class="form-control"  value="N/A">
             </div>
+            <div class="col-sm-4">
+                <label>Imagen Caat</label>
+                <div class="container-fluid">
+                    <input type="file" name="imgCaat">
+                </div>
+            </div>            
+        </div>
+
+        
+        <div class="container-fluid wrapper fadeInDown col-sm-5">
+                <br>
+                <center>
+                    <input type="submit" class="btn btn-success" value="Aceptar">
+                    <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                    <input type="submit" class="btn btn-danger" value="cancelar">
+                    <br>
+                    
+                </center>
+            </div>
+
     </form>
+    <?php
+}
+?>
 </div>
 </div>
 </body>
