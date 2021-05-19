@@ -1,14 +1,14 @@
 <?php 
 ob_start();
 include ('../Configuracion/config.php');
-class Receptor
+class Piloto
 {
 
-		public function IngresarReceptor($nombre,$apellido,$telefono,$telefono2)
+	public function Ingresar($nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat)
 	{
-		$bd = new datos();
+        $bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_receptor(0,'I', '$nombre', '$apellido', '$telefono', '$telefono2', @pn_respuesta);";
+		$consulta= "call sp_pilotos(0, '$nombre', '$apellido', '$dpi', '$telefono', '$telefono2', '$licencia', '$tlicencia', '$pasaporte', '$ruta_licencia', '$ruta_pasaporte', '$ruta', '$ruta_caat', 'Disponible', '$caat', '$correo', 'I', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -21,38 +21,37 @@ class Receptor
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/receptor.php" </script>';
+						self.location="../views/choferes.php" </script>';
 
 
 	}
 
-		public function VerReceptor()
+	public function Ver()
 	{
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_receptor(0, 'S', '0', '0', '0', '0', @pn_respuesta);";
+		$consulta= "call sp_pilotos(0, '0', '0', '0', '00', '0', '0', '0', '0', '0', '0', '00', '00', '0', '0', '0', 'S', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
 
 	}
-			public function VerUnReceptor($id)
+	public function VerUno($id)
 	{
-
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_receptor($id, 'S1', '0', '0', '0','0', @pn_respuesta);";
+		$consulta= "call sp_ruta($id, 'n', 'n', 'no','S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
 	}
-				public function Eliminar($id)
+	public function Eliminar($id)
 	{
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_receptor($id, 'D', '0', '0', '0','0', @pn_respuesta);";
+		$consulta= "call sp_ruta($id, 'n', 'n', 'no','D', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -65,17 +64,15 @@ class Receptor
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/receptor.php" </script>';
+						self.location="../views/Rutas.php" </script>';
 
 	}
 
-				
-
-		public function ModificarReceptor($id,$nombre,$apellido,$telefono,$telefono2)
+    public function Modificar($id,$origen,$destino,$cond)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_receptor($id,'U','$nombre', '$apellido', '$telefono', '$telefono2', @pn_respuesta);";
+		$consulta= "call sp_ruta($id, '$origen', '$destino','$cond', 'U', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -88,10 +85,15 @@ class Receptor
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/receptor.php" </script>';
+						self.location="../views/Rutas.php" </script>';
 
 
 	}
+
+    public function VerDetalle($id)
+    {
+
+    }
 
 	
 }
