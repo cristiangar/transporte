@@ -25,8 +25,8 @@ if (isset($_GET['id']))
         }
         else{
             $id = $_GET['id'];
-           /*$ruta=new Ruta();
-            $dt=$ruta->VerUno($id);*/
+            $piloto=new Piloto();
+            $dt=$piloto->VerDetalle($id);
         }
 
     }

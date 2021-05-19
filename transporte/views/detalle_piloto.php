@@ -34,54 +34,38 @@
 </nav>
 <br>
 <br>
-<div class="container-fluid">
-          <div class="card-group">
-              <div class="card bg-primary" style="width:400px">
-            <div class="card-body">
-              <h2 class="card-title" backgound="red">Jorge Campos</h2><br>
-              <label>No. DPI: 1234567891112</label><br>
-              <label>telefono 1: 12345678</label>  <br> 
-              <label>telefono 2: N/A</label><br>
-              <label>DIreccion: calle 2 5b </label>
-            </div>
-            <img class="card-img-bottom" src="../imagenes/images.jpg" alt="Card image" style="width:100%">
-          </div>
+<div class="container-fluid " style="width:20rem;margin:20px 0 24px 0">
+<?php
+$id=$_GET['id'];
+include_once("../controller/pilotoInterno.php");
+$piloto=new Piloto();
+$dt=$piloto->VerDetalle($id);
+while ($row=mysqli_fetch_array($dt)) {
+  $id_empleado=$row['id_empleado'];
+  $nombre=$row['nombre'];
+  $apellido=$row['apellido'];
+  $dpi=$row['dpi'];
+  $telefono1=$row['telefono1'];
+  $telefono2=$row['telefono2'];
+  $licencia=$row['licencia'];
+  $tipo_licencia=$row['tipo_licencia'];
+  $pasaporte=$row['pasaporte'];
+  $ruta_imagen_licencia=$row['ruta_imagen_licencia'];
+  $ruta_imagen_pasaporte=$row['ruta_imagen_pasaporte'];
+  $ruta_imagen_caat=$row['ruta_imagen_caat'];
+  $ruta_imagen_dpi=$row['ruta_imagen_dpi'];
+  $codigo_caat=$row['codigo_caat'];
+  $correo=$row['correo'];
 
-
-            <div class="card bg-warning" style="width:400px">
-            <div class="card-body">
-              <h2 class="card-title" backgound="red">Datos Licencia</h2><br>
-              <label>No. DPI: 1234567891112</label><br>
-              <label>telefono 1: 12345678</label>  <br> 
-              <label>telefono 2: N/A</label><br>
-              <label>DIreccion: calle 2 5b </label>
-            </div>
-            <img class="card-img-bottom" src="../imagenes/licencia.jpg" alt="Card image" style="width:100%">
-          </div>
-
-                        <div class="card bg-success" style="width:400px">
-            <div class="card-body">
-              <h2 class="card-title" backgound="red">Datos Pasaporte</h2><br>
-              <label>No. DPI: 1234567891112</label><br>
-              <label>telefono 1: 12345678</label>  <br> 
-              <label>telefono 2: N/A</label><br>
-              <label>DIreccion: calle 2 5b </label>
-            </div>
-            <img class="card-img-bottom" src="../imagenes/pasaporte.jpg" alt="Card image" style="width:100%">
-          </div>
-          </div>
-
-          <div class="container-fluid wrapper fadeInDown col-sm-5">
-                <br>
-                <br>
-            <center>
-                <input type="submit" class="btn btn-dark" value="Editar">
-                <a href="choferes.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-                <input type="submit" class="btn btn-danger" value="Eliminar">
-                
-            </center>
-            </div>
-
+  }
+?>
+<h1><?php echo $nombre." ".$apellido;?></h1>
+  <div class="card">
+      <div class="card-body">
+          <h2 class="card-title">DPI: <?php echo $dpi;?></h2>
+      </div>
+      <img src="<?php $ruta_imagen_dpi;?>" style="width:100%" alt="">
+  </div>
 </div>
 
 

@@ -78,7 +78,7 @@
                       }
                     ?>
                     <td><?php echo $cargo?></td>
-                    <td><center><a href="nueva_ruta.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
+                    <td><center><a href="detalle_piloto.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
                     <td><center><a href="../controller/rutas.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
                   </tr>
                  </tbody>
@@ -111,7 +111,7 @@
       <br>
       <br><br><br><br>
       <h1>no hay datos ingresados</h1>
-      <a href="nueva_ruta.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+      <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
     </center>
     <?php
   }

@@ -41,7 +41,7 @@ class Piloto
 	{
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_ruta($id, 'n', 'n', 'no','S1', @pn_respuesta);";
+		$consulta= "";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -92,7 +92,12 @@ class Piloto
 
     public function VerDetalle($id)
     {
-
+        $db = new datos();
+		$db->conectar();
+		$consulta= "call sp_pilotos($id, '0', '0', '0', '00', '0', '0', '0', '0', '0', '0', '00', '00', '0', '0', '0', 'S1', @pn_respuesta);";
+		$dt= mysqli_query($db->objetoconexion,$consulta);
+		$db->desconectar();
+		return $dt;
     }
 
 	
