@@ -69,8 +69,8 @@
                     <td><?php echo $fecha_inicio?></td>
                     <td><?php echo $estado_factura?></td>
                     
-                    <td><center><a href="lista_abonos.php?id=<?php echo $id?>"><button type="button" class="btn btn-warning">Detalle</button></a></center></td>
-                    <td><center><a href="../controller/nuevo_abono.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Abonar</button></a></center></td>
+                    <td><center><a href="lista_abonos.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
+                    <td><center><a href="nuevo_abono.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Abonar</button></a></center></td>
                   </tr>
                  </tbody>
             <?php
@@ -104,7 +104,7 @@
       <br>
       <br><br><br><br>
       <h1>No hay datos ingresados</h1>
-      <a href="nueva_cuenta.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+      <a href="nueva_cuenta.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a
       <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
     </center>
     <?php
