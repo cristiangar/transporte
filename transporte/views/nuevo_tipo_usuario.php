@@ -21,7 +21,7 @@
     </a>
     <ul class="navbar-nav ml-auto">
         <li class="navbar-item">
-            <a class="nav-link" >Nuevo Cliente</a>
+            <a class="nav-link" >Nuevo Tipo Usuario</a>
         </li>
         <li class="navbar-item">
             <a class="nav-link" >Usuario: Admin</a>

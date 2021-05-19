@@ -44,11 +44,14 @@
 
         ?>
         <form method="POST" action="../controller/cuentas.php?id2=<?php echo $id2?>">
-    <br>
+          <center>
+            <br>
+          <h1>Listado de Abonos</h1>
+          </center>
       <br>
       <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
 
-            <thead>
+            <thead> 
               <center><td>Cantidad</td></center>
               <center><td>Fecha</td></center>
               <center><td>Eliminar</td></center>
@@ -70,7 +73,7 @@
                     <td><?php echo $cantidad?></td>
                     <td><?php echo $fecha?></td>
            
-                    <td><a href="../controller/cuentas.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+                    <td><a href="../controller/cuentas.php?id2=<?php echo $id2?>&es=E&id=<?php echo $id?>"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
                   </tr>
                  </tbody>
             <?php

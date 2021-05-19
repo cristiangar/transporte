@@ -4,11 +4,11 @@ include ('../Configuracion/config.php');
 class cuenta
 {
 
-		public function IngresarCuenta($nombre,$apellido,$telefono,$telefono2,$correo,$nit,$cuenta,$banco)
+		public function IngresarAbono($cantidad,$id)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_cliente(0, '$nombre', '$apellido', '$telefono', '$telefono2', '$correo', '$nit', '$cuenta', '$banco', 'I', @pn_respuesta);";
+		$consulta= "call sp_abonos(0, $cantidad, $id, 'I', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -21,7 +21,7 @@ class cuenta
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/clientes.php" </script>';
+						self.location="../views/cuentas.php" </script>';
 
 
 	}
@@ -44,7 +44,7 @@ class cuenta
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_cliente($id, '0', '0', '0', '0', '0', '0', '0', '0', 'S1', @pn_respuesta);";
+		$consulta= "call sp_abonos(0, 0, $id, 'S2', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -63,12 +63,12 @@ class cuenta
 
 	}
 
-				public function Eliminar($id)
+				public function Eliminar($id,$cxc)
 	{
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_cliente($id, '0', '0', '0', '0', '0', '0', '0', '0', 'D', @pn_respuesta);";
+		$consulta= "call sp_abonos($id, 0, $cxc, 'D', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -81,13 +81,13 @@ class cuenta
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/clientes.php" </script>';
+						self.location="../views/cuentas.php" </script>';
 
 	}
 
 				
 
-		public function ModificarCuenta($id,$nombre,$apellido,$telefono,$telefono2,$correo,$nit,$cuenta,$banco)
+	/*	public function ModificarCuenta($id,$nombre,$apellido,$telefono,$telefono2,$correo,$nit,$cuenta,$banco)
 	{
 		$bd = new datos();
 		$bd->conectar();
@@ -107,7 +107,7 @@ class cuenta
 						self.location="../views/clientes.php" </script>';
 
 
-	}
+	}*/
 
 	
 }
