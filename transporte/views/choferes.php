@@ -79,7 +79,7 @@
                     ?>
                     <td><?php echo $cargo?></td>
                     <td><center><a href="detalle_piloto.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-                    <td><center><a href="../controller/rutas.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
+                    <td><center><a href="../controller/pilotoInterno.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
                   </tr>
                  </tbody>
                  <?php

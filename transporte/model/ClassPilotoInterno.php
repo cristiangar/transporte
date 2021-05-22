@@ -41,7 +41,7 @@ class Piloto
 	{
 		$db = new datos();
 		$db->conectar();
-		$consulta= "";
+		$consulta= "call sp_pilotos(1, 'n', 'n', 'n', 'nn', 'n', 'n', 'nn', 'n', 'nn', 'n', 'n', 'n', 'n', 'n', 'n', 'S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -51,7 +51,7 @@ class Piloto
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_ruta($id, 'n', 'n', 'no','D', @pn_respuesta);";
+		$consulta= "call sp_pilotos($id, 'n', 'n', 'n', 'nn', 'n', 'n', 'nn', 'n', 'nn', 'n', 'n', 'n', 'n', 'n', 'n', 'D', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -64,7 +64,7 @@ class Piloto
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/Rutas.php" </script>';
+						self.location="../views/choferes.php" </script>';
 
 	}
 

@@ -37,7 +37,137 @@
 <?php
 if(isset($_GET['id']))
 {
+    include_once('../controller/pilotoInterno.php');
     $id= $_GET['id'];
+    while($row=mysqli_fetch_array($dt)){
+        $nombre=$row['nombre'];
+        $apellido=$row['apellido'];
+        $dpi=$row['dpi'];
+        $telefono1=$row['telefono1'];
+        $telefono2=$row['telefono2'];
+        $licencia=$row['licencia'];
+        $tipo_licencia=$row['tipo_licencia'];
+        $pasaporte=$row['pasaporte'];
+        $ruta_imagen_licencia=$row['ruta_imagen_licencia'];
+        $ruta_imagen_pasaporte=$row['ruta_imagen_pasaporte'];
+        $ruta_imagen_caat=$row['ruta_imagen_caat'];
+        $ruta_imagen_dpi=$row['ruta_imagen_dpi'];
+        $id_tipo_empleado=$row['id_tipo_empleado'];
+        $codigo_caat=$row['codigo_caat'];
+        $correo=$row['correo'];
+
+    }
+?>
+ <form method="POST" action="../controller/pilotoInterno.php" enctype="multipart/form-data">
+    <h1>Datos del piloto a modificar</h1>
+     <br>
+        <div class="form-row">
+            <div class="col-sm-4">
+                <label>Nombre</label>
+                <input value='<?php echo $nombre;?>' name="nombre" type="text" class="form-control" placeholder="Nombre" require>
+            </div>
+            <div class="col-sm-4">
+                <label>Apellido</label>
+                <input value='<?php echo $apellido;?>' name="apellido" type="text" class="form-control" placeholder="Apellido" require>
+            </div>
+            <div class="col-sm-4">
+                <label>No.DPI</label>
+                <input value='<?php echo $dpi;?>' name="dpi" type="text" class="form-control" placeholder="DPI" require>
+            </div>
+            <div class="col-sm-4">
+                <label>Telefono</label>
+                <input value='<?php echo $telefono1;?>' name="telefono1" type="text" class="form-control" placeholder="Telefono" require>
+            </div>
+            <div class="col-sm-4">
+                <label>Telefono 2</label>
+                <input value='<?php echo $telefono2;?>' name="telefono2" value='N/A' type="text" class="form-control" placeholder="Telefono 2" require>
+            </div>
+            <div class="col-sm-4">
+                <label>Correo</label>
+                <input value='<?php echo $correo;?>' name="correo" value='N/A' type="text" class="form-control" placeholder="Correo" require>
+            </div>
+            
+            <div class="col-sm-4">
+                <br>
+                <label>Imagen de DPI</label>
+                <div class="container-fluid">
+                    <input type="file" name="imgDPI">
+                </div>
+            </div>  
+        </div>
+        <br>
+
+        <h1>Datos de licencia</h1>
+        <br>
+        <div class="form-row">
+            <div class="col-sm-4">
+                <label>No. licencia</label>
+                <input value='<?php echo $licencia;?>' name="licencia" type="text" class="form-control" placeholder="No.licencia" require>
+            </div>
+            <div class="col-sm-4">
+                <label>Tipo Licencia</label>
+                <select name="tlicencia" id="" class="form-control">
+                    <option value='A'>A</option>
+                    <option value='B'>B</option>
+                    <option value='C'>C</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>Imagen Licencia</label>
+                <div class="container-fluid">
+                    <input type="file" name="imglicencia">
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <h1>Datos del Pasaporte</h1>
+        <br>
+        <div class="form-row">
+            <div class="col-sm-4">
+                <label>No.Pasaporte</label>
+                <input value='<?php echo $pasaporte;?>' name="pasaporte" type="text" class="form-control" value="N/A">
+            </div>
+            <div class="col-sm-4">
+                <label>Imagen Pasaporte</label>
+                <div class="container-fluid">
+                    <input type="file" name="imgPasaporte">
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <h1>Datos del Caat</h1>
+        <br>
+        <div class="form-row">
+            <div class="col-sm-4">
+                <label>No.Caat</label>
+                <input value='<?php echo $codigo_caat;?>' name="caat" type="text" class="form-control"  value="N/A">
+            </div>
+            <div class="col-sm-4">
+                <label>Imagen Caat</label>
+                <div class="container-fluid">
+                    <input type="file" name="imgCaat">
+                </div>
+            </div>            
+        </div>
+
+        
+        <div class="container-fluid wrapper fadeInDown col-sm-5">
+                <br>
+                <center>
+                    <input type="submit" class="btn btn-success" value="Aceptar">
+                    <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                    <input type="submit" class="btn btn-danger" value="cancelar">
+                    <br>
+                    
+                </center>
+            </div>
+
+    </form>
+<?php
+    
+
 }
 else
 {

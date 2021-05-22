@@ -99,7 +99,7 @@ while ($row=mysqli_fetch_array($dt)) {
 </center>
 
 <center>
-    <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-success" >Modificar</button></a>
+    <a href="nuevo_piloto.php?id=<?php echo $id_empleado?>"><button type="button" class="btn btn-success" >Modificar</button></a>
     <a href="choferes.php"><button type="button" class="btn btn-warning" >Regresar</button></a>       
 </center>
 </div>
