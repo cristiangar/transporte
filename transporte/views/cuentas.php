@@ -67,7 +67,19 @@
                     <td><?php echo $total?></td>
                     <td><?php echo $saldo?></td>
                     <td><?php echo $fecha_inicio?></td>
-                    <td><?php echo $estado_factura?></td>
+                    
+                    <?php
+                      if($estado_factura == 'Pagado' or $estado_factura =='pagado'){
+                        ?>
+                        <td><span class="badge badge-success"><?php echo $estado_factura?></span></td>
+                        <?php
+                      }
+                      else{
+                        ?>
+                        <td><span class="badge badge-danger"><?php echo $estado_factura?></span></td>
+                        <?php
+                      }
+                    ?>
                     
                     <td><center><a href="lista_abonos.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
                     <td><center><a href="nuevo_abono.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Abonar</button></a></center></td>
@@ -86,9 +98,8 @@
                 echo '</table>';
                 ?>
             <center>
-                 <a href="nueva_cuenta.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
-                
-                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                 
+                <a href="secritaria.php"><button type="button" class="btn btn-warning btn-lg" >Regresar</button></a>
                 
                 
             </center>

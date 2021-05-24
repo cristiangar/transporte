@@ -32,10 +32,10 @@ if (isset($_GET['id2']))
 }
 else
 {
-    if(isset($_POST ['cantidad']) and isset($_GET['id2'])){
+    if(isset($_POST ['cantidad']) and isset($_GET['id'])){
 
     $cantidad=$_POST['cantidad'];
-    $id=$_GET['id2'];
+    $id=$_GET['id'];
 
     /*echo $cantidad;*/
     
