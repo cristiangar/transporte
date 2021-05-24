@@ -83,6 +83,11 @@ class cuenta
 						alert("'.$texto.'")
 						self.location="../views/cuentas.php" </script>';
 
+		/*echo $texto;
+		echo'<script language = javascript>
+						alert("'.Eliminado.'")
+						self.location="../views/cuentas.php" </script>';*/
+
 	}
 
 				
