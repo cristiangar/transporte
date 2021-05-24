@@ -83,7 +83,7 @@
                 echo '</table>';
             ?>
             <center>
-                 <a href="nuevo_abono.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                <a href="nuevo_abono.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Abonar</button></a>
                 
                 <a href="cuentas.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                 
