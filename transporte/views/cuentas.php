@@ -69,7 +69,7 @@
                     <td><?php echo $fecha_inicio?></td>
                     
                     <?php
-                      if($estado_factura == 'Pagado' or $estado_factura =='pagado'){
+                      if($estado_factura == 'Cancelado' or $estado_factura =='cancelado'){
                         ?>
                         <td><span class="badge badge-success"><?php echo $estado_factura?></span></td>
                         <?php
@@ -115,8 +115,9 @@
       <br>
       <br><br><br><br>
       <h1>No hay datos ingresados</h1>
-      
-      <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+      <br>
+      <br>
+      <a href="secritaria.php"><button type="button" class="btn btn-warning btn-lg" >Regresar</button></a>
     </center>
     <?php
   }

@@ -33,7 +33,8 @@ class cuenta
 		$db->conectar();
 		$consulta= " select a.id_encabezado, a.total,c.saldo, c.fecha_inicio, a.estado_factura,concat(b.nombre,' ',b.apellido) as cliente,a.id_cliente,c.id_cxc from encabezado as a
 			inner join clientes as b on a.id_cliente=b.id_cliente inner join cxc as c on a.id_encabezado=c.id_encabezado
-    		where a.estado_eliminado=1 and a.estado_factura='Pendiente';";
+    		where a.estado_eliminado=1;";
+    		/*and a.estado_factura='Pendiente'*/
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -76,12 +77,16 @@ class cuenta
 		
 		$bd->desconectar();
 
+
 		$res=mysqli_fetch_array($consultar);
 		//
 		$texto=$res['@pn_respuesta'];
-		echo'<script language = javascript>
+
+		echo $texto;
+
+		/*echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/cuentas.php" </script>';
+						</script>';   
 
 		/*echo $texto;
 		echo'<script language = javascript>

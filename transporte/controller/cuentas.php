@@ -8,7 +8,7 @@ if (isset($_GET['id2']))
         $id=$_GET['id2'];
         $cxc=$_GET['id'];
         $au =new cuenta();
-        $au->  Eliminar($id,$cxc);
+        $au->Eliminar($id,$cxc);
         
     }
     else 

@@ -51,7 +51,7 @@ if(isset($_GET['id'])){
             <form method="POST" action="../controller/cuentas.php?id=<?php echo $id?>" enctype="multipart/form-data">
     <br>
     <br>
-        <h1>Ingresar Abono / modificar</h1>
+        <center><h1>Ingresar Abono</h1></center>
         <br>
         <div class="form-row">
            
