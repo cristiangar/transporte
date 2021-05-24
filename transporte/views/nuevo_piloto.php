@@ -58,7 +58,7 @@ if(isset($_GET['id']))
 
     }
 ?>
- <form method="POST" action="../controller/pilotoInterno.php" enctype="multipart/form-data">
+ <form method="POST" action="../controller/pilotoInterno.php?id=<?php echo $id?>&mod" enctype="multipart/form-data">
     <h1>Datos del piloto a modificar</h1>
      <br>
         <div class="form-row">
@@ -86,14 +86,41 @@ if(isset($_GET['id']))
                 <label>Correo</label>
                 <input value='<?php echo $correo;?>' name="correo" value='N/A' type="text" class="form-control" placeholder="Correo" require>
             </div>
-            
-            <div class="col-sm-4">
-                <br>
-                <label>Imagen de DPI</label>
-                <div class="container-fluid">
-                    <input type="file" name="imgDPI">
+<?php
+            if($ruta_imagen_dpi=="N/A")//verifico si hay imagen que mostrar S
+            {
+                ?>
+                            
+                <div class="col-sm-4">
+                    <br>
+                    <label>Imagen de DPI</label>
+                    <div class="container-fluid">
+                        <input type="file" name="imgDPI">
+                    </div>
+                </div> 
+                <?php
+            }
+            else
+            {
+                 ?>
+                <div class="col-sm-4">
+                <label>Imagen actual</label><br>
+                <img src="<?php echo $ruta_imagen_dpi;?>"width="400" height="200" alt="">
                 </div>
-            </div>  
+
+                <div class="col-sm-4">
+                <br>
+                    <label>Seleccione una imagen si quiere cambiar la actual</label>
+                    <div class="container-fluid">
+                        <input type="file" name="imgDPI">
+                    </div>
+                </div>
+                <input value='<?php echo $ruta_imagen_dpi;?>' name="ruta_dpi" type="hidden">
+                 <?php   
+            }
+?>
+             
+
         </div>
         <br>
 
@@ -112,12 +139,40 @@ if(isset($_GET['id']))
                     <option value='C'>C</option>
                 </select>
             </div>
+<?php
+            if($ruta_imagen_licencia=="N/A")
+            {
+                ?>
             <div class="col-sm-4">
                 <label>Imagen Licencia</label>
                 <div class="container-fluid">
                     <input type="file" name="imglicencia">
                 </div>
-            </div>
+            </div>                
+                <?php
+            }
+            else{
+                ?>
+                <div class="col-sm-4">
+                <label>Imagen actual</label><br>
+                    <div class="container-fluid">
+                    <img src="<?php echo $ruta_imagen_licencia;?>" width="400" height="200" alt="">
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Seleccione una imagen si quiere cambiar la actual</label>
+                    <div class="container-fluid">
+                        <input type="file" name="imglicencia">
+                    </div>
+                </div>
+                <input value='<?php echo $ruta_imagen_licencia;?>' name="ruta_licencia" type="hidden">
+                <?php
+            }
+?>   
+
+
+
         </div>
         <br>
 
@@ -128,12 +183,36 @@ if(isset($_GET['id']))
                 <label>No.Pasaporte</label>
                 <input value='<?php echo $pasaporte;?>' name="pasaporte" type="text" class="form-control" value="N/A">
             </div>
+<?php
+            if($ruta_imagen_pasaporte=='N/A'){
+                ?>
+                <div class="col-sm-4">
+                    <label>Imagen Pasaporte</label>
+                    <div class="container-fluid">
+                        <input type="file" name="imgPasaporte">
+                    </div>
+                </div>
+                <?php
+            }
+            else{
+                ?>
             <div class="col-sm-4">
-                <label>Imagen Pasaporte</label>
+            <label>Imagen actual</label><br>
+            <img src="<?php echo $ruta_imagen_pasaporte;?>"width="400" height="200" alt="">
+            </div>
+
+            <div class="col-sm-4">
+                <label>Seleccione una imagen si quiere cambiar la actual</label>
                 <div class="container-fluid">
                     <input type="file" name="imgPasaporte">
                 </div>
             </div>
+            <input value='<?php echo $ruta_imagen_pasaporte;?>' name="ruta_pasaporte" type="hidden">
+                <?php
+
+            }
+?>      
+
         </div>
         <br>
 
@@ -144,12 +223,34 @@ if(isset($_GET['id']))
                 <label>No.Caat</label>
                 <input value='<?php echo $codigo_caat;?>' name="caat" type="text" class="form-control"  value="N/A">
             </div>
+<?php
+            if($ruta_imagen_caat=='N/A')
+            {
+              ?>
             <div class="col-sm-4">
-                <label>Imagen Caat</label>
+            <label>Imagen actual</label><br>
+            <img src="<?php echo $ruta_imagen_caat;?>"width="400" height="200" alt="">
+            </div>
+              <?php
+            }
+            else{
+?>
+            <div class="col-sm-4">
+            <label>Imagen actual</label><br>
+            <img src="<?php echo $ruta_imagen_caat;?>"width="400" height="200" alt="">
+            </div>
+
+            <div class="col-sm-4">
+                <label>Seleccione una imagen si quiere cambiar la actual</label>
                 <div class="container-fluid">
                     <input type="file" name="imgCaat">
                 </div>
-            </div>            
+            </div> 
+            <input value='<?php echo $ruta_imagen_caat;?>' name="ruta_caat" type="hidden">
+<?php
+            }
+?>
+           
         </div>
 
         
@@ -157,7 +258,7 @@ if(isset($_GET['id']))
                 <br>
                 <center>
                     <input type="submit" class="btn btn-success" value="Aceptar">
-                    <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                    <a href="choferes.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                     <input type="submit" class="btn btn-danger" value="cancelar">
                     <br>
                     

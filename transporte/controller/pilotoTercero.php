@@ -1,5 +1,5 @@
 <?php
-include_once("../model/ClassPilotoInterno.php");
+include_once("../model/classPilotoTercero.php");
 
 if (isset($_GET['id']))
 {
@@ -146,8 +146,31 @@ else
             move_uploaded_file($archivo, $ruta_caat);//mueve la imagen ala ruta*/
         
         }
-        $au =new Piloto();
-        $au->Ingresar($nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat);
+
+        /*datos del veiculo*/
+        $marca=$_POST['marca'];
+        $modelo=$_POST['modelo'];
+        $tonelaje=$_POST['tonelaje'];
+        $placa=$_POST['placa'];
+        $color=$_POST['color'];
+        $tipo_vehiculo=$_POST['tVehiculo'];
+        if(empty($_FILES['imgTargetaVeiculo']['name'])){
+            $ruta_tarjeta='N/A';
+        }
+        else{
+            $nombreimgc=$_FILES['imgTargetaVeiculo']['name'];//carga el nombre de la imagen
+            $archivo=$_FILES['imgTargetaVeiculo']['tmp_name'];//carga el archivo
+            $ruta_tarjeta="../imagen_tarjetas";//es el nbombre de la carpeta
+            $ruta_tarjeta=$ruta_tarjeta."/".$nombreimgc;//la ruta de la imagen
+            move_uploaded_file($archivo, $ruta_tarjeta);//mueve la imagen ala ruta*/
+        
+        }
+        $otros=$_POST['otros'];
+        echo $otros;
+        /* datos del remolque*/
+
+        //$au =new Piloto();
+        //$au->Ingresar($nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat);
 
     }
     else
