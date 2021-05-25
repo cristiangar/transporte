@@ -115,7 +115,7 @@ else{
             </div>
             <div class="col-sm-4">
             <label>Teléfono 2</label>
-                <input type="text" name='telefono2' class="form-control" placeholder="Teléfono 2" require>
+                <input type="text" name='telefono2' value='N/A' class="form-control" placeholder="Teléfono 2" require>
             </div>
             <div class="col-sm-4">
             <label>No.DPI</label>

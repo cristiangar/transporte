@@ -82,16 +82,9 @@ class cuenta
 		//
 		$texto=$res['@pn_respuesta'];
 
-		echo $texto;
-
-		/*echo'<script language = javascript>
-						alert("'.$texto.'")
-						</script>';   
-
-		/*echo $texto;
 		echo'<script language = javascript>
-						alert("'.Eliminado.'")
-						self.location="../views/cuentas.php" </script>';*/
+						alert("'.$texto.'")
+						self.location="../views/cuentas.php" </script>';   
 
 	}
 
