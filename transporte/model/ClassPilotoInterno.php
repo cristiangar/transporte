@@ -41,7 +41,7 @@ class Piloto
 	{
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_pilotos(1, 'n', 'n', 'n', 'nn', 'n', 'n', 'nn', 'n', 'nn', 'n', 'n', 'n', 'n', 'n', 'n', 'S1', @pn_respuesta);";
+		$consulta= "call sp_pilotos($id, 'n', 'n', 'n', 'nn', 'n', 'n', 'nn', 'n', 'nn', 'n', 'n', 'n', 'n', 'n', 'n', 'S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;

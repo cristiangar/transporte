@@ -153,7 +153,10 @@ else
         $tonelaje=$_POST['tonelaje'];
         $placa=$_POST['placa'];
         $color=$_POST['color'];
-        $tipo_vehiculo=$_POST['tVehiculo'];
+        $tipo=$_POST['tVehiculo'];
+        $descripcion=$_POST['descripcion'];
+        $tamaño=$_POST['tamaño'];
+        $ejes=$_POST['ejes'];
         if(empty($_FILES['imgTargetaVeiculo']['name'])){
             $ruta_tarjeta='N/A';
         }
@@ -165,12 +168,42 @@ else
             move_uploaded_file($archivo, $ruta_tarjeta);//mueve la imagen ala ruta*/
         
         }
-        $otros=$_POST['otros'];
-        echo $otros;
-        /* datos del remolque*/
 
-        //$au =new Piloto();
-        //$au->Ingresar($nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat);
+        /**datos del remolque */
+        $pmarca=$_POST['pmarca'];
+        $ptamaño=$_POST['ptamaño'];
+        $pcolor=$_POST['pcolor'];
+        $pejes=$_POST['pejes'];
+        $ppeso=$_POST['ppeso'];
+        $ptipo=$_POST['ptipo'];
+        $pplaca=$_POST['pplaca'];
+        if(empty($_FILES['imgremolque']['name'])){
+            $pimagen='N/A';
+        }
+        else{
+            $nombreimgc=$_FILES['imgremolque']['name'];//carga el nombre de la imagen
+            $archivo=$_FILES['imgremolque']['tmp_name'];//carga el archivo
+            $pimagen="../imagen_tarjetas";//es el nbombre de la carpeta
+            $pimagen=$pimagen."/".$nombreimgc;//la ruta de la imagen
+            move_uploaded_file($archivo, $pimagen);//mueve la imagen ala ruta*/
+        
+        }
+        
+        if($pmarca=='N/A')
+        {
+            $au =new PilotoTercero();
+            $au->Ingresar($nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat);
+            $au->functionIngrearVehiculo($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$tipo,$tamaño,$ejes,$color);
+            
+        }
+        else
+        {
+            $au =new PilotoTercero();
+            $au->Ingresar($nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat);
+            $au->functionIngrearVehiculo($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$tipo,$tamaño,$ejes,$color);
+            $au-> IngrearPlataforma($ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen);
+            
+        }
 
     }
     else

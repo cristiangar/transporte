@@ -385,6 +385,14 @@ else
                 <input name='tonelaje' type="text" class="form-control" placeholder="Tonelaje" require>
             </div>
             <div class="col-sm-4">
+                <label>Tamaño</label>
+                <input name='tamaño' type="text" class="form-control" placeholder="Tamaño" require>
+            </div>
+            <div class="col-sm-4">
+                <label>ejes</label>
+                <input name='ejes' type="text" class="form-control" placeholder="ejes" value='N/A' require>
+            </div>
+            <div class="col-sm-4">
                 <label>No.Placa</label>
                 <input name='placa' type="text" class="form-control" placeholder="Número de placa" require>
              </div>
@@ -423,32 +431,31 @@ else
         <br>
                 <div class="col-sm-4">
                     <label>Marca</label>
-                    <input value="N/A" type="text" class="form-control" placeholder="Marca" require>
+                    <input value="N/A"name='pmarca' type="text" class="form-control" placeholder="Marca" require>
                 </div>
                 <div class="col-sm-4">
                     <label>Tamaño</label>
-                    <input value="N/A" type="text" class="form-control" placeholder="Tamaño"require>
+                    <input value="N/A" name='ptamaño' type="text" class="form-control" placeholder="Tamaño"require>
                 </div>
                 <div class="col-sm-4">
                     <label>Color</label>
-                        <input value="N/A" type="text" class="form-control" placeholder="Color" require>
+                        <input value="N/A" name='pcolor' type="text" class="form-control" placeholder="Color" require>
                 </div>
                 <div class="col-sm-4">
                     <label>Placa</label>
-                        <input value="N/A" type="text" class="form-control" placeholder="Número de placa" require>
+                        <input value="N/A" name='pplaca' type="text" class="form-control" placeholder="Número de placa" require>
                 </div>
                 <div class="col-sm-4">
                     <label>Peso</label>
-                        <input value="N/A" type="text" class="form-control" placeholder="Peso en Kilogramos" require>
+                        <input value="N/A" name='ppeso' type="text" class="form-control" placeholder="Peso en Kilogramos" require>
                 </div>
                 <div class="col-sm-4">
                     <label>Ejes</label>
-                    <input value="N/A" type="text" class="form-control" placeholder="Ejes" require>
+                    <input value="N/A" name='pejes' type="text" class="form-control" placeholder="Ejes" require>
                 </div>
                 <div class="col-sm-4">
                     <label>Tipo de Remolque</label>
-                        <select class="form-control">
-                            <option value="N/A">N/A</option>
+                        <select name="ptipo" id=""class="form-control">
                             <option value="portaautomoviles">portaautomoviles</option>
                             <option value="plataforma abierta">plataforma abierta</option>
                             <option value="plataforma cerrada">plataforma cerrada</option>
