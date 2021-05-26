@@ -77,7 +77,7 @@ class paquete
     {
         $db = new datos();
 		$db->conectar();
-		$consulta= "call sp_ruta(0, 'n', 'n', 'no','S', @pn_respuesta);";
+		$consulta= "call sp_ruta(0, 'n', 'n', 'no','S2', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
