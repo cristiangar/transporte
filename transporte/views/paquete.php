@@ -68,7 +68,7 @@
                 <?php
                 while($row=mysqli_fetch_array($dt)){
                     $valor=$row['id_ruta'];
-                    $texto=$row['codigo_ruta'];
+                    $texto=$row['ruta'];
                     echo '<option  value="'.$valor.'">'.$texto.'</option>';
                 }
                 ?>
