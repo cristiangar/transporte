@@ -110,8 +110,9 @@
       <br>
       <br>
       <br><br><br><br>
-      <h1>no hay datos ingresados</h1>
-      <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+      <h1>No hay datos ingresados</h1>
+      <br>
+      <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
     </center>
     <?php
   }

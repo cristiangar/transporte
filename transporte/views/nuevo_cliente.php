@@ -72,24 +72,45 @@ if(isset($_GET['id'])){
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>
-                <input type="text" name="telefono" class="form-control" placeholder="Telefono 1" value="<?php echo  $telefono?>" require>
+            <script>
+                function mascara(valor) {
+                    if (valor.match(/^\d{3}$/) !== null) {
+                         return valor + '-';
+                } else if (valor.match(/^\d{3}\-\d{4}$/) !== null) {
+                return valor + '-';
+                }
+                return cadena;
+                }
+            </script>
+                <input type="tel" name="telefono" class="form-control" placeholder="solo números" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"  onkeyup="this.value = mascara(this.value)" maxlength="13" value="<?php echo  $telefono?>" require>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 2</label>
-                <input type="text" name="telefono2" class="form-control" placeholder="Teléfono 2" value="<?php echo $telefono2?>">
+                <script>
+                function mascara(valor) {
+                    if (valor.match(/^\d{3}$/) !== null) {
+                         return valor + '-';
+                } else if (valor.match(/^\d{3}\-\d{4}$/) !== null) {
+                return valor + '-';
+                }
+                return cadena;
+                }
+            </script>
+                <input type="tel" name="telefono2" class="form-control" placeholder="solo números" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"  onkeyup="this.value = mascara(this.value)" maxlength="13" value="<?php echo  $telefono2?>" require>
             </div>
             <div class="col-sm-4">
             <label>Correo electronico</label>
-                <input type="text" name="correo" class="form-control" placeholder="Nombre del banco" value="<?php echo $correo?>">
+                <input type="email" name="correo" class="form-control" placeholder="Nombre del banco" value="<?php echo $correo?>">
             </div>
             <div class="col-sm-4">
             <label>Nit</label>
-                <input type="text" name="nit" class="form-control" placeholder="Número de DPI" value="<?php echo    $nit?>"require>
+                <input type="text" name="nit" value='C/F' class="form-control" placeholder="Nit" value="<?php echo $nit?>"require>
             </div>
 
             <div class="col-sm-4">
             <label>No. de Cuenta bancaria</label>
-                <input type="text" name="cuenta" class="form-control" placeholder="Número de cuenta" value="<?php echo $nocuenta?>" require>
+                <input type="tex" name="cuenta" value='N/A' class="form-control" placeholder="Número de cuenta" value="<?php echo $nocuenta?>" require>
+                <!--<input type="tel" name="cuenta" class="form-control" pattern="[0-9]{2,15}" placeholder="Número de cuenta" value="<?php /*echo*/ $nocuenta?>" require>-->
             </div>
 
             <div class="col-sm-4">
@@ -137,19 +158,39 @@ else
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>
-                <input type="text" name="telefono" class="form-control" placeholder="Telefono 1" require>
+                <script>
+                function mascara(valor) {
+                    if (valor.match(/^\d{3}$/) !== null) {
+                         return valor + '-';
+                } else if (valor.match(/^\d{3}\-\d{4}$/) !== null) {
+                return valor + '-';
+                }
+                return cadena;
+                }
+            </script>
+                <input type="tel" name="telefono" class="form-control" placeholder="solo números" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"  onkeyup="this.value = mascara(this.value)" maxlength="13"  require>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 2</label>
-                <input type="text" name="telefono2" value='N/A' class="form-control" placeholder="Teléfono 2">
+                <script>
+                function mascara(valor) {
+                    if (valor.match(/^\d{3}$/) !== null) {
+                         return valor + '-';
+                } else if (valor.match(/^\d{3}\-\d{4}$/) !== null) {
+                return valor + '-';
+                }
+                return cadena;
+                }
+            </script>
+                <input type="tel" name="telefono2" class="form-control" placeholder="solo números" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"  onkeyup="this.value = mascara(this.value)" maxlength="13" require>
             </div>
             <div class="col-sm-4">
             <label>Correo electronico</label>
-                <input type="text" name="correo" class="form-control" placeholder="Nombre del banco">
+                <input type="email" name="correo" class="form-control" placeholder="nombre@correo.com">
             </div>
             <div class="col-sm-4">
             <label>Nit</label>
-                <input type="text" name="nit" class="form-control" placeholder="Número de DPI" require>
+                <input type="text" name="nit" value='C/F' class="form-control" placeholder="Nit" require>
             </div>
 
             <div class="col-sm-4">
