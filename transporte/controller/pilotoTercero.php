@@ -177,6 +177,7 @@ else
         $ppeso=$_POST['ppeso'];
         $ptipo=$_POST['ptipo'];
         $pplaca=$_POST['pplaca'];
+        $otro=$_POST['otros'];
         if(empty($_FILES['imgremolque']['name'])){
             $pimagen='N/A';
         }
@@ -194,15 +195,16 @@ else
             $au =new PilotoTercero();
             $au->Ingresar($nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat);
             $au->functionIngrearVehiculo($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$tipo,$tamaño,$ejes,$color);
-            
+            $au-> asiganacion2();
         }
         else
         {
+            $bandera2='1';
             $au =new PilotoTercero();
             $au->Ingresar($nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat);
             $au->functionIngrearVehiculo($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$tipo,$tamaño,$ejes,$color);
-            $au-> IngrearPlataforma($ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen);
-            
+            $au-> IngrearPlataforma($ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen,$otro);
+            $au-> asiganacion();
         }
 
     }

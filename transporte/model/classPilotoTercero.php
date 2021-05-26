@@ -107,28 +107,64 @@ class PilotoTercero
 
 	public function functionIngrearVehiculo($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$tipo,$tamaño,$ejes,$color)
 	{
-		$id=$_SESSION['idTercero'];
+		
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_vehiculos(0, '$marca', '$modelo', '$tonelaje','$ruta_tarjeta', '$placa', '$descripcion', 0, '$tipo ', 1,'$tamaño', '$ejes', '$id', '$color', 'I', @pn_respuesta);";
+		$consulta= "call sp_vehiculos(0, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', 1, '$tipo', 1, '$tamaño', '$ejes', '$color', 'I', @pn_respuesta,@pn_id_vehiculo);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
 		$consultar=mysqli_query($bd->objetoconexion,$salida);
+
+		$idv="SELECT @pn_id_vehiculo";
+		$consultar3=mysqli_query($bd->objetoconexion,$idv);
 		
 		$bd->desconectar();
 
 		$res=mysqli_fetch_array($consultar);
+		$texto=$res['@pn_respuesta'];	
+
+		$res1=mysqli_fetch_array($consultar3);
+		$_SESSION['idvehiculo']=$res1['@pn_id_vehiculo'];
+	
+	}
+
+	public function IngrearPlataforma($ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen,$otro)
+	{
+		$bd = new datos();
+		$bd->conectar();
+		$consulta= "call transporte.sp_plataforma(0, '$ptamaño', '$pcolor', '$pejes', '$ppeso', '$ptipo', '$pplaca', 'I', '$pimagen', '$otro', @pn_respuesta, @pn_id);";
+		$dt= mysqli_query($bd->objetoconexion,$consulta);
+
+		$salida="SELECT @pn_respuesta";
+		$consultar=mysqli_query($bd->objetoconexion,$salida);
+
+		$pn_id="SELECT  @pn_id";
+		$consulta4=mysqli_query($bd->objetoconexion,$pn_id);/*llama al out del procedimiento que tien el id*/ 
+		
+		$bd->desconectar();
+		
+		$resplataforma=mysqli_fetch_array($consulta4);
+		$_SESSION['idplataforma']=$resplataforma['@pn_id'];
+
+		$res=mysqli_fetch_array($consultar);
 		$texto=$res['@pn_respuesta'];
+	
+				/*echo'<script language = javascript>
+						alert("'.$texto.'")
+						self.location="../views/choferes.php" </script>';*/
 		
 	}
 
-	public function IngrearPlataforma($ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen)
+	public function asiganacion()
 	{
-		$idem=$_SESSION['idTercero'];
+		$bandera2='1';
+		$id_empleado=$_SESSION['idTercero'];
+		$id_vehiculo=$_SESSION['idvehiculo'];
+		$id_plataforma=$_SESSION['idplataforma'];
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_plataforma(0, '$ptamaño', '$pcolor', '$pejes', '$idem', '$ppeso', '$ptipo', '$pplaca', 'I', '$pimagen',@pn_respuesta);";
+		$consulta= "call sp_asiganacion_vehiculo_empleado(0, '$bandera2', 'I', $id_empleado, $id_vehiculo, $id_plataforma, 'N/A', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -137,11 +173,34 @@ class PilotoTercero
 		$bd->desconectar();
 
 		$res=mysqli_fetch_array($consultar);
-		$texto=$res['@pn_respuesta'];
+		$texto=$res['@pn_respuesta'];	
 				echo'<script language = javascript>
 						alert("'.$texto.'")
 						self.location="../views/choferes.php" </script>';
+
+	}
+
+	public function asiganacion2()
+	{
+		$bandera2='0';
+		$id_empleado=$_SESSION['idTercero'];
+		$id_vehiculo=$_SESSION['idvehiculo'];
+		$bd = new datos();
+		$bd->conectar();
+		$consulta= "call sp_asiganacion_vehiculo_empleado(0, '$bandera2', 'I', $id_empleado, $id_vehiculo,4,'N/A', @pn_respuesta);";
+		$dt= mysqli_query($bd->objetoconexion,$consulta);
+
+		$salida="SELECT @pn_respuesta";
+		$consultar=mysqli_query($bd->objetoconexion,$salida);
 		
+		$bd->desconectar();
+
+		$res=mysqli_fetch_array($consultar);
+		$texto=$res['@pn_respuesta'];	
+				echo'<script language = javascript>
+						alert("'.$texto.'")
+						self.location="../views/choferes.php" </script>';
+
 	}
 
 
