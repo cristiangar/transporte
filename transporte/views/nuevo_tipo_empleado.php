@@ -37,7 +37,7 @@
 <?php
 if(isset($_GET['id'])){
      $id= $_GET['id'];
-     echo $id;
+    
     //busco los datos para acatualizar
     include_once("../model/classtipo_empleado.php");
     $cliente=new tipo();

@@ -95,7 +95,8 @@
       <br>
       <br>
       <br><br><br><br>
-      <h1>no hay datos ingresados</h1>
+      <h1>No hay datos ingresados</h1>
+      <br>
       <a href="nuevo_receptor.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
       <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
     </center>

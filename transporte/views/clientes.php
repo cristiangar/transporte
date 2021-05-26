@@ -106,8 +106,9 @@
       <br>
       <br>
       <br><br><br><br>
-      <h1>no hay datos ingresados</h1>
-      <a href="nuevo_cliente.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+      <h1>No hay datos ingresados</h1>
+      <br>
+      <a href="nuevo_cliente.php"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
     </center>
     <?php
   }

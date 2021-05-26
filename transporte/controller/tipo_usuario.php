@@ -16,12 +16,8 @@ if (isset($_GET['id']))
         $id = $_GET['id'];
         $nombre=$_POST['nombre'];
 
-        echo $id;
-        echo $nombre;
-        
-        /*$au =new rol_usuario();
-        $au->ModificarRolUsuario($id,$nombre);*/
-
+        $au =new rol_usuario();
+        $au->ModificarRolUsuario($id,$nombre);
 
     }
 
