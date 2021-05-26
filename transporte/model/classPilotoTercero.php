@@ -9,7 +9,7 @@ class PilotoTercero
 	{
         $bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_piloto_tercero(0, '$nombre', '$apellido', '$dpi', '$telefono', '$telefono2', '$licencia', '$tlicencia', '$pasaporte', '$ruta_licencia', '$ruta_pasaporte', '$ruta', '$ruta_caat', 'DISPONIBLE', '$caat', '$correo', 'I', @pn_respuesta, @pn_ultimoid);";
+		$consulta= "call sp_piloto_tercero(0, '$nombre', '$apellido', '$dpi', '$telefono', '$telefono2', '$licencia', '$tlicencia', '$pasaporte', '$ruta_licencia', '$ruta_pasaporte', '$ruta', '$ruta_caat', 'Disponible', '$caat', '$correo', 'I', @pn_respuesta, @pn_ultimoid);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -56,7 +56,7 @@ class PilotoTercero
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_pilotos($id, 'n', 'n', 'n', 'nn', 'n', 'n', 'nn', 'n', 'nn', 'n', 'n', 'n', 'n', 'n', 'n', 'D', @pn_respuesta);";
+		$consulta= "call sp_piloto_tercero($id, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'Disponible', 'a', 'a', 'D', @pn_respuesta, @pn_ultimoid);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";

@@ -6,7 +6,7 @@ if (isset($_GET['id']))
     
     if (isset($_GET['id']) and isset($_GET['es'])) {//valida si es modificar o eliminar
         $id=$_GET['id'];
-        $au =new Piloto();
+        $au =new PilotoTercero();
         $au->  Eliminar($id);
         
     }
