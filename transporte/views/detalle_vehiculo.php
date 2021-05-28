@@ -103,11 +103,133 @@ else
 {
     if(isset($_GET['C']))
     {
-       echo 'cabezal';
+        ?>
+    <div class="container-fluid">
+    <center>
+    <div class="container-fluid  bg-primary"style="width:50rem;margin:20px 0 24px 0" >
+    <?php
+    $id=$_GET['id'];
+    include_once("../controller/cabezales.php");
+    $cabezal=new Cabezal();
+    $detalle=$cabezal->VerUno($id);
+    while ($row=mysqli_fetch_array($detalle)) {
+    $id_cabezal=$row['id_vehiculo'];
+    $marca=$row['marca'];
+    $modelo=$row['modelo'];
+    $tonelaje=$row['tonelaje'];
+    $ruta_imagen_targeta=$row['ruta_imagen_tarjeta'];
+    $placa=$row['no_placa'];
+    $descripcion=$row['descripcion'];
+    $tipo=$row['tipo_interno_externo'];
+    $tamaño=$row['tamaño'];
+    $ejes=$row['ejes'];
+    $color=$row['color'];
+   
+    }
+    ?>
+    <h1>Datos del Cabezal <?php ?></h1>
+            <div class="card container-fluid">
+                <div class="card-body container-fluid">
+                    <h2 class="card-title">Marca: <?php echo $marca; ?></h2>
+                    <h2 class="card-title">Modelo: <?php echo $modelo;  ?></h2>
+                    <h2 class="card-title">Peso: <?php echo $tonelaje;  ?></h2>
+                    <h2 class="card-title">No. Placa: <?php echo $placa;  ?></h2>
+                    <h2 class="card-title">Tamaño: <?php echo $tamaño;  ?></h2>
+                    <h2 class="card-title">Ejes: <?php echo $ejes;  ?></h2>
+                    <h2 class="card-title">Color: <?php echo $color;  ?></h2>
+                    <?php
+                    if($tipo=='1')
+                    {
+                       ?>
+                        <h2 class="card-title">Propiedad: Externo</h2>
+                       <?php  
+                    }
+                    else{
+                        ?>
+                        <h2 class="card-title">Propiedad: Interno</h2>
+                        <?php
+                    }
+                    ?>
+                    <h2 class="card-title">Descripcion: <?php echo $descripcion; ?></h2>
+                </div>
+                <img src="<?php echo $ruta_imagen_targeta; ?>" style="width:100%" alt="">
+            </div>
+            <br>
+            <br>
+    </div>
+    </center>
+
+    <center>
+        <a href="nuevo_vehiculo.php?id=<?php echo $id_cabezal?>&C"><button type="button" class="btn btn-success" >Modificar</button></a>
+        <a href="vehiculos.php?P"><button type="button" class="btn btn-warning" >Regresar</button></a>       
+    </center>
+    </div>
+        <?php
     }
     else
     {
-        echo 'camion';
+        ?>
+            <div class="container-fluid">
+    <center>
+    <div class="container-fluid  bg-primary"style="width:50rem;margin:20px 0 24px 0" >
+    <?php
+    $id=$_GET['id'];
+    include_once("../controller/camion.php");
+    $cabezal=new Camion();
+    $detalle=$cabezal->VerUno($id);
+    while ($row=mysqli_fetch_array($detalle)) {
+    $id_cabezal=$row['id_vehiculo'];
+    $marca=$row['marca'];
+    $modelo=$row['modelo'];
+    $tonelaje=$row['tonelaje'];
+    $ruta_imagen_targeta=$row['ruta_imagen_tarjeta'];
+    $placa=$row['no_placa'];
+    $descripcion=$row['descripcion'];
+    $tipo=$row['tipo_interno_externo'];
+    $tamaño=$row['tamaño'];
+    $ejes=$row['ejes'];
+    $color=$row['color'];
+   
+    }
+    ?>
+    <h1>Datos del Camion <?php ?></h1>
+            <div class="card container-fluid">
+                <div class="card-body container-fluid">
+                    <h2 class="card-title">Marca: <?php echo $marca; ?></h2>
+                    <h2 class="card-title">Modelo: <?php echo $modelo;  ?></h2>
+                    <h2 class="card-title">Peso: <?php echo $tonelaje;  ?></h2>
+                    <h2 class="card-title">No. Placa: <?php echo $placa;  ?></h2>
+                    <h2 class="card-title">Tamaño: <?php echo $tamaño;  ?></h2>
+                    <h2 class="card-title">Ejes: <?php echo $ejes;  ?></h2>
+                    <h2 class="card-title">Color: <?php echo $color;  ?></h2>
+                    <?php
+                    if($tipo=='1')
+                    {
+                       ?>
+                        <h2 class="card-title">Propiedad: Externo</h2>
+                       <?php  
+                    }
+                    else{
+                        ?>
+                        <h2 class="card-title">Propiedad: Interno</h2>
+                        <?php
+                    }
+                    ?>
+                    <h2 class="card-title">Descripcion: <?php echo $descripcion; ?></h2>
+                </div>
+                <img src="<?php echo $ruta_imagen_targeta; ?>" style="width:100%" alt="">
+            </div>
+            <br>
+            <br>
+    </div>
+    </center>
+
+    <center>
+        <a href="nuevo_vehiculo.php?id=<?php echo $id_cabezal?>&C2"><button type="button" class="btn btn-success" >Modificar</button></a>
+        <a href="vehiculos.php"><button type="button" class="btn btn-warning" >Regresar</button></a>       
+    </center>
+    </div>
+        <?php
     }
 }
 ?>

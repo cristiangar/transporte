@@ -1,14 +1,14 @@
 <?php 
 ob_start();
 include ('../Configuracion/config.php');
-class Cabezal
+class Camion
 {
 
 		public function Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tamaño,$ejes,$color)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_vehiculos(0, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, 'Cabezal', 1, '$tamaño', '$ejes', '$color', 'I2', @pn_respuesta,@pn_id_vehiculo);";
+		$consulta= "call sp_vehiculos(0, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, 'Camion', 1, '$tamaño', '$ejes', '$color', 'I2', @pn_respuesta,@pn_id_vehiculo);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -21,7 +21,7 @@ class Cabezal
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/vehiculos.php?C" </script>';
+						self.location="../views/vehiculos.php" </script>';
 
 
 	}
@@ -31,7 +31,7 @@ class Cabezal
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_vehiculos(0, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'S', @pn_respuesta, @pn_id_vehiculo);";
+		$consulta= "call sp_vehiculos(0, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'S2', @pn_respuesta, @pn_id_vehiculo);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -66,7 +66,7 @@ class Cabezal
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/vehiculos.php?C" </script>';
+						self.location="../views/vehiculos.php" </script>';
 
 	}
 
@@ -76,7 +76,7 @@ class Cabezal
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta="call sp_vehiculos($id, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, 'Cabezal', 1, '$tamaño', '$ejes', '$color', 'U', @pn_respuesta,@pn_id_vehiculo);";
+		$consulta="call sp_vehiculos($id, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, 'Camion', 1, '$tamaño', '$ejes', '$color', 'U', @pn_respuesta,@pn_id_vehiculo);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -90,7 +90,7 @@ class Cabezal
 		echo $texto;
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/vehiculos.php?C" </script>';
+						self.location="../views/vehiculos.php" </script>';
 
 
 	}

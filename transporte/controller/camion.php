@@ -1,12 +1,12 @@
 <?php
-include_once("../model/classcabezales.php");
+include_once("../model/classCamion.php");
 
 if (isset($_GET['id']))
 {
     
     if (isset($_GET['id']) and isset($_GET['es'])) {//valida si es modificar o eliminar
         $id=$_GET['id'];
-        $au =new Cabezal();
+        $au =new Camion();
         $au->  Eliminar($id);
         
     }
@@ -34,13 +34,13 @@ if (isset($_GET['id']))
                 move_uploaded_file($archivo, $ruta_tarjeta);//mueve la imagen ala ruta*/
             
             }
-            $cabezal=new Cabezal();
+            $cabezal=new Camion();
             $cabezal->Modificar($id,$marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tamaño,$ejes,$color);
 
         }
         else{
             $id = $_GET['id'];
-            $cabezal=new Cabezal();
+            $cabezal=new Camion();
             $detalle=$cabezal->VerUno($id);
         }
 
@@ -71,14 +71,14 @@ else
             move_uploaded_file($archivo, $ruta_tarjeta);//mueve la imagen ala ruta*/
         
         }
-        $cabezal=new Cabezal();
+        $cabezal=new Camion();
         $cabezal->Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tamaño,$ejes,$color);
 
     }
     else
     {
-        $cabezal=new Cabezal();
-        $dt=$cabezal->Ver();
+        $camion=new Camion();
+        $dt=$camion->Ver();
     }
 
 }
