@@ -53,7 +53,7 @@
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
-                    <a href="cabezales.php">
+                    <a href="vehiculos.php?C">
                     <img class="img-fluid" src="../imagenes/cabezales.jpg" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;">
                     </a>
                     <h1>Cabezales</h1>

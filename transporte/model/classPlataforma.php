@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 include ('../Configuracion/config.php');
-class Cabezal
+class Plataforma
 {
 
 		public function Ingresar($ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen,$otro,$propiedad)
@@ -31,7 +31,7 @@ class Cabezal
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_vehiculos(0, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'S', @pn_respuesta, @pn_id_vehiculo);";
+		$consulta= "call sp_plataforma(0, '0', '0', '0', '0', '0', '0', 'S', '0', '0', 0, @pn_respuesta, @pn_id);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;

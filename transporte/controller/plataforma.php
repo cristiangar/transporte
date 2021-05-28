@@ -1,5 +1,5 @@
 <?php
-include_once("../model/classcabezales.php");
+include_once("../model/classPlataforma.php");
 
 if (isset($_GET['id']))
 {
@@ -52,37 +52,35 @@ if (isset($_GET['id']))
 }
 else
 {
-    if(isset($_POST ['marca'])){
+    if(isset($_POST ['pmarca'])){
 
-        $marca=$_POST['marca'];
-        $modelo=$_POST['modelo'];
-        $tonelaje=$_POST['tonelaje'];
-        $placa=$_POST['placa'];
-        $color=$_POST['color'];
-        $tipo=$_POST['tVehiculo'];
-        $descripcion=$_POST['descripcion'];
-        $tamaño=$_POST['tamaño'];
-        $ejes=$_POST['ejes'];
+        $ptamaño=$_POST['ptamaño'];
+        $pcolor=$_POST['pcolor'];
+        $pejes=$_POST['pejes'];
+        $ppeso=$_POST['ppeso'];
+        $ptipo=$_POST['ptipo'];
+        $pplaca=$_POST['pplaca'];
+        $otro=$_POST['otros'];
         $propiedad=$_POST['propiedad'];
-        if(empty($_FILES['imgTargetaVeiculo']['name'])){
-            $ruta_tarjeta='N/A';
+        if(empty($_FILES['imagen']['name'])){
+            $pimagen='N/A';
         }
         else{
-            $nombreimgc=$_FILES['imgTargetaVeiculo']['name'];//carga el nombre de la imagen
-            $archivo=$_FILES['imgTargetaVeiculo']['tmp_name'];//carga el archivo
-            $ruta_tarjeta="../imagen_tarjetas";//es el nbombre de la carpeta
-            $ruta_tarjeta=$ruta_tarjeta."/".$nombreimgc;//la ruta de la imagen
-            move_uploaded_file($archivo, $ruta_tarjeta);//mueve la imagen ala ruta*/
+            $nombreimgc=$_FILES['imagen']['name'];//carga el nombre de la imagen
+            $archivo=$_FILES['imagen']['tmp_name'];//carga el archivo
+            $pimagen="../imagen_tarjetas";//es el nbombre de la carpeta
+            $pimagen=$pimagen."/".$nombreimgc;//la ruta de la imagen
+            move_uploaded_file($archivo, $pimagen);//mueve la imagen ala ruta*/
         
         }
-        /*$plataforma=new Plataforma();
-        $plataforma->Ingresar($ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen,$otro,$propiedad);*/
+        $plataforma=new Plataforma();
+        $plataforma->Ingresar($ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen,$otro,$propiedad);
 
     }
     else
     {
-        $cabezal=new Cabezal();
-        $dt=$cabezal->Ver();
+        $plataforma=new Plataforma();
+        $dt=$plataforma->Ver();
     }
 
 }

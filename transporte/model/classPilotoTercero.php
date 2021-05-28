@@ -133,7 +133,7 @@ class PilotoTercero
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call transporte.sp_plataforma(0, '$ptamaño', '$pcolor', '$pejes', '$ppeso', '$ptipo', '$pplaca', 'I', '$pimagen', '$otro', @pn_respuesta, @pn_id);";
+		$consulta= "call sp_plataforma(0, '$ptamaño', '$pcolor', '$pejes', '$ppeso', '$ptipo', '$pplaca', 'I', '$pimagen', '$otro',1, @pn_respuesta, @pn_id);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
