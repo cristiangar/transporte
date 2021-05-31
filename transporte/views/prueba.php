@@ -13,9 +13,9 @@
     <br>
 	
     <label for="">Nombre del cliente: </label><button id="btnAbrir">Seleccionar Cliente:</button>
-		<input type="text" id="mensajeRecibido" placeholder='Cliente'>
-    
-    <h1><p id="mensajeRecibido2"></p></h1>
+  
+    <h1><p id="mensajeRecibido"></p></h1>
+    <input type="text" id="mensajeRecibido2" value=''>
     <script src="../js/padre.js"></script>
     <?php  
     /*session_start();           
