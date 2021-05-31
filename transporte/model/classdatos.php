@@ -34,23 +34,12 @@ class envio
 		$db = new datos();
 		$db->conectar();
 		$consulta= "call sp_pilotos(0, '0', '0', '0', '00', '0', '0', '0', '0', '0', '0', '00', '00', '0', '0', '0', 'S', @pn_respuesta);";
-		$dt= mysqli_query($db->objetoconexion,$consulta);
+		$dt5= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
-		return $dt;
+		return $dt5;
 
 	}
 
-	public function Verpiloto()
-	{
-
-		$db = new datos();
-		$db->conectar();
-		$consulta= "call sp_pilotos(0, '0', '0', '0', '00', '0', '0', '0', '0', '0', '0', '00', '00', '0', '0', '0', 'S', @pn_respuesta);";
-		$dt= mysqli_query($db->objetoconexion,$consulta);
-		$db->desconectar();
-		return $dt;
-
-	}
 
 	public function VerReceptor()
 	{
@@ -64,16 +53,39 @@ class envio
 
 	}
 
-	public function Verruta()
+	
+	public function VerVehiculo()
 	{
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_ruta(0, 'n', 'n', 'no','S', @pn_respuesta);";
-		$dt= mysqli_query($db->objetoconexion,$consulta);
+		$consulta= "call sp_vehiculos(0, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'S', @pn_respuesta, @pn_id_vehiculo);";
+		$dt4= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
-		return $dt;
+		return $dt4;
+	}
 
+	/*public function Verpiloto()
+	{
+
+		$db = new datos();
+		$db->conectar();
+		$consulta= "call sp_pilotos(0, '0', '0', '0', '00', '0', '0', '0', '0', '0', '0', '00', '00', '0', '0', '0', 'S', @pn_respuesta);";
+		$dt7= mysqli_query($db->objetoconexion,$consulta);
+		$db->desconectar();
+		return $dt7;
+
+	}*/
+
+	public function VerPlataforma()
+	{
+
+		$db = new datos();
+		$db->conectar();
+		$consulta= "call sp_plataforma(0, '0', '0', '0', '0', '0', '0', 'S', '0', '0', 0, @pn_respuesta, @pn_id);";
+		$dt6= mysqli_query($db->objetoconexion,$consulta);
+		$db->desconectar();
+		return $dt6;
 	}
 
 }
