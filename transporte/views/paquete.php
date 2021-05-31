@@ -36,10 +36,10 @@
 <div class="container-fluid">
 <?php
     ?>
-    <form method="POST" action="../controller/paquete.php" enctype="multipart/form-data">
+    <form method="POST" action=" " enctype="multipart/form-data">
     <br>
     <br>
-        <h1>Datos del Paquete</h1>
+        <h1>Datos del Envio</h1>
         <br>
         <div class="form-row">
             
@@ -73,6 +73,7 @@
                 }
                 ?>
                 </select>
+            </div>
 
             <br>
             <br>

@@ -4,7 +4,4 @@
         $cliente=new cliente();
         $dt2=$cliente->Verclientes();
 
-        
-
-
 ?>
