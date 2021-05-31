@@ -1,3 +1,4 @@
+
 const $btnEnviar = document.querySelector("#btnEnviar"),
 	$mensaje = document.querySelector("#mensaje"),
     $mensaje2=document.querySelector("#mensaje2"),/**segundo input */
@@ -17,4 +18,6 @@ $btnEnviar.addEventListener("click", () => {
 window.establecerMensaje = function (mensaje) {
 	$mensajeRecibido.textContent = mensaje;
 }
+
+
 

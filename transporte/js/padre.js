@@ -4,7 +4,7 @@ const $btnAbrir = document.querySelector("#btnAbrir"),
 
 let ventana;
 $btnAbrir.addEventListener("click", () => {
-	ventana = window.open("pruebacliente.php");/**abre la ventana hija */
+	ventana = window.open("listacliente.php");/**abre la ventana hija */
 });
 
 
