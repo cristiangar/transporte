@@ -58,7 +58,7 @@ class envio
 		$db = new datos();
 		$db->conectar();
 		$consulta= "call sp_receptor(0, 'S', '0', '0', '0', '0', @pn_respuesta);";
-		$dt= mysqli_query($db->objetoconexion,$consulta);
+		$dt3= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt3;
 
