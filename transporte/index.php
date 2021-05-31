@@ -23,6 +23,7 @@
                 <input type="text" id="password" class="fadeIn third" name="pwd" placeholder="password">
                 <input type="submit" class="fadeIn fourth" value="Log In">    
             </form>
+            <?php session_start(); $valor=$_SESSION['idcliente']; echo $valor;?>
         </div>
     </div>
 </body>
