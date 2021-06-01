@@ -33,6 +33,39 @@
     </ul>
 
 </nav>
+<script>
+                   function Card(event, el){//Validar nombre
+
+                        //Obteniendo posicion del cursor 
+                        var val = el.value;//Valor de la caja de texto
+                        var pos = val.slice(0, el.selectionStart).length;
+                        
+                        var out = '';//Salida
+                        var filtro = '1234567890';
+                        var v = 0;//Contador de caracteres validos
+                        
+                        //Filtar solo los numeros
+                        for (var i=0; i<val.length; i++){
+                           if (filtro.indexOf(val.charAt(i)) != -1){
+                               v++;
+                               out += val.charAt(i);
+                               
+                               //Agregando un espacio cada 4 caracteres
+                               if((v==3) || (v==7))
+                                   out+='-';
+                           }
+                        }
+                        
+                        //Reemplazando el valor
+                        el.value = out;
+                        
+                        //En caso de modificar un numero reposicionar el cursor
+                        if(event.keyCode==8){//Tecla borrar precionada
+                            el.selectionStart = pos;
+                            el.selectionEnd = pos;
+                        }
+                    } 
+            </script>
 <div class="container-fluid">
 <?php
 if(isset($_GET['id'])){
@@ -72,7 +105,7 @@ if(isset($_GET['id'])){
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>
-            <script>
+            <!--<script>
                 function mascara(valor) {
                     if (valor.match(/^\d{3}$/) !== null) {
                          return valor + '-';
@@ -82,11 +115,14 @@ if(isset($_GET['id'])){
                 return cadena;
                 }
             </script>
-                <input type="tel" name="telefono" class="form-control" placeholder="solo números" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"  onkeyup="this.value = mascara(this.value)" maxlength="13" value="<?php echo  $telefono?>" require>
+                <input type="tel" name="telefono" class="form-control" placeholder="solo números" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"  onkeyup="this.value = mascara(this.value)" maxlength="13" value="aqui va php echo $telefono?>" require>-->
+            <input type="tel" name="telefono" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13" value="<?php echo  $telefono?>" require>
+
+
             </div>
             <div class="col-sm-4">
             <label>Teléfono 2</label>
-                <script>
+                <!--<script>
                 function mascara(valor) {
                     if (valor.match(/^\d{3}$/) !== null) {
                          return valor + '-';
@@ -95,8 +131,8 @@ if(isset($_GET['id'])){
                 }
                 return cadena;
                 }
-            </script>
-                <input type="tel" name="telefono2" class="form-control" placeholder="solo números" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"  onkeyup="this.value = mascara(this.value)" maxlength="13" value="<?php echo  $telefono2?>" require>
+            </script>-->
+                <input type="tel" name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13" value="<?php echo  $telefono2?>" require>
             </div>
             <div class="col-sm-4">
             <label>Correo electronico</label>
@@ -158,31 +194,11 @@ else
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>
-                <script>
-                function mascara(valor) {
-                    if (valor.match(/^\d{3}$/) !== null) {
-                         return valor + '-';
-                } else if (valor.match(/^\d{3}\-\d{4}$/) !== null) {
-                return valor + '-';
-                }
-                return cadena;
-                }
-            </script>
-                <input type="tel" name="telefono" class="form-control" placeholder="solo números" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"  onkeyup="this.value = mascara(this.value)" maxlength="13"  require>
+                <input type="text" name="telefono" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  require>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 2</label>
-                <script>
-                function mascara(valor) {
-                    if (valor.match(/^\d{3}$/) !== null) {
-                         return valor + '-';
-                } else if (valor.match(/^\d{3}\-\d{4}$/) !== null) {
-                return valor + '-';
-                }
-                return cadena;
-                }
-            </script>
-                <input type="tel" name="telefono2" class="form-control" placeholder="solo números" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"  onkeyup="this.value = mascara(this.value)" maxlength="13" require>
+                <input type="tel" name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  value="N/A" require>
             </div>
             <div class="col-sm-4">
             <label>Correo electronico</label>
@@ -223,5 +239,6 @@ else
 }
 ?>
 </div>
+<script src="main.js"></script>
 </body>
 </html>
