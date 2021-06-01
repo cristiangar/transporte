@@ -16,7 +16,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-        <a href="secritaria.php">
+        <a href="../views/secritaria.php">
         <img src="../imagenes/logo.png" alt="HTML tutorial" style="width:52px;height:52px;">
         </a>
     <ul class="navbar-nav ml-auto">
@@ -127,6 +127,6 @@ $(document).ready(function(){
     }
     ?>
     <br>
-    <script src="../js/hija.js"></script>
+    <script src="../js/hijoReceptor.js"></script>
 
 </html>

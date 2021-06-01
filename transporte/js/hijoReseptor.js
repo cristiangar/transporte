@@ -1,17 +1,12 @@
-const $btnEnviar = document.querySelector("#btnEnviar"),
-    $mensaje2=document.querySelector("#mensaje2"),/**segundo input */
-	$mensajeRecibido = document.querySelector("#mensajeRecibido");
-$btnEnviar.addEventListener("click", () => {
+const $btnEnviar = document.querySelector("#btnR"),
+	$mensaje = document.querySelector("#mensajeR"),
 
-    const mensaje2=$mensaje2.value;/*mensaje del input*/ 
-	if (!mensaje) return alert("Escribe un mensaje");
+	$mensajeRecibido = document.querySelector("#mensajeRecibido");
+
+	$btnEnviar.addEventListener("click", (e) => {
+	const mensaje =$mensaje.value;
 	if (window.opener) {
-	
-        window.opener.establecerMensaje2(mensaje2);/**mensaje a mandar al padre */
+		window.opener.establecerMensaje(mensaje);
+		e.preventDefault();
 	}
 });
-
-// Definición de función desde la que nos llama el padre
-window.establecerMensaje = function (mensaje) {
-	$mensajeRecibido.textContent = mensaje;
-}

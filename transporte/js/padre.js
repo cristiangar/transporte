@@ -6,8 +6,9 @@ $mensajeRecibido = document.querySelector("#cliente");
 
 //funcion que hace para abrir una nueva ventana
 let ventana;
-$btnAbrir.addEventListener("click", () => {
+$btnAbrir.addEventListener("click", (e) => {
 	ventana = window.open("listacliente.php");/**abre la ventana hija */
+	e.preventDefault();
 });
 
 

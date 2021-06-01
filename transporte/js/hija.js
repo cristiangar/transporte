@@ -4,10 +4,11 @@ const $btnEnviar = document.querySelector("#btnEnviar"),
 
 	$mensajeRecibido = document.querySelector("#mensajeRecibido");
 
-	$btnEnviar.addEventListener("click", () => {
+	$btnEnviar.addEventListener("click", (e) => {
 	const mensaje =$mensaje.value;
 	if (window.opener) {
 		window.opener.establecerMensaje(mensaje);
+		e.preventDefault();
 	}
 });
 
