@@ -60,22 +60,25 @@
 
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cliente" id="cliente" name="Cliente">
+                    <input type="text" class="form-control" placeholder="Cliente" id="cliente" return false; name="Cliente">
                     <div class="input-group-append">
                       <button class="input-group-text btn-btn-primary" id="btnAbrir">Cliente</button>
                     </div>
                   </div>
                 </div>
-                <script src="../js/padre.js"></script>
 
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Receptor" id="mail" name="Receptor">
+                    <input type="text" class="form-control" placeholder="Receptor" id="receptor" name="Receptor">
                     <div class="input-group-append">
-                      <button class="input-group-text btn-btn-primary">Receptor</button>
+                      <button  class="input-group-text btn-btn-primary" id="btnreceptor" return false;>Receptor</button>
                     </div>
                   </div>
                 </div>
+                <script src="../js/padre.js"></script>  
+                
+                <script src="../js/padrereceptor.js"></script> 
+                
       </div>
       <br>
       <h2>Datos del paquete</h2>

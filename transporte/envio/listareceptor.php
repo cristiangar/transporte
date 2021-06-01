@@ -47,8 +47,8 @@
              
               <center><td>Teléfono</td></center>
               <center><td>Teléfono 2</td></center>
-              <center><td>Modificar</td></center>
-              <center><td>Eliminar</td></center>
+              <center><td>Seleccionar</td></center>
+              
             </thead>
       <?php
           while ($row=mysqli_fetch_array($dt3)) {
@@ -61,12 +61,9 @@
             ?>
                   <tbody id="myTable">
                   <tr>
-
-                    <td><?php echo $nombre?></td>
-                    
+                    <td><?php echo $nombre?></td>                 
                     <td><?php echo $telefono?></td>
                     <td><?php echo $telefono2?></td>
-
                     <td><center><a href="listareceptor.php?id=<?php echo $id?>&no=<?php echo $nombre?>"><button type="button" class="btn btn-primary">Seleccionar</button></a></center></td>
                   </tr>
                  </tbody>
@@ -78,10 +75,7 @@
             ?>
             <center>
                  <a href="../views/nuevo_receptor.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
-                
                 <!--<a href="datos.php"><button type="button" class="btn btn-warning" >Regresar</button></a>-->
-                
-                
             </center>
             <?php
   }
@@ -125,11 +119,10 @@ $(document).ready(function(){
       $nombre=$_GET['no'];
       $_SESSION['idreceptor']=$valor;
       ?>
-          <h2>Cliente seleccionado: <?php echo $nombre ?></h2>
-          <input value='<?php echo $valor;?>' type="text" id="mensaje" placeholder="Enviar al padre" >&nbsp;
-          <input value='<?php echo $nombre;?>' type="text" id="mensaje2" placeholder="Enviar al padre" >&nbsp;
+          <h2>Receptor seleccionado es: <?php echo $nombre ?></h2>
+          <input value='<?php echo $nombre;?>' type="text" id="mensajeR" placeholder="Receptor" >&nbsp;
           <label for="">Precione el boton aceptar para continuar</label> <br>
-          <button class='btn btn-success btn-lg' id="btnEnviar" onclick="window.close();">Aceptar</button>
+          <button class='btn btn-success btn-lg' id="btnR" onclick="window.close();">Aceptar</button>
       <?php
     }
     ?>
