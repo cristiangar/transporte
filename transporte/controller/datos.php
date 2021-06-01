@@ -15,6 +15,9 @@
 
         $plataforma = new envio();
         $dt6 = $plataforma->VerPlataforma();
+
+        $asignado = new envio();
+        $dt7 = $asignado->VerAsignado();
         
 
 

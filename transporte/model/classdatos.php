@@ -88,4 +88,16 @@ class envio
 		return $dt6;
 	}
 
+	public function VerAsignado()
+	{
+
+		$db = new datos();
+		$db->conectar();
+		$consulta= "select a.id_asignacion_vehiculo, a.fecha_asignacion, a.observacion, a.id_empleado, concat(e.nombre,' ',e.apellido) as nombre, a.id_vehiculo, v.tipo_vehiculo, p.tipo as Plataforma, a.id_plataforma from asignacion_vehiculo_empleado as a inner join empleado as e on a.id_empleado=e.id_empleado
+inner join vehiculo as v on a.id_vehiculo=v.id_vehiculo inner join plataforma as p on a.id_plataforma=p.id_plataforma;";
+		$dt7= mysqli_query($db->objetoconexion,$consulta);
+		$db->desconectar();
+		return $dt7;
+	}
+
 }
