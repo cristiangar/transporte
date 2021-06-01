@@ -56,20 +56,23 @@
       <h2>Datos del cliente y receptor</h2>
       <br>
       <div class="form-row">
+
+
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cliente" id="mail" name="Cliente">
+                    <input type="text" class="form-control" placeholder="Cliente" id="cliente" name="Cliente">
                     <div class="input-group-append">
-                      <button class="input-group-text btn-btn-primary">Cliente</button>
+                      <button class="input-group-text btn-btn-primary" id="btnAbrir">Cliente</button>
                     </div>
                   </div>
                 </div>
+                <script src="../js/padre.js"></script>
 
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Receptor" id="mail" name="Receptor">
                     <div class="input-group-append">
-                      <button class="input-group-text btn-btn-primary">Cliente</button>
+                      <button class="input-group-text btn-btn-primary">Receptor</button>
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,6 @@
 const $btnAbrir = document.querySelector("#btnAbrir"),
-    $mensajeRecibido = document.querySelector("#mensajeRecibido");
-    $mensajeRecibido2 = document.querySelector("#mensajeRecibido2");/**recibe el mensaje */
+    $mensajeRecibido = document.querySelector("#cliente");
+    $mensajeRecibido2 = document.querySelector("#cliente");/**recibe el mensaje */
 
 let ventana;
 $btnAbrir.addEventListener("click", () => {
@@ -10,7 +10,7 @@ $btnAbrir.addEventListener("click", () => {
 
 // Llamada desde la hija
 function establecerMensaje(mensaje) {
-	$mensajeRecibido.textContent = mensaje;
+	$mensajeRecibido.value = mensaje;
 }
 
 function establecerMensaje2(mensaje2) {
