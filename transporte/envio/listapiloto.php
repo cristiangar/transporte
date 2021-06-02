@@ -141,14 +141,13 @@ $(document).ready(function(){
       $_SESSION['idcliente']=$valor;
       ?>
           <h2>Cliente seleccionado: <?php echo $nombre ?></h2>
-      		<input value='<?php echo $valor;?>' type="text" id="mensaje" placeholder="Enviar al padre" >&nbsp;
-          <input value='<?php echo $nombre;?>' type="text" id="mensaje2" placeholder="Enviar al padre" >&nbsp;
+      		<input value='<?php echo $nombre;?>' type="text" id="P5" placeholder="Enviar al padre" hidden>&nbsp;
           <label for="">Precione el boton aceptar para continuar</label> <br>
-		      <button class='btn btn-success btn-lg' id="btnEnviar" onclick="window.close();">Aceptar</button>
+		      <button class='btn btn-success btn-lg' id="btnp5" onclick="window.close();">Aceptar</button>
       <?php
     }
     ?>
 		<br>
-    <script src="../js/hija.js"></script>
+    <script src="../js/hija5.js"></script>
 
 </html>

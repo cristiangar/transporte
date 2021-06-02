@@ -51,12 +51,13 @@
             </thead>
       <?php
           while ($row=mysqli_fetch_array($dt7)) {
+            $id=$row['id_asignacion_vehiculo'];
             $ide=$row['id_empleado'];
             $idv=$row['id_vehiculo'];
             $idp=$row['id_plataforma'];
             $nombre=$row['nombre'];
             $tipo=$row['tipo_vehiculo'];
-            $plataforma=$row['Plataforma'];
+            /*$plataforma=$row['Plataforma'];*/
             $fecha=$row['fecha_asignacion'];
             $observaciones=$row['observacion'];
             ?>
@@ -64,10 +65,23 @@
                   <tr>
                     <td><?php echo $nombre?></td>
                     <td><?php echo $tipo?></td>
-                    <td><?php echo $plataforma?></td>
+                    <?php
+                    if($idp==null){
+                      ?>
+                      <td><span>Sin Platafomra</span></td>
+                      <?php
+                    }
+                    else{
+                      ?>
+                      <td><span>Con Plataforma</span></td>
+                      <?php
+                    }
+
+                    ?>
+                    
                     <td><?php echo $fecha?></td>
                     <td><?php echo $observaciones?></td>
-                    <td><center><a href="listaasignadopiloto.php?ide=<?php echo $ide?>&no=<?php echo $nombre?>& idv=<?php echo $idv?>& no2=<?php echo $tipo?>& idp=<?php echo $idp?>&no3=<?php echo $plataforma?>"><button type="button" class="btn btn-primary">Seleccionar</button></a></center></td>
+                    <td><center><a href="listaasignadopiloto.php?ide=<?php echo $ide?>&no=<?php echo $nombre?>& idv=<?php echo $idv?>& no2=<?php echo $tipo?>& idp=<?php echo $idp?>&id=<?php echo $id?>"> <button type="button" class="btn btn-primary">Seleccionar</button></a></center></td>
                   </tr>
                  </tbody>
             <?php
@@ -121,40 +135,24 @@ $(document).ready(function(){
 <?php
     if (isset($_GET['ide'])){
       session_start();
-      $valor=$_GET['ide'];
+      $valor=$_GET['id'];
+      $valor1=$_GET['ide'];
       $nombre=$_GET['no'];
       $valor2=$_GET['idv'];
       $nombre2=$_GET['no2'];
       $valor3=$_GET['idp'];
-      $nombre3=$_GET['no3'];
+      /*$nombre3=$_GET['no3'];*/
 
       $_SESSION['idasignacion']=$valor;
       ?>
           <h2>Piloto seleccionado: <?php echo $nombre ?></h2>
-      		<input value='<?php echo $valor;?>' type="text" id="mensaje" placeholder="Enviar al padre" >&nbsp;
-          <input value='<?php echo $nombre;?>' type="text" id="mensaje2" placeholder="Enviar al padre" >&nbsp;
-          <br>
-          <br>
-
-          <h2>Vehiculo seleccionado: <?php echo $tipo ?></h2>
-          <input value='<?php echo $valor2;?>' type="text" id="mensaje" placeholder="Enviar al padre" >&nbsp;
-          <input value='<?php echo $nombre2;?>' type="text" id="mensaje2" placeholder="Enviar al padre" >&nbsp;
-            <br>
-            <br>
-
-          <h2>Plataforma seleccionado: <?php echo $plataforma ?></h2>
-          <input value='<?php echo $valor3;?>' type="text" id="mensaje" placeholder="Enviar al padre" >&nbsp;
-          <input value='<?php echo $nombre3;?>' type="text" id="mensaje2" placeholder="Enviar al padre" >&nbsp;
-            
-            <br>
-
+          <input value='<?php echo $nombre." ".$nombre2;?>' type="text" id="P6" placeholder="Enviar al padre" hidden>&nbsp;     
           <label for="">Precione el boton aceptar para continuar</label> <br>
-          <button class='btn btn-success btn-lg' id="btnEnviar" onclick="window.close();">Aceptar</button>
-
+          <button class='btn btn-success btn-lg' id='btnp6' onclick="window.close();">Aceptar</button>
       <?php
     }
     ?>
-		<br>
-    <script src="../js/hija.js"></script>
+    <br>
+    <script src="../js/hija6.js"></script>
 
 </html>

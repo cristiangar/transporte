@@ -120,13 +120,13 @@ $(document).ready(function(){
       $_SESSION['idreceptor']=$valor;
       ?>
           <h2>Receptor seleccionado es: <?php echo $nombre ?></h2>
-          <input value='<?php echo $nombre;?>' type="text" id="mensajeR" placeholder="Receptor" >&nbsp;
+          <input value='<?php echo $nombre;?>' type="text" id="P2" placeholder="Receptor" hidden>&nbsp;
           <label for="">Precione el boton aceptar para continuar</label> <br>
-          <button class='btn btn-success btn-lg' id="btnR" onclick="window.close();">Aceptar</button>
+          <button class='btn btn-success btn-lg' id="btnp2" onclick="window.close();">Aceptar</button>
       <?php
     }
     ?>
     <br>
-    <script src="../js/hijoReceptor.js"></script>
+    <script src="../js/hija2.js"></script>
 
 </html>

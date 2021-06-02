@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,24 +61,21 @@
 
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cliente" id="cliente" return false; name="Cliente">
+                    <input type="text" class="form-control" placeholder="Cliente" id="pagina1" return false; name="Cliente">
                     <div class="input-group-append">
-                      <button class="input-group-text btn-btn-primary" id="btnAbrir">Cliente</button>
+                      <button class="input-group-text btn-btn-primary" id="boton1">Cliente</button>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Receptor" id="receptor" name="Receptor">
+                    <input type="text" class="form-control" placeholder="Receptor" id="pagina2" name="Receptor">
                     <div class="input-group-append">
-                      <button  class="input-group-text btn-btn-primary" id="btnreceptor" return false;>Receptor</button>
+                      <button  class="input-group-text btn-btn-primary" id="boton2" return false;>Receptor</button>
                     </div>
                   </div>
-                </div>
-                <script src="../js/padre.js"></script>  
-                
-                <script src="../js/padrereceptor.js"></script> 
+                </div>   
                 
       </div>
       <br>
@@ -126,34 +124,35 @@
       <div class="form-row">
                <div class="col-sm-4">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Vehiculo" id="mail" name="Vehiculo">
+                    <input type="text" class="form-control" placeholder="Vehiculo" id="pagina3" name="Vehiculo">
                     <div class="input-group-append">
-                      <button class="input-group-text btn-btn-primary">Vehiculo</button>
+                      <button class="input-group-text btn-btn-primary" id="boton3">Vehiculo1</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Plataforma" id="pagina4" name="Plataforma">
+                    <div class="input-group-append">
+                      <button id="boton4" class="input-group-text btn-btn-primary">Plataforma</button>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Plataforma" id="mail" name="Plataforma">
+                    <input type="text" class="form-control" placeholder="Piloto" id="pagina5" name="Piloto">
                     <div class="input-group-append">
-                      <button class="input-group-text btn-btn-primary">Plataforma</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Piloto" id="mail" name="Piloto">
-                    <div class="input-group-append">
-                      <button class="input-group-text btn-btn-primary">Piloto</button>
+                      <button id="boton5" class="input-group-text btn-btn-primary">Piloto</button>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-4">
                   <label for="" class="text-danger">seleccione solo si un piloto cuenta con vehiculo propio</label>
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Pilotos Con vehiculos" id="mail" name="pilotoTercero">
+                    <input type="text" class="form-control" placeholder="Pilotos Con vehiculos" id="pagina6" name="pilotoTercero">
                     <div class="input-group-append">
-                      <button class="input-group-text btn-btn-primary">Piloto</button>
+                      <button id="boton6" class="input-group-text btn-btn-primary">Piloto</button>
                     </div>
                   </div>
                 </div>
@@ -169,7 +168,7 @@
             </center>
         </div>
 
-
+<script src="../js/padre.js"></script> 
     </form>
 
 </div>
