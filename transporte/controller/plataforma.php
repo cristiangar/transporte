@@ -52,7 +52,7 @@ if (isset($_GET['id']))
 }
 else
 {
-    if(isset($_POST ['pmarca'])){
+    if(isset($_POST ['ptamaño'])){
 
         $ptamaño=$_POST['ptamaño'];
         $pcolor=$_POST['pcolor'];
