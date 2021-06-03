@@ -127,6 +127,18 @@
             </div>
         </div>
 
+
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
+                    <a href="encabezado.php">
+                    <img class="img-fluid" src="../imagenes/reporte.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Generar Recibo</h1>
+                </div>
+            </div>
+        </div>
+
                 <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
