@@ -1,5 +1,6 @@
 <?php 
 ob_start();
+session_start();
 include ('../Configuracion/config.php');
 class envio
 {
@@ -98,6 +99,63 @@ class envio
 		$dt7= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt7;
+	}
+
+
+
+
+public function Ingresar($descripcion, $peso, $direccion_entrega, $direccion_envio, $ruta, $fecha_envio,$fecha_entrega, $id_cliente, $id_receptor, $codigo_envio,$tercero)
+	{
+		$bd = new datos();
+		$bd->conectar();
+		$consulta= "call sp_envio(0, 'I', '$descripcion', '$peso', '$direccion_entrega', '$direccion_envio', $ruta, '$fecha_envio', '$fecha_entrega', $id_cliente, $id_receptor, '$codigo_envio', 1, $tercero, @pn_respuesta);";
+		$dt= mysqli_query($bd->objetoconexion,$consulta);
+
+		$salida="SELECT @pn_respuesta";
+		$consultar=mysqli_query($bd->objetoconexion,$salida);
+		
+		$bd->desconectar();
+
+		$res=mysqli_fetch_array($consultar);
+		session_destroy($_SESSION['idcliente']);
+		session_destroy($_SESSION['idreceptor']);
+		session_destroy($_SESSION['idasignacion']);
+
+		//
+		/*$texto=$res['@pn_respuesta'];
+		echo'<script language = javascript>
+						alert("'.$texto.'")
+						self.location="../views/.php" </script>';*/
+
+
+	}
+public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_envio, $ruta, $fecha_envio,$fecha_entrega, $id_cliente, $id_receptor, $codigo_envio,$piloto,$cabezal,$plataforma)
+	{
+		$bd = new datos();
+		$bd->conectar();
+		$consulta= "call sp_envio(0, 'I', '$descripcion', '$peso', '$direccion_entrega', '$direccion_envio', $ruta, '$fecha_envio', '$fecha_entrega', $id_cliente, $id_receptor, '$codigo_envio', 1,$piloto,$cabezal,$plataforma, @pn_respuesta);";
+		$dt= mysqli_query($bd->objetoconexion,$consulta);
+
+		$salida="SELECT @pn_respuesta";
+		$consultar=mysqli_query($bd->objetoconexion,$salida);
+		
+		$bd->desconectar();
+
+		$res=mysqli_fetch_array($consultar);
+		unset($_SESSION['idcliente']);
+		unset($_SESSION['idreceptor']);
+		unset($_SESSION['idpiloto']);
+		unset($_SESSION['idvehiculo']);
+		unset($_SESSION['idplataforma']);
+
+		//
+		$texto=$res['@pn_respuesta'];
+		echo $texto;
+		/*echo'<script language = javascript>
+						alert("'.$texto.'")
+						self.location="../views/.php" </script>';*/
+
+
 	}
 
 }

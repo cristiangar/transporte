@@ -152,7 +152,7 @@ $(document).ready(function(){
 
 <?php
     if (isset($_GET['id'])){
-      session_start();
+      
       $valor=$_GET['id'];
       $nombre=$_GET['no'];
       $_SESSION['idvehiculo']=$valor;

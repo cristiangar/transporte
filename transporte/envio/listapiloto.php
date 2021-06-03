@@ -135,10 +135,10 @@ $(document).ready(function(){
 <?php
     
     if (isset($_GET['id'])){
-      session_start();
+      
       $valor=$_GET['id'];
       $nombre=$_GET['no'];
-      $_SESSION['idcliente']=$valor;
+      $_SESSION['idpiloto']=$valor;
       ?>
           <h2>Cliente seleccionado: <?php echo $nombre ?></h2>
       		<input value='<?php echo $nombre;?>' type="text" id="P5" placeholder="Enviar al padre" hidden>&nbsp;

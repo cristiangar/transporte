@@ -134,7 +134,7 @@ $(document).ready(function(){
 
 <?php
     if (isset($_GET['ide'])){
-      session_start();
+      
       $valor=$_GET['id'];
       $valor1=$_GET['ide'];
       $nombre=$_GET['no'];

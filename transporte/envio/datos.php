@@ -36,7 +36,7 @@
 </nav>
 <div class="container-fluid">
 
-    <form method="POST" action=" " enctype="multipart/form-data">
+    <form method="POST" action="../controller/envio.php" >
       <h1>Datos del envio</h1>
       <br>
       <div class="form-row">
@@ -89,11 +89,11 @@
             </div>
             <div class="col-sm-4">
             <label>Dirección de Entrega</label>
-                <input type="text" name="direccione" class="form-control" placeholder="Lugar de destino" require>
+                <input type="text" name="direccion" class="form-control" placeholder="Lugar de destino" require>
             </div>
             <div class="col-sm-4">
             <label>Dirección de Envío</label>
-                <input type="text" name="direccionenvi" class="form-control" placeholder="Lugar de envío">
+                <input type="text" name="direccionenvio" class="form-control" placeholder="Lugar de envío">
             </div>
             <?php 
             include_once('../model/classpaquete.php');
