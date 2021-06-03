@@ -117,9 +117,9 @@ public function Ingresar($descripcion, $peso, $direccion_entrega, $direccion_env
 		$bd->desconectar();
 
 		$res=mysqli_fetch_array($consultar);
-		session_destroy($_SESSION['idcliente']);
-		session_destroy($_SESSION['idreceptor']);
-		session_destroy($_SESSION['idasignacion']);
+		unset($_SESSION['idcliente']);
+		unset($_SESSION['idreceptor']);
+		unset($_SESSION['idasignacion']);
 
 		//
 		/*$texto=$res['@pn_respuesta'];
@@ -133,7 +133,7 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_envio(0, 'I', '$descripcion', '$peso', '$direccion_entrega', '$direccion_envio', $ruta, '$fecha_envio', '$fecha_entrega', $id_cliente, $id_receptor, '$codigo_envio', 1,$piloto,$cabezal,$plataforma, @pn_respuesta);";
+		$consulta= "call sp_envio2(0, 'I', '$descripcion', '$peso', '$direccion_entrega', '$direccion_envio', $ruta, '$fecha_envio', '$fecha_entrega', $id_cliente, $id_receptor, '$codigo_envio', 1, $piloto, $cabezal, $plataforma, @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -148,6 +148,33 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 		unset($_SESSION['idvehiculo']);
 		unset($_SESSION['idplataforma']);
 
+		//
+		$texto=$res['@pn_respuesta'];
+		echo $texto;
+		/*echo'<script language = javascript>
+						alert("'.$texto.'")
+						self.location="../views/.php" </script>';*/
+
+
+	}
+
+	public function Ingresar3($descripcion, $peso, $direccion_entrega, $direccion_envio, $ruta, $fecha_envio,$fecha_entrega, $id_cliente, $id_receptor, $codigo_envio,$piloto,$cabezal)
+	{
+		$bd = new datos();
+		$bd->conectar();
+		$consulta= "call sp_envio2(0, 'I', '$descripcion', '$peso', '$direccion_entrega', '$direccion_envio', $ruta, '$fecha_envio', '$fecha_entrega', $id_cliente, $id_receptor, '$codigo_envio', 1, $piloto, $cabezal,0, @pn_respuesta);";
+		$dt= mysqli_query($bd->objetoconexion,$consulta);
+
+		$salida="SELECT @pn_respuesta";
+		$consultar=mysqli_query($bd->objetoconexion,$salida);
+		
+		$bd->desconectar();
+
+		$res=mysqli_fetch_array($consultar);
+		unset($_SESSION['idcliente']);
+		unset($_SESSION['idreceptor']);
+		unset($_SESSION['idpiloto']);
+		unset($_SESSION['idvehiculo']);
 		//
 		$texto=$res['@pn_respuesta'];
 		echo $texto;
