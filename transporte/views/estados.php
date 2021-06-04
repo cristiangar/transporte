@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Inicio</title>
+    <title>Clientes</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="../css/index.css" rel="stylesheet"/>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -13,7 +16,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-    <a href="secritaria.php">
+        <a href="secritaria.php">
         <img src="../imagenes/logo.png" alt="HTML tutorial" style="width:52px;height:52px;">
         </a>
     <ul class="navbar-nav ml-auto">
@@ -27,67 +30,98 @@
 
 </nav>
 <div class="container-fluid">
-<h1>Buscar envios</h1>
-<h3>por favor ingrese el codigo del envio para buscar el paquete</h3>
-<br>
-<div class="container mt-3">
-<input class="form-control" id="myInput" type="text" placeholder="buscar..">
-<br>
-<table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>codigo</th>
-        <th>ruta</th>
-        <th>chofer</th>
-        <th>estado</th>
-        <th>Detalle</th>
-      </tr>
-    </thead>
-    <tbody id="myTable">
-      <tr>
-        <td>123456789</td>
-        <td>Guatemala-Quetzaltenango</td>
-        <td>Mary</td>
-        <td>en ruta</td>
-        <td>
-            <a href="detalle.php">
-                <button type="button" class="btn btn-primary">ver detalle</button>
-            </a>
-        </td>
-      </tr>
-      <tr>
-        <td>987654321</td>
-        <td>San Marcos-Guatemala</td>
-        <td>Moe</td>
-        <td>Recogiendo</td>
-        <td>
-            <a href="detalle.php">
-                <button type="button" class="btn btn-primary">ver detalle</button>
-            </a>
-        </td>
-      </tr>
-      <tr>
-        <td>1597536482</td>
-        <td>San Marcos-Quetzaltenango</td>
-        <td>anja</td>
-        <td>en bodega</td>
-        <td>
-            <a href="detalle.php">
-                <button type="button" class="btn btn-primary">ver detalle</button>
-            </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-  
-  <div class="container-fluid">
-                <br>
+<?php
+  include_once("../model/classEnvio.php");
+  $envio=new Envio();
+  $dt=$envio->Ver();
+
+  $resultado=$dt->num_rows;
+
+  if($resultado>0){
+    ?>
+      <h1>Lista de Envios</h1>
+      <br>
+      <div class="container mt-3">
+      <input class="form-control" id="myInput" type="text" placeholder="buscar..">
+      <br>
+      <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
+            <thead>
+              <td>Codigo envio</td>
+              <td>Fecha Envio</td>
+              <td>Fecha entrega</td>
+              <td>Cliente</td>
+              <td>Receptor</td>
+              <td>Estado</td>
+              <td>Detalle</td>
+            </thead>
+      <?php
+          while ($row=mysqli_fetch_array($dt)) {
+            $id=$row['id_envio'];
+            $codigo=$row['codigo_envio'];
+            $fenvio=$row['fecha_envio'];
+            $fentrega=$row['fecha_entrega'];
+            $cliente=$row['cliente'];
+            $receptor=$row['receptor'];
+            $autorizacion=$row['autorizacion'];
+            ?>
+                  <tbody id="myTable">
+                  <tr>
+                    <td><?php echo $codigo?></td>
+                    <td><?php echo $fenvio?></td>
+                    <td><?php echo $fentrega?></td>
+                    <td><?php echo $cliente?></td>
+                    <td><?php echo $receptor?></td>
+                    <?php
+                    if($autorizacion=='0')
+                    {
+                      echo '<td>sin Autorizar</td>';
+                    }
+                    else{
+                      echo '<td>Autorizado</td>';
+                    }
+                    ?>
+                    <td><center><a href="detalleEnvio.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Detalle</button></a></center></td>
+
+                  </tr>
+                 </tbody>
+            <?php
+
+          }
+               echo '<tfoot>';
+                echo  '<td><input type="button" id="cargar_primera_pagina" value="<< Primero"/></td>';
+                echo  '<td><input type="button" id="cargar_anterior_pagina" value="< Anterior"/></td>';
+                echo  '<td id="indicador_paginas"></td>';
+                echo  '<td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >"/></td>';
+                echo  '<td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>';
+                echo'</tfoot>';
+                echo '</table>';
+                ?>
             <center>
+                 <a href="../envio/datos.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                
                 <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                 
+                
             </center>
-            </div>
+            <?php
+  }
+  else{
+    ?> 
+    <center>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br><br><br><br>
+      <h1>No hay datos ingresados</h1>
+      <br>
+      <a href="nuevo_cliente.php"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
+    </center>
+    <?php
+  }
+?>
+
 </div>
 </body>
 
@@ -101,4 +135,5 @@ $(document).ready(function(){
   });
 });
 </script>
+
 </html>

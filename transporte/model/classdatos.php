@@ -66,17 +66,7 @@ class envio
 		return $dt4;
 	}
 
-	/*public function Verpiloto()
-	{
 
-		$db = new datos();
-		$db->conectar();
-		$consulta= "call sp_pilotos(0, '0', '0', '0', '00', '0', '0', '0', '0', '0', '0', '00', '00', '0', '0', '0', 'S', @pn_respuesta);";
-		$dt7= mysqli_query($db->objetoconexion,$consulta);
-		$db->desconectar();
-		return $dt7;
-
-	}*/
 
 	public function VerPlataforma()
 	{
@@ -122,10 +112,10 @@ public function Ingresar($descripcion, $peso, $direccion_entrega, $direccion_env
 		unset($_SESSION['idasignacion']);
 
 		//
-		/*$texto=$res['@pn_respuesta'];
+		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/.php" </script>';*/
+						self.location="../views/estados.php" </script>';
 
 
 	}
@@ -151,9 +141,9 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 		//
 		$texto=$res['@pn_respuesta'];
 		echo $texto;
-		/*echo'<script language = javascript>
+		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/.php" </script>';*/
+						self.location="../views/estados.php" </script>';
 
 
 	}
@@ -178,11 +168,20 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 		//
 		$texto=$res['@pn_respuesta'];
 		echo $texto;
-		/*echo'<script language = javascript>
+		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/.php" </script>';*/
+						self.location="../views/estados.php" </script>';
 
 
 	}
+	public function Ver()
+	{
 
+		$db = new datos();
+		$db->conectar();
+		$consulta= "call sp_envio(0, 'S', '0', '0', '0', '0', 0, '0', '0', 0, 0, '0', 0, 0, @pn_respuesta);";
+		$dt4= mysqli_query($db->objetoconexion,$consulta);
+		$db->desconectar();
+		return $dt;
+	}
 }
