@@ -6,9 +6,9 @@ if (isset($_GET['id2']))
     
     if (isset($_GET['id2']) and isset($_GET['es'])and isset($_GET['id'])) {//valida si es modificar o eliminar
         $id=$_GET['id2'];
-        $cxc=$_GET['id'];
-        $au =new cuenta();
-        $au->Eliminar($id,$cxc);
+        $ide=$_GET['id'];
+        $au =new encabezado();
+        $au->Eliminar($id,$ide);
         
     }
     else 

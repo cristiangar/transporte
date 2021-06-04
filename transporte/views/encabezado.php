@@ -35,39 +35,41 @@
   $resultado=$dt->num_rows;
   if($resultado>0){
     ?>
-      <h1>Cuentas por Cobrar</h1>
+      <h1>Encabezado</h1>
       <br>
       <div class="container mt-3">
       <input class="form-control" id="myInput" type="text" placeholder="buscar..">
       <br>
       <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
             <thead>
-              <td>Codigo Envio</td>
+              <!--<td>Codigo Envio</td>-->
               <td>Cliente</td>
               <td>Total</td>
               <td>Saldo</td>
+              <td>Fecha</td>
               <td>Estado de la Cuenta</td>
-              <td>Detalles</td>
-              <td>Nuevo Detalle</td>
+              <!--<td>Detalles</td>
+              <td>Nuevo Detalle</td>-->
             </thead>
       <?php
           while ($row=mysqli_fetch_array($dt)) {
-            $id=$row['id_cxc'];
-            $codenvio=$row['codigo_envio'];
+            $id=$row['id_encabezado'];
+            /*$envio=$row['codigo_envio'];*/
             $cliente=$row['cliente'];
             $total=$row['total'];
             $saldo=$row['saldo'];
-            $fecha_inicio=$row['fecha_inicio'];
+            $fecha=$row['fecha'];
             $estado_factura=$row['estado_factura'];
             
             
             ?>
                   <tbody id="myTable">
                   <tr>
-                    <td><<?php echo $codenvio?></td>
+                    <!--<td><<?php echo $envio?></td>-->
                     <td><?php echo $cliente?></td>
                     <td><?php echo $total?></td>
                     <td><?php echo $saldo?></td>
+                    <td><?php echo $fecha?></td>
                     
                     <?php
                       if($estado_factura == 'Cancelado' or $estado_factura =='cancelado'){
@@ -82,8 +84,8 @@
                       }
                     ?>
                     
-                    <td><center><a href="lista_abonos.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-                    <td><center><a href="nuevo_abono.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Abonar</button></a></center></td>
+                    <td><center><a href="lista_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalles</button></a></center></td>
+                    <td><center><a href="nuevo_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Agregar Detalle</button></a></center></td>
                   </tr>
                  </tbody>
             <?php
