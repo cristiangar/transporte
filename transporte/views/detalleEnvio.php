@@ -64,16 +64,25 @@ while($row=mysqli_fetch_array($dt))
     $placa=$row['no_placa'];
     $interno_externo=$row['tipo_interno_externo'];
     $tipo_vehivulo=$row['tipo_vehiculo'];
-    if($tipo_vehivulo=='Cabezal' or 'cabezal'){
-        echo 'es cabezal';
-        $bandera=1;
+    if(($tipo_vehivulo=="Cabezal") or ($tipo_vehivulo=="cabezal")){
+      $placa_plataforma=$row['placa'];
+      $tipo_plataforma=$row['tipo'];
+      $color_plataforma=$row['color'];
+      $tamanio_plataforma=$row['tamaño'];
+      $descripcion_plataforma=$row['dplataforma'];
+      $tplataforma=$row['tplataforma'];
+
+      $activador=1;
+    
     }
     else
     {
-        $bandera=0;
+      //echo 'es camion';
+      $activador=0;
     }
 
 }
+
 ?>
 <h1>Datos del envio</h1>
       <br>
@@ -182,32 +191,93 @@ while($row=mysqli_fetch_array($dt))
                 <label>Marca del Vehiculo</label>
                 <input value='<?php echo $marca;?>' type="text" name="cod" class="form-control" readonly>
                 </div>
-
+                 
                 <div class="col-sm-4">
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Plataforma" id="pagina4" name="Plataforma">
-                    <div class="input-group-append">
-                      <button id="boton4" class="input-group-text btn-btn-primary">Plataforma</button>
-                    </div>
-                  </div>
+                <label>Tipo Vehiculo</label>
+                <input value='<?php echo $tipo_vehivulo;?>' type="text" name="cod" class="form-control" readonly>
                 </div>
-
                 <div class="col-sm-4">
-                  <label for="" class="text-danger">seleccione solo si un piloto cuenta con vehiculo propio</label>
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Pilotos Con vehiculos" id="pagina6" name="pilotoTercero">
-                    <div class="input-group-append">
-                      <button id="boton6" class="input-group-text btn-btn-primary">Piloto</button>
-                    </div>
-                  </div>
+                <label>no_placa</label>
+                <input value='<?php echo $placa;?>' type="text" name="cod" class="form-control" readonly>
                 </div>
-
+                <?php 
+                    if($interno_externo=="1"){
+                        ?>
+                        <div class="col-sm-4">
+                        <label>Propiedad el vehiculo</label>
+                        <input value="Externo" type="text" name="cod" class="form-control" readonly>
+                        </div>
+                        <?php
+                    }
+                    else
+                    {
+                      ?>
+                      <div class="col-sm-4">
+                      <label>Propiedad el vehiculo</label>
+                      <input value="Interno" type="text" name="cod" class="form-control" readonly>
+                      </div>
+                      <?php
+                    }
+                ?>
                 <div class="col-sm-4">
                 <label>Descripción</label>
                 <br>
                 <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="135" rows="3" disabled><?php echo $descripcion;?></textarea>
                 </div>
       </div>
+      <br>
+      <?php
+                if($activador== "1"){
+                  ?>
+                  <br>
+                  <h1>Datos del remolque</h1>
+                  <div class="form-row">
+                      <div class="col-sm-4">
+                      <label>No. placa del remolque</label>
+                      <input value='<?php echo $placa_plataforma;?>' type="text" name="cod" class="form-control" readonly>
+                      </div>
+                      <div class="col-sm-4">
+                      <label>Tipo de remolque</label>
+                      <input value='<?php echo $tipo_plataforma;?>' type="text" name="cod" class="form-control" readonly>
+                      </div>
+                      <div class="col-sm-4">
+                      <label>Tamaño del remolque</label>
+                      <input value='<?php echo $tamanio_plataforma;?>' type="text" name="cod" class="form-control" readonly>
+                      </div>
+                      <div class="col-sm-4">
+                      <label>Color del remolque</label>
+                      <input value='<?php echo $color_plataforma;?>' type="text" name="cod" class="form-control" readonly>
+                      </div>
+                      <?php
+                        if($tplataforma=='1'){
+                          ?>
+                            <div class="col-sm-4">
+                            <label>Propiedad del remolque</label>
+                            <input value='Externo' type="text" name="cod" class="form-control" readonly>
+                            </div>
+                          <?php
+                          
+                        }
+                        else{
+                          ?>
+                          <div class="col-sm-4">
+                          <label>Propiedad del remolque</label>
+                          <input value='Interno' type="text" name="cod" class="form-control" readonly>
+                          </div>
+                        <?php
+                        }
+                      ?>
+                <div class="col-sm-6">
+                <label>Descripción del remolque</label>
+                <br>
+                <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="135" rows="3" disabled><?php echo $descripcion_plataforma;?></textarea>
+                </div>
+                  </div>
+                  <?php
+                  
+                }
+        ?>
+
       <div class="container-fluid col-sm-5">
                 <br>
                 <br>

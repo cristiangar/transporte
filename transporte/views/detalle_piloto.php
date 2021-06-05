@@ -99,8 +99,22 @@ while ($row=mysqli_fetch_array($dt)) {
 </center>
 
 <center>
-    <a href="nuevo_piloto.php?id=<?php echo $id_empleado?>"><button type="button" class="btn btn-success" >Modificar</button></a>
-    <a href="choferes.php"><button type="button" class="btn btn-warning" >Regresar</button></a>       
+    <?php
+    if(isset($_GET['id']) and isset($_GET['envio']) ){
+        $envio=$_GET['envio'];
+        ?>
+        <a href="detalleEnvio.php?id=<?php echo $envio;?>"><button type="button" class="btn btn-warning" >Regresar</button></a>     
+        <?php
+    }
+    else
+    {
+        ?>
+            <a href="nuevo_piloto.php?id=<?php echo $id_empleado?>"><button type="button" class="btn btn-success" >Modificar</button></a>
+            <a href="choferes.php"><button type="button" class="btn btn-warning" >Regresar</button></a> 
+        <?php
+
+    }
+    ?>      
 </center>
 </div>
 
