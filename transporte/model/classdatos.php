@@ -184,4 +184,15 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 		$db->desconectar();
 		return $dt;
 	}
+
+	public function VerUno($id)
+	{
+
+		$db = new datos();
+		$db->conectar();
+		$consulta= "call sp_envio($id, 'S1', '0', '0', '0', '0', 0, '0', '0', 0, 0, '0', 0, 0, @pn_respuesta);";
+		$dt= mysqli_query($db->objetoconexion,$consulta);
+		$db->desconectar();
+		return $dt;
+	}
 }

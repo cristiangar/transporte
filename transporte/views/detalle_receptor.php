@@ -39,20 +39,16 @@ if(isset($_GET['id'])){
      $id= $_GET['id'];
      $envio=$_GET['envio'];
     //busco los datos para acatualizar
-    include_once("../model/classcliente.php");
-    $cliente=new cliente();
-    $dt=$cliente->VerUnCliente($id);
+    include_once("../model/classreceptor.php");
+    $detalle=new Receptor();
+    $dt=$detalle->VerUnReceptor($id);
 
     while ($row=mysqli_fetch_array($dt)) {
-            $id=$row['id_cliente'];
+            $id=$row['id_receptor'];
             $nombre=$row['nombre'];
             $apellido=$row['apellido'];
             $telefono=$row['telefono'];
             $telefono2=$row['telefono2'];
-            $correo=$row['correo'];
-            $nit=$row['nit'];
-            $nocuenta=$row['no_cuenta'];
-            $nombre_cuenta=$row['nombre_cuenta'];
         }
 ?>
 
@@ -67,8 +63,7 @@ if(isset($_GET['id'])){
             </div>
             <div class="col-sm-4">
             <label>Apellido</label>
-                <input type="text" name="apellido" class="form-control" placeholder="Apellido" value="<?php echo 
-                $apellido?>" readonly>
+                <input type="text" name="apellido" class="form-control" placeholder="Apellido" value="<?php echo $apellido?>" readonly>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>
@@ -79,25 +74,8 @@ if(isset($_GET['id'])){
 
                 <input type="tel" name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13" value="<?php echo  $telefono2?>" readonly>
             </div>
-            <div class="col-sm-4">
-            <label>Correo electronico</label>
-                <input type="email" name="correo" class="form-control" placeholder="Nombre del banco" value="<?php echo $correo?>"readonly>
-            </div>
-            <div class="col-sm-4">
-            <label>Nit</label>
-                <input type="text" name="nit" value='C/F' class="form-control" placeholder="Nit" value="<?php echo $nit?>"readonly>
-            </div>
 
-            <div class="col-sm-4">
-            <label>No. de Cuenta bancaria</label>
-                <input type="tex" name="cuenta" value='N/A' class="form-control" placeholder="Número de cuenta" value="<?php echo $nocuenta?>" readonly>
-               
-            </div>
 
-            <div class="col-sm-4">
-            <label>Banco del cliente</label>
-                <input type="text" name="banco" class="form-control" placeholder="Nombre del banco" value = "<?php echo $nombre_cuenta?>" readonly>
-            </div>
       
         </div>  
         <br>

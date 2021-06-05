@@ -21,8 +21,8 @@ if (isset($_GET['id']))
         }
         else{
             $id = $_GET['id'];
-            $cabeal=new Cabezal();
-            $detalle=$cabezal->VerUno($id);
+            $detalle=new envio();
+            $dt=$detalle->VerUno($id);
             /*VER UNO*/
         }
 
