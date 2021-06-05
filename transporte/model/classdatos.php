@@ -195,4 +195,28 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 		$db->desconectar();
 		return $dt;
 	}
+
+	public function Autorizar($id)
+	{
+		$bd = new datos();
+		$bd->conectar();
+		$consulta= "call sp_envio($id, 'A', '0', '0', '0', '0', 0, '0', '0', 0, 0, '0', 0, 0, @pn_respuesta);";
+		$dt= mysqli_query($bd->objetoconexion,$consulta);
+
+		$salida="SELECT @pn_respuesta";
+		$consultar=mysqli_query($bd->objetoconexion,$salida);
+		
+		$bd->desconectar();
+
+		$res=mysqli_fetch_array($consultar);
+
+
+		//
+		$texto=$res['@pn_respuesta'];
+		echo'<script language = javascript>
+						alert("'.$texto.'")
+						self.location="../views/estados.php" </script>';
+
+
+	}
 }

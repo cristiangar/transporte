@@ -41,6 +41,7 @@ while($row=mysqli_fetch_array($dt))
     $codigo_envio=$row['codigo_envio'];
     $fenvio=$row['fecha_envio'];
     $fentrega=$row['fecha_entrega'];
+    $autorizacion=$row['autorizacion'];
     /**datos del receptor y emisor */
     $id_cliente=$row['id_cliente'];
     $cliente=$row['cliente'];
@@ -80,11 +81,19 @@ while($row=mysqli_fetch_array($dt))
       //echo 'es camion';
       $activador=0;
     }
+    if($autorizacion==0){
+      $au="Sin Autorizar";
+    }
+    else{
+      $au="Autorizado";
+    }
 
 }
 
 ?>
 <h1>Datos del envio</h1>
+<br>  
+<h2>Estado del envio: <?php echo $au;?></h2>
       <br>
       <div class="form-row">
         <div class="col-sm-4">
@@ -282,6 +291,7 @@ while($row=mysqli_fetch_array($dt))
                 <br>
                 <br>
             <center>
+                <a href="../controller/datos.php?id=<?php echo $id?>&Autorizar"><button type="button" class="btn btn-primary" >Autorizar</button></a> 
                 <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>        
             </center>
         </div>
