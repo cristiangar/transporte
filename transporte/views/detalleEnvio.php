@@ -291,9 +291,12 @@ while($row=mysqli_fetch_array($dt))
                 <br>
                 <br>
             <center>
-                <a href="../controller/datos.php?id=<?php echo $id?>&Autorizar"><button type="button" class="btn btn-primary" >Autorizar</button></a> 
-                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>        
+                <a href="../controller/datos.php?id=<?php echo $id?>&Autorizar"><button type="button" class="btn btn-success" >Autorizar</button></a> 
+                <a href=""><button type="button" class="btn btn-info" >Imprimir</button></a> 
+                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>   
+                <a href="../controller/envio.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger" >Eliminar</button></a>      
             </center>
+            <br>
         </div>
 
 </div>

@@ -132,18 +132,18 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 		$bd->desconectar();
 
 		$res=mysqli_fetch_array($consultar);
-		unset($_SESSION['idcliente']);
-		unset($_SESSION['idreceptor']);
-		unset($_SESSION['idpiloto']);
-		unset($_SESSION['idvehiculo']);
-		unset($_SESSION['idplataforma']);
+
 
 		//
 		$texto=$res['@pn_respuesta'];
-		echo $texto;
 		echo'<script language = javascript>
 						alert("'.$texto.'")
 						self.location="../views/estados.php" </script>';
+						unset($_SESSION['idcliente']);
+						unset($_SESSION['idreceptor']);
+						unset($_SESSION['idpiloto']);
+						unset($_SESSION['idvehiculo']);
+						unset($_SESSION['idplataforma']);
 
 
 	}
@@ -218,5 +218,26 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 						self.location="../views/estados.php" </script>';
 
 
+	}
+
+	public function Eliminar($id)
+	{
+		
+		$bd = new datos();
+		$bd->conectar();
+		$consulta= "call sp_envio2($id, 'D', '1', '1', '1', '1', 1, '1', '1', 1, 1, '1', 1, 1, 1, 1, @pn_respuesta);";
+		$dt= mysqli_query($bd->objetoconexion,$consulta);
+
+		$salida="SELECT @pn_respuesta";
+		$consultar=mysqli_query($bd->objetoconexion,$salida);
+		
+		$bd->desconectar();
+
+		$res=mysqli_fetch_array($consultar);
+		//
+		$texto=$res['@pn_respuesta'];
+		echo'<script language = javascript>
+						alert("'.$texto.'")
+						self.location="../views/estados.php" </script>';
 	}
 }

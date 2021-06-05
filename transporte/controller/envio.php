@@ -7,7 +7,7 @@ if (isset($_GET['id']))
     
     if (isset($_GET['id']) and isset($_GET['es'])) {//valida si es modificar o eliminar
         $id=$_GET['id'];
-        $au =new Cabezal();
+        $au =new envio();
         $au->  Eliminar($id);
         /*ELIMINAR*/
         
