@@ -43,7 +43,7 @@
         /*}*/
 
         ?>
-        <form method="POST" action="../controller/encabezado.php?id2=<?php echo $id2?>">
+        <form method="POST" action="../controller/encabezado.php?id2=<?php echo $id2?>&idenca=<?php echo $idenca?>">
           <center>
             <br>
           <h1>Listado de Detalles</h1>
@@ -54,7 +54,7 @@
             <thead> 
               <center><td>Descripción</td></center>
               <center><td>Sub-Total</td></center>
-              <center><td>Eliminar</td></center>
+              
             </thead>
           
       <?php
@@ -67,14 +67,15 @@
             $id2=$row['id_detalle'];
             $descripcion=$row['descripcion'];
             $subtotal=$row['subtotal']; 
-            $idenvio=$row['id_envio'];
+            /*$idenvio=$row['id_envio'];*/
             $idenca=$row['id_encabezado'];
             ?>
                   <tbody id="myTable">
                   <tr>
                     <td><?php echo $descripcion?></td>
                     <td><?php echo $subtotal?></td>
-           
+                    
+                    <td><center><a href="nuevo_detalle.php?id=<?php echo $id?>&mod=M&id2=<?php echo $id2?>"><button type="button" class="btn btn-warning">Modificar</button></a></center></td>
                     <td><a href="../controller/encabezado.php?id2=<?php echo $id2?>&es=E&id=<?php echo $id?>"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
                   </tr>
                  </tbody>
@@ -85,7 +86,7 @@
                 echo '</table>';
             ?>
             <center>
-                <a href="nuevo_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Nuevo</button></a>
+                <a href="nuevo_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Nuevo Detalle</button></a>
                 
                 <a href="encabezado.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                 

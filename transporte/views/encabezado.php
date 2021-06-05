@@ -42,7 +42,7 @@
       <br>
       <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
             <thead>
-              <!--<td>Codigo Envio</td>-->
+              <td>Codigo Envio</td>
               <td>Cliente</td>
               <td>Total</td>
               <td>Saldo</td>
@@ -54,7 +54,7 @@
       <?php
           while ($row=mysqli_fetch_array($dt)) {
             $id=$row['id_encabezado'];
-            /*$envio=$row['codigo_envio'];*/
+            $envio=$row['codigo_envio'];
             $cliente=$row['cliente'];
             $total=$row['total'];
             $saldo=$row['saldo'];
@@ -65,7 +65,7 @@
             ?>
                   <tbody id="myTable">
                   <tr>
-                    <!--<td><<?php echo $envio?></td>-->
+                    <td><?php echo $envio?></td>
                     <td><?php echo $cliente?></td>
                     <td><?php echo $total?></td>
                     <td><?php echo $saldo?></td>
@@ -85,7 +85,7 @@
                     ?>
                     
                     <td><center><a href="lista_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalles</button></a></center></td>
-                    <td><center><a href="nuevo_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Agregar Detalle</button></a></center></td>
+                    <td><center><a href="nuevo_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Agregar</button></a></center></td>
                   </tr>
                  </tbody>
             <?php

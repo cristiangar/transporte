@@ -13,34 +13,29 @@ if (isset($_GET['id2']))
     }
     else 
     {
-        if(isset($_GET['id']) and isset($_GET['mod'])){
-        /*$id = $_GET['id'];
-        $nombre=$_POST['nombre'];
-        $apellido=$_POST['apellido'];
-        $telefono=$_POST['telefono'];
-        $telefono2=$_POST['telefono2'];
-        $correo=$_POST['correo'];
-        $nit=$_POST['nit'];
-        $cuenta=$_POST['cuenta'];
-        $banco=$_POST['banco'];
-        $au =new cuenta();
-        $au->ModificarCuenta($id,$nombre,$apellido,$telefono,$telefono2,$correo,$nit,$cuenta,$banco);*/
-        echo "cantidad";
+        if(isset($_GET['id']) and isset($_GET['mod'])and isset($_GET['id2'])){
+        $id=$_GET['id2'];
+        $ide=$_GET['id'];
+        $descripcion=$_POST['descripcion'];
+        $cantidad=$_POST['subtotal'];
+        $au =new encabezado();
+        $au->ModificarDetalle($id,$id2,$descripcion,$subtotal);
         }
     }
 
 }
 else
 {
-    if(isset($_POST ['cantidad']) and isset($_GET['id'])){
+    if(isset($_POST ['subtotal']) and isset($_GET['id'])){
 
-    $cantidad=$_POST['cantidad'];
+    $cantidad=$_POST['subtotal'];
     $id=$_GET['id'];
+    $descripcion=$_POST['descripcion'];
 
     /*echo $cantidad;*/
     
-        $au =new cuenta();
-        $au->IngresarAbono($cantidad,$id);
+        $au =new encabezado();
+        $au->IngresarEncabezado($cantidad,$id,$descripcion);
 
     }
     else
