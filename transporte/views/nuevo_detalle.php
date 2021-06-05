@@ -33,14 +33,11 @@
     </ul>
 
 </nav>
-<div class="container-fluid col-sm-5">
-<?php
-if(isset($_GET['id2'])){
-     $id= $_GET['id2'];
-     $idenvio=$_GET['idenvio'];
-     $idenca=$_GET['idenca']
-    //busco los datos para acatualizar
-    include_once("../model/classcuenta.php");
+
+   <?php  
+   //busco los datos para acatualizar
+   $id= $_GET['id2'];
+    include_once("../model/classencabezado.php");
     $cliente=new encabezado();
     $dt=$cliente->VerUnDetalle($id);
 
@@ -48,10 +45,30 @@ if(isset($_GET['id2'])){
             $id2=$row['id_detalle'];
             $descripcion=$row['descripcion'];
             $subtotal=$row['subtotal'];
+            $idenca=$row['id_encabezado'];
         }
 
         ?>
-            <form method="POST" action="../controller/encabezado.php?id2=<?php echo $id2?>" enctype="multipart/form-data">
+<div class="container-fluid col-sm-5">
+<?php
+if(isset($_GET['id']) and isset($_GET['mod'])and isset($_GET['id2'])){
+     
+     /*$idenvio=$_GET['idenvio'];*/
+     
+    
+    include_once("../model/classencabezado.php");
+    $cliente=new encabezado();
+    $dt=$cliente->VerUnDetalle($id2);
+
+    while ($row=mysqli_fetch_array($dt)) {
+            $id2=$row['id_detalle'];
+            $descripcion=$row['descripcion'];
+            $subtotal=$row['subtotal'];
+            $idenca=$row['id_encabezado'];
+        }
+
+        ?>
+            <form method="POST" action="../controller/encabezado.php?id=<?php echo $id?>&mod" enctype="multipart/form-data">
     <br>
     <br>
         <center><h1>Modificar Detalle</h1></center>
@@ -72,14 +89,10 @@ if(isset($_GET['id2'])){
             </div>
         <br>
             
-            <div class="col-sm-10">
-            <label>Id Envío</label>
-                <input type="text" name="idenvio" class="form-control" placeholder="código Envío" value="<?php echo $idenvio?>" require>
-            </div>
 
             <div class="col-sm-10">
             <label>Id Encabezado</label>
-                <input type="text" name="idenca" class="form-control" placeholder="código encabezado" value="<?php echo $idenca?>" require>
+                <input type="text" name="idenca" class="form-control" placeholder="código encabezado" value="<?php echo $idenca?>" require hidden>
             </div>
 
 
@@ -102,8 +115,9 @@ if(isset($_GET['id2'])){
 }
 else
 {
+
     ?>
-    <form method="POST" action="../controller/encabezado.php" enctype="multipart/form-data">
+    <form method="POST" action="../controller/encabezado.php?id=<?php echo $id?>" enctype="multipart/form-data">
     <br>
     <br>
         <h1>Nuevo Datalle</h1>
@@ -116,16 +130,6 @@ else
             <div class="col-sm-10">
             <label>Sub-Total</label>
                 <input type="text" name="subtotal" class="form-control" placeholder="Cantidad del detalle" require>
-            </div>
-
-            <div class="col-sm-10">
-            <label>Id Envío</label>
-                <input type="text" name="idenvio" class="form-control" placeholder="código Envío" value="<?php echo $idenvio?>" require>
-            </div>
-
-            <div class="col-sm-10">
-            <label>Id Encabezado</label>
-                <input type="text" name="idenca" class="form-control" placeholder="código encabezado" value="<?php echo $idenca?>" require>
             </div>
                 
         </div>  
