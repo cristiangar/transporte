@@ -32,8 +32,6 @@
 <div class='container-fluid'>
 <?php
 include_once("../controller/envio.php");
-/*$detalle=new envio();
-$dt=$detalle->VerUno($id);*/
 while($row=mysqli_fetch_array($dt))
 {
     /**datos del envio */
@@ -49,14 +47,14 @@ while($row=mysqli_fetch_array($dt))
     $id_receptor=$row['id_receptor'];
     $receptor=$row['receptor'];
     $tel_receptor=$row['tel_receptor'];
-    /**datos del envio */
-    $descripcion=$row['descripcion'];
+    /**datos del paquete */
     $peso=$row['peso'];
     $direccion_entrega=$row['direccion_entrega'];
     $direccion_envio=$row['direccion_envio'];
     $codigo_ruta=$row['codigo_ruta'];
     $origen=$row['pais_origen'];
     $destino=$row['pais_destino'];
+    $dpaquete=$row['dpaquete'];
     /**datos del piloto */
     $id_piloto=$row['id_empleado'];
     $piloto=$row['piloto'];
@@ -64,6 +62,7 @@ while($row=mysqli_fetch_array($dt))
     $marca=$row['marca'];
     $placa=$row['no_placa'];
     $interno_externo=$row['tipo_interno_externo'];
+    $descripcion=$row['descripcion'];
     $tipo_vehivulo=$row['tipo_vehiculo'];
     if(($tipo_vehivulo=="Cabezal") or ($tipo_vehivulo=="cabezal")){
       $placa_plataforma=$row['placa'];
@@ -72,7 +71,6 @@ while($row=mysqli_fetch_array($dt))
       $tamanio_plataforma=$row['tamaño'];
       $descripcion_plataforma=$row['dplataforma'];
       $tplataforma=$row['tplataforma'];
-
       $activador=1;
     
     }
@@ -175,6 +173,11 @@ while($row=mysqli_fetch_array($dt))
             <div class="col-sm-4">
                 <label>Peso</label>
                 <input value="<?php echo $peso;?>" type="text" name="peso" class="form-control" placeholder="Peso del paquete"readonly>
+            </div>
+            <div class="col-sm-4">
+                <label>Descripción</label>
+                <br>
+                <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="135" rows="3" disabled><?php echo $dpaquete;?></textarea>
             </div>
       </div>
       <br>
@@ -292,7 +295,7 @@ while($row=mysqli_fetch_array($dt))
                 <br>
             <center>
                 <a href="../controller/datos.php?id=<?php echo $id?>&Autorizar"><button type="button" class="btn btn-success" >Autorizar</button></a> 
-                <a href=""><button type="button" class="btn btn-info" >Imprimir</button></a> 
+                <a href="../Reportes/reporteEnvio.php?id=<?php echo $id;?>"><button type="button" class="btn btn-info" >Imprimir</button></a> 
                 <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>   
                 <a href="../controller/envio.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger" >Eliminar</button></a>      
             </center>
@@ -301,7 +304,4 @@ while($row=mysqli_fetch_array($dt))
 
 </div>
 </body>
-
-
-
 </html>
