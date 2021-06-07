@@ -43,7 +43,7 @@
         /*}*/
 
         ?>
-        <form method="POST" action="../controller/encabezado.php?id2=<?php echo $id2?>&idenca=<?php echo $idenca?>">
+        <form method="POST" action="../controller/encabezado.php?id2=<?php echo $id2?>&id=<?php echo $id?>">
           <center>
             <br>
           <h1>Listado de Detalles</h1>
@@ -68,7 +68,7 @@
             $descripcion=$row['descripcion'];
             $subtotal=$row['subtotal']; 
             /*$idenvio=$row['id_envio'];*/
-            $idenca=$row['id_encabezado'];
+            $id=$row['id_encabezado'];
             ?>
                   <tbody id="myTable">
                   <tr>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Encabezado</title>
+    <title>Clientes</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,61 +31,47 @@
 </nav>
 <div class="container-fluid">
 <?php
-  include_once("../controller/encabezado.php");
-  $resultado=$dt->num_rows;
+  include_once("../controller/datos.php");
+  $resultado=$dt2->num_rows;
   if($resultado>0){
     ?>
-      <h1>Encabezado</h1>
+      <h1>Lista de Clientes</h1>
       <br>
       <div class="container mt-3">
       <input class="form-control" id="myInput" type="text" placeholder="buscar..">
       <br>
       <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
             <thead>
-              <td>Codigo Envio</td>
-              <td>Cliente</td>
-              <td>Total</td>
-              <td>Saldo</td>
-              <td>Fecha</td>
-              <td>Estado de la Cuenta</td>
-              <!--<td>Detalles</td>
-              <td>Nuevo Detalle</td>-->
+              <td>Nombre</td>
+              <td>Nit</td>
+              <td>Telefono</td>
+              <td>Teléfono 2</td>
+              <td>Correo</td>
+              <td>No. cuenta</td>
+              <td>Banco</td>
+              <td>Seleccionar</td>
             </thead>
       <?php
-          while ($row=mysqli_fetch_array($dt)) {
-            $id=$row['id_encabezado'];
-            $envio=$row['codigo_envio'];
-            $cliente=$row['cliente'];
-            $total=$row['total'];
-            $saldo=$row['saldo'];
-            $fecha=$row['fecha'];
-            $estado_factura=$row['estado_factura'];
-            
-            
+          while ($row=mysqli_fetch_array($dt2)) {
+            $id=$row['id_cliente'];
+            $nombre=$row['nombre'];
+            $telefono=$row['telefono'];
+            $telefono2=$row['telefono2'];
+            $correo=$row['correo'];
+            $nit=$row['nit'];
+            $nocuenta=$row['no_cuenta'];
+            $nombre_cuenta=$row['nombre_cuenta'];
             ?>
                   <tbody id="myTable">
                   <tr>
-                    <td><?php echo $envio?></td>
-                    <td><?php echo $cliente?></td>
-                    <td><?php echo $total?></td>
-                    <td><?php echo $saldo?></td>
-                    <td><?php echo $fecha?></td>
-                    
-                    <?php
-                      if($estado_factura == 'Cancelado' or $estado_factura =='cancelado'){
-                        ?>
-                        <td><span class="badge badge-success"><?php echo $estado_factura?></span></td>
-                        <?php
-                      }
-                      else{
-                        ?>
-                        <td><span class="badge badge-danger"><?php echo $estado_factura?></span></td>
-                        <?php
-                      }
-                    ?>
-                    
-                    <td><center><a href="lista_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalles</button></a></center></td>
-                    <td><center><a href="nuevo_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Agregar</button></a></center></td>
+                    <td><?php echo $nombre?></td>
+                    <td><?php echo $nit?></td>
+                    <td><?php echo $telefono?></td>
+                    <td><?php echo $telefono2?></td>
+                    <td><?php echo $correo?></td>
+                    <td><?php echo $nocuenta?></td>
+                    <td><?php echo $nombre_cuenta?></td>
+                    <td><center><a href="listaclienteencabezado.php?id=<?php echo $id?>&no=<?php echo $nombre?>"><button type="button" class="btn btn-primary">Seleccionar</button></a></center></td>
                   </tr>
                  </tbody>
             <?php
@@ -100,12 +86,7 @@
                 echo'</tfoot>';
                 echo '</table>';
                 ?>
-            <center>
-                <a href="../envio/nuevo_encabezado.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a> 
-                <a href="secritaria.php"><button type="button" class="btn btn-warning btn-lg" >Regresar</button></a>
-                
-                
-            </center>
+
             <?php
   }
   else{
@@ -119,8 +100,7 @@
       <br><br><br><br>
       <h1>No hay datos ingresados</h1>
       <br>
-      <br>
-      <a href="secritaria.php"><button type="button" class="btn btn-warning btn-lg" >Regresar</button></a>
+      <a href="../view/nuevo_cliente.php"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
     </center>
     <?php
   }
@@ -139,5 +119,24 @@ $(document).ready(function(){
   });
 });
 </script>
+
+
+
+<?php
+    if (isset($_GET['id'])){
+      
+      $valor=$_GET['id'];
+      $nombre=$_GET['no'];
+      $_SESSION['idcliente']=$valor;
+      ?>
+          <h2>Cliente seleccionado: <?php echo $nombre ?></h2>
+          <input value='<?php echo $nombre;?>' type="text" id='P7' placeholder="Enviar al padre" hidden >&nbsp;
+          <label for="">Precione el boton aceptar para continuar</label> <br>
+		      <button class='btn btn-success btn-lg' id='btnp7' onclick="window.close();">Aceptar</button>
+      <?php
+    }
+    ?>
+		<br>
+    <script src="../js/hija7.js"></script>
 
 </html>
