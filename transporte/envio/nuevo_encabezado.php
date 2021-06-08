@@ -47,18 +47,18 @@
 
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cliente" id="pagina1" return false; name="Cliente">
+                    <input type="text" class="form-control" placeholder="Cliente" id="pagina7" return false; name="Cliente">
                     <div class="input-group-append">
-                      <button class="input-group-text btn-btn-primary" id="boton1">Cliente</button>
+                      <button class="input-group-text btn-btn-primary" id="boton7">Cliente</button>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Receptor" id="pagina2" name="Receptor">
+                    <input type="text" class="form-control" placeholder="Receptor" id="pagina8" name="Receptor">
                     <div class="input-group-append">
-                      <button  class="input-group-text btn-btn-primary" id="boton2" return false;>Código de Envío</button>
+                      <button  class="input-group-text btn-btn-primary" id="boton8" return false;>Código de Envío</button>
                     </div>
                   </div>
                 </div>   
@@ -89,7 +89,7 @@
             </center>
         </div>
 
-<script src="../js/padre.js"></script> 
+<script src="../js/padreencabezado.js"></script> 
     </form>
 
 </div>
