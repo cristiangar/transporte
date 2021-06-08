@@ -132,6 +132,7 @@ if(isset($_GET['id']))
                         <input type="file" name="imgDPI">
                     </div>
                 </div> 
+                <input value='<?php echo $ruta_imagen_dpi;?>' name="ruta_dpi" type="hidden">
                 <?php
             }
             else
@@ -153,7 +154,7 @@ if(isset($_GET['id']))
                  <?php   
             }
 ?>
-             
+        
 
         </div>
         <br>
@@ -182,7 +183,8 @@ if(isset($_GET['id']))
                 <div class="container-fluid">
                     <input type="file" name="imglicencia">
                 </div>
-            </div>                
+            </div>    
+            <input value='<?php echo $ruta_imagen_licencia;?>' name="ruta_licencia" type="hidden">            
                 <?php
             }
             else{
@@ -206,7 +208,6 @@ if(isset($_GET['id']))
 ?>   
 
 
-
         </div>
         <br>
 
@@ -226,6 +227,7 @@ if(isset($_GET['id']))
                         <input type="file" name="imgPasaporte">
                     </div>
                 </div>
+                <input value='<?php echo $ruta_imagen_pasaporte;?>' name="ruta_pasaporte" type="hidden">
                 <?php
             }
             else{
@@ -265,6 +267,7 @@ if(isset($_GET['id']))
             <label>Imagen actual</label><br>
             <img src="<?php echo $ruta_imagen_caat;?>"width="400" height="200" alt="">
             </div>
+            <input value='<?php echo $ruta_imagen_caat;?>' name="ruta_caat" type="hidden">
               <?php
             }
             else{
@@ -330,7 +333,7 @@ else
             </div>
             <div class="col-sm-4">
                 <label>Telefono 2</label>
-                <input type="text" name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  value="N/A" require>
+                <input type="text" value='N/A' name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  require>
             </div>
             <div class="col-sm-4">
                 <label>Correo</label>
