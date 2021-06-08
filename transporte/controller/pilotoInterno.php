@@ -20,6 +20,7 @@ if (isset($_GET['id']))
             $telefono=$_POST['telefono1'];
             $telefono2=$_POST['telefono2'];
             $correo=$_POST['correo'];
+
             if(empty($_FILES['imgDPI']['name']))
             {
                 $ruta=$_POST['ruta_dpi'];
@@ -33,8 +34,10 @@ if (isset($_GET['id']))
                 $ruta=$ruta."/".$nombreimg;//la ruta de la imagen
                 move_uploaded_file($archivo, $ruta);//mueve la imagen ala ruta    
             }
+
             $licencia=$_POST['licencia'];
             $tlicencia=$_POST['tlicencia'];
+
             if(empty($_FILES['imglicencia']['name'])){/**licencia */
                 $ruta_licencia=$_POST['ruta_licencia'];
                 
@@ -47,6 +50,7 @@ if (isset($_GET['id']))
                 move_uploaded_file($archivo, $ruta_licencia);//mueve la imagen ala ruta*/
             }
             $pasaporte=$_POST['pasaporte'];
+
             if(empty($_FILES['imgPasaporte']['name'])){
                 $ruta_pasaporte=$_POST['ruta_pasaporte'];
                 
@@ -58,6 +62,7 @@ if (isset($_GET['id']))
                 $ruta_pasaporte=$ruta_pasaporte."/".$nombreimgp;//la ruta de la imagen
                 move_uploaded_file($archivo, $ruta_pasaporte);//mueve la imagen ala ruta*/
             }
+            
             $caat=$_POST['caat'];
             if(empty($_FILES['imgCaat']['name'])){
                 $ruta_caat=$_POST['ruta_caat'];
