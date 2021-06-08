@@ -1,5 +1,5 @@
 <?php
-include_once("../model/classencabezado.php");
+include_once("../model/classnuevoencabezado.php");
 
 if (isset($_GET['id2']))
 {
@@ -26,26 +26,18 @@ if (isset($_GET['id2']))
 }
 else
 {
-    if(isset($_POST ['subtotal']) and isset($_GET['id'])){
-
-    $cantidad=$_POST['subtotal'];
-    $id=$_GET['id'];
-    $descripcion=$_POST['descripcion'];
-
-    /*echo $cantidad;*/
     
-        $au =new encabezado();
-        $au->IngresarEncabezado($cantidad,$id,$descripcion);
-
-    }
     if(isset($_POST['total'])and isset($_POST['anticipo'])){
         $total=$_POST['total'];
         $anticipo=$_POST['anticipo'];
-        $id_envio=$_GET['idenvio'];
-        $id_cliente=$_GET['id_cliente'];
+        /*datos del cliente y envio*/
+        $id_cliente=$_SESSION['idcliente'];
+        $id_envio=$_SESSION['idenvio'];
+        /*$id_envio=$_GET['idenvio'];
+        $id_cliente=$_GET['idcliente'];*/
 
         $au = new encabezado();
-        $au -> IngresarEncabezado2($total,$anticipo,$d_evnio, $id_clinte);
+        $au -> IngresarEncabezado2($total,$anticipo,$id_envio, $id_cliente);
     }
     else
     {

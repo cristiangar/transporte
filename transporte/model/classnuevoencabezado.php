@@ -1,14 +1,15 @@
 <?php 
 ob_start();
+session_start();
 include ('../Configuracion/config.php');
 class encabezado
 {
 
-        public function IngresarEncabezado($cantidad,$id,$descripcion)
+        public function IngresarEncabezado2($total,$anticipo,$id_envio, $id_cliente)
     {
         $bd = new datos();
         $bd->conectar();
-        $consulta= "call sp_detalle(0, '$descripcion', $cantidad, $id, 'I', @pn_respuesta);";
+        $consulta= "call sp_encabezado(0, $id_cliente, $id_envio, $anticipo, $total, 'Pendiente', 'I', '1', @pn_respuesta);";
         $dt= mysqli_query($bd->objetoconexion,$consulta);
 
         $salida="SELECT @pn_respuesta";
@@ -17,6 +18,9 @@ class encabezado
         $bd->desconectar();
 
         $res=mysqli_fetch_array($consultar);
+
+        unset($_SESSION['id_cliente']);
+        unset($_SESSION['id_envio']);
         //
         $texto=$res['@pn_respuesta'];
         echo'<script language = javascript>

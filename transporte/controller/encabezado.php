@@ -38,15 +38,6 @@ else
         $au->IngresarEncabezado($cantidad,$id,$descripcion);
 
     }
-    if(isset($_POST['total'])and isset($_POST['anticipo'])){
-        $total=$_POST['total'];
-        $anticipo=$_POST['anticipo'];
-        $id_envio=$_GET['idenvio'];
-        $id_cliente=$_GET['id_cliente'];
-
-        $au = new encabezado();
-        $au -> IngresarEncabezado2($total,$anticipo,$d_evnio, $id_clinte);
-    }
     else
     {
         $cliente=new encabezado();

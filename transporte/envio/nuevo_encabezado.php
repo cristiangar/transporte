@@ -66,12 +66,12 @@
             <div class="form-row">
                 <div class="col-sm-5">
                     <label>Total</label>
-                    <input type="text" name="direccion" class="form-control" placeholder="Lugar de destino" require>
+                    <input type="text" name="total" class="form-control" placeholder="Total del recibo" require>
                 </div>
 
                 <div class="col-sm-5">
                     <label>Anticipo</label>
-                    <input type="text" name="direccion" class="form-control" placeholder="Lugar de destino" require>
+                    <input type="text" name="anticipo" class="form-control" placeholder="Anticipo del envío" require>
                 </div>
             </div>
       </div>
@@ -83,7 +83,7 @@
                 <br>
             <center>
                 <input type="submit" class="btn btn-success" value="Aceptar">
-                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                <a href="../views/encabezado.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                 <input type="reset" class="btn btn-danger" value="cancelar">
                 
             </center>
