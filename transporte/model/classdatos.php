@@ -252,4 +252,13 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 						alert("'.$texto.'")
 						self.location="../views/estados.php" </script>';
 	}
+	public function Tipo_ruta()
+    {
+        $db = new datos();
+		$db->conectar();
+		$consulta= "call sp_ruta(0, 'n', 'n', 'no','S2', @pn_respuesta);";
+		$dtruta= mysqli_query($db->objetoconexion,$consulta);
+		$db->desconectar();
+		return $dtruta;
+    }
 }

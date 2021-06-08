@@ -103,14 +103,10 @@ else
             $ruta=$_POST['id_ruta'];
             $descripcion=$_POST['descripcion'];
             /*datos del vehiculo*/
-            //$cabezal=$_SESSION['idvehiculo'];
-            //$piloto=$_SESSION['idpiloto'];
             $tercero=$_SESSION['idasignacion'];
 
-            /*$envio=new envio();
-            $envio->Ingresar($descripcion, $peso, $direccion_entrega, $direccion_envio, $ruta, $fecha_envio,$fecha_entrega, $id_cliente, $id_receptor, $codigo_envio,$tercero);
-                */
-                echo 'np';
+            $envio=new envio();
+            $envio->Ingresar($descripcion, $peso, $direccion_entrega, $direccion_envio, $ruta, $fecha_envio,$fecha_entrega, $id_cliente, $id_receptor, $codigo_envio,$tercero);    
         }
     }
 

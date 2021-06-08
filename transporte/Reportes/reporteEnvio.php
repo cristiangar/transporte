@@ -59,6 +59,7 @@ while($row=mysqli_fetch_array($dt))
     }
 
 }
+
 $pdf=new PDF();
 $pdf->AddPage();
 $pdf->SetFillColor(232,232,232);
@@ -68,6 +69,7 @@ $pdf->cell(40,10,'Nombre del cliente:',0,1,'L');
 $pdf->cell(40,10,'Telefono cliente:',0,1,'L');
 $pdf->cell(40,10,'Nombre receptor:',0,1,'L');
 $pdf->cell(40,10,'Telefono receptor:',0,1,'L');
+
 $pdf->SetFont('Arial','',12);
 $pdf->Sety(50);
 $pdf->SetX(51);
@@ -219,18 +221,7 @@ if($activador=="1"){
   $pdf->Sety(120);
   $pdf->SetX(10);
   $pdf->MultiCell(170,10,$descripcion_plataforma,0,'L',0);
-
-
-
-}
-
-
-
-
-
-
-
-    
+}    
 $pdf->Output();
 
 ?>

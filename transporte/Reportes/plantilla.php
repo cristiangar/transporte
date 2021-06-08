@@ -14,7 +14,6 @@ class pdf extends fpdf
 		$this->Cell(30);
 		$this->Cell(120,10,'Envio',0,0,'C');
 		$this->Ln(20);
-
 	}
 
 }
