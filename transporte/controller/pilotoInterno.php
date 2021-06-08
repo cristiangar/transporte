@@ -95,8 +95,9 @@ else
         $telefono=$_POST['telefono1'];
         $telefono2=$_POST['telefono2'];
         $correo=$_POST['correo'];
+
         if(empty($_FILES['imgDPI']['name'])){/*valido si hay imagen de dpi*/
-            $ruta='N/A';    
+            $ruta='N/A';  
         }
         else{
             $nombreimg=$_FILES['imgDPI']['name'];//carga el nombre de la imagen
@@ -109,6 +110,7 @@ else
 
         $licencia=$_POST['licencia'];
         $tlicencia=$_POST['tlicencia'];
+
         if(empty($_FILES['imglicencia']['name'])){/**licencia */
             $ruta_licencia='N/A';
         }

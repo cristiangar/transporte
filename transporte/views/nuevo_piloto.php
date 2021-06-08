@@ -330,7 +330,7 @@ else
             </div>
             <div class="col-sm-4">
                 <label>Telefono 2</label>
-                <input type="text" name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  value="N/A" require>
+                <input type="text" value='N/A' name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  require>
             </div>
             <div class="col-sm-4">
                 <label>Correo</label>
