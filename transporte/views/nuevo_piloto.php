@@ -264,9 +264,12 @@ if(isset($_GET['id']))
             {
               ?>
             <div class="col-sm-4">
-            <label>Imagen actual</label><br>
-            <img src="<?php echo $ruta_imagen_caat;?>"width="400" height="200" alt="">
-            </div>
+                <label>Imagen Caat</label>
+                <div class="container-fluid">
+                    <input type="file" name="imgCaat">
+                </div>
+            </div> 
+
             <input value='<?php echo $ruta_imagen_caat;?>' name="ruta_caat" type="hidden">
               <?php
             }
