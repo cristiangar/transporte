@@ -107,9 +107,10 @@ else
             //$piloto=$_SESSION['idpiloto'];
             $tercero=$_SESSION['idasignacion'];
 
-            $envio=new envio();
+            /*$envio=new envio();
             $envio->Ingresar($descripcion, $peso, $direccion_entrega, $direccion_envio, $ruta, $fecha_envio,$fecha_entrega, $id_cliente, $id_receptor, $codigo_envio,$tercero);
-                
+                */
+                echo 'np';
         }
     }
 
