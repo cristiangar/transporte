@@ -72,7 +72,7 @@ class envio
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_vehiculos(0, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'S', @pn_respuesta, @pn_id_vehiculo);";
+		$consulta= "call sp_vehiculos(0, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'S3', @pn_respuesta, @pn_id_vehiculo);";
 		$dt4= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt4;

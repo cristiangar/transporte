@@ -174,7 +174,7 @@ if(isset($_GET['id'])){
             <div class="col-sm-4">
                 <label>Descripción</label>
                 <br>
-                <textarea value='<?php echo $dpaquete;?>' calss='form-control' name="descripcion" id="" cols="135" rows="3"><?php echo $dpaquete;?></textarea>
+                <textarea value='<?php echo $dpaquete;?>' calss='form-control' name="descripcion" id="" cols="110" rows="3"><?php echo $dpaquete;?></textarea>
             </div>
       </div>
       <br>
@@ -323,7 +323,7 @@ else
             <div class="col-sm-4">
                 <label>Descripción</label>
                 <br>
-                <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="135" rows="3"></textarea>
+                <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="110" rows="3"></textarea>
             </div>
       </div>
       <br>
