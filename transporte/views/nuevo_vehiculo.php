@@ -605,7 +605,7 @@
                             <div class="col-sm-4">
                                 <label>descripcion</label>
                                 <br>
-                                <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="200" rows="3"></textarea>
+                                <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="170" rows="3"></textarea>
                             </div>
                     </div>
                         <br>
