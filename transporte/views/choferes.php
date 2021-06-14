@@ -96,7 +96,8 @@
       </table>            
             <center>
                  <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
-                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>       
+                 <a href="asignacion_vehiculos.php"><button type="button" class="btn btn-info" >Ver pilotos y vehiculos asignados</button></a>
+                 <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>       
             </center>
             <?php
   
