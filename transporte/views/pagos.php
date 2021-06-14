@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Encabezado</title>
+    <title>Pago Piloto</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,61 +31,59 @@
 </nav>
 <div class="container-fluid">
 <?php
-  include_once("../controller/encabezado.php");
+  include_once("../controller/pagos.php");
   $resultado=$dt->num_rows;
   if($resultado>0){
     ?>
-      <h1>Encabezado</h1>
+      <h1>Pagos a Pilotos</h1>
       <br>
       <div class="container mt-3">
       <input class="form-control" id="myInput" type="text" placeholder="buscar..">
       <br>
       <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
             <thead>
-              <td>Codigo Envio</td>
-              <td>Cliente</td>
+              <td>Piloto</td>
               <td>Total</td>
               <td>Saldo</td>
-              <td>Fecha</td>
+              <td>Fecha Inicio</td>
               <td>Estado de la Cuenta</td>
               <!--<td>Detalles</td>
               <td>Nuevo Detalle</td>-->
             </thead>
       <?php
           while ($row=mysqli_fetch_array($dt)) {
-            $id=$row['id_encabezado'];
-            $envio=$row['codigo_envio'];
-            $cliente=$row['cliente'];
-            $total=$row['total'];
+            $id=$row['id_cuentas_por_pagar'];
+            $id2=$row['id_empleado'];
+            $piloto=$row['nombre'];
+            $total=$row['total_cancelar'];
             $saldo=$row['saldo'];
-            $fecha=$row['fecha'];
-            $estado_factura=$row['estado_factura'];
+            $fecha=$row['fecha_inicio'];
+            $estado_factura=$row['estado_cancelado'];
             
             
             ?>
                   <tbody id="myTable">
                   <tr>
-                    <td><?php echo $envio?></td>
-                    <td><?php echo $cliente?></td>
+                    <td><?php echo $piloto?></td>
                     <td><?php echo $total?></td>
                     <td><?php echo $saldo?></td>
                     <td><?php echo $fecha?></td>
                     
                     <?php
-                      if($estado_factura == 'Cancelado' or $estado_factura =='cancelado'){
+                      if($estado_factura == 0 or $estado_factura ==0){
                         ?>
-                        <td><span class="badge badge-success"><?php echo $estado_factura?></span></td>
+                        <td><span class="badge badge-success">Cancelado</span></td>
                         <?php
                       }
                       else{
                         ?>
-                        <td><span class="badge badge-danger"><?php echo $estado_factura?></span></td>
+                        <td><span class="badge badge-danger">Pendiente</span></td>
                         <?php
                       }
                     ?>
                     
                     <td><center><a href="lista_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalles</button></a></center></td>
-                    <td><center><a href="nuevo_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Nuevo Detalle</button></a></center></td>
+                    <td><center><a href="nuevo_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Nuevo Abono</button></a></center></td>
                     <td><a href="../controller/nuevoencabezado.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
                   </tr>
                  </tbody>

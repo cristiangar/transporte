@@ -107,18 +107,6 @@
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
-                    <a href="cuentas.php">
-                    <img class="img-fluid" src="../imagenes/cxc.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
-                    </a>
-                    <h1>Cuentas por Cobrar</h1>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
-            <div id="formContent"><!--contenedor-->
-                <div class="fadeIn first">
                     <a href="receptor.php">
                     <img class="img-fluid" src="../imagenes/receptor.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
                     </a>
@@ -127,19 +115,7 @@
             </div>
         </div>
 
-
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
-            <div id="formContent"><!--contenedor-->
-                <div class="fadeIn first">
-                    <a href="encabezado.php">
-                    <img class="img-fluid" src="../imagenes/reporte.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
-                    </a>
-                    <h1>Generar Recibo</h1>
-                </div>
-            </div>
-        </div>
-
-                <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
                     <a href="personal.php">
@@ -153,10 +129,33 @@
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
-                    <a href="usuarios.php">
-                    <img class="img-fluid" src="../imagenes/usuario.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    <a href="encabezado.php">
+                    <img class="img-fluid" src="../imagenes/reporte.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
                     </a>
-                    <h1>Usuarios</h1>
+                    <h1>Generar Recibo</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
+                    <a href="cuentas.php">
+                    <img class="img-fluid" src="../imagenes/cxc.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Cuentas por Cobrar</h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
+                    <a href="pagos.php">
+                    <img class="img-fluid" src="../imagenes/pagar.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Pago Pilotos</h1>
                 </div>
             </div>
         </div>
@@ -172,6 +171,16 @@
             </div>
         </div>
 
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
+                    <a href="usuarios.php">
+                    <img class="img-fluid" src="../imagenes/usuario.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Usuarios</h1>
+                </div>
+            </div>
+        </div>
 
 
     </div>

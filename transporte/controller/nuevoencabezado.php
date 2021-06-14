@@ -1,14 +1,13 @@
 <?php
 include_once("../model/classnuevoencabezado.php");
 
-if (isset($_GET['id2']))
+if (isset($_GET['id']))
 {
     
-    if (isset($_GET['id2']) and isset($_GET['es'])and isset($_GET['id'])) {//valida si es modificar o eliminar
-        $id=$_GET['id2'];
-        $ide=$_GET['id'];
+    if (isset($_GET['id']) and isset($_GET['es'])) {//valida si es modificar o eliminar
+        $id=$_GET['id'];
         $au =new encabezado();
-        $au->Eliminar($id,$ide);
+        $au->Eliminar($id);
         
     }
     else 
