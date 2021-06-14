@@ -46,7 +46,7 @@
               <td>Total</td>
               <td>Saldo</td>
               <td>Fecha Inicio</td>
-              <td>Estado de la Cuenta</td>
+              <td>Estado del Pago</td>
               <!--<td>Detalles</td>
               <td>Nuevo Detalle</td>-->
             </thead>
