@@ -222,6 +222,6 @@ if($activador=="1"){
   $pdf->SetX(10);
   $pdf->MultiCell(170,10,$descripcion_plataforma,0,'L',0);
 }    
-$pdf->Output();
+$pdf->Output('Envio','I');
 
 ?>
