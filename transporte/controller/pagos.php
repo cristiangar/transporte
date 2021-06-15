@@ -13,14 +13,19 @@ if (isset($_GET['id2']))
     }
     else 
     {
-        if(isset($_GET['id']) and isset($_GET['mod'])and isset($_GET['id2'])){
+        if(isset($_GET['id'])){
+            $id=$_GET['id'];
+            $cliente=new pagos();
+            $dt2=$cliente->VerUnAbono($id);
+        }
+        /*if(isset($_GET['id']) and isset($_GET['mod'])and isset($_GET['id2'])){
         $id2=$_GET['id2'];
         $id=$_GET['id'];
         $descripcion=$_POST['descripcion'];
         $subtotal=$_POST['subtotal'];
         $au =new pagos();
         $au->ModificarDetalle($id,$id2,$descripcion,$subtotal);
-        }
+        }*/
     }
 
 }

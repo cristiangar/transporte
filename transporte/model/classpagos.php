@@ -26,12 +26,12 @@ class pagos
 
     }
 
-            public function VerUnDetalle($id)
+            public function VerUnAbono($id)
     {
 
         $db = new datos();
         $db->conectar();
-        $consulta= "call sp_detalle($id, '0', 0, 0, 'S1', @pn_respuesta);";
+        $consulta= "call sp_abonos_cuentas_por_pagar($id, 0, 0, 'S1', @pn_respuesta);";
         $dt= mysqli_query($db->objetoconexion,$consulta);
         $db->desconectar();
         return $dt;
@@ -43,7 +43,7 @@ class pagos
 
         $db = new datos();
         $db->conectar();
-        $consulta= "call sp_cuentas_por_pagar(0, 0, 0, 'S', @pn_respuesta);";
+        $consulta= "call sp_cuentas_por_pagar(0, 0, 0, 0, 'S', @pn_respuesta);";
         $dt= mysqli_query($db->objetoconexion,$consulta);
         $db->desconectar();
         return $dt;
