@@ -1,30 +1,9 @@
 <?php 
 ob_start();
 include ('../Configuracion/config.php');
-class cliente
+class asignacion
 {
 
-		public function Ingresar($nombre,$apellido,$telefono,$telefono2,$correo,$nit,$cuenta,$banco)
-	{
-		$bd = new datos();
-		$bd->conectar();
-		$consulta= "call sp_cliente(0, '$nombre', '$apellido', '$telefono', '$telefono2', '$correo', '$nit', '$cuenta', '$banco', 'I', @pn_respuesta);";
-		$dt= mysqli_query($bd->objetoconexion,$consulta);
-
-		$salida="SELECT @pn_respuesta";
-		$consultar=mysqli_query($bd->objetoconexion,$salida);
-		
-		$bd->desconectar();
-
-		$res=mysqli_fetch_array($consultar);
-		//
-		$texto=$res['@pn_respuesta'];
-		echo'<script language = javascript>
-						alert("'.$texto.'")
-						self.location="../views/clientes.php" </script>';
-
-
-	}
 
 		public function Ver()
 	{
@@ -72,27 +51,6 @@ class cliente
 
 				
 
-		public function Modificar($id,$nombre,$apellido,$telefono,$telefono2,$correo,$nit,$cuenta,$banco)
-	{
-		$bd = new datos();
-		$bd->conectar();
-		$consulta= "call sp_cliente($id, '$nombre', '$apellido', '$telefono', '$telefono2', '$correo', '$nit', '$cuenta', '$banco', 'U', @pn_respuesta);";
-		$dt= mysqli_query($bd->objetoconexion,$consulta);
-
-		$salida="SELECT @pn_respuesta";
-		$consultar=mysqli_query($bd->objetoconexion,$salida);
-		
-		$bd->desconectar();
-
-		$res=mysqli_fetch_array($consultar);
-		//
-		$texto=$res['@pn_respuesta'];
-		echo'<script language = javascript>
-						alert("'.$texto.'")
-						self.location="../views/clientes.php" </script>';
-
-
-	}
 
 	
 }
