@@ -18,7 +18,7 @@ if (isset($_GET['id']))
         }
         else{
             $id = $_GET['id'];
-            $asignacion=new Cabezal();
+            $asignacion=new asignacion();
             $detalle=$asignacion->VerUno($id);
         }
 
@@ -29,22 +29,12 @@ else
 {
     if(isset($_POST ['nombre'])){
 
-    $nombre=$_POST['nombre'];
-    $apellido=$_POST['apellido'];
-    $telefono=$_POST['telefono'];
-    $telefono2=$_POST['telefono2'];
-    $correo=$_POST['correo'];
-    $nit=$_POST['nit'];
-    $cuenta=$_POST['cuenta'];
-    $banco=$_POST['banco'];
-
-        $au =new cliente();
-        $au->Ingresarcliente($nombre,$apellido,$telefono,$telefono2,$correo,$nit,$cuenta,$banco);  
+        /**ingresars */
 
     }
     else
     {
-        $cliente=new cliente();
+        $cliente=new asignacion();
         $dt=$cliente->Ver();
     }
 

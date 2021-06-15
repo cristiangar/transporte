@@ -67,7 +67,7 @@
                     <td><?php echo $licencia?></td>
                     <td><?php echo $tipo_vehiculo?></td>
                     <td><?php echo $placa?></td>
-                    <td><center><a href="../Reportes/pdf_asignacion_vehiculo.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Ver e imprimir</button></a></center></td>
+                    <td><center><a href="../Reportes/pdf_asignacion_vehiculo.php?id=<?php echo $id?>" target='_blank'><button type="button" class="btn btn-info">Ver e imprimir</button></a></center></td>
                     <td><center><a href="../controller/pilotoInterno.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
                   </tr>
                  </tbody>
