@@ -19,6 +19,9 @@ include_once("../model/classdatos.php");
                 $codenvio = new envio();
                 $dt8 = $codenvio->VerEnvio();
 
+                $codenvio = new envio();
+                $dt9 = $codenvio->VerPilotoExterno();
+
                 $asignado = new envio();
                 $dt7 = $asignado->VerAsignado();
         if(isset($_GET['id'])and isset($_GET['Autorizar'])){

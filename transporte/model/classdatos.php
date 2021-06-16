@@ -41,6 +41,17 @@ class envio
 
 	}
 
+	public function VerpilotoExterno()
+	{
+
+		$db = new datos();
+		$db->conectar();
+		$consulta= "select * from empleado where id_tipo_empleado = 2;";
+		$dt5= mysqli_query($db->objetoconexion,$consulta);
+		$db->desconectar();
+		return $dt5;
+
+	}
 
 	public function VerReceptor()
 	{

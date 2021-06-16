@@ -31,16 +31,16 @@ if (isset($_GET['id2']))
 }
 else
 {
-    if(isset($_POST ['subtotal']) and isset($_GET['id'])){
+    if(isset($_POST ['cantidad']) and isset($_GET['id'])){
 
-    $cantidad=$_POST['subtotal'];
+    $cantidad=$_POST['cantidad'];
     $id=$_GET['id'];
     $descripcion=$_POST['descripcion'];
 
     /*echo $cantidad;*/
     
         $au =new pagos();
-        $au->IngresarEncabezado($cantidad,$id,$descripcion);
+        $au->IngresarAbono($cantidad,$id,$descripcion);
 
     }
     else
