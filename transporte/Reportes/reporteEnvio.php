@@ -182,7 +182,7 @@ else
 }
 $pdf->Sety(260);
 $pdf->SetX(10);
-$pdf->MultiCell(170,10,$descripcion,0,'L',0);
+$pdf->MultiCell(170,5,$descripcion,1,'L',0);
 if($activador=="1"){
   $pdf->cell(40,10,'',0,1,'L');
   $pdf->SetFont('Arial','B',12);
@@ -194,33 +194,33 @@ if($activador=="1"){
   $pdf->cell(40,10,'Propiedad del remolque:',0,1,'L');
   $pdf->cell(40,10,'Descripcion del remolque:',0,1,'L');
   $pdf->SetFont('Arial','',12);
-  $pdf->Sety(60);
+  $pdf->Sety(50);
   $pdf->SetX(65);
   $pdf->cell(40,10,$placa_plataforma,0,1,'L');
-  $pdf->Sety(70);
+  $pdf->Sety(60);
   $pdf->SetX(65);
   $pdf->cell(40,10,$tipo_plataforma,0,1,'L');
-  $pdf->Sety(80);
+  $pdf->Sety(70);
   $pdf->SetX(65);
   $pdf->cell(40,10,$tamanio_plataforma,0,1,'L');
-  $pdf->Sety(90);
+  $pdf->Sety(80);
   $pdf->SetX(65);
   $pdf->cell(40,10,$color_plataforma,0,1,'L');
   if($tplataforma=='1'){
-    $pdf->Sety(100);
+    $pdf->Sety(90);
     $pdf->SetX(65);
     $pdf->cell(40,10,'Externo',0,1,'L');
     
   }
   else{
-    $pdf->Sety(100);
+    $pdf->Sety(90);
     $pdf->SetX(65);
     $pdf->cell(40,10,'Interno',0,1,'L');
  
   }
-  $pdf->Sety(120);
+  $pdf->Sety(110);
   $pdf->SetX(10);
-  $pdf->MultiCell(170,10,$descripcion_plataforma,0,'L',0);
+  $pdf->MultiCell(170,5,$descripcion_plataforma,1,'L',0);
 }    
 $pdf->Output('Envio','I');
 
