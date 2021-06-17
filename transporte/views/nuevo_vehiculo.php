@@ -551,7 +551,7 @@
                     else{
                         ?>
                     <form method="POST" action="../controller/camion.php" enctype="multipart/form-data">
-                    <h1>Datos del cabezal</h1>
+                    <h1>Datos del Camion</h1>
                     <br>
                     <div class='form-row'>
                             <div class="col-sm-4">

@@ -300,7 +300,7 @@
             <div class="container-fluid">
                   <br>
               <center>
-                  <a href="nuevo_vehiculo.php?c2"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                  <a href="nuevo_vehiculo.php?C2"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
                   <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                   
               </center>
