@@ -31,8 +31,8 @@
 </nav>
 <div class="container-fluid">
 <?php
-  include_once("../controller/nuevo_cuenta_pagar.php");
-   $resultado=$dt->num_rows;
+  include_once("../controller/datos.php");
+   $resultado=$dt9->num_rows;
   if($resultado>0){
 
     ?>
@@ -51,7 +51,7 @@
               
             </thead>
       <?php
-          while ($row=mysqli_fetch_array($dt)) {
+          while ($row=mysqli_fetch_array($dt9)) {
             $id=$row['id_empleado'];
             $nombre=$row['nombre'];
             $telefono=$row['telefono1'];

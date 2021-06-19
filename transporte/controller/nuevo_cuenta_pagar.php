@@ -12,14 +12,14 @@ if (isset($_GET['id']))
     }
     else 
     {
-        if(isset($_GET['id']) and isset($_GET['mod'])and isset($_GET['id2'])){
+        /*if(isset($_GET['id']) and isset($_GET['mod'])and isset($_GET['id2'])){
         $id2=$_GET['id2'];
         $id=$_GET['id'];
         $descripcion=$_POST['descripcion'];
         $subtotal=$_POST['subtotal'];
         $au =new cuentapago();
         $au->ModificarDetalle($id,$id2,$descripcion,$subtotal);
-        }
+        }*/
     }
 
 }
@@ -36,7 +36,7 @@ else
         $id_cliente=$_GET['idcliente'];*/
 
         $au = new cuentapago();
-        $au -> IngresarEncabezado2($total,$anticipo, $id_cliente);
+        $au -> IngresarCuentaPagar($id_cliente,$total,$anticipo);
     }
     else
     {

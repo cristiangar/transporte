@@ -103,7 +103,7 @@
                 ?>
             <center>
                 <a href="../envio/nuevo_encabezado.php"><button type="button" class="btn btn-success" >Nuevo Encabezado</button></a> 
-                <a href="secritaria.php"><button type="button" class="btn btn-warning btn-lg" >Regresar</button></a>                
+                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>                
             </center>
             <?php
   }

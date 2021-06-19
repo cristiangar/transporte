@@ -24,6 +24,7 @@ include_once("../model/classdatos.php");
 
                 $asignado = new envio();
                 $dt7 = $asignado->VerAsignado();
+                
         if(isset($_GET['id'])and isset($_GET['Autorizar'])){
                 echo "autorizar";
                 $id=$_GET['id'];

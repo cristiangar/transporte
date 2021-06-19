@@ -16,6 +16,6 @@ const $btnEnviar = document.querySelector("#btnp9"),
 
 // Definición de función desde la que nos llama el padre
 window.establecerMensaje9 = function (mensaje) {
-	$mensajeRecibido8.textContent = mensaje;
+	$mensajeRecibido9.textContent = mensaje;
 }
 

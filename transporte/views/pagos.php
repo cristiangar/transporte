@@ -84,7 +84,7 @@
                     
                     <td><center><a href="lista_abonos_pagos.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
                     <td><center><a href="nuevo_abono_pago.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Nuevo Abono</button></a></center></td>
-                    <td><a href="../controller/nuevoencabezado.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
+                    <td><a href="../controller/nuevo_cuenta_pagar.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
                   </tr>
                  </tbody>
             <?php

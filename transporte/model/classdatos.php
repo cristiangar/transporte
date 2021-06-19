@@ -41,15 +41,19 @@ class envio
 
 	}
 
-	public function VerpilotoExterno()
+	public function VerPilotoExterno()
 	{
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "select * from empleado where id_tipo_empleado = 2;";
-		$dt5= mysqli_query($db->objetoconexion,$consulta);
+		$consulta= "select a.id_tipo_empleado,a.id_empleado, concat(a.nombre,' ',a.apellido)as nombre,a.dpi,a.telefono1,a.telefono2,a.licencia,a.tipo_licencia,a.pasaporte,a.ruta_imagen_licencia,a.ruta_imagen_pasaporte,a.ruta_imagen_caat,a.ruta_imagen_dpi,a.ruta_imagen_dpi,a.estado_piloto,b.cargo,codigo_caat,a.correo, d.nombre as rol from empleado as a
+    inner join tipo_empleado as b on b.id_tipo_empleado=a.id_tipo_empleado
+    inner join usuario as c on c.id_empleado=a.id_empleado
+    inner join rol_usuario as d on d.id_rol_usuario=c.id_rol_usuario
+    where (a.estado_eliminado=1) and (d.nombre='Piloto' or d.nombre='piloto') and (b.cargo='Externo' or b.cargo='externo');";
+		$dt9= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
-		return $dt5;
+		return $dt9;
 
 	}
 

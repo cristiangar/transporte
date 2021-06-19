@@ -58,12 +58,12 @@
             <div class="form-row">
                 <div class="col-sm-5">
                     <label>Total</label>
-                    <input type="text" name="total" class="form-control" placeholder="Total del recibo" require>
+                    <input type="text" name="total" class="form-control" placeholder="Total del viaje" require>
                 </div>
 
                 <div class="col-sm-5">
-                    <label>Anticipo</label>
-                    <input type="text" name="anticipo" class="form-control" placeholder="Anticipo del envío" require>
+                    <label>Adelanto</label>
+                    <input type="text" name="anticipo" class="form-control" placeholder="Adelanto de pago" require>
                 </div>
             </div>
       </div>
