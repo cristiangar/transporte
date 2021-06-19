@@ -119,6 +119,7 @@ $pdf->cell(40,10,$color,0,1,'L');
 $pdf->Sety(190);
 $pdf->SetX(51);
 $pdf->MultiCell(150,5,$descripcion,1,1,'L');
+/**si es cabezal con plataforma */
 if($activador=="1"){
   $pdf->cell(200,10,'',0,1,'L');
   $pdf->SetFont('Arial','B',12);
@@ -141,6 +142,7 @@ if($activador=="1"){
   $pdf->Sety(250);
   $pdf->SetX(51);
   $pdf->MultiCell(150,5,$descripcion_plataforma,1,1,'L');
+
   /**imagenes */
   $pdf->AddPage();/**agrega una pagina nueva */
   $pdf->SetFillColor(232,232,232);
@@ -173,8 +175,35 @@ if($activador=="1"){
   $pdf->Image($ruta_caat,51,235,125);
 
 }   
-/**imagenes */
+else{
+  /**imagenes si es solo camion sin remolque */
+$pdf->AddPage();/**agrega una pagina nueva */
+$pdf->SetFillColor(232,232,232);
+$pdf->SetFont('Arial','B',12);
+$pdf->MultiCell(190,10,'Imagenes del piloto y del vehiculo',0,'C',1);
+$pdf->Cell(190,10,'Licancia del Piloto:',0,'C',1);
+$pdf->Image($ruta_licencia,51,50,125);
+$pdf->Sety(135);
+$pdf->SetX(10);
+$pdf->Cell(190,10,'Pasaporte del piloto:',0,'C',1);
+$pdf->Image($ruta_pasaporte,51,145,100);
+$pdf->Sety(223);
+$pdf->SetX(10);
+$pdf->Cell(190,10,'Codigo caat del piloto:',0,'C',1);
+$pdf->Image($ruta_caat,51,235,125);
 
+$pdf->AddPage();/**agrega una pagina nueva */
+$pdf->SetFillColor(232,232,232);
+$pdf->SetFont('Arial','B',12);
+$pdf->MultiCell(190,10,'Imagenes del piloto y del vehiculo',0,'C',1);
+$pdf->Cell(190,10,'Targeta circulacion Vehiculo:',0,'C',1);
+$pdf->Image($ruta_tarjeta,51,55,125);
+$pdf->Sety(110);
+$pdf->SetX(10);
+$pdf->Cell(190,10,'DPI del piloto:',0,'C',1);
+$pdf->Image($ruta_dpi,51,120,125);
+
+}
 $pdf->Close();
 $pdf->Output('Asignacion vehiculo','I');
 
