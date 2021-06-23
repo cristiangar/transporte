@@ -98,11 +98,6 @@
                                 </div>
 
                                 <div class="col-sm-4">
-                                    <label>Ejes</label>
-                                    <input value="<?php echo $ejes?>" name='pejes' type="text" class="form-control" placeholder="Ejes" require>
-                                </div>
-
-                                <div class="col-sm-4">
                                     <label>Número Economico</label>
                                         <input value="<?php echo $numeco?>" name='pnumeco' type="text" class="form-control" placeholder="Peso en Kilogramos" require>
                                 </div>
@@ -157,10 +152,10 @@
                                         </select>
                                 </div>
                             <div class="col-sm-4">
-                            <label>Propiedad</label>
+                            <label>Flotilla</label>
                             <select name='propiedad' class="form-control">
-                                <option value='0'>Interno</option>
-                                <option value='1'>Externo</option>
+                                <option value='0'>Interna</option>
+                                <option value='1'>Agregado</option>
                             </select>
                             </div>
                             <br><br>
@@ -281,9 +276,9 @@
                                 </select>
                         </div>
                     <div class="col-sm-4">
-                    <label>Propiedad</label>
+                    <label>Flotilla</label>
                     <select name='propiedad' class="form-control">
-                        <option value='0'>Interno</option>
+                        <option value='0'>Interna</option>
                         <option value='1'>Agregado</option>
                     </select>
                     </div>

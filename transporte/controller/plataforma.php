@@ -18,7 +18,6 @@ if (isset($_GET['id']))
             $ptamaño=$_POST['ptamaño'];
             $pcolor=$_POST['pcolor'];
             $pejes=$_POST['pejes'];
-            $ppeso=$_POST['ppeso'];
             $ptipo=$_POST['ptipo'];
             $pplaca=$_POST['pplaca'];
             $otro=$_POST['otros'];
@@ -29,7 +28,7 @@ if (isset($_GET['id']))
             $pnumeco=$_POST['pnumeco'];
 
         if(empty($_FILES['imagencaat']['name'])){
-            $pimagen='N/A';
+            $pimagencaat=$_POST['ruta_caat'];
         }
         else{
             $nombreimcaat=$_FILES['imagencaat']['name'];//carga el nombre de la imagen
@@ -54,7 +53,7 @@ if (isset($_GET['id']))
                 move_uploaded_file($archivo, $ruta);//mueve la imagen ala ruta    
             }
             $plataforma=new Plataforma();
-            $plataforma->Modificar($id,$ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen,$otro,$propiedad,$pmarca,$pmodelo,$pcaat,$pnumeco,$pimagencaat);
+            $plataforma->Modificar($id,$ptamaño,$pcolor,$pejes,$ptipo,$pplaca,$ruta,$otro,$propiedad,$pmarca,$pmodelo,$pcaat,$pnumeco,$pimagencaat);
 
         }
         else{
@@ -83,7 +82,7 @@ else
         $pnumeco=$_POST['pnumeco'];
 
         if(empty($_FILES['imagencaat']['name'])){
-            $pimagen='N/A';
+            $pimagencaat='N/A';
         }
         else{
             $nombreimcaat=$_FILES['imagencaat']['name'];//carga el nombre de la imagen

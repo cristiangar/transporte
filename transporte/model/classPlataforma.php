@@ -53,7 +53,7 @@ class Plataforma
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_plataforma($id, '0', '0', '0', '0', '0', '0', 'D', '0', '0', 0, @pn_respuesta, @pn_id);";
+		$consulta= "call sp_plataforma($id, '0', '0', '0', '0', '0', 'D', '0', '0', '0', '0', '0', '0', '0', 0, @pn_respuesta, @pn_id);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -72,11 +72,11 @@ class Plataforma
 
 				
 
-		public function Modificar($id,$ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen,$otro,$propiedad)
+		public function Modificar($id,$ptamaño,$pcolor,$pejes,$ptipo,$pplaca,$pimagen,$otro,$propiedad,$pmarca,$pmodelo,$pcaat,$pnumeco,$pimagencaat)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta="call sp_plataforma($id, '$ptamaño', '$pcolor', '$pejes', '$ppeso', '$ptipo', '$pplaca', 'U', '$pimagen', '$otro',$propiedad, @pn_respuesta, @pn_id);";
+		$consulta="call sp_plataforma($id, '$ptamaño', '$pcolor', '$pejes', '$ptipo', '$pplaca', 'U', '$pimagen', '$otro','$pmarca','$pmodelo','$pnumeco','$pimagencaat','$pcaat',$propiedad, @pn_respuesta, @pn_id);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
