@@ -47,9 +47,9 @@
               <td>Telefono</td>
               <td>Teléfono 2</td>
               <td>Correo</td>
-              <td>No. cuenta</td>
-              <td>Banco</td>
-              <td>Modificar</td>
+              <td>Contacto</td>
+              <td>Contacto 2</td>
+              <td> Modificar</td>
               <td>Eliminar</td>
             </thead>
       <?php

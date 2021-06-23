@@ -38,31 +38,31 @@
     <div class="row">
 
         
-        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+        <div class="wrapper fadeInDown col-sm-6"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
                     <a href="vehiculos.php?P">
                         <img class="conimagen" id="conimg"src="../imagenes/plataforma2.jpg" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;"/>
                     </a>
-                    <h1>Plataforma</h1>
+                    <h1>Equipo Especial</h1>
                 </div>
             </div>
         </div>
 
 
-        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+        <div class="wrapper fadeInDown col-sm-6"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
                     <a href="vehiculos.php?C">
-                    <img class="img-fluid" src="../imagenes/cabezales.jpg" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;">
+                    <img class="img-fluid" src="../imagenes/camiones2.jpg" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;">
                     </a>
-                    <h1>Cabezales</h1>
+                    <h1>Vehiculos</h1>
                 </div>
             </div>
         </div>
 
-        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
-            <div id="formContent"><!--contenedor-->
+        <!--<div class="wrapper fadeInDown col-sm-4">!--efecto de caida--
+            <div id="formContent">--contenedor--
                 <div class="fadeIn first">
                     <a href="vehiculos.php">
                     <img class="img-fluid" src="../imagenes/camiones2.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
@@ -70,7 +70,7 @@
                     <h1>Camiones</h1>
                 </div>
             </div>
-        </div>
+        </div>-->
         <div class="container-fluid wrapper fadeInDown col-sm-5">
                 <br>
             <center>

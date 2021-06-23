@@ -45,16 +45,17 @@
     $resultado=$dt->num_rows;
       if($resultado>0){
         ?>
-          <h1>Listas de Plataformas</h1>
+          <h1>Listas de Equipo Especial</h1>
           <input class="form-control" id="myInput" type="text" placeholder="buscar..">
           <br>
 
           <table class="table table-dark table-striped table-hover table-responsive-sm" border="1" id="tabla_paginada">
                 <thead>
-                  <td>tipo remolque</td>
-                  <td>Estado</td>
                   <td>No.placa</td>
-                  <td>Propiedad</td>
+                  <td>tipo remolque</td>
+                  <td>Modelo</td>
+                  <td>Marca</td>
+                  
                   <td>Detalle</td>
                   <td>Eliminar</td>
                 </thead>
@@ -67,23 +68,17 @@
                     $estado=$row['estado_uso'];
                     $placa=$row['placa'];
                     $propiedad=$row['tipo_interno_externo'];
+                    $modelo=$row['modelo'];
+                    $marca=$row['marca'];
+
                     ?>
                     <tr>
-                    <td><?php echo $tipo;?></td>
-                    <td><?php echo $estado;?></td>
                     <td><?php echo $placa;?></td>
-                    <?php
-                    if($propiedad=='1'){/** valida si viene un 1 0 sera para ver la propiedad de la plataforma */
-                      ?>
-                      <td>Externo</td>
-                      <?php
-                    }
-                    else{
-                      ?>
-                      <td>Interno</td>
-                      <?php
-                    }
-                    ?>
+                    <td><?php echo $tipo;?></td>
+                    <td><?php echo $modelo;?></td>
+                    <td><?php echo $marca;?></td>
+                    
+                    
                     <td><center><a href="detalle_vehiculo.php?id=<?php echo $id?>&P"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
                     <td><center><a href="../controller/plataforma.php?id=<?php echo $id?>&es"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
                     </tr>
@@ -132,17 +127,17 @@
       if($resultado>0)
       {
         ?>
-          <h1>Listas de Cabezales</h1>
+          <h1>Listas de Vehiculos</h1>
           <input class="form-control" id="myInput" type="text" placeholder="buscar..">
           <br>
 
           <table class="table table-dark table-striped table-hover table-responsive-sm" border="1" id="tabla_paginada">
                 <thead>
+                  <td>Placas</td>
                   <td>Marca</td>
                   <td>Modelo</td>
-                  <td>Placas</td>
-                  <td>Propiedad</td>
-                  <td>Estado</td>
+                  <td>Tipo</td> 
+                 
                   <td>Detalle</td>
                   <td>Eliminar</td>
                 </thead>
@@ -156,33 +151,15 @@
                     $placa=$row['no_placa'];
                     $propiedad=$row['tipo_interno_externo'];
                     $estado=$row['estado_vehiculo'];
+                    $tipo=$row['tipo_vehiculo']
                     ?>
                     <tr>
+                    <td><?php echo $placa;?></td>
                     <td><?php echo $marca;?></td>
                     <td><?php echo $modelo;?></td>
-                    <td><?php echo $placa;?></td>
-                    <?php
-                    if($propiedad=='1'){/** valida si viene un 1 0 sera para ver la propiedad de la plataforma */
-                      ?>
-                      <td>Externo</td>
-                      <?php
-                    }
-                    else{
-                      ?>
-                      <td>Interno</td>
-                      <?php
-                    }
-                    if($estado=='1'){
-                      ?>
-                      <td><span class="badge badge-success">Disponible</span></td>
-                      <?php
-                    }
-                    else{
-                      ?>
-                      <td><span class="badge badge-danger">Ocupado</span></td>
-                      <?php
-                    }
-                    ?>
+                    <td><?php echo $tipo;?></td>
+                    
+                    
                     <td><center><a href="detalle_vehiculo.php?id=<?php echo $id?>&C"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
                     <td><center><a href="../controller/cabezales.php?id=<?php echo $id?>&es"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
                     </tr>
@@ -224,107 +201,7 @@
           <?php
       }
     }
-    else{
-      /**camion */
-      include_once('../controller/camion.php');
-      $resultado=$dt->num_rows;
-      if($resultado>0)
-      {
-        ?>
-        <h1>Listas de Camiones</h1>
-        <input class="form-control" id="myInput" type="text" placeholder="buscar..">
-        <br>
-
-        <table class="table table-dark table-striped table-hover table-responsive-sm" border="1" id="tabla_paginada">
-              <thead>
-                <td>Marca</td>
-                <td>Modelo</td>
-                <td>Placas</td>
-                <td>Propiedad</td>
-                <td>Estado</td>
-                <td>Detalle</td>
-                <td>Eliminar</td>
-              </thead>
-              <tbody id="myTable">
-                <?php
-                while($row=mysqli_fetch_array($dt) )
-                {
-                  $id=$row['id_vehiculo'];
-                  $marca=$row['marca'];
-                  $modelo=$row['modelo'];
-                  $placa=$row['no_placa'];
-                  $propiedad=$row['tipo_interno_externo'];
-                  $estado=$row['estado_vehiculo'];
-                  ?>
-                  <tr>
-                  <td><?php echo $marca;?></td>
-                  <td><?php echo $modelo;?></td>
-                  <td><?php echo $placa;?></td>
-                  <?php
-                  if($propiedad=='1'){/** valida si viene un 1 0 sera para ver la propiedad de la plataforma */
-                    ?>
-                    <td>Externo</td>
-                    <?php
-                  }
-                  else{
-                    ?>
-                    <td>Interno</td>
-                    <?php
-                  }
-                  if($estado=='1'){
-                    ?>
-                    <td><span class="badge badge-success">Disponible</span></td>
-                    <?php
-                  }
-                  else{
-                    ?>
-                    <td><span class="badge badge-danger">Ocupado</span></td>
-                    <?php
-                  }
-                  ?>
-                  <td><center><a href="detalle_vehiculo.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-                  <td><center><a href="../controller/camion.php?id=<?php echo $id?>&es"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
-                  </tr>
-                  <?php
-                }       
-                ?> 
-              </tbody>
-              <tfoot>
-                <td><input type="button" id="cargar_primera_pagina" value="<< Primero"/></td>
-                <td><input type="button" id="cargar_anterior_pagina" value="< Anterior"/></td>
-                <td id="indicador_paginas"></td>
-                <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >"/></td>
-                <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>
-              </tfoot>
-            </table>
-            <div class="container-fluid">
-                  <br>
-              <center>
-                  <a href="nuevo_vehiculo.php?C2"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
-                  <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-                  
-              </center>
-              </div>
-      <?php
-
-      }
-      else{
-        ?>
-        <center>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br><br><br><br>
-        <h1>no hay datos ingresados</h1>
-        <a href="nuevo_vehiculo.php?C2"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
-        <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-      </center>
-        <?php
-
-      }
-    }
+    
   }
 ?>
 </div>

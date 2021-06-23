@@ -48,13 +48,17 @@ if(isset($_GET['P']))
     $detalle=$plataforma->VerUno($id);
     while ($row=mysqli_fetch_array($detalle)) {
     $id_plataforma=$row['id_plataforma'];
+    $placa=$row['placa'];
+    $modelo=$row['modelo'];
+    $marca=$row['marca'];
     $tamaño=$row['tamaño'];
     $color=$row['color'];
     $ejes=$row['ejes'];
-    $peso=$row['peso'];
     $tipo=$row['tipo'];
     $estado_uso=$row['estado_uso'];
-    $placa=$row['placa'];
+    $caat=$row['caat'];
+    $numeco=$row['numeco'];
+    $ruta_imagen_caat=$row['ruta_imagen_caat'];
     $ruta_imagen_targeta=$row['ruta_imagen_targeta'];
     $descripcion=$row['descripcion'];
     $tipo_interno=$row['tipo_interno_externo'];
@@ -63,18 +67,21 @@ if(isset($_GET['P']))
     <h1>Datos de la plataforma: <?php ?></h1>
             <div class="card container-fluid">
                 <div class="card-body container-fluid">
+                    <h2 class="card-title">No. placa: <?php echo $placa;?></h2>
+                    <h2 class="card-title">Modelo: <?php echo $modelo;?></h2>
+                    <h2 class="card-title">Marca: <?php echo $marca;?></h2>
                     <h2 class="card-title">Tamaño: <?php echo $tamaño; ?></h2>
                     <h2 class="card-title">color: <?php echo $color ?></h2>
                     <h2 class="card-title">ejes: <?php  echo $ejes;?></h2>
-                    <h2 class="card-title">peso: <?php echo $peso; ?></h2>
-                    <h2 class="card-title">tipo: <?php echo $tipo?></h2>
-                    <h2 class="card-title">estado de uso: <?php echo $estado_uso;?></h2>
-                    <h2 class="card-title">No. placa: <?php echo $placa;?></h2>
+                    <h2 class="card-title">No. Economico: <?php echo $numeco; ?></h2>
+                    <h2 class="card-title">Tipo: <?php echo $tipo?></h2>
+                    
+                    
                     <?php
                     if($tipo_interno=='1')
                     {
                        ?>
-                        <h2 class="card-title">Propiedad: Externo</h2>
+                        <h2 class="card-title">Propiedad: Agregado</h2>
                        <?php  
                     }
                     else{
@@ -86,6 +93,12 @@ if(isset($_GET['P']))
                     <h2 class="card-title">Descripcion: <?php echo $descripcion;?></h2>
                 </div>
                 <img src="<?php echo  $ruta_imagen_targeta;?>" style="width:100%" alt="">
+                <br>
+                <br>
+                <br>
+                <a href="<?php echo  $ruta_imagen_caat;?>" download="Codigo CAAT">
+                Descargar CAAT
+                </a>
             </div>
             <br>
             <br>

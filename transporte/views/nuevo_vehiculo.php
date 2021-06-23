@@ -37,7 +37,7 @@
     <?php
         if(isset($_GET['P']))/**plataforma */
         {
-            if(isset($_GET['P']) and isset($_GET['id']))/** formulario de  amodificar */
+            if(isset($_GET['P']) and isset($_GET['id']))/** formulario de  a modificar */
             {
                 $id_plataforma=$_GET['id'];
                 include_once('../controller/plataforma.php');
@@ -55,12 +55,38 @@
                     $ruta_imagen_targeta=$row['ruta_imagen_targeta'];
                     $descripcion=$row['descripcion'];
                     $tipo_interno=$row['tipo_interno_externo'];
+                    $modelo=$row['modelo'];
+                    $marca=$row['marca'];
+                    $numeco=$row['numeco'];
+                    $ruta_imagen_caat=$row['ruta_imagen_caat'];
+                    $caat=$row['caat'];
                     }   
                 ?>
                     <form method="POST" action="../controller/plataforma.php?id=<?php echo $id_plataforma;?>&mod" enctype="multipart/form-data">
                         <h1>Datos de la Plataforma a modificar</h1>
                         <br>
-                        <div class="form-row">
+                            <div class="form-row">
+
+                                <div class="col-sm-4">
+                                <label>Placa</label>
+                                        <input value="<?php echo $placa?>"  name='pplaca' type="text" class="form-control" placeholder="Número de placa" require>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label>Marca</label>
+                                        <input value="<?php echo $marca?>"  name='pmarca' type="text" class="form-control" placeholder="marca del equipo" require>
+                                </div>
+
+                               
+                                <div class="col-sm-4">
+                                    <label>Modelo</label>
+                                        <input value="<?php echo $modelo?>"  name='pmodelo' type="text" class="form-control" placeholder="Modelo del equipo" require>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label>Ejes</label>
+                                    <input value="<?php echo $ejes?>" name='pejes' type="text" class="form-control" placeholder="Tamaño"require>
+                                </div>
 
                                 <div class="col-sm-4">
                                     <label>Tamaño</label>
@@ -71,13 +97,43 @@
                                         <input value="<?php echo $color?>"  name='pcolor' type="text" class="form-control" placeholder="Color" require>
                                 </div>
                                 <div class="col-sm-4">
-                                    <label>Placa</label>
-                                        <input value="<?php echo $placa?>"  name='pplaca' type="text" class="form-control" placeholder="Número de placa" require>
+                                    <label>Número Economico</label>
+                                        <input value="<?php echo $numeco?>" name='pnumeco' type="text" class="form-control" placeholder="Peso en Kilogramos" require>
                                 </div>
+
+                                <br><br>
+                            <?php
+                            if($ruta_imagen_caat=="N/A"){/**valida si hay imagen o no */
+                                ?>
                                 <div class="col-sm-4">
-                                    <label>Peso</label>
-                                        <input value="<?php echo $peso?>" name='ppeso' type="text" class="form-control" placeholder="Peso en Kilogramos" require>
+                                <br>
+                                <label>Documento CAAT</label>
+                                <input type="file" name="imagencaat">
                                 </div>
+                                <?php
+                            }
+                            else
+                            {
+                                ?>
+                            <div class="col-sm-4">
+                            <label>Documento actual</label><br>
+                                <div class="container-fluid">
+                                <a href="<?php echo  $ruta_imagen_caat;?>" download="Codigo CAAT">Descargar CAAT</a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <br>
+                                <label>Documento CAAT</label>
+                                <br>
+                                <input type="file" name="imagencaat">
+                            </div>
+                            <input value='<?php echo $ruta_imagen_caat;?>' name="ruta_caat" type="hidden">
+
+                                <?php
+                            }
+                            ?>
+                                <br>
                                 <div class="col-sm-4">
                                     <label>Ejes</label>
                                     <input value="<?php echo $ejes?>" name='pejes' type="text" class="form-control" placeholder="Ejes" require>
@@ -162,6 +218,26 @@
                 <div class="form-row">
 
                         <div class="col-sm-4">
+                            <label>Placa</label>
+                                <input  name='pplaca' type="text" class="form-control" placeholder="Número de placa" require>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label>Marca</label>
+                            <input value="N/A" name='pmarca' type="text" class="form-control" placeholder="Marca" require>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label>Modelo</label>
+                                <input value="N/A" name='pmodelo' type="text" class="form-control" placeholder="Modelo" require>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label>Ejes</label>
+                            <input value="N/A" name='pejes' type="text" class="form-control" placeholder="Ejes"require>
+                        </div>
+
+                        <div class="col-sm-4">
                             <label>Tamaño</label>
                             <input value="N/A" name='ptamaño' type="text" class="form-control" placeholder="Tamaño"require>
                         </div>
@@ -169,18 +245,24 @@
                             <label>Color</label>
                                 <input  name='pcolor' type="text" class="form-control" placeholder="Color" require>
                         </div>
+                        
                         <div class="col-sm-4">
-                            <label>Placa</label>
-                                <input  name='pplaca' type="text" class="form-control" placeholder="Número de placa" require>
+                            <label>Número Economico</label>
+                                <input value="S/N" name='pnumeco' type="text" class="form-control" placeholder="Numero economico" require>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label>Número CAAT</label>
+                                <input value="N/A" name='pcaat' type="text" class="form-control" placeholder="Numero CAAT" require>
                         </div>
                         <div class="col-sm-4">
-                            <label>Peso</label>
-                                <input value="N/A" name='ppeso' type="text" class="form-control" placeholder="Peso en Kilogramos" require>
-                        </div>
-                        <div class="col-sm-4">
-                            <label>Ejes</label>
-                            <input value="N/A" name='pejes' type="text" class="form-control" placeholder="Ejes" require>
-                        </div>
+                    <br>
+                    <label>Documento CAAT</label>
+                    <input type="file" name="imagencaat">
+                    </div>
+
+                        
+
                         <div class="col-sm-4">
                             <label>Tipo de Remolque</label>
                                 <select name="ptipo" id=""class="form-control">
@@ -195,7 +277,7 @@
                     <label>Propiedad</label>
                     <select name='propiedad' class="form-control">
                         <option value='0'>Interno</option>
-                        <option value='1'>Externo</option>
+                        <option value='1'>Agregado</option>
                     </select>
                     </div>
                     <br><br>
