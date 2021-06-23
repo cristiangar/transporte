@@ -4,11 +4,11 @@ include ('../Configuracion/config.php');
 class Plataforma
 {
 
-		public function Ingresar($ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen,$otro,$propiedad)
+		public function Ingresar($ptamaño,$pcolor,$pejes,$ptipo,$pplaca,$pimagen,$otro,$propiedad,$pmarca,$pmodelo,$pcaat,$pnumeco,$pimagencaat)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_plataforma(0, '$ptamaño', '$pcolor', '$pejes', '$ppeso', '$ptipo', '$pplaca', 'I', '$pimagen', '$otro',$propiedad, @pn_respuesta, @pn_id);";
+		$consulta= "call sp_plataforma(0, '$ptamaño', '$pcolor', '$pejes', '$ptipo', '$pplaca', 'I', '$pimagen', '$otro','$pmarca','$pmodelo','$pnumeco','$pimagencaat','$pcaat',$propiedad, @pn_respuesta, @pn_id);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -31,7 +31,7 @@ class Plataforma
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_plataforma(0, '0', '0', '0', '0', '0', '0', 'S', '0', '0', 0, @pn_respuesta, @pn_id);";
+		$consulta= "call sp_plataforma(0, '0', '0', '0', '0', '0', 'S', '0', '0', '0', '0', '0', '0', '0', 0, @pn_respuesta, @pn_id);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -42,7 +42,7 @@ class Plataforma
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_plataforma($id, '0', '0', '0', '0', '0', '0', 'S1', '0', '0', 0, @pn_respuesta, @pn_id);";
+		$consulta= "call sp_plataforma($id, '0', '0', '0', '0', '0', 'S1', '0', '0', '0', '0', '0', '0', '0', 0, @pn_respuesta, @pn_id);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;

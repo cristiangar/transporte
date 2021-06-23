@@ -57,11 +57,27 @@ else
         $ptamaño=$_POST['ptamaño'];
         $pcolor=$_POST['pcolor'];
         $pejes=$_POST['pejes'];
-        $ppeso=$_POST['ppeso'];
         $ptipo=$_POST['ptipo'];
         $pplaca=$_POST['pplaca'];
         $otro=$_POST['otros'];
         $propiedad=$_POST['propiedad'];
+        $pmodelo=$_POST['pmodelo'];
+        $pmarca=$_POST['pmarca'];
+        $pcaat=$_POST['pcaat'];
+        $pnumeco=$_POST['pnumeco'];
+
+        if(empty($_FILES['imagencaat']['name'])){
+            $pimagen='N/A';
+        }
+        else{
+            $nombreimcaat=$_FILES['imagencaat']['name'];//carga el nombre de la imagen
+            $archivocaat=$_FILES['imagencaat']['tmp_name'];//carga el archivo
+            $pimagencaat="../imagen_caat";//es el nbombre de la carpeta
+            $pimagencaat=$pimagencaat."/".$nombreimcaat;//la ruta de la imagen
+            move_uploaded_file($archivocaat, $pimagencaat);//mueve la imagen ala ruta*/
+        
+        }
+
         if(empty($_FILES['imagen']['name'])){
             $pimagen='N/A';
         }
@@ -74,7 +90,7 @@ else
         
         }
         $plataforma=new Plataforma();
-        $plataforma->Ingresar($ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen,$otro,$propiedad);
+        $plataforma->Ingresar($ptamaño,$pcolor,$pejes,$ptipo,$pplaca,$pimagen,$otro,$propiedad,$pmarca,$pmodelo,$pcaat,$pnumeco,$pimagencaat);
 
     }
     else

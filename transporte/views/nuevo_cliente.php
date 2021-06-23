@@ -144,13 +144,13 @@ if(isset($_GET['id'])){
             </div>
 
             <div class="col-sm-4">
-            <label>No. de Cuenta bancaria</label>
+            <label>Contacto 1</label>
                 <input type="tex" name="cuenta" value='N/A' class="form-control" placeholder="Número de cuenta" value="<?php echo $nocuenta?>" require>
                 <!--<input type="tel" name="cuenta" class="form-control" pattern="[0-9]{2,15}" placeholder="Número de cuenta" value="<?php /*echo*/ $nocuenta?>" require>-->
             </div>
 
             <div class="col-sm-4">
-            <label>Banco del cliente</label>
+            <label>Conctacto 2</label>
                 <input type="text" name="banco" class="form-control" placeholder="Nombre del banco" value = "<?php echo $nombre_cuenta?>" require>
             </div>
 
@@ -210,13 +210,13 @@ else
             </div>
 
             <div class="col-sm-4">
-            <label>No. de Cuenta bancaria</label>
-                <input type="text" name="cuenta" class="form-control" placeholder="Número de cuenta" require>
+            <label>Contacto 1</label>
+                <input type="text" name="cuenta" class="form-control" placeholder="Nombre del contacto 1" require>
             </div>
 
             <div class="col-sm-4">
-            <label>Banco del cliente</label>
-                <input type="text" name="banco" class="form-control" placeholder="Nombre del banco" require>
+            <label>Contacto 2</label>
+                <input type="text" name="banco" class="form-control" placeholder="Nombre del contacto 2" value="N/A" require>
             </div>
 
                 
