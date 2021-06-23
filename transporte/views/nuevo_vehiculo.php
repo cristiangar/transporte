@@ -96,12 +96,22 @@
                                     <label>Color</label>
                                         <input value="<?php echo $color?>"  name='pcolor' type="text" class="form-control" placeholder="Color" require>
                                 </div>
+
+                                <div class="col-sm-4">
+                                    <label>Ejes</label>
+                                    <input value="<?php echo $ejes?>" name='pejes' type="text" class="form-control" placeholder="Ejes" require>
+                                </div>
+
                                 <div class="col-sm-4">
                                     <label>Número Economico</label>
                                         <input value="<?php echo $numeco?>" name='pnumeco' type="text" class="form-control" placeholder="Peso en Kilogramos" require>
                                 </div>
 
                                 <br><br>
+                                <div class="col-sm-4">
+                                <label>Número CAAT</label>
+                                <input value="<?php echo $caat?>" name='pcaat' type="text" class="form-control" placeholder="Numero CAAT" require>
+                                </div>
                             <?php
                             if($ruta_imagen_caat=="N/A"){/**valida si hay imagen o no */
                                 ?>
@@ -134,10 +144,7 @@
                             }
                             ?>
                                 <br>
-                                <div class="col-sm-4">
-                                    <label>Ejes</label>
-                                    <input value="<?php echo $ejes?>" name='pejes' type="text" class="form-control" placeholder="Ejes" require>
-                                </div>
+                                
                                 <div class="col-sm-4">
                                     <label>Tipo de Remolque</label>
                                         <select name="ptipo" id=""class="form-control">
