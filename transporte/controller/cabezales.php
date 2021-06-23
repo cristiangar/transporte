@@ -60,6 +60,7 @@ else
         $tamaño=$_POST['tamaño'];
         $ejes=$_POST['ejes'];
         $propiedad=$_POST['propiedad'];
+        $tipo_vehiculo=$_POST['tipo_vheiculo'];
         if(empty($_FILES['imgTargetaVeiculo']['name'])){
             $ruta_tarjeta='N/A';
         }
