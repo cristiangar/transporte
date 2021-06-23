@@ -54,7 +54,7 @@ if (isset($_GET['id']))
                 move_uploaded_file($archivo, $ruta);//mueve la imagen ala ruta    
             }
             $plataforma=new Plataforma();
-            $plataforma->Modificar($id,$ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen,$otro,$propiedad);
+            $plataforma->Modificar($id,$ptamaño,$pcolor,$pejes,$ppeso,$ptipo,$pplaca,$pimagen,$otro,$propiedad,$pmarca,$pmodelo,$pcaat,$pnumeco,$pimagencaat);
 
         }
         else{
