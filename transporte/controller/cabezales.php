@@ -20,9 +20,11 @@ if (isset($_GET['id']))
             $placa=$_POST['placa'];
             $color=$_POST['color'];
             $descripcion=$_POST['descripcion'];
-            $tamaño=$_POST['tamaño'];
+            //$tamaño=$_POST['tamaño'];
+            $tamaño='N/A';
             $ejes=$_POST['ejes'];
             $propiedad=$_POST['propiedad'];
+            $tipo_vehiculo=$_POST['tipo_vehiculo'];
             if(empty($_FILES['imgTargetaVeiculo']['name'])){
                 $ruta_tarjeta=$_POST['ruta'];
             }
@@ -35,7 +37,7 @@ if (isset($_GET['id']))
             
             }
             $cabezal=new Cabezal();
-            $cabezal->Modificar($id,$marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tamaño,$ejes,$color);
+            $cabezal->Modificar($id,$marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$tamaño,$ejes,$color);
 
         }
         else{
@@ -57,7 +59,7 @@ else
         $placa=$_POST['placa'];
         $color=$_POST['color'];
         $descripcion=$_POST['descripcion'];
-        $tamaño=$_POST['tamaño'];
+        //tamaño=$_POST['tamaño'];
         $ejes=$_POST['ejes'];
         $propiedad=$_POST['propiedad'];
         $tipo_vehiculo=$_POST['tipo_vehiculo'];
@@ -73,7 +75,7 @@ else
         
         }
         $cabezal=new Cabezal();
-        $cabezal->Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tamaño,$ejes,$color);
+        $cabezal->Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$ejes,$color);
 
     }
     else
