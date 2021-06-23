@@ -18,8 +18,13 @@ if (isset($_GET['id']))
             $apellido=$_POST['apellido'];
             $dpi=$_POST['dpi'];
             $telefono=$_POST['telefono1'];
-            $telefono2=$_POST['telefono2'];
+            $whatsApp=$_POST['telefono2'];
+            $banco=$_POST['banco'];
+            $cuenta=$_POST['cuenta_banco'];
+            $nombre_emergencia=$_POST['contacto_emergencia'];
+            $numero_emergencia=$_POST['numero_emergencia'];
             $correo=$_POST['correo'];
+            $id_tipo_empleado=$_POST['id_tipo_empleado'];
 
             if(empty($_FILES['imgDPI']['name']))
             {
@@ -62,22 +67,8 @@ if (isset($_GET['id']))
                 $ruta_pasaporte=$ruta_pasaporte."/".$nombreimgp;//la ruta de la imagen
                 move_uploaded_file($archivo, $ruta_pasaporte);//mueve la imagen ala ruta*/
             }
-            
-            $caat=$_POST['caat'];
-            if(empty($_FILES['imgCaat']['name'])){
-                $ruta_caat=$_POST['ruta_caat'];
-                
-            }
-            else{
-                $nombreimgc=$_FILES['imgCaat']['name'];//carga el nombre de la imagen
-                $archivo=$_FILES['imgCaat']['tmp_name'];//carga el archivo
-                $ruta_caat="../imagen_caat";//es el nbombre de la carpeta
-                $ruta_caat=$ruta_caat."/".$nombreimgc;//la ruta de la imagen
-                move_uploaded_file($archivo, $ruta_caat);//mueve la imagen ala ruta*/
-            
-            }
             $au =new Piloto();
-            $au->Modificar($id,$nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat);
+            $au->Modificar($id,$nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia);
     
 
         }
@@ -85,6 +76,7 @@ if (isset($_GET['id']))
             $id = $_GET['id'];
             $piloto=new Piloto();
             $dt=$piloto->VerUno($id);
+            $dt2=$piloto->tipo();
         }
 
     }
@@ -98,8 +90,13 @@ else
         $apellido=$_POST['apellido'];
         $dpi=$_POST['dpi'];
         $telefono=$_POST['telefono1'];
-        $telefono2=$_POST['telefono2'];
+        $whatsApp=$_POST['telefono2'];
+        $banco=$_POST['banco'];
+        $cuenta=$_POST['cuenta_banco'];
+        $nombre_emergencia=$_POST['contacto_emergencia'];
+        $numero_emergencia=$_POST['numero_emergencia'];
         $correo=$_POST['correo'];
+        $id_tipo_empleado=$_POST['id_tipo_empleado'];
 
         if(empty($_FILES['imgDPI']['name'])){/*valido si hay imagen de dpi*/
             $ruta='N/A';  
@@ -140,21 +137,8 @@ else
             move_uploaded_file($archivo, $ruta_pasaporte);//mueve la imagen ala ruta*/
         }
     
-
-        $caat=$_POST['caat'];
-        if(empty($_FILES['imgCaat']['name'])){
-            $ruta_caat='N/A';
-        }
-        else{
-            $nombreimgc=$_FILES['imgCaat']['name'];//carga el nombre de la imagen
-            $archivo=$_FILES['imgCaat']['tmp_name'];//carga el archivo
-            $ruta_caat="../imagen_caat";//es el nbombre de la carpeta
-            $ruta_caat=$ruta_caat."/".$nombreimgc;//la ruta de la imagen
-            move_uploaded_file($archivo, $ruta_caat);//mueve la imagen ala ruta*/
-        
-        }
         $au =new Piloto();
-        $au->Ingresar($nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat);
+        $au->Ingresar($nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia);
 
     }
     else

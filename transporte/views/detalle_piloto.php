@@ -41,23 +41,26 @@
 $id=$_GET['id'];
 include_once("../controller/pilotoInterno.php");
 $piloto=new Piloto();
-$dt=$piloto->VerDetalle($id);
+$dt=$piloto->VerUno($id);
 while ($row=mysqli_fetch_array($dt)) {
   $id_empleado=$row['id_empleado'];
   $nombre=$row['nombre'];
   $apellido=$row['apellido'];
   $dpi=$row['dpi'];
   $telefono1=$row['telefono1'];
-  $telefono2=$row['telefono2'];
+  $telefono2=$row['whatsApp'];
   $licencia=$row['licencia'];
   $tipo_licencia=$row['tipo_licencia'];
   $pasaporte=$row['pasaporte'];
   $ruta_imagen_licencia=$row['ruta_imagen_licencia'];
   $ruta_imagen_pasaporte=$row['ruta_imagen_pasaporte'];
-  $ruta_imagen_caat=$row['ruta_imagen_caat'];
   $ruta_imagen_dpi=$row['ruta_imagen_dpi'];
-  $codigo_caat=$row['codigo_caat'];
   $correo=$row['correo'];
+  $banco=$row['banco'];
+  $cuenta=$row['cuenta_bancaria'];
+  $nombre_emergencia=$row['contacto_emergencia_nombre'];
+  $numero_emergencia=$row['contacto_emergencia_numero'];
+
 
   }
 ?>
@@ -66,7 +69,11 @@ while ($row=mysqli_fetch_array($dt)) {
             <div class="card-body container-fluid">
                 <h2 class="card-title">DPI: <?php echo $dpi;?></h2>
                 <h2 class="card-title">Telefono: <?php echo $telefono1;?></h2>
-                <h2 class="card-title">Telefono 2: <?php echo $telefono2;?></h2>
+                <h2 class="card-title">WhatsApp: <?php echo $telefono2;?></h2>
+                <h2 class="card-title">Banco: <?php echo $banco;?></h2>
+                <h2 class="card-title">Cuenta Bancaria: <?php echo $cuenta;?></h2>
+                <h2 class="card-title">Contacto de emergencia: <?php echo $nombre_emergencia;?></h2>
+                <h2 class="card-title">No. contacto de emergencia: <?php echo $numero_emergencia;?></h2>
                 <h2 class="card-title">Correo electronico: <?php echo $correo;?></h2>
             </div>
             <img src="<?php echo  $ruta_imagen_dpi;?>" style="width:100%" alt="">
@@ -86,13 +93,6 @@ while ($row=mysqli_fetch_array($dt)) {
                 <h2 class="card-title">No. pasaporte: <?php echo $pasaporte;?></h2>
             </div>
             <img src="<?php echo  $ruta_imagen_pasaporte;?>" style="width:100%" alt="">
-        </div>
-        <br>
-        <div class="card container-fluid">
-            <div class="card-body">
-                <h2 class="card-title">No. caat: <?php echo $codigo_caat;?></h2>
-            </div>
-            <img class='img-fluid' onclick="javascript:this.width=450;this.height=338" ondblclick="javascript:this.width=100;this.height=80" src="<?php echo  $ruta_imagen_caat;?>" style="width:100%" alt="">
         </div>
         <br>
 </div>
