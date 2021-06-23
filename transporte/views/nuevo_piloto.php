@@ -73,21 +73,25 @@ if(isset($_GET['id']))
     include_once('../controller/pilotoInterno.php');
     $id= $_GET['id'];
     while($row=mysqli_fetch_array($dt)){
+        $id_empleado=$row['id_empleado'];
         $nombre=$row['nombre'];
         $apellido=$row['apellido'];
         $dpi=$row['dpi'];
         $telefono1=$row['telefono1'];
-        $telefono2=$row['telefono2'];
+        $telefono2=$row['whatsApp'];
         $licencia=$row['licencia'];
         $tipo_licencia=$row['tipo_licencia'];
         $pasaporte=$row['pasaporte'];
         $ruta_imagen_licencia=$row['ruta_imagen_licencia'];
         $ruta_imagen_pasaporte=$row['ruta_imagen_pasaporte'];
-        $ruta_imagen_caat=$row['ruta_imagen_caat'];
         $ruta_imagen_dpi=$row['ruta_imagen_dpi'];
-        $id_tipo_empleado=$row['id_tipo_empleado'];
-        $codigo_caat=$row['codigo_caat'];
         $correo=$row['correo'];
+        $banco=$row['banco'];
+        $cuenta=$row['cuenta_bancaria'];
+        $nombre_emergencia=$row['contacto_emergencia_nombre'];
+        $numero_emergencia=$row['contacto_emergencia_numero'];
+        $id_tipo_empleado=$row['id_tipo_empleado'];
+        $cargo=$row['cargo'];
 
     }
 ?>
@@ -109,16 +113,48 @@ if(isset($_GET['id']))
             </div>
             <div class="col-sm-4">
                 <label>Telefono</label>
-                <!--<input value='<?php echo $telefono1;?>' name="telefono1" type="text" class="form-control" placeholder="Telefono" require>-->
                 <input type="text" name="telefono1" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13" value="<?php echo  $telefono1?>" require>
             </div>
             <div class="col-sm-4">
-                <label>Telefono 2</label>
-                <input type="text" name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13" value="<?php echo  $telefono2?>" require>
+                <label>WhatsApp</label>
+                <input value='<?php echo $telefono2;?>' type="text" value='N/A' name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  require>
+            </div>
+            <div class="col-sm-4">
+                <label>Banco</label>
+                <input name="banco" value='<?php echo $banco;?>' type="text" class="form-control" placeholder="Correo" require>
+            </div>
+            <div class="col-sm-4">
+                <label>No.cuenta de banco</label>
+                <input name="cuenta_banco" value='<?php echo $cuenta;?>' type="text" class="form-control" placeholder="Correo" require>
+            </div>
+            <div class="col-sm-4">
+                <label>contacto de emergencia</label>
+                <input name="contacto_emergencia" value='<?php echo $nombre_emergencia;?>' type="text" class="form-control" placeholder="Correo" require>
+            </div>
+            <div class="col-sm-4">
+                <label>Numero de energencia</label>
+                <input name="numero_emergencia" value='<?php echo $numero_emergencia;?>' type="text" class="form-control" placeholder="Correo" require>
             </div>
             <div class="col-sm-4">
                 <label>Correo</label>
                 <input value='<?php echo $correo;?>' name="correo" value='N/A' type="text" class="form-control" placeholder="Correo" require>
+            </div>
+            <?php 
+                $tipo_empleado=new Piloto();
+                $dt=$tipo_empleado->Tipo();
+            ?>
+            <div class="col-sm-4">
+                <label>Tipo de Piloto</label>
+                <select name="id_tipo_empleado" id="" class="form-control">
+                <option value="<?php echo $id_tipo_empleado; ?>"><?php echo $cargo; ?></option>
+                <?php
+                while($row=mysqli_fetch_array($dt2)){
+                    $valor=$row['id_tipo_empleado'];
+                    $texto=$row['cargo'];
+                    echo '<option  value="'.$valor.'">'.$texto.'</option>';
+                }
+                ?>
+                </select>
             </div>
             <?php
             if($ruta_imagen_dpi=="N/A")//verifico si hay imagen que mostrar S
@@ -207,7 +243,6 @@ if(isset($_GET['id']))
             }
 ?>   
 
-
         </div>
         <br>
 
@@ -251,48 +286,6 @@ if(isset($_GET['id']))
 
         </div>
         <br>
-
-        <h1>Datos del Caat</h1>
-        <br>
-        <div class="form-row">
-            <div class="col-sm-4">
-                <label>No.Caat</label>
-                <input value='<?php echo $codigo_caat;?>' name="caat" type="text" class="form-control"  value="N/A">
-            </div>
-<?php
-            if($ruta_imagen_caat=='N/A')
-            {
-              ?>
-            <div class="col-sm-4">
-                <label>Imagen Caat</label>
-                <div class="container-fluid">
-                    <input type="file" name="imgCaat">
-                </div>
-            </div> 
-
-            <input value='<?php echo $ruta_imagen_caat;?>' name="ruta_caat" type="hidden">
-              <?php
-            }
-            else{
-?>
-            <div class="col-sm-4">
-            <label>Imagen actual</label><br>
-            <img src="<?php echo $ruta_imagen_caat;?>"width="400" height="200" alt="">
-            </div>
-
-            <div class="col-sm-4">
-                <label>Seleccione una imagen si quiere cambiar la actual</label>
-                <div class="container-fluid">
-                    <input type="file" name="imgCaat">
-                </div>
-            </div> 
-            <input value='<?php echo $ruta_imagen_caat;?>' name="ruta_caat" type="hidden">
-<?php
-            }
-?>
-           
-        </div>
-
         
         <div class="container-fluid wrapper fadeInDown col-sm-5">
                 <br>
@@ -331,25 +324,56 @@ else
             </div>
             <div class="col-sm-4">
                 <label>Telefono</label>
-                <!--<input name="telefono1" type="text" class="form-control" placeholder="Telefono"require>-->
                 <input type="text" name="telefono1" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  require>
             </div>
             <div class="col-sm-4">
-                <label>Telefono 2</label>
+                <label>WhatsApp</label>
                 <input type="text" value='N/A' name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  require>
+            </div>
+            <div class="col-sm-4">
+                <label>Banco</label>
+                <input name="banco" value='N/A' type="text" class="form-control" placeholder="Correo" require>
+            </div>
+            <div class="col-sm-4">
+                <label>No.cuenta de banco</label>
+                <input name="cuenta_banco" value='N/A' type="text" class="form-control" placeholder="Correo" require>
+            </div>
+            <div class="col-sm-4">
+                <label>contacto de emergencia</label>
+                <input name="contacto_emergencia" value='N/A' type="text" class="form-control" placeholder="Correo" require>
+            </div>
+            <div class="col-sm-4">
+                <label>Numero de energencia</label>
+                <input name="numero_emergencia" value='N/A' type="text" class="form-control" placeholder="Correo" require>
             </div>
             <div class="col-sm-4">
                 <label>Correo</label>
                 <input name="correo" value='N/A' type="text" class="form-control" placeholder="Correo" require>
+            </div> 
+            <?php 
+            include_once('../model/ClassPilotoInterno.php');
+                $tipo_empleado=new Piloto();
+                $dt=$tipo_empleado->Tipo();
+            ?>
+            <div class="col-sm-4">
+                <label>Tipo de Piloto</label>
+                <select name="id_tipo_empleado" id="" class="form-control">
+                <?php
+                while($row=mysqli_fetch_array($dt)){
+                    $valor=$row['id_tipo_empleado'];
+                    $texto=$row['cargo'];
+                    echo '<option  value="'.$valor.'">'.$texto.'</option>';
+                }
+                ?>
+                </select>
             </div>
-            
             <div class="col-sm-4">
                 <br>
                 <label>Imagen de DPI</label>
                 <div class="container-fluid">
                     <input type="file" name="imgDPI">
                 </div>
-            </div>  
+            </div> 
         </div>
         <br>
 
@@ -392,23 +416,6 @@ else
             </div>
         </div>
         <br>
-
-        <h1>Datos del Caat</h1>
-        <br>
-        <div class="form-row">
-            <div class="col-sm-4">
-                <label>No.Caat</label>
-                <input name="caat" type="text" class="form-control"  value="N/A">
-            </div>
-            <div class="col-sm-4">
-                <label>Imagen Caat</label>
-                <div class="container-fluid">
-                    <input type="file" name="imgCaat">
-                </div>
-            </div>            
-        </div>
-
-        
         <div class="container-fluid wrapper fadeInDown col-sm-5">
                 <br>
                 <center>
@@ -418,7 +425,10 @@ else
                     <br>
                     
                 </center>
+                <br>
             </div>
+            <br>
+            <div></div>
 
     </form>
     <?php

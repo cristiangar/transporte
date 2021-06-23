@@ -8,7 +8,7 @@ class Personal
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_empleado(0,$id_tipo_empleado, '$nombre', '$apellido', '$dpi', '$telefono', '$telefono2', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 1, 'N/A', '$correo', 'I', @pn_respuesta);";
+		$consulta= "call sp_empleado(0, $id_tipo_empleado, '$nombre', '$apellido', '$dpi', '$telefono', '$telefono2', '$correo', 'I', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -31,7 +31,7 @@ class Personal
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_empleado('n', 0, 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 0, 'n', 'n', 'S', @pn_respuesta);";
+		$consulta= "call sp_empleado(0, 0, '0', '0', '0', '0', '0', '0', 'S', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -42,7 +42,7 @@ class Personal
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_empleado($id, 0, 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 0, 'n', 'n', 'S1', @pn_respuesta);";
+		$consulta= "call sp_empleado($id, 0, '0', '0', '0', '0', '0', '0', 'S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -53,7 +53,7 @@ class Personal
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_empleado($id,0, 'bre', 'ellido', 'pi', 'elefono', 'elefono2', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 1, 'N/A', 'correo', 'D', @pn_respuesta);";
+		$consulta= "call sp_empleado($id, 0, '0', '0', '0', '0', '0', '0', 'D', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -76,7 +76,7 @@ class Personal
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_empleado($id,0, '$nombre', '$apellido', '$dpi', '$telefono', '$telefono2', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', 'N/A', $id_tipo_empleado, 'N/A', '$correo', 'U', @pn_respuesta);";
+		$consulta= "call sp_empleado($id, $id_tipo_empleado, '$nombre', '$apellido', '$dpi', '$telefono', '$telefono2', '$correo', 'U', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";

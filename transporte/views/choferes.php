@@ -45,9 +45,9 @@
             <thead>
               <td>Nombre Piloto</td>
               <td>Telefono</td>
+              <td>WhatsApp</td>
               <td>Tipo licencia</td>
               <td>Estado</td>
-              <td>Tipo Piloto</td>
               <td>Detalle</td>
               <td>Eliminar</td>
             </thead>
@@ -57,26 +57,15 @@
             $nombre=$row['nombre'];
             $telefono=$row['telefono1'];
             $tipo_licencia=$row['tipo_licencia'];
-            $estado=$row['estado_piloto'];
+            $whatsApp=$row['whatsApp'];
             $cargo=$row['cargo'];
          ?>
                   <tbody id="myTable">
                   <tr>
                     <td><?php echo $nombre?></td>
                     <td><?php echo $telefono?></td>
+                    <td><?php echo $whatsApp?></td>
                     <td><?php echo $tipo_licencia?></td>
-                    <?php
-                      if($estado == 'Disponible' or $estado =='disponible'){
-                        ?>
-                        <td><span class="badge badge-success"><?php echo $estado?></span></td>
-                        <?php
-                      }
-                      else{
-                        ?>
-                        <td><span class="badge badge-danger"><?php echo $estado?></span></td>
-                        <?php
-                      }
-                    ?>
                     <td><?php echo $cargo?></td>
                     <td><center><a href="detalle_piloto.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
                     <td><center><a href="../controller/pilotoInterno.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
@@ -95,7 +84,7 @@
                 </tfoot>
       </table>            
             <center>
-                 <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                 <a href="nuevo_piloto.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
                  <a href="asignacion_vehiculos.php"><button type="button" class="btn btn-info" >Ver pilotos y vehiculos asignados</button></a>
                  <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>       
             </center>
@@ -113,7 +102,7 @@
       <br><br><br><br>
       <h1>No hay datos ingresados</h1>
       <br>
-      <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
+      <a href="nuevo_piloto.php"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
     </center>
     <?php
   }

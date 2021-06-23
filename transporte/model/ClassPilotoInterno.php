@@ -4,11 +4,11 @@ include ('../Configuracion/config.php');
 class Piloto
 {
 
-	public function Ingresar($nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat)
+	public function Ingresar($nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia)
 	{
         $bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_pilotos(0, '$nombre', '$apellido', '$dpi', '$telefono', '$telefono2', '$licencia', '$tlicencia', '$pasaporte', '$ruta_licencia', '$ruta_pasaporte', '$ruta', '$ruta_caat', 'Disponible', '$caat', '$correo', 'I', @pn_respuesta);";
+		$consulta= "call sp_pilotos(0, '$nombre', '$apellido', '$dpi', '$telefono', '$whatsApp', '$licencia', '$tlicencia', '$pasaporte', '$ruta_licencia', '$ruta_pasaporte', '$ruta', 'Disponible',$id_tipo_empleado, '$cuenta', '$correo', '$banco', '$nombre_emergencia', '$numero_emergencia', 'I', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -31,7 +31,7 @@ class Piloto
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_pilotos(0, '0', '0', '0', '00', '0', '0', '0', '0', '0', '0', '00', '00', '0', '0', '0', 'S', @pn_respuesta);";
+		$consulta= "call sp_pilotos(0, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 0, '0', '0', '0', '0', '0', 'S', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -41,7 +41,7 @@ class Piloto
 	{
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_pilotos($id, 'n', 'n', 'n', 'nn', 'n', 'n', 'nn', 'n', 'nn', 'n', 'n', 'n', 'n', 'n', 'n', 'S1', @pn_respuesta);";
+		$consulta= "call sp_pilotos($id, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 0, '0', '0', '0', '0', '0', 'S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -51,7 +51,7 @@ class Piloto
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_pilotos($id, 'n', 'n', 'n', 'nn', 'n', 'n', 'nn', 'n', 'nn', 'n', 'n', 'n', 'n', 'n', 'n', 'D', @pn_respuesta);";
+		$consulta= "call sp_pilotos($id, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 0, '0', '0', '0', '0', '0', 'D', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -68,11 +68,11 @@ class Piloto
 
 	}
 
-    public function Modificar($id,$nombre,$apellido,$dpi,$telefono,$telefono2,$correo,$ruta,$licencia,$tlicencia,$ruta_licencia,$pasaporte,$ruta_pasaporte,$caat,$ruta_caat)
+    public function Modificar($id,$nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_pilotos($id, '$nombre', '$apellido', '$dpi', '$telefono', '$telefono2', '$licencia', '$tlicencia', '$pasaporte', '$ruta_licencia', '$ruta_pasaporte', '$ruta', '$ruta_caat', 'Disponible', '$caat', '$correo', 'U', @pn_respuesta);";
+		$consulta= "call sp_pilotos($id, '$nombre', '$apellido', '$dpi', '$telefono', '$whatsApp', '$licencia', '$tlicencia', '$pasaporte', '$ruta_licencia', '$ruta_pasaporte', '$ruta', 'Disponible',$id_tipo_empleado, '$cuenta', '$correo', '$banco', '$nombre_emergencia', '$numero_emergencia', 'U', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -89,17 +89,16 @@ class Piloto
 
 
 	}
-
-    public function VerDetalle($id)
+	
+	public function tipo()
     {
         $db = new datos();
 		$db->conectar();
-		$consulta= "call sp_pilotos($id, '0', '0', '0', '00', '0', '0', '0', '0', '0', '0', '00', '00', '0', '0', '0', 'S1', @pn_respuesta);";
+		$consulta= "SELECT *FROM tipo_empleado;";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
     }
-
 	
 }
 

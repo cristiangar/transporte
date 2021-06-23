@@ -77,7 +77,7 @@ if(isset($_GET['id'])){
     $nombre=$row['nombre'];
     $apellido=$row['apellido'];
     $telefono=$row['telefono1'];
-    $telefono2=$row['telefono2'];
+    $telefono2=$row['whatsApp'];
     $dpi=$row['dpi'];
     $correo=$row['correo'];
     }

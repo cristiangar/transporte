@@ -46,7 +46,6 @@
               <td>DPI</td>
               <td>Rol Usuario</td>
               <td>Telefono</td>
-              <td>Teléfono 2</td>
               <td>Correo</td>
               <td>Modificar</td>
               <td>Eliminar</td>
@@ -56,7 +55,6 @@
             $id=$row['id_empleado'];
             $nombre=$row['nombre'];
             $telefono=$row['telefono1'];
-            $telefono2=$row['telefono2'];
             $dpi=$row['dpi'];
             $id_tipoempleado=$row['id_tipo_empleado'];
             $correo=$row['correo'];
@@ -68,7 +66,6 @@
                     <td><?php echo $dpi?></td>
                     <td><?php echo $rol?></td>
                     <td><?php echo $telefono?></td>
-                    <td><?php echo $telefono2?></td>
                     <td><?php echo $correo?></td>
                     <td><center><a href="nuevo_personal.php?id=<?php echo $id?>"><button type="button" class="btn btn-warning">Modificar</button></a></center></td>
                     <td><center><a href="../controller/personal.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
