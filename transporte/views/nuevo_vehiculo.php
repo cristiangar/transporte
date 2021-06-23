@@ -342,9 +342,13 @@
                     /**formulario para modificar */
                     ?>
                     <form method="POST" action="../controller/cabezales.php?id=<?php echo $id_cabezal;?>&mod" enctype="multipart/form-data">
-                    <h1>Datos del cabezal a modificar</h1>
+                    <h1>Datos del Vehiculo a modificar</h1>
                     <br>
                     <div class='form-row'>
+                            <div class="col-sm-4">
+                                <label>No.Placa</label>
+                                <input value='<?php echo $placa; ?>' name='placa' type="text" class="form-control" placeholder="Número de placa" require>
+                            </div>
                             <div class="col-sm-4">
                                 <label>Marca</label>
                                 <input value='<?php echo $marca; ?>' name='marca' type="text" class="form-control" placeholder="Marca" require>
@@ -359,27 +363,25 @@
                                 <input value='<?php echo $tonelaje; ?>' name='tonelaje' type="text" class="form-control" placeholder="Tonelaje" require>
                             </div>
                             <div class="col-sm-4">
-                                <label>Tamaño</label>
-                                <input value='<?php echo $tamaño; ?>' name='tamaño' type="text" class="form-control" placeholder="Tamaño" require>
-                            </div>
-                            <div class="col-sm-4">
                                 <label>ejes</label>
                                 <input value='<?php echo $ejes; ?>' name='ejes' type="text" class="form-control" placeholder="ejes" value='N/A' require>
                             </div>
                             <div class="col-sm-4">
-                                <label>No.Placa</label>
-                                <input value='<?php echo $placa; ?>' name='placa' type="text" class="form-control" placeholder="Número de placa" require>
-                            </div>
-                            <div class="col-sm-4">
                                     <label>color</label>
                                         <input value='<?php echo $color; ?>' name='color' type="text" class="form-control" placeholder="color" require>
-                                </div>
-
+                            </div>
                             <div class="col-sm-4">
-                            <label>Propiedad</label>
+                            <label>Tipo Vehiculo</label>
+                            <select name='tipo_vehiculo' class="form-control">
+                                <option value='Cabezal'>Cabezal</option>
+                                <option value='Camion'>Camion</option>
+                            </select>
+                            </div>
+                            <div class="col-sm-4">
+                            <label>Flotilla</label>
                             <select name='propiedad' class="form-control">
-                                <option value='0'>Interno</option>
-                                <option value='1'>Externo</option>
+                                <option value='0'>Flotilla Interna</option>
+                                <option value='1'>Flotilla Externa</option>
                             </select>
                             </div>
                             <br><br>
@@ -441,7 +443,7 @@
                     <?php
                 }
                 else{
-                    /**ingresar nuevo cabezal */
+                    /**ingresar nuevo Vehiculo */
                     ?>
                     <form method="POST" action="../controller/cabezales.php" enctype="multipart/form-data">
                     <h1>Datos del Vehiculo</h1>
@@ -463,10 +465,6 @@
                             <div class="col-sm-4">
                                 <label>Tonelaje</label>
                                 <input name='tonelaje' type="text" class="form-control" placeholder="Tonelaje" require>
-                            </div>
-                            <div class="col-sm-4">
-                                <label>Tamaño</label>
-                                <input name='tamaño' type="text" class="form-control" placeholder="Tamaño" require>
                             </div>
                             <div class="col-sm-4">
                                 <label>ejes</label>

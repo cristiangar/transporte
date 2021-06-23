@@ -4,11 +4,11 @@ include ('../Configuracion/config.php');
 class Cabezal
 {
 
-		public function Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tamaño,$ejes,$color)
+		public function Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$ejes,$color)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_vehiculos(0, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, 'Cabezal', 1, '$tamaño', '$ejes', '$color', 'I2', @pn_respuesta,@pn_id_vehiculo);";
+		$consulta= "call sp_vehiculos(0, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, '$tipo_vehiculo', 1, 'N/A', '$ejes', '$color', 'I2', @pn_respuesta,@pn_id_vehiculo);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -72,11 +72,11 @@ class Cabezal
 
 				
 
-		public function Modificar($id,$marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tamaño,$ejes,$color)
+		public function Modificar($id,$marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$tamaño,$ejes,$color)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta="call sp_vehiculos($id, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, 'Cabezal', 1, '$tamaño', '$ejes', '$color', 'U', @pn_respuesta,@pn_id_vehiculo);";
+		$consulta="call sp_vehiculos($id, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, '$tipo_vehiculo', 1, '$tamaño', '$ejes', '$color', 'U', @pn_respuesta,@pn_id_vehiculo);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
