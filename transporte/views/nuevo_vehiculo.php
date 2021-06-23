@@ -478,7 +478,7 @@
                                 </div>
                             <div class="col-sm-4">
                             <label>Tipo Vehiculo</label>
-                            <select name='propiedad' class="form-control">
+                            <select name='tipo_vehiculo' class="form-control">
                                 <option value='Cabezal'>Cabezal</option>
                                 <option value='Camion'>Camion</option>
                             </select>
