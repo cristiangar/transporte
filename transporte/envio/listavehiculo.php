@@ -37,7 +37,7 @@
       if($resultado>0)
       {
         ?>
-          <h1>Listas de Cabezales</h1>
+          <h1>Listas de vehiculos</h1>
           <input class="form-control" id="myInput" type="text" placeholder="buscar..">
           <br>
 
