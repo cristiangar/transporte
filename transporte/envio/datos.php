@@ -292,16 +292,12 @@ else
 
       <div class="form-row">
             <div class="col-sm-4">
-                <label>Peso</label>
-                <input type="text" name="peso" class="form-control" placeholder="Peso del paquete"require>
+            <label>Refecrencia 1</label>
+                <input type="text" name="direccion" class="form-control" placeholder="Referencia" require>
             </div>
             <div class="col-sm-4">
-            <label>Dirección de Entrega</label>
-                <input type="text" name="direccion" class="form-control" placeholder="Lugar de destino" require>
-            </div>
-            <div class="col-sm-4">
-            <label>Dirección de Envío</label>
-                <input type="text" name="direccionenvio" class="form-control" placeholder="Lugar de envío">
+            <label>Referencia 2</label>
+                <input type="text" name="direccionenvio" class="form-control" placeholder="Referencia">
             </div>
             <?php 
             include_once('../model/classpaquete.php');
@@ -355,15 +351,7 @@ else
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4">
-                  <label for="" class="text-danger">seleccione solo si un piloto cuenta con vehiculo propio</label>
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Pilotos Con vehiculos" id="pagina6" name="pilotoTercero">
-                    <div class="input-group-append">
-                      <button id="boton6" class="input-group-text btn-btn-primary">Piloto</button>
-                    </div>
-                  </div>
-                </div>
+                
       </div>
       <div class="container-fluid col-sm-5">
                 <br>
