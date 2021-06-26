@@ -67,7 +67,16 @@
             </div>
         </div>
 
-        
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
+                    <a href="bitacora.php">
+                    <img class="img-fluid" src="../imagenes/bitacora.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Bitácora</h1>
+                </div>
+            </div>
+        </div>        
 
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
