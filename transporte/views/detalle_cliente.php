@@ -89,13 +89,13 @@ if(isset($_GET['id'])){
             </div>
 
             <div class="col-sm-4">
-            <label>No. de Cuenta bancaria</label>
+            <label>Contacto 1</label>
                 <input type="tex" name="cuenta" value='N/A' class="form-control" placeholder="Número de cuenta" value="<?php echo $nocuenta?>" readonly>
                
             </div>
 
             <div class="col-sm-4">
-            <label>Banco del cliente</label>
+            <label>Contacto 2</label>
                 <input type="text" name="banco" class="form-control" placeholder="Nombre del banco" value = "<?php echo $nombre_cuenta?>" readonly>
             </div>
       

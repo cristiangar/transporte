@@ -64,6 +64,8 @@ while($row=mysqli_fetch_array($dt))
     $interno_externo=$row['tipo_interno_externo'];
     $descripcion=$row['descripcion'];
     $tipo_vehivulo=$row['tipo_vehiculo'];
+
+    
     if(($tipo_vehivulo=="Cabezal") or ($tipo_vehivulo=="cabezal")){
       $placa_plataforma=$row['placa'];
       $tipo_plataforma=$row['tipo'];
@@ -79,6 +81,8 @@ while($row=mysqli_fetch_array($dt))
       //echo 'es camion';
       $activador=0;
     }
+
+    
     if($autorizacion==0){
       $au="Sin Autorizar";
     }
@@ -152,32 +156,28 @@ while($row=mysqli_fetch_array($dt))
                 <input value="<?php echo $codigo_ruta;?>" type="text" name="direccion" class="form-control" placeholder="Lugar de destino" readonly>
             </div>
             <div class="col-sm-4">
-            <label>Pais destino</label>
-                <input value="<?php echo $destino;?>" type="text" name="direccion" class="form-control" placeholder="Lugar de destino" readonly>
-            </div>
-            <div class="col-sm-4">
-            <label>Dirección de Entrega</label>
-                <input value="<?php echo $direccion_entrega;?>" type="text" name="direccion" class="form-control" placeholder="Lugar de destino" readonly>
-            </div>
-            <div class="col-sm-4">
             <label>Pais origen</label>
                 <input value="<?php echo $origen;?>" type="text" name="direccion" class="form-control" placeholder="Lugar de destino" readonly>
             </div>
+            <div class="col-sm-4">
+            <label>Pais destino</label>
+                <input value="<?php echo $destino;?>" type="text" name="direccion" class="form-control" placeholder="Lugar de destino" readonly>
+            </div>
+
+            <div class="col-sm-4">
+            <label>Referencia 1</label>
+                <input value="<?php echo $direccion_entrega;?>" type="text" name="direccion" class="form-control" placeholder="Lugar de destino" readonly>
+            </div>
             
             <div class="col-sm-4">
-            <label>Dirección de origen</label>
+            <label>Referencia 2</label>
                 <input value="<?php echo $direccion_envio;?>" type="text" name="direccionenvio" class="form-control" placeholder="Lugar de envío" readonly>
             </div>
         
-
-            <div class="col-sm-4">
-                <label>Peso</label>
-                <input value="<?php echo $peso;?>" type="text" name="peso" class="form-control" placeholder="Peso del paquete"readonly>
-            </div>
             <div class="col-sm-4">
                 <label>Descripción</label>
                 <br>
-                <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="135" rows="3" disabled><?php echo $dpaquete;?></textarea>
+                <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="65" rows="3" disabled><?php echo $dpaquete;?></textarea>
             </div>
       </div>
       <br>

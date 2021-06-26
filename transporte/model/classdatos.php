@@ -139,10 +139,9 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 		unset($_SESSION['idvehiculo']);
 		//
 		$texto=$res['@pn_respuesta'];
-		echo $texto;
-		/*echo'<script language = javascript>
+		echo'<script language = javascript>
 						alert("'.$texto.'")
-						self.location="../views/estados.php" </script>';*/
+						self.location="../views/estados.php" </script>';
 
 
 	}

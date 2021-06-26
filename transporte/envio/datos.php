@@ -45,37 +45,45 @@ if(isset($_GET['id'])){
   while($row=mysqli_fetch_array($dt))
   {
       /**datos del envio */
-      $id=$row['id_envio'];
+      $id_envio=$row['id_envio']; //id_envio
       $codigo_envio=$row['codigo_envio'];
       $fenvio=$row['fecha_envio'];
       $fentrega=$row['fecha_entrega'];
       $autorizacion=$row['autorizacion'];
       /**datos del receptor y emisor */
-      $id_cliente=$row['id_cliente'];//id
+      $id_cliente=$row['id_cliente'];//id_cliente
       $cliente=$row['cliente'];
       $tel_cliente=$row['tel_cliente'];
-      $id_receptor=$row['id_receptor'];//id
+      $id_receptor=$row['id_receptor'];//id_receptor
       $receptor=$row['receptor'];
       $tel_receptor=$row['tel_receptor'];
       /**datos del paquete */
+      $id_paquete=$row['id_paquete']; //id de paquete
       $peso=$row['peso'];
       $direccion_entrega=$row['direccion_entrega'];
       $direccion_envio=$row['direccion_envio'];
-      $id_ruta=$row['id_ruta'];
+      $id_ruta=$row['id_ruta'];//id_ruta
       $codigo_ruta=$row['codigo_ruta'];
       $origen=$row['pais_origen'];
       $destino=$row['pais_destino'];
       $dpaquete=$row['dpaquete'];
       /**datos del piloto */
-      $id_piloto=$row['id_empleado'];
+      $id_piloto=$row['id_empleado'];//id_piloto
       $piloto=$row['piloto'];
       $tel_piloto=$row['telefono1'];
+      /**asignacion */
+      $id_asignacion=$row['id_asignacion_vehiculo'];
+      
+      /**datos del vehiculo */
+      $id_vehiculo=$row['id_vehiculo'];/**id vehiculo */
       $marca=$row['marca'];
       $placa=$row['no_placa'];
       $interno_externo=$row['tipo_interno_externo'];
       $descripcion=$row['descripcion'];
       $tipo_vehivulo=$row['tipo_vehiculo'];
+
       if(($tipo_vehivulo=="Cabezal") or ($tipo_vehivulo=="cabezal")){
+        $id_plataforma=$row['id_plataforma']; /* id plataforma*/ 
         $placa_plataforma=$row['placa'];
         $tipo_plataforma=$row['tipo'];
         $color_plataforma=$row['color'];
@@ -95,7 +103,7 @@ if(isset($_GET['id'])){
 
   ?>
   <h1>Modificar envio</h1>
-    <form method="POST" action="../controller/envio.php" >
+    <form method="POST" action="../controller/envio.php?id=<?php echo $id_envio;?>&mod" >
       <h1>Datos del envio</h1>
       <br>
       <div class="form-row">
@@ -126,7 +134,14 @@ if(isset($_GET['id'])){
                     </div>
                   </div>
                 </div>
-
+                <!-- todos los id  -->
+                <input value='<?php echo $id_cliente;?>' name="id_cliente" type="hidden">
+                <input value='<?php echo $id_receptor;?>' name="id_receptor" type="hidden">
+                <input value='<?php echo $id_paquete;?>' name="id_paquete" type="hidden">
+                <input value='<?php echo $id_asignacion;?>' name="id_asignacion" type="hidden">
+                <input value='<?php echo $id_piloto;?>' name="id_piloto" type="hidden">
+                <input value='<?php echo $id_vehiculo;?>' name="id_vehiculo" type="hidden">
+                <!--______________________________________________________________________________ -->
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
                     <input value='<?php echo $receptor;?>' type="text" class="form-control" placeholder="Receptor" id="pagina2" name="Receptor">
@@ -202,6 +217,8 @@ if(isset($_GET['id'])){
                       </div>
                     </div>
                   </div>
+
+                  <input value='<?php echo $id_plataforma;?>' name="id_plataforma" type="hidden">
                   <?php
                 }
                 ?>
@@ -214,15 +231,7 @@ if(isset($_GET['id'])){
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4">
-                  <label for="" class="text-danger">seleccione solo si un piloto cuenta con vehiculo propio</label>
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Pilotos Con vehiculos" id="pagina6" name="pilotoTercero">
-                    <div class="input-group-append">
-                      <button id="boton6" class="input-group-text btn-btn-primary">Piloto</button>
-                    </div>
-                  </div>
-                </div>
+
       </div>
       <div class="container-fluid col-sm-5">
                 <br>
@@ -358,7 +367,7 @@ else
                 <br>
             <center>
                 <input type="submit" class="btn btn-success" value="Aceptar">
-                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                <a href="../views/secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                 <input type="reset" class="btn btn-danger" value="cancelar">
                 
             </center>
