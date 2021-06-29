@@ -50,6 +50,17 @@ class pagos
 
     }
 
+    public function VerEnviosPagos()
+    {
+
+        $db = new datos();
+        $db->conectar();
+        $consulta= "call sp_cuentas_por_pagar(0, 0, 0, 0, 'S4', @pn_respuesta);";
+        $dt= mysqli_query($db->objetoconexion,$consulta);
+        $db->desconectar();
+        return $dt2;
+
+    }
 
             public function VerCuentasPorPagar()
     {

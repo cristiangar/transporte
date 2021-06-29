@@ -19,6 +19,9 @@ include_once("../model/classdatos.php");
                 $codenvio = new envio();
                 $dt8 = $codenvio->VerEnvio();
                 
+                $codenvio = new envio();
+                $dt9 = $codenvio->VerListaViajePago();
+
         if(isset($_GET['id'])and isset($_GET['Autorizar'])){
                 echo "autorizar";
                 $id=$_GET['id'];

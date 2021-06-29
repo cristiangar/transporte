@@ -36,48 +36,52 @@
   if($resultado>0){
 
     ?>
-      <h1>Lista de pilotos</h1>
+      <h1>Viajes Autorizados</h1>
       <br>
       <div class="container mt-3">
       <input class="form-control" id="myInput" type="text" placeholder="buscar..">
       <br>
       <table class="table table-dark table-striped table-hover table-responsive-sm" border="1" id="tabla_paginada" >
             <thead>
+              <td>Codigo de Viaje</td>
               <td>Nombre Piloto</td>
-              <td>Telefono</td>
-              <td>Tipo licencia</td>
+              <td>Adelanto</td>
+              <td>Pendiente Complemento</td>
               <td>Estado</td>
               <td>Tipo Piloto</td>
               
             </thead>
       <?php
           while ($row=mysqli_fetch_array($dt9)) {
-            $id=$row['id_empleado'];
-            $nombre=$row['nombre'];
-            $telefono=$row['telefono1'];
-            $tipo_licencia=$row['tipo_licencia'];
-            $estado=$row['estado_piloto'];
+            $idenvio=$row['id_envio'];
+            $id=$row['codigo_envio'];
+            $idp=$row['id_empleado'];
+            $nombre=$row['piloto'];
+            $adelanto=$row['adelanto_piloto'];
+            $pendiente=$row['pendiente_piloto'];
+            $estado=$row['autorizacion'];
             $cargo=$row['cargo'];
          ?>
                   <tbody id="myTable">
                   <tr>
+                    <td><?php echo $id?></td>
                     <td><?php echo $nombre?></td>
-                    <td><?php echo $telefono?></td>
-                    <td><?php echo $tipo_licencia?></td>
+                    <td><?php echo $adelanto?></td>
+                    <td><?php echo $pendiente?></td>
                     <?php
-                      if($estado == 'Disponible' or $estado =='disponible'){
+                      if($estado == 1){
                         ?>
-                        <td><span class="badge badge-success"><?php echo $estado?></span></td>
+                        <td><span class="badge badge-success">Autorizado</span></td>
                         <?php
                       }
                       else{
                         ?>
-                        <td><span class="badge badge-danger"><?php echo $estado?></span></td>
+                        <td><span class="badge badge-danger">Sin Autorizar</span></td>
                         <?php
                       }
                     ?>
                     <td><?php echo $cargo?></td>
-                    <td><center><a href="listapilotopago.php?id=<?php echo $id?>&no=<?php echo $nombre?>"><button type="button" class="btn btn-primary">Seleccionar</button></a></center></td>
+                    <td><center><a href="listapilotopago.php?id=<?php echo $id?>&no=<?php echo $nombre?>&idp=<?php echo $idp?>&ad=<?php echo $adelanto?>&pe=<?php echo $pendiente?>"><button type="button" class="btn btn-primary">Seleccionar</button></a></center></td>
                   </tr>
                  </tbody>
                  <?php
@@ -138,7 +142,13 @@ $(document).ready(function(){
       
       $valor=$_GET['id'];
       $nombre=$_GET['no'];
-      $_SESSION['idpiloto']=$valor;
+      $valor2=$_GET['idp'];
+      $adelanto=$_GET['ad'];
+      $pendiente=$_GET['pe'];
+      $_SESSION['idenvio']=$valor;
+      $_SESSION['idpiloto']=$valor2;
+      $_SESSION['adelanto']=$adelanto;
+      $_SESSION['pendiente']=$pendiente;
       ?>
           <h2>Cliente seleccionado: <?php echo $nombre ?></h2>
       		<input value='<?php echo $nombre;?>' type="text" id="P9" placeholder="Enviar al padre" hidden>&nbsp;

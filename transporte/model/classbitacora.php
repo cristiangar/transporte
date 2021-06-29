@@ -54,7 +54,7 @@ class bitacora
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_bitacora($id, 1, 0, '0', 'S1', @pn_respuesta);;";
+		$consulta= "call sp_bitacora(0, $id, 0, '0', 'S1', @pn_respuesta);;";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
