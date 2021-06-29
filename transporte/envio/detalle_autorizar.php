@@ -236,6 +236,7 @@ while($row=mysqli_fetch_array($dt))
                 <br>
                 <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="135" rows="3" disabled><?php echo $descripcion;?></textarea>
                 </div>
+
       </div>
       <br>
       <?php
@@ -289,19 +290,37 @@ while($row=mysqli_fetch_array($dt))
                   
                 }
         ?>
-
-      <div class="container-fluid col-sm-5">
+        <form method="POST" action="../controller/datos.php?id=<?php echo $id;?>&Autorizar">
+        <h1>Información adicional </h1>
+        <div class="form-row"> 
+            <div class="col-sm-4">
+                <label>Adelanto del piloto</label>
+                <input value="0" type="text" name="adelanto" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                <label>saldo</label>
+                <input value="0" type="text" name="saldo" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                <label>Renta de caja</label>
+                <input value="0" type="text" name="renta" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                <label>combustibel</label>
+                <input value="0" type="text" name="combustible" class="form-control">
+            </div>
+        </div>
+        <div class="container-fluid col-sm-5">
                 <br>
                 <br>
             <center>
-               <!-- <a href="../controller/datos.php?id=<?php //echo $id?>&Autorizar"><button type="button" class="btn btn-success" >Autorizar</button></a> -->
-                <!--<a href="../Reportes/reporteEnvio.php?id=<?php //echo $id;?>"target='_blank'><button type="button" class="btn btn-info" >Imprimir</button></a> -->
-                <a href="../envio/datos.php?id=<?php echo $id; ?>"><button type="button" class="btn btn-dark" >Modificar</button></a>
-                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>   
-                <a href="../controller/envio.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger" >Eliminar</button></a>      
+                <input type="submit" class="btn btn-success" value="Autorizar"> 
+                <a href="../Reportes/reporteEnvio.php?id=<?php //echo $id;?>"target='_blank'><button type="button" class="btn btn-info" >Imprimir</button></a> 
+                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>         
             </center>
             <br>
         </div>
+        </form>
 
 </div>
 </body>
