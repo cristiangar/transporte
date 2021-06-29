@@ -15,8 +15,120 @@ if (isset($_GET['id']))
     else
     {
         if(isset($_GET['id']) and isset($_GET['mod'])){
-
                 /*MODIFICAR*/
+                if(isset($_POST ['cod']) and isset($_POST['plataforma'])){
+                    $id=$_GET['id'];
+                    $codigo_envio=$_POST['cod'];
+                    $fecha_envio=$_POST['fenvio'];
+                    $fecha_entrega=$_POST['fentrega'];
+                    /*datos del cliente y receptor*/
+                    if(isset($_SESSION['idcliente'])){
+                        $id_cliente=$_SESSION['idcliente'];
+                    }
+                    else{
+                        $id_cliente=$_POST['id_cliente'];
+                    
+                    }
+
+                    if(isset($_SESSION['idreceptor'])){
+                        $id_receptor=$_SESSION['idreceptor'];
+                    }
+                    else{
+                        $id_receptor=$_POST['id_receptor'];
+                        
+                    }
+                    /*datos del paquete*/
+                    $id_paquete=$_POST['id_paquete'];
+                    $peso="N/A";
+                    $direccion_entrega=$_POST['direccion'];
+                    $direccion_envio=$_POST['direccionenvio'];
+                    $ruta=$_POST['id_ruta'];
+                    $descripcion=$_POST['descripcion'];
+                    /**id asignacion */
+                    $asignacion=$_POST['id_asignacion'];
+                    /*datos del vehiculo*/
+                    if(isset($_SESSION['idvehiculo'])){
+                        $vehiculo=$_SESSION['idvehiculo'];
+                    }
+                    else{
+                        $vehiculo=$_POST['id_vehiculo'];
+                        
+                    } 
+
+                    if(isset($_SESSION['idpiloto'])){
+                        $piloto=$_SESSION['idpiloto'];
+                    }
+                    else{
+                        $piloto=$_POST['id_piloto'];
+
+                    }
+                    if(isset($_SESSION['idplataforma'])){
+                        $plataforma=$_SESSION['idplataforma'];
+                    }
+                    else{
+                        $plataforma=$_POST['id_plataforma'];
+
+                    }
+
+                    $modificar=new envio();
+                    $modificar->Actualizar2($id,$codigo_envio,$fecha_envio, $fecha_entrega,$id_cliente, $id_receptor,$id_paquete,$direccion_entrega, $direccion_envio,$descripcion,$ruta,$asignacion,$piloto, $vehiculo,$plataforma);
+                    
+                  
+                  //echo "cabezal con plataforma";  
+            }
+            else
+            {
+                    //echo "piloto y vehiculo sin plataforma";
+                    /*datos del envio*/
+                    $id=$_GET['id'];
+                    $codigo_envio=$_POST['cod'];
+                    $fecha_envio=$_POST['fenvio'];
+                    $fecha_entrega=$_POST['fentrega'];
+                    /*datos del cliente y receptor*/
+                    if(isset($_SESSION['idcliente'])){
+                        $id_cliente=$_SESSION['idcliente'];
+                    }
+                    else{
+                        $id_cliente=$_POST['id_cliente'];
+                    
+                    }
+
+                    if(isset($_SESSION['idreceptor'])){
+                        $id_receptor=$_SESSION['idreceptor'];
+                    }
+                    else{
+                        $id_receptor=$_POST['id_receptor'];
+                        
+                    }
+                    /*datos del paquete*/
+                    $id_paquete=$_POST['id_paquete'];
+                    $peso="N/A";
+                    $direccion_entrega=$_POST['direccion'];
+                    $direccion_envio=$_POST['direccionenvio'];
+                    $ruta=$_POST['id_ruta'];
+                    $descripcion=$_POST['descripcion'];
+                    /**id asignacion */
+                    $asignacion=$_POST['id_asignacion'];
+                    /*datos del vehiculo*/
+                    if(isset($_SESSION['idvehiculo'])){
+                        $vehiculo=$_SESSION['idvehiculo'];
+                    }
+                    else{
+                        $vehiculo=$_POST['id_vehiculo'];
+                        
+                    } 
+
+                    if(isset($_SESSION['idpiloto'])){
+                        $piloto=$_SESSION['idpiloto'];
+                    }
+                    else{
+                        $piloto=$_POST['id_piloto'];
+
+                    }
+                    $modificar=new envio();
+                    $modificar->Actualizar1($id,$codigo_envio,$fecha_envio, $fecha_entrega,$id_cliente, $id_receptor,$id_paquete,$direccion_entrega, $direccion_envio,$descripcion,$ruta,$asignacion,$piloto, $vehiculo);
+                    
+            }
 
         }
         else{
