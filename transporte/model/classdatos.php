@@ -220,4 +220,52 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 		$db->desconectar();
 		return $dtruta;
     }
+	public function Actualizar1($id,$codigo_envio,$fecha_envio, $fecha_entrega,$id_cliente, $id_receptor,$id_paquete,$direccion_entrega, $direccion_envio,$descripcion,$ruta,$asignacion,$piloto, $vehiculo)
+	{
+		$bd = new datos();
+		$bd->conectar();
+		$consulta= "call actualizar_envio($id, '$codigo_envio', '$fecha_envio', '$fecha_entrega', $id_cliente,$id_receptor, $id_paquete, '$direccion_entrega', '$direccion_envio', '$descripcion', $ruta, $asignacion, $piloto, $vehiculo,0, 'U', @pn_respuesta);";
+		$dt= mysqli_query($bd->objetoconexion,$consulta);
+
+		$salida="SELECT @pn_respuesta";
+		$consultar=mysqli_query($bd->objetoconexion,$salida);
+		
+		$bd->desconectar();
+
+		$res=mysqli_fetch_array($consultar);
+		unset($_SESSION['idcliente']);
+		unset($_SESSION['idreceptor']);
+		unset($_SESSION['idpiloto']);
+		unset($_SESSION['idvehiculo']);
+		//
+		$texto=$res['@pn_respuesta'];
+		echo'<script language = javascript>
+						alert("'.$texto.'")
+						self.location="../views/estados.php" </script>';
+	}
+
+	public function Actualizar2($id,$codigo_envio,$fecha_envio, $fecha_entrega,$id_cliente, $id_receptor,$id_paquete,$direccion_entrega, $direccion_envio,$descripcion,$ruta,$asignacion,$piloto, $vehiculo,$plataforma)
+	{
+		$bd = new datos();
+		$bd->conectar();
+		$consulta= "call actualizar_envio($id, '$codigo_envio', '$fecha_envio', '$fecha_entrega', $id_cliente,$id_receptor, $id_paquete, '$direccion_entrega', '$direccion_envio', '$descripcion', $ruta, $asignacion, $piloto, $vehiculo,$plataforma, 'U2', @pn_respuesta);";
+		$dt= mysqli_query($bd->objetoconexion,$consulta);
+
+		$salida="SELECT @pn_respuesta";
+		$consultar=mysqli_query($bd->objetoconexion,$salida);
+		
+		$bd->desconectar();
+
+		$res=mysqli_fetch_array($consultar);
+		unset($_SESSION['idcliente']);
+		unset($_SESSION['idreceptor']);
+		unset($_SESSION['idpiloto']);
+		unset($_SESSION['idvehiculo']);
+		//
+		$texto=$res['@pn_respuesta'];
+		echo'<script language = javascript>
+						alert("'.$texto.'")
+						self.location="../views/estados.php" </script>';
+	}
+
 }

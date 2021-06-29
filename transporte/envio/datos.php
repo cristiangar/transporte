@@ -158,16 +158,12 @@ if(isset($_GET['id'])){
 
       <div class="form-row">
             <div class="col-sm-4">
-                <label>Peso</label>
-                <input value='<?php echo $peso;?>' type="text" name="peso" class="form-control" placeholder="Peso del paquete"require>
+            <label>Referencia 1</label>
+                <input value='<?php echo $direccion_entrega;?>' type="text" name="direccion" class="form-control" placeholder="Referencia" require>
             </div>
             <div class="col-sm-4">
-            <label>Dirección de Entrega</label>
-                <input value='<?php echo $direccion_entrega;?>' type="text" name="direccion" class="form-control" placeholder="Lugar de destino" require>
-            </div>
-            <div class="col-sm-4">
-            <label>Dirección de Envío</label>
-                <input value='<?php echo $direccion_envio;?>' type="text" name="direccionenvio" class="form-control" placeholder="Lugar de envío">
+            <label>Referencia 2</label>
+                <input value='<?php echo $direccion_envio;?>' type="text" name="direccionenvio" class="form-control" placeholder="Referencia">
             </div>
             <?php 
                 $tipo=new envio();
@@ -219,6 +215,7 @@ if(isset($_GET['id'])){
                   </div>
 
                   <input value='<?php echo $id_plataforma;?>' name="id_plataforma" type="hidden">
+                  <input  name="plataforma" type="hidden">
                   <?php
                 }
                 ?>
