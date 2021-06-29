@@ -23,10 +23,13 @@ include_once("../model/classdatos.php");
                 $dt9 = $codenvio->VerListaViajePago();
 
         if(isset($_GET['id'])and isset($_GET['Autorizar'])){
-                echo "autorizar";
-                $id=$_GET['id'];
+               $id=$_GET['id'];
+               $adelanto=$_POST['adelanto'];
+               $pendiente=$_POST['saldo'];
+               $renta=$_POST['renta'];
+               $combustible=$_POST['combustible'];
                 $au=new envio();
-                $au->Autorizar($id);
+                $au->Autorizar($id,$adelanto,$pendiente,$renta,$combustible);
         }
         else{
                 

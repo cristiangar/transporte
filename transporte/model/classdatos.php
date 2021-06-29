@@ -179,11 +179,11 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 		return $dt;
 	}
 
-	public function Autorizar($id)
+	public function Autorizar($id,$adelanto,$pendiente,$renta,$combustible)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_envio($id, 'A', '0', '0', '0', '0', 0, '0', '0', 0, 0, '0', 0, 0, @pn_respuesta);";
+		$consulta= "call sp_autorizar_envio($id,$adelanto,$pendiente,$renta,$combustible, 'A', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -273,6 +273,8 @@ public function Ingresar2($descripcion, $peso, $direccion_entrega, $direccion_en
 		unset($_SESSION['idreceptor']);
 		unset($_SESSION['idpiloto']);
 		unset($_SESSION['idvehiculo']);
+		unset($_SESSION['idplataforma']);
+
 		//
 		$texto=$res['@pn_respuesta'];
 		echo'<script language = javascript>
