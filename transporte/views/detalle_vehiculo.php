@@ -96,8 +96,9 @@ if(isset($_GET['P']))
                 <br>
                 <br>
                 <br>
+
                 <a href="<?php echo  $ruta_imagen_caat;?>" download="Codigo CAAT">
-                Descargar CAAT
+                <button type="button" class="btn btn-primary">Descargar CAAT</button>
                 </a>
             </div>
             <br>

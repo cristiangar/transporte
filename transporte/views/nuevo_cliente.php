@@ -66,6 +66,12 @@
                         }
                     } 
             </script>
+<script>
+    function forceLower(strInput) 
+{
+strInput.value=strInput.value.toLowerCase();
+}
+</script>
 <div class="container-fluid">
 <?php
 if(isset($_GET['id'])){
@@ -96,42 +102,21 @@ if(isset($_GET['id'])){
         <div class="form-row">
             <div class="col-sm-4">
             <label>Nombre</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo $nombre?>" require>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo $nombre?>" onkeyup="return forceLower(this);" require>
             </div>
             <div class="col-sm-4">
             <label>Apellido</label>
                 <input type="text" name="apellido" class="form-control" placeholder="Apellido" value="<?php echo 
-                $apellido?>" require>
+                $apellido?>" onkeyup="return forceLower(this);" require>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>
-            <!--<script>
-                function mascara(valor) {
-                    if (valor.match(/^\d{3}$/) !== null) {
-                         return valor + '-';
-                } else if (valor.match(/^\d{3}\-\d{4}$/) !== null) {
-                return valor + '-';
-                }
-                return cadena;
-                }
-            </script>
-                <input type="tel" name="telefono" class="form-control" placeholder="solo números" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"  onkeyup="this.value = mascara(this.value)" maxlength="13" value="aqui va php echo $telefono?>" require>-->
             <input type="tel" name="telefono" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13" value="<?php echo  $telefono?>" require>
 
 
             </div>
             <div class="col-sm-4">
             <label>Teléfono 2</label>
-                <!--<script>
-                function mascara(valor) {
-                    if (valor.match(/^\d{3}$/) !== null) {
-                         return valor + '-';
-                } else if (valor.match(/^\d{3}\-\d{4}$/) !== null) {
-                return valor + '-';
-                }
-                return cadena;
-                }
-            </script>-->
                 <input type="tel" name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13" value="<?php echo  $telefono2?>" require>
             </div>
             <div class="col-sm-4">
@@ -186,11 +171,11 @@ else
         <div class="form-row">
             <div class="col-sm-4">
             <label>Nombre</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre" require>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" onkeyup="return forceLower(this);" require>
             </div>
             <div class="col-sm-4">
             <label>Apellido</label>
-                <input type="text" name="apellido" class="form-control" placeholder="Apellido"require>
+                <input type="text" name="apellido" class="form-control" placeholder="Apellido" onkeyup="return forceLower(this);" require>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>
