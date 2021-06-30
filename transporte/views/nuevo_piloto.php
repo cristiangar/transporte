@@ -92,6 +92,8 @@ if(isset($_GET['id']))
         $numero_emergencia=$row['contacto_emergencia_numero'];
         $id_tipo_empleado=$row['id_tipo_empleado'];
         $cargo=$row['cargo'];
+        $nombre_cuenta=$row['nombre_cuenta'];
+        $tipo_cuenta=$row['tipocuenta'];
 
     }
 ?>
@@ -118,14 +120,6 @@ if(isset($_GET['id']))
             <div class="col-sm-4">
                 <label>WhatsApp</label>
                 <input value='<?php echo $telefono2;?>' type="text" value='N/A' name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  require>
-            </div>
-            <div class="col-sm-4">
-                <label>Banco</label>
-                <input name="banco" value='<?php echo $banco;?>' type="text" class="form-control" placeholder="Correo" require>
-            </div>
-            <div class="col-sm-4">
-                <label>No.cuenta de banco</label>
-                <input name="cuenta_banco" value='<?php echo $cuenta;?>' type="text" class="form-control" placeholder="Correo" require>
             </div>
             <div class="col-sm-4">
                 <label>contacto de emergencia</label>
@@ -284,9 +278,31 @@ if(isset($_GET['id']))
             }
 ?>      
 
+        
+
         </div>
         <br>
-        
+        <br>
+        <h1>Datos bancarios</h1>
+        <br>
+        <div class="form-row">
+            <div class="col-sm-4">
+                <label>Banco</label>
+                <input value="<?php echo $banco;?>" name="banco"  type="text" class="form-control" placeholder="Banco" require>
+            </div>
+            <div class="col-sm-4">
+                <label>Nombre de la cuenta</label>
+                <input value="<?php echo $nombre_cuenta;?>" name="Nbanco"  type="text" class="form-control" placeholder="Nombre de la cuenta" require>
+            </div>
+            <div class="col-sm-4">
+                <label>No.cuenta de banco</label>
+                <input value="<?php echo $cuenta;?>" name="cuenta_banco"  type="text" class="form-control" placeholder="No.cuenta" require>
+            </div>
+            <div class="col-sm-4">
+                <label>Tipo de cuenta</label>
+                <input value="<?php echo $tipo_cuenta;?>" name="tipo_cuenta"  type="text" class="form-control" placeholder="tipo cuenta" require>
+            </div>
+        </div>
         <div class="container-fluid wrapper fadeInDown col-sm-5">
                 <br>
                 <center>
@@ -329,14 +345,6 @@ else
             <div class="col-sm-4">
                 <label>WhatsApp</label>
                 <input type="text" value='N/A' name="telefono2" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  require>
-            </div>
-            <div class="col-sm-4">
-                <label>Banco</label>
-                <input name="banco" value='N/A' type="text" class="form-control" placeholder="Correo" require>
-            </div>
-            <div class="col-sm-4">
-                <label>No.cuenta de banco</label>
-                <input name="cuenta_banco" value='N/A' type="text" class="form-control" placeholder="Correo" require>
             </div>
             <div class="col-sm-4">
                 <label>contacto de emergencia</label>
@@ -416,6 +424,26 @@ else
             </div>
         </div>
         <br>
+        <h1>Datos bancarios</h1>
+        <br>
+        <div class="form-row">
+            <div class="col-sm-4">
+                <label>Banco</label>
+                <input name="banco"  type="text" class="form-control" placeholder="Banco" require>
+            </div>
+            <div class="col-sm-4">
+                <label>Nombre de la cuenta</label>
+                <input name="Nbanco"  type="text" class="form-control" placeholder="Nombre de la cuenta" require>
+            </div>
+            <div class="col-sm-4">
+                <label>No.cuenta de banco</label>
+                <input name="cuenta_banco"  type="text" class="form-control" placeholder="No.cuenta" require>
+            </div>
+            <div class="col-sm-4">
+                <label>Tipo de cuenta</label>
+                <input name="tipo_cuenta"  type="text" class="form-control" placeholder="tipo cuenta" require>
+            </div>
+        </div>
         <div class="container-fluid wrapper fadeInDown col-sm-5">
                 <br>
                 <center>
