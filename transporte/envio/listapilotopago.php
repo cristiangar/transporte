@@ -43,12 +43,19 @@
       <br>
       <table class="table table-dark table-striped table-hover table-responsive-sm" border="1" id="tabla_paginada" >
             <thead>
-              <td>Codigo de Viaje</td>
-              <td>Nombre Piloto</td>
+              <td>No. de Viaje</td>
+              <td>Nombre de Operador</td>
+              <td>Cliente</td>
+              <td>País</td>
               <td>Adelanto</td>
               <td>Pendiente Complemento</td>
-              <td>Estado</td>
-              <td>Tipo Piloto</td>
+              <td>Renta de Caja</td>
+              <td>Combustible</td>
+              <td>Tipo de Cuenta</td>
+              <td>Banco</td>
+              <td>Cuenta Numero</td>
+              <td>Cuentahabiente</td>
+              <td>Telefono</td>
               
             </thead>
       <?php
@@ -61,26 +68,31 @@
             $pendiente=$row['pendiente_piloto'];
             $estado=$row['autorizacion'];
             $cargo=$row['cargo'];
+            $cliente=$row['cliente'];
+            $pais=$row['pais_origen'];
+            $rentacaja=$row['renta_caja'];
+            $combustible=$row['combistible'];
+            $tipocuenta=$row['tipocuenta'];
+            $banco=$row['banco'];
+            $cuentabancaria=$row['cuenta_bancaria'];
+            $nombrecuentah=$row['nombre_cuentahabiente'];
+            $telefono=$row['telefono'];
          ?>
                   <tbody id="myTable">
                   <tr>
                     <td><?php echo $id?></td>
                     <td><?php echo $nombre?></td>
+                    <td><?php echo $cliente?></td>
+                    <td><?php echo $pais?></td>
                     <td><?php echo $adelanto?></td>
                     <td><?php echo $pendiente?></td>
-                    <?php
-                      if($estado == 1){
-                        ?>
-                        <td><span class="badge badge-success">Autorizado</span></td>
-                        <?php
-                      }
-                      else{
-                        ?>
-                        <td><span class="badge badge-danger">Sin Autorizar</span></td>
-                        <?php
-                      }
-                    ?>
-                    <td><?php echo $cargo?></td>
+                    <td><?php echo $rentacaja?></td>
+                    <td><?php echo $combustible?></td>
+                    <td><?php echo $tipocuenta?></td>
+                    <td><?php echo $banco?></td>
+                    <td><?php echo $cuentabancaria?></td>
+                    <td><?php echo $nombrecuentah?></td>
+                    <td><?php echo $telefono?></td>
                     <td><center><a href="listapilotopago.php?id=<?php echo $id?>&no=<?php echo $nombre?>&idp=<?php echo $idp?>&ad=<?php echo $adelanto?>&pe=<?php echo $pendiente?>"><button type="button" class="btn btn-primary">Seleccionar</button></a></center></td>
                   </tr>
                  </tbody>
@@ -97,7 +109,7 @@
                 </tfoot>
       </table>            
             <center>
-                 <a href="../views/menu_nuevo_piloto.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                 
                     
             </center>
 
@@ -114,7 +126,7 @@
       <br><br><br><br>
       <h1>No hay datos ingresados</h1>
       <br>
-      <a href="../view/menu_nuevo_piloto.php"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
+      
     </center>
     <?php
   }
@@ -145,13 +157,16 @@ $(document).ready(function(){
       $valor2=$_GET['idp'];
       $adelanto=$_GET['ad'];
       $pendiente=$_GET['pe'];
-      $_SESSION['idenvio']=$valor;
-      $_SESSION['idpiloto']=$valor2;
+      $_SESSION['codviaje']=$valor;
+      $_SESSION['idpilotoviaje']=$valor2;
       $_SESSION['adelanto']=$adelanto;
       $_SESSION['pendiente']=$pendiente;
       ?>
-          <h2>Cliente seleccionado: <?php echo $nombre ?></h2>
-      		<input value='<?php echo $nombre;?>' type="text" id="P9" placeholder="Enviar al padre" hidden>&nbsp;
+          <h2>Viaje seleccionado: <?php echo $valor?></h2>
+      		<input value='<?php echo $valor;?>' type="text" id="P9" placeholder="Enviar al padre" hidden>&nbsp;
+          <input value='<?php echo $nombre;?>' type="text" id="P10" placeholder="Enviar al padre" hidden>&nbsp;
+          <input value='<?php echo $adelanto;?>' type="text" id="P11" placeholder="Enviar al padre" hidden>&nbsp;
+          <input value='<?php echo $pendiente;?>' type="text" id="P12" placeholder="Enviar al padre" hidden>&nbsp;
           <label for="">Precione el boton aceptar para continuar</label> <br>
 		      <button class='btn btn-success btn-lg' id="btnp9" onclick="window.close();">Aceptar</button>
       <?php

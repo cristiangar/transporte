@@ -26,17 +26,15 @@ if (isset($_GET['id']))
 else
 {
     
-    if(isset($_POST['total'])and isset($_POST['anticipo'])){
-        $total=$_POST['total'];
-        $anticipo=$_POST['anticipo'];
-        /*datos del cliente y envio*/
-        $id_cliente=$_SESSION['idpiloto'];
-        
-        /*$id_envio=$_GET['idenvio'];
-        $id_cliente=$_GET['idcliente'];*/
+    if(isset($_SESSION['pendiente'])and isset($_SESSION['adelanto'])){
+        $pendiente=$_SESSION['pendiente'];
+        $adelanto=$_SESSION['adelanto'];
+        /*datos del cliente y envio*/        
+        $codviaje=$_SESSION['codviaje'];
+        $id_pilotoviaje=$_SESSION['idpilotoviaje'];
 
         $au = new cuentapago();
-        $au -> IngresarCuentaPagar($id_cliente,$total,$anticipo);
+        $au -> IngresarCuentaPagar($codviaje,$id_pilotoviaje,$pendiente,$adelanto);
     }
     else
     {
