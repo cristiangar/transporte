@@ -84,7 +84,7 @@
                     <a href="bitacora.php">
                     <img class="img-fluid" src="../imagenes/bitacora.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
                     </a>
-                    <h1>Bitácora</h1>
+                    <h1>Bitácora de viaje</h1>
                 </div>
             </div>
         </div>        
