@@ -60,6 +60,8 @@ while ($row=mysqli_fetch_array($dt)) {
   $cuenta=$row['cuenta_bancaria'];
   $nombre_emergencia=$row['contacto_emergencia_nombre'];
   $numero_emergencia=$row['contacto_emergencia_numero'];
+  $nombre_cuenta=$row['nombre_cuenta'];
+  $tipo_cuenta=$row['tipocuenta'];
 
 
   }
@@ -72,6 +74,8 @@ while ($row=mysqli_fetch_array($dt)) {
                 <h2 class="card-title">WhatsApp: <?php echo $telefono2;?></h2>
                 <h2 class="card-title">Banco: <?php echo $banco;?></h2>
                 <h2 class="card-title">Cuenta Bancaria: <?php echo $cuenta;?></h2>
+                <h2 class="card-title">Nombre cuentahabiente: <?php echo $nombre_cuenta;?></h2>
+                <h2 class="card-title">tipo de cuenta: <?php echo $tipo_cuenta;?></h2>
                 <h2 class="card-title">Contacto de emergencia: <?php echo $nombre_emergencia;?></h2>
                 <h2 class="card-title">No. contacto de emergencia: <?php echo $numero_emergencia;?></h2>
                 <h2 class="card-title">Correo electronico: <?php echo $correo;?></h2>

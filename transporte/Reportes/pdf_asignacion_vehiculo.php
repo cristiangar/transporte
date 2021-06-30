@@ -14,8 +14,7 @@ while($row=mysqli_fetch_array($detalle))
     $ruta_licencia=$row['ruta_imagen_licencia'];
     $pasaporte=$row['pasaporte'];
     $ruta_pasaporte=$row['ruta_imagen_pasaporte'];
-    $codigo_caat=$row['codigo_caat'];
-    $ruta_caat=$row['ruta_imagen_caat'];
+
     /**vehiculo */
     $marca=$row['marca'];
     $modelo=$row['modelo'];
@@ -27,14 +26,16 @@ while($row=mysqli_fetch_array($detalle))
     $color=$row['color'];
     $descripcion=$row['descripcion'];
 
-    if(($tvehiculo=="Cabezal") or ($tvehiculo=="cabezal")){
+    if(($tvehiculo=="Cabezal") or ($tvehiculo==" cabezal")){
   
       $activador=1;
-      $tamanio_plataforma=$row['tamanio_plataforma'];
-      $pplataforma=$row['pplataforma'];
-      $tipo=$row['tipo'];
-      $descripcion_plataforma=$row['descripcion_plataforma'];
-      $ruta_plataforma=$row['imagen_plataforma'];
+      $id_plataforma=$row['id_plataforma'];
+      $pplaca=$row['placa'];
+      $tipop=$row['tipo'];
+      $colorp=$row['colorp'];
+      $tamanio=$row['tamaño'];
+      $dplataforma=$row['dplataforma'];
+
     
     }
     else
@@ -78,9 +79,6 @@ $pdf->cell(40,10,$tipo_licencia,0,1,'L');
 $pdf->Sety(90);
 $pdf->SetX(51);
 $pdf->cell(40,10,$pasaporte,0,1,'L');
-$pdf->Sety(100);
-$pdf->SetX(51);
-$pdf->cell(40,10,$codigo_caat,0,1,'L');
 /*datos del vehiculo */
 
 $pdf->SetFont('Arial','B',12);
@@ -95,28 +93,28 @@ $pdf->cell(40,10,'Color:',0,1,'L');
 $pdf->cell(40,10,'Descripcion:',0,1,'L');
 
 $pdf->SetFont('Arial','',12);
-$pdf->Sety(120);
+$pdf->Sety(110);
 $pdf->SetX(51);
 $pdf->cell(40,10,$tvehiculo,0,1,'L');
-$pdf->Sety(130);
+$pdf->Sety(120);
 $pdf->SetX(51);
 $pdf->cell(40,10,$marca,0,1,'L');
-$pdf->Sety(140);
+$pdf->Sety(130);
 $pdf->SetX(51);
 $pdf->cell(40,10,$modelo,0,1,'L');
-$pdf->Sety(150);
+$pdf->Sety(140);
 $pdf->SetX(51);
 $pdf->cell(40,10,$placa,0,1,'L');
-$pdf->Sety(160);
+$pdf->Sety(150);
 $pdf->SetX(51);
 $pdf->cell(40,10,$tamaño,0,1,'L');
-$pdf->Sety(170);
+$pdf->Sety(160);
 $pdf->SetX(51);
 $pdf->cell(40,10,$ejes,0,1,'L');
-$pdf->Sety(180);
+$pdf->Sety(170);
 $pdf->SetX(51);
 $pdf->cell(40,10,$color,0,1,'L');
-$pdf->Sety(190);
+$pdf->Sety(183);
 $pdf->SetX(51);
 $pdf->MultiCell(150,5,$descripcion,1,1,'L');
 /**si es cabezal con plataforma */
@@ -130,81 +128,21 @@ if($activador=="1"){
   $pdf->cell(40,10,'Descripcion:',0,1,'L');
   
   $pdf->SetFont('Arial','',12);
+  $pdf->Sety(205);
+  $pdf->SetX(65);
+  $pdf->cell(40,10,$tipop,0,1,'L');
   $pdf->Sety(215);
   $pdf->SetX(65);
-  $pdf->cell(40,10,$tipo,0,1,'L');
+  $pdf->cell(40,10,$tamanio,0,1,'L');
   $pdf->Sety(225);
   $pdf->SetX(65);
-  $pdf->cell(40,10,$tamanio_plataforma,0,1,'L');
-  $pdf->Sety(235);
-  $pdf->SetX(65);
-  $pdf->cell(40,10,$pplataforma,0,1,'L');
-  $pdf->Sety(250);
+  $pdf->cell(40,10,$pplaca,0,1,'L');
+  $pdf->Sety(240);
   $pdf->SetX(51);
-  $pdf->MultiCell(150,5,$descripcion_plataforma,1,1,'L');
-
-  /**imagenes */
-  $pdf->AddPage();/**agrega una pagina nueva */
-  $pdf->SetFillColor(232,232,232);
-  $pdf->SetFont('Arial','B',12);
-  $pdf->MultiCell(190,10,'Imagenes del piloto y del vehiculo',0,'C',1);
-  $pdf->Cell(190,10,'Targeta circulacion remolque:',0,'C',1);
-  $pdf->Image($ruta_plataforma,51,50,125);
-  $pdf->Sety(135);
-  $pdf->SetX(10);
-  $pdf->Cell(190,10,'Targeta circulacion Vehiculo:',0,'C',1);
-  $pdf->Image($ruta_tarjeta,51,145,125);
-  $pdf->Sety(195);
-  $pdf->SetX(10);
-  $pdf->Cell(190,10,'DPI del piloto:',0,'C',1);
-  $pdf->Image($ruta_dpi,51,205,125);
-
-  $pdf->AddPage();/**agrega una pagina nueva */
-  $pdf->SetFillColor(232,232,232);
-  $pdf->SetFont('Arial','B',12);
-  $pdf->MultiCell(190,10,'Imagenes del piloto y del vehiculo',0,'C',1);
-  $pdf->Cell(190,10,'Licancia del Piloto:',0,'C',1);
-  $pdf->Image($ruta_licencia,51,50,125);
-  $pdf->Sety(135);
-  $pdf->SetX(10);
-  $pdf->Cell(190,10,'Pasaporte del piloto:',0,'C',1);
-  $pdf->Image($ruta_pasaporte,51,145,100);
-  $pdf->Sety(223);
-  $pdf->SetX(10);
-  $pdf->Cell(190,10,'Codigo caat del piloto:',0,'C',1);
-  $pdf->Image($ruta_caat,51,235,125);
-
-}   
-else{
-  /**imagenes si es solo camion sin remolque */
-$pdf->AddPage();/**agrega una pagina nueva */
-$pdf->SetFillColor(232,232,232);
-$pdf->SetFont('Arial','B',12);
-$pdf->MultiCell(190,10,'Imagenes del piloto y del vehiculo',0,'C',1);
-$pdf->Cell(190,10,'Licancia del Piloto:',0,'C',1);
-$pdf->Image($ruta_licencia,51,50,125);
-$pdf->Sety(135);
-$pdf->SetX(10);
-$pdf->Cell(190,10,'Pasaporte del piloto:',0,'C',1);
-$pdf->Image($ruta_pasaporte,51,145,100);
-$pdf->Sety(223);
-$pdf->SetX(10);
-$pdf->Cell(190,10,'Codigo caat del piloto:',0,'C',1);
-$pdf->Image($ruta_caat,51,235,125);
-
-$pdf->AddPage();/**agrega una pagina nueva */
-$pdf->SetFillColor(232,232,232);
-$pdf->SetFont('Arial','B',12);
-$pdf->MultiCell(190,10,'Imagenes del piloto y del vehiculo',0,'C',1);
-$pdf->Cell(190,10,'Targeta circulacion Vehiculo:',0,'C',1);
-$pdf->Image($ruta_tarjeta,51,55,125);
-$pdf->Sety(110);
-$pdf->SetX(10);
-$pdf->Cell(190,10,'DPI del piloto:',0,'C',1);
-$pdf->Image($ruta_dpi,51,120,125);
-
+  $pdf->MultiCell(150,5,$dplataforma,1,1,'L');
 }
-$pdf->Close();
+ 
+
 $pdf->Output('Asignacion vehiculo','I');
 
 ?>

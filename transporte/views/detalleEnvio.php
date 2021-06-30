@@ -295,7 +295,7 @@ while($row=mysqli_fetch_array($dt))
                 <br>
             <center>
                <!-- <a href="../controller/datos.php?id=<?php //echo $id?>&Autorizar"><button type="button" class="btn btn-success" >Autorizar</button></a> -->
-                <!--<a href="../Reportes/reporteEnvio.php?id=<?php //echo $id;?>"target='_blank'><button type="button" class="btn btn-info" >Imprimir</button></a> -->
+                <a href="../Reportes/reporteEnvio.php?id=<?php echo $id;?>"target='_blank'><button type="button" class="btn btn-info" >Imprimir</button></a>
                 <a href="../envio/datos.php?id=<?php echo $id; ?>"><button type="button" class="btn btn-dark" >Modificar</button></a>
                 <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>   
                 <a href="../controller/envio.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger" >Eliminar</button></a>      

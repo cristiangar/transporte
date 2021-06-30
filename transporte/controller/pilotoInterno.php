@@ -21,6 +21,8 @@ if (isset($_GET['id']))
             $whatsApp=$_POST['telefono2'];
             $banco=$_POST['banco'];
             $cuenta=$_POST['cuenta_banco'];
+            $nombre_cuenta=$_POST['Nbanco'];
+            $tipo_cuenta=$_POST['tipo_cuenta']; 
             $nombre_emergencia=$_POST['contacto_emergencia'];
             $numero_emergencia=$_POST['numero_emergencia'];
             $correo=$_POST['correo'];
@@ -68,7 +70,7 @@ if (isset($_GET['id']))
                 move_uploaded_file($archivo, $ruta_pasaporte);//mueve la imagen ala ruta*/
             }
             $au =new Piloto();
-            $au->Modificar($id,$nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia);
+            $au->Modificar($id,$nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia,$nombre_cuenta,$tipo_cuenta);
     
 
         }
@@ -91,8 +93,12 @@ else
         $dpi=$_POST['dpi'];
         $telefono=$_POST['telefono1'];
         $whatsApp=$_POST['telefono2'];
+        
         $banco=$_POST['banco'];
         $cuenta=$_POST['cuenta_banco'];
+        $nombre_cuenta=$_POST['Nbanco'];
+        $tipo_cuenta=$_POST['tipo_cuenta'];  
+       
         $nombre_emergencia=$_POST['contacto_emergencia'];
         $numero_emergencia=$_POST['numero_emergencia'];
         $correo=$_POST['correo'];
@@ -138,7 +144,7 @@ else
         }
     
         $au =new Piloto();
-        $au->Ingresar($nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia);
+        $au->Ingresar($nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia,$nombre_cuenta,$tipo_cuenta);
 
     }
     else
