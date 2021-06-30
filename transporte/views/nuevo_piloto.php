@@ -448,7 +448,7 @@ else
                 <br>
                 <center>
                     <input type="submit" class="btn btn-success" value="Aceptar">
-                    <a href="menu_nuevo_piloto.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                    <a href="choferes.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                     <input type="submit" class="btn btn-danger" value="cancelar">
                     <br>
                     
