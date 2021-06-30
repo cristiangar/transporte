@@ -9,7 +9,7 @@ class Envio
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_envio(0, 'S', '0', '0', '0', '0', 0, '0', '0', 0, 0, '0', 0, 0, @pn_respuesta);";
+		$consulta= "call sp_envio(0, 'S3', '0', '0', '0', '0', 0, '0', '0', 0, 0, '0', 0, 0, @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
