@@ -50,7 +50,6 @@
           </center>
       <br>
       <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
-
             <thead> 
               <center><td>Cantidad</td></center>
               <center><td>Fecha</td></center>
@@ -68,7 +67,10 @@
             $id=$row['id_cuentas_por_pagar'];
             $cantidad=$row['cantidad'];
             $fecha=$row['fecha_abono'];
-            $descripcion=$row['descripcion']; 
+            $descripcion=$row['descripcion'];
+            $total=$row['total_cancelar'];
+            $saldo=$row['saldo'];
+            $viaje=$row['codigo_de_envio']; 
             ?>
                   <tbody id="myTable">
                   <tr>
@@ -85,7 +87,15 @@
                
                 echo '</table>';
             ?>
+            <td>No. de Viaje: <?php echo $viaje?></td>
+                <br>
+             <td>Total Viaje: <?php echo $total?></td>
+             <br>
+             <td>Saldo: <?php echo $saldo ?></td>
+             <br>
             <center>
+
+             <br>
                 <a href="nuevo_abono_pago.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Abonar</button></a>
                 
                 <a href="pagos.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
