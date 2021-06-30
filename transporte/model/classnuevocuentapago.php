@@ -5,11 +5,11 @@ include ('../Configuracion/config.php');
 class cuentapago
 {
 
-        public function IngresarCuentaPagar($id_cliente,$total,$anticipo)
+        public function IngresarCuentaPagar($codviaje,$id_pilotoviaje,$pendiente,$adelanto)
     {
         $bd = new datos();
         $bd->conectar();
-        $consulta= "call sp_cuentas_por_pagar(0, $id_cliente, $total, $anticipo, 'I', @pn_respuesta);";
+        $consulta= "call sp_cuentas_por_pagar(0, '$codviaje', $id_pilotoviaje, $pendiente, $adelanto, 'I', @pn_respuesta);";
         $dt= mysqli_query($bd->objetoconexion,$consulta);
 
         $salida="SELECT @pn_respuesta";
@@ -19,7 +19,10 @@ class cuentapago
 
         $res=mysqli_fetch_array($consultar);
 
-        unset($_SESSION['id_cliente']);
+        unset($_SESSION['id_pilotoviaje']);
+        unset($_SESSION['pendiente']);
+        unset($_SESSION['adelanto']);
+        unset($_SESSION['codviaje']);
         //
         $texto=$res['@pn_respuesta'];
         echo'<script language = javascript>

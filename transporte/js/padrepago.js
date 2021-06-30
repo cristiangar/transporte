@@ -3,7 +3,10 @@ const boton = document.querySelector("#boton9");
 	 
 	  //boton7 = document.querySelector("#boton7"),;//declaro las variables de los botones para abrir ventanas
 
-const $mensajeRecibido9=document.querySelector("#pagina9");
+const $mensajeRecibido9=document.querySelector("#pagina9"),
+      $mensajeRecibido10=document.querySelector("#pagina10"),
+      $mensajeRecibido11=document.querySelector("#pagina11"),
+      $mensajeRecibido12=document.querySelector("#pagina12");
 	  
 	   //$mensajeRecibido7=document.querySelector("#pagina7");//declaro los input que voy a llenar
 
@@ -20,6 +23,17 @@ boton.addEventListener("click", (e) =>{
 // funcion que le da un valor al input cliente
 function establecerMensaje9(mensaje) {
 	$mensajeRecibido9.value = mensaje;
+}
+function establecerMensaje10(mensaje2) {
+	$mensajeRecibido10.value = mensaje2;
+}
+
+function establecerMensaje11(mensaje3) {
+	$mensajeRecibido11.value = mensaje3;
+}
+
+function establecerMensaje12(mensaje4) {
+	$mensajeRecibido12.value = mensaje4;
 }
 
 

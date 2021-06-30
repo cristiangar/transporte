@@ -32,24 +32,24 @@
         </li>
         
     </ul>
-
+    
 </nav>
 <div class="container-fluid">
 
     <form method="POST" action="../controller/nuevo_cuenta_pagar.php" >
-      <h1>Datos de la Cuenta</h1>
+      <h1>Nueva Cuenta</h1>
       <br>
       <br>
-      <h2>Datos del Piloto</h2>
+      <h2>Seleccionar Viaje</h2>
       <br>
       <div class="form-row">
 
 
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Seleccione Piloto" id="pagina9" return false; name="Piloto">
+                    <input type="text" class="form-control" placeholder="Seleccione Viaje" id="pagina9" return false; name="Piloto">
                     <div class="input-group-append">
-                      <button class="input-group-text btn-btn-primary" id="boton9">Piloto</button>
+                      <button class="input-group-text btn-btn-primary" id="boton9">Viajes</button>
                     </div>
                   </div>
                 </div>
@@ -57,13 +57,19 @@
 
             <div class="form-row">
                 <div class="col-sm-5">
-                    <label>Total</label>
-                    <input type="text" name="total" class="form-control" placeholder="Total del viaje" require>
+                    <label>Piloto</label>
+                    <input type="text" name="total" class="form-control" placeholder="Nombre del piloto" id="pagina10" return false; name="Piloto">
+                </div>
+            </div>
+                <div class="form-row">
+                <div class="col-sm-5">
+                    <label>Adelanto</label>
+                    <input type="text" name="total" class="form-control" placeholder="Adelanto" id="pagina11" return false;>
                 </div>
 
                 <div class="col-sm-5">
-                    <label>Adelanto</label>
-                    <input type="text" name="anticipo" class="form-control" placeholder="Adelanto de pago" require>
+                    <label>Complemento</label>
+                    <input type="text" name="anticipo" class="form-control" placeholder="Pendiente de pago" id="pagina12" return false;>
                 </div>
             </div>
       </div>
