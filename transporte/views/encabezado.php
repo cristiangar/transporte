@@ -61,6 +61,9 @@
             $fecha=$row['fecha'];
             $estado_factura=$row['estado_factura'];
             
+            $datos=array("cliente"=>$cliente,"total"=>$total,"estadof"=>$estado_factura,"saldo"=>$saldo,"envio"=>$envio);
+            $comprimida=serialize($datos);
+            $comprimida=urlencode($comprimida);
             
             ?>
                   <tbody id="myTable">
@@ -84,7 +87,7 @@
                       }
                     ?>
                     
-                    <td><center><a href="lista_detalle.php?id=<?php echo $id?>&envio=<?php echo $envio;?>&cliente=<?php echo $cliente;?>&total=<?php echo $total;?>&estadof=<?php echo $estado_factura;?>&saldo=<?php echo $saldo;?>"><button type="button" class="btn btn-info">Detalles</button></a></center></td>
+                    <td><center><a href="lista_detalle.php?id=<?php echo $id?>&envio=<?php echo $envio;?>&datos=<?php echo $comprimida;?>"><button type="button" class="btn btn-info">Detalles</button></a></center></td>
                     <td><center><a href="nuevo_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Nuevo Detalle</button></a></center></td>
                     <td><a href="../controller/nuevoencabezado.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
                   </tr>

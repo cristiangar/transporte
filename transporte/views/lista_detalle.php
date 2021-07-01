@@ -32,12 +32,17 @@
 <div class="container-fluid">
 <?php
   if(isset($_GET['id'])){/*este id es mi id_encabezado*/
-     $id= $_GET['id'];
-     $cliente1=$_GET['cliente'];
-     $codigo=$_GET['envio'];
-     $total=$_GET['total'];
-     $saldo=$_GET['saldo'];
-     $estado_factura=$_GET['estadof'];
+     $id= $_GET['id'];/**id del encabezado */
+     $detalle=stripslashes($_GET['datos']);
+     $arreglo=unserialize($detalle);
+ 
+   $cliente1=$arreglo['cliente'];
+   $codigo=$arreglo['envio'];
+   $total=$arreglo['total'];
+   $saldo=$arreglo['saldo'];
+   $estado_factura=$arreglo['estadof'];
+
+
     //busco los datos para mostrar
     include_once("../model/classencabezado.php");
     $cliente=new encabezado();
