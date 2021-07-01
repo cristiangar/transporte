@@ -40,11 +40,20 @@
       <h1>Datos del encabezado</h1>
       <br>
       <br>
-      <h2>Datos del cliente </h2>
+      <h2>Datos del encabezado</h2>
       <br>
       <div class="form-row">
 
+            <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Receptor" id="pagina8" name="Receptor">
+                    <div class="input-group-append">
+                      <button  class="input-group-text btn-btn-primary" id="boton8" return false;>Código de Envío</button>
+                    </div>
+                  </div>
+                </div>   
 
+                
                 <div class="col-sm-4">
                   <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Cliente" id="pagina7" return false; name="Cliente">
@@ -53,25 +62,24 @@
                     </div>
                   </div>
                 </div>
-
+            </div>
+            
+            <div class="form-row">
                 <div class="col-sm-4">
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Receptor" id="pagina8" name="Receptor">
-                    <div class="input-group-append">
-                      <button  class="input-group-text btn-btn-primary" id="boton8" return false;>Código de Envío</button>
-                    </div>
-                  </div>
-                </div>   
+                    <label>Cliente</label>
+                    <input type="text" name="Clientes" class="form-control" placeholder="Nombre del Cliente" id="pagina14" return false; require>
+                </div>
             </div>
             <div class="form-row">
-                <div class="col-sm-5">
+                <div class="col-sm-4">
                     <label>Total</label>
                     <input type="text" name="total" class="form-control" placeholder="Total del recibo" require>
                 </div>
 
-                <div class="col-sm-5">
+
+                <div class="col-sm-4">
                     <label>Anticipo</label>
-                    <input type="text" name="anticipo" class="form-control" placeholder="Anticipo del envío" require>
+                    <input type="text" name="anticipo" class="form-control" placeholder="Anticipo del Viaje" require>
                 </div>
             </div>
       </div>

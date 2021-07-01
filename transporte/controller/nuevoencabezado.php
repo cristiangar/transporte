@@ -30,13 +30,13 @@ else
         $total=$_POST['total'];
         $anticipo=$_POST['anticipo'];
         /*datos del cliente y envio*/
-        $id_cliente=$_SESSION['idcliente'];
+        $id_clienteenvio=$_SESSION['idclienteenvio'];
         $id_envio=$_SESSION['idenvio'];
         /*$id_envio=$_GET['idenvio'];
         $id_cliente=$_GET['idcliente'];*/
 
         $au = new encabezado();
-        $au -> IngresarEncabezado2($total,$anticipo,$id_envio, $id_cliente);
+        $au -> IngresarEncabezado2($total,$anticipo,$id_envio, $id_clienteenvio);
     }
     else
     {

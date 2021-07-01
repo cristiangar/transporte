@@ -87,11 +87,11 @@
                
                 echo '</table>';
             ?>
-            <td>No. de Viaje: <?php echo $viaje?></td>
+            <b>No. de Viaje: </b><td><?php echo $viaje?></td>
                 <br>
-             <td>Total Viaje: <?php echo $total?></td>
+             <b>Pago de Viaje: </b><td><?php echo $total?></td>
              <br>
-             <td>Saldo: <?php echo $saldo ?></td>
+             <b>Saldo: </b><td><?php echo $saldo?></td>
              <br>
             <center>
 

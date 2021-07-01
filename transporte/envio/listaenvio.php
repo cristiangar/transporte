@@ -57,6 +57,7 @@
             $fenvio=$row['fecha_envio'];
             $fentrega=$row['fecha_entrega'];
             $cliente=$row['cliente'];
+            $idcliente=$row['id_cliente'];
             $receptor=$row['receptor'];
             $autorizacion=$row['autorizacion'];
             ?>
@@ -76,7 +77,7 @@
                       echo '<td>Autorizado</td>';
                     }
                     ?>
-                    <td><center><a href="listaenvio.php?id=<?php echo $id?>&co=<?php echo $codigo?>"><button type="button" class="btn btn-primary">Seleccionar</button></a></center></td>
+                    <td><center><a href="listaenvio.php?id=<?php echo $id?>&co=<?php echo $codigo?>&idcliente=<?php echo $idcliente?>&cli=<?php echo $cliente?>"><button type="button" class="btn btn-primary">Seleccionar</button></a></center></td>
 
                   </tr>
                  </tbody>
@@ -93,9 +94,7 @@
                 echo '</table>';
                 ?>
             <center>
-                 <a href="../envio/datos.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
-                
-                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                 
                 
                 
             </center>
@@ -137,10 +136,14 @@ $(document).ready(function(){
       
       $valor=$_GET['id'];
       $nombre=$_GET['co'];
+      $nombrecli=$_GET['cli'];
+      $idclienteenvio=$_GET['idcliente'];
       $_SESSION['idenvio']=$valor;
+      $_SESSION['idclienteenvio']=$idclienteenvio;
       ?>
           <h2>Cliente seleccionado: <?php echo $nombre ?></h2>
           <input value='<?php echo $nombre;?>' type="text" id='P8' placeholder="Enviar al padre" hidden >&nbsp;
+          <input value='<?php echo $nombrecli;?>' type="text" id='P14' placeholder="Enviar al padre" hidden >&nbsp;
           <label for="">Precione el boton aceptar para continuar</label> <br>
           <button class='btn btn-success btn-lg' id='btnp8' onclick="window.close();">Aceptar</button>
       <?php

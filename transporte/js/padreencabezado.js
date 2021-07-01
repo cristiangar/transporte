@@ -8,7 +8,7 @@ const boton = document.querySelector("#boton7"),
 
 const $mensajeRecibido7=document.querySelector("#pagina7"),
 	   $mensajeRecibido8=document.querySelector("#pagina8"),
-	   $mensajeRecibido3=document.querySelector("#pagina3"),
+	   $mensajeRecibido14=document.querySelector("#pagina14"),
 	   $mensajeRecibido4=document.querySelector("#pagina4"),
 	   $mensajeRecibido5=document.querySelector("#pagina5"),
 	   $mensajeRecibido6=document.querySelector("#pagina6");
@@ -56,8 +56,8 @@ function establecerMensaje8(mensaje) {
 	$mensajeRecibido8.value = mensaje;
 }
 
-function establecerMensaje3(mensaje) {
-	$mensajeRecibido3.value = mensaje;
+function establecerMensaje14(mensaje14) {
+	$mensajeRecibido14.value = mensaje14;
 }
 
 function establecerMensaje4(mensaje) {

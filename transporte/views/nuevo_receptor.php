@@ -59,12 +59,12 @@ if(isset($_GET['id'])){
         <div class="form-row">
             <div class="col-sm-4">
             <label>Nombre</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo $nombre?>" require>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo $nombre?>" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
             <label>Apellido</label>
                 <input type="text" name="apellido" class="form-control" placeholder="Apellido" value="<?php echo 
-                $apellido?>" require>
+                $apellido?>" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
             <label>Telefono</label>
@@ -140,11 +140,11 @@ else
         <div class="form-row">
             <div class="col-sm-4">
             <label>Nombre</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre" require>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
             <label>Apellido</label>
-                <input type="text" name="apellido" class="form-control" placeholder="Apellido"require>
+                <input type="text" name="apellido" class="form-control" placeholder="Apellido" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>

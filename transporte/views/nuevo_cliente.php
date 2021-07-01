@@ -66,12 +66,6 @@
                         }
                     } 
             </script>
-<script>
-    function forceLower(strInput) 
-{
-strInput.value=strInput.value.toLowerCase();
-}
-</script>
 <div class="container-fluid">
 <?php
 if(isset($_GET['id'])){
@@ -102,12 +96,12 @@ if(isset($_GET['id'])){
         <div class="form-row">
             <div class="col-sm-4">
             <label>Nombre</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo $nombre?>" onkeyup="return forceLower(this);" require>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo $nombre?>" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
             <label>Apellido</label>
                 <input type="text" name="apellido" class="form-control" placeholder="Apellido" value="<?php echo 
-                $apellido?>" onkeyup="return forceLower(this);" require>
+                $apellido?>" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>
@@ -171,11 +165,11 @@ else
         <div class="form-row">
             <div class="col-sm-4">
             <label>Nombre</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre" onkeyup="return forceLower(this);" require>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
             <label>Apellido</label>
-                <input type="text" name="apellido" class="form-control" placeholder="Apellido" onkeyup="return forceLower(this);" require>
+                <input type="text" name="apellido" class="form-control" placeholder="Apellido" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>
