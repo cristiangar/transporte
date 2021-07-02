@@ -32,17 +32,7 @@
 
     <div class="row">
         
-         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
-            <div id="formContent"><!--contenedor-->
-                <div class="fadeIn first">
-                    <a href="Clientes.php">
-                    <img class="img-fluid" src="../imagenes/clientes.png" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;">
-                    </a>
-                    <h1>Clientes</h1>
-                </div>
-            </div>
-        </div>
-
+         
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
@@ -70,17 +60,6 @@
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
-                    <a href="../envio/autorizar.php">
-                    <img class="img-fluid" src="../imagenes/autorizar.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
-                    </a>
-                    <h1>Autorizar Viajes</h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
-            <div id="formContent"><!--contenedor-->
-                <div class="fadeIn first">
                     <a href="bitacora.php">
                     <img class="img-fluid" src="../imagenes/bitacora.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
                     </a>
@@ -92,10 +71,44 @@
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
+                    <a href="Clientes.php">
+                    <img class="img-fluid" src="../imagenes/clientes.png" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;">
+                    </a>
+                    <h1>Clientes</h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
                     <a href="choferes.php">
                         <img class="img-fluid" src="../imagenes/chofer.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">    
                     </a>
                     <h1>Pilotos</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
+                    <a href="receptor.php">
+                    <img class="img-fluid" src="../imagenes/receptor.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Receptor</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
+                    <a href="../envio/autorizar.php">
+                    <img class="img-fluid" src="../imagenes/autorizar.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Autorizar Viajes</h1>
                 </div>
             </div>
         </div>
@@ -123,29 +136,7 @@
         </div>
         <br>
 
-
-        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
-            <div id="formContent"><!--contenedor-->
-                <div class="fadeIn first">
-                    <a href="receptor.php">
-                    <img class="img-fluid" src="../imagenes/receptor.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
-                    </a>
-                    <h1>Receptor</h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
-            <div id="formContent"><!--contenedor-->
-                <div class="fadeIn first">
-                    <a href="personal.php">
-                    <img class="img-fluid" src="../imagenes/personal.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
-                    </a>
-                    <h1>Personal</h1>
-                </div>
-            </div>
-        </div>
-
+        
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
@@ -180,6 +171,17 @@
             </div>
         </div>
 
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
+                    <a href="personal.php">
+                    <img class="img-fluid" src="../imagenes/personal.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Personal</h1>
+                </div>
+            </div>
+        </div>
+        
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
