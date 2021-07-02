@@ -40,37 +40,28 @@
       <h1>Datos del encabezado</h1>
       <br>
       <br>
-      <h2>Datos del encabezado</h2>
+      <h2>Información del Viaje</h2>
       <br>
       <div class="form-row">
 
             <div class="col-sm-4">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Receptor" id="pagina8" name="Receptor">
+                    <input type="text" class="form-control" placeholder="Seleccione Viaje" id="pagina8" return false; name="Receptor">
                     <div class="input-group-append">
-                      <button  class="input-group-text btn-btn-primary" id="boton8" return false;>Código de Envío</button>
+                      <button  class="input-group-text btn-btn-primary" id="boton8">No. de Viaje</button>
                     </div>
                   </div>
                 </div>   
-
-                
-                <div class="col-sm-4">
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cliente" id="pagina7" return false; name="Cliente">
-                    <div class="input-group-append">
-                      <button class="input-group-text btn-btn-primary" id="boton7">Cliente</button>
-                    </div>
-                  </div>
-                </div>
-                
             </div>
-            
+                
+            <br>
             <div class="form-row">
                 <div class="col-sm-4">
-                    <label>Cliente</label>
+                    <label>Nombre del Cliente</label>
                     <input type="text" name="Clientes" class="form-control" placeholder="Nombre del Cliente" id="pagina14" return false; require>
                 </div>
             </div>
+            <br>
             <div class="form-row">
                 <div class="col-sm-4">
                     <label>Total</label>

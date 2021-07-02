@@ -163,16 +163,16 @@ $(document).ready(function(){
       $_SESSION['pendiente']=$pendiente;
       ?>
           <h2>Viaje seleccionado: <?php echo $valor?></h2>
-      		<input value='<?php echo $valor;?>' type="text" id="P9" placeholder="Enviar al padre" hidden>&nbsp;
+          <input value='<?php echo $valor;?>' type="text" id="P9" placeholder="Enviar al padre" hidden>&nbsp;
           <input value='<?php echo $nombre;?>' type="text" id="P10" placeholder="Enviar al padre" hidden>&nbsp;
           <input value='<?php echo $adelanto;?>' type="text" id="P11" placeholder="Enviar al padre" hidden>&nbsp;
           <input value='<?php echo $pendiente;?>' type="text" id="P12" placeholder="Enviar al padre" hidden>&nbsp;
           <label for="">Precione el boton aceptar para continuar</label> <br>
-		      <button class='btn btn-success btn-lg' id="btnp9" onclick="window.close();">Aceptar</button>
+          <button class='btn btn-success btn-lg' id="btnp9" onclick="window.close();">Aceptar</button>
       <?php
     }
     ?>
-		<br>
+    <br>
     <script src="../js/hija9.js"></script>
 
 </html>
