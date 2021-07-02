@@ -1,4 +1,4 @@
-const $btnEnviar = document.querySelector("#btnp7"),
+/*const $btnEnviar = document.querySelector("#btnp7"),
 	$mensaje = document.querySelector("#P7"),
 	
 	$mensajeRecibido7 = document.querySelector("#mensajeRecibido7");
@@ -17,5 +17,6 @@ const $btnEnviar = document.querySelector("#btnp7"),
 // Definición de función desde la que nos llama el padre
 window.establecerMensaje7 = function (mensaje) {
 	$mensajeRecibido7.textContent = mensaje;
-}
+}*/
+
 
