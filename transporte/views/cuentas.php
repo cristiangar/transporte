@@ -42,12 +42,13 @@
       <br>
       <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
             <thead>
+              <td>No. de Viaje</td>
               <td>Cliente</td>
               <td>Total</td>
               <td>Saldo</td>
               <td>Fecha Inicial</td>
               <td>Estado de la Cuenta</td>
-              <td>Detalle</td>
+              <td>Lista de Abonos</td>
               <td>Nuevo Abono</td>
             </thead>
       <?php
@@ -58,11 +59,13 @@
             $saldo=$row['saldo'];
             $fecha_inicio=$row['fecha_inicio'];
             $estado_factura=$row['estado_factura'];
+            $noviaje=$row['codigo_envio'];
             
             
             ?>
                   <tbody id="myTable">
                   <tr>
+                    <td><?php echo $noviaje?></td>
                     <td><?php echo $cliente?></td>
                     <td><?php echo $total?></td>
                     <td><?php echo $saldo?></td>
@@ -81,8 +84,8 @@
                       }
                     ?>
                     
-                    <td><center><a href="lista_abonos.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-                    <td><center><a href="nuevo_abono.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Abonar</button></a></center></td>
+                    <td><center><a href="lista_abonos.php?id=<?php echo $id?>"><button type="button" class="btn btn-info">Detalle de Abonos</button></a></center></td>
+                    <td><center><a href="nuevo_abono.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Nuevo Abono</button></a></center></td>
                   </tr>
                  </tbody>
             <?php

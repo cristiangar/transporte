@@ -41,7 +41,7 @@
                         <a href="../envio/datos.php">
                         <img class="conimagen" id="conimg"src="../imagenes/generar.png" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;"/>
                     </a>
-                    <h1>Generar envio</h1>
+                    <h1>Generar Viaje</h1>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
                     <a href="estados.php">
                     <img class="img-fluid" src="../imagenes/estados.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
                     </a>
-                    <h1>Estado Envios</h1>
+                    <h1>Estado de Viajes</h1>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                     <a href="bitacora.php">
                     <img class="img-fluid" src="../imagenes/bitacora.png" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
                     </a>
-                    <h1>Bitácora de viaje</h1>
+                    <h1>Bitácora de Viaje</h1>
                 </div>
             </div>
         </div>        

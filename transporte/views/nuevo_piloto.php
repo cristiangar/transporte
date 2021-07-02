@@ -103,11 +103,11 @@ if(isset($_GET['id']))
         <div class="form-row">
             <div class="col-sm-4">
                 <label>Nombre</label>
-                <input value='<?php echo $nombre;?>' name="nombre" type="text" class="form-control" placeholder="Nombre" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
+                <input value='<?php echo $nombre;?>' name="nombre" type="text" class="form-control" placeholder="Nombre" onkeypress="return (event.charCode==241 || event.charCode==32 || event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
                 <label>Apellido</label>
-                <input value='<?php echo $apellido;?>' name="apellido" type="text" class="form-control" placeholder="Apellido" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
+                <input value='<?php echo $apellido;?>' name="apellido" type="text" class="form-control" placeholder="Apellido" onkeypress="return (event.charCode==241 || event.charCode==32 || event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
                 <label>No.DPI</label>
@@ -123,7 +123,7 @@ if(isset($_GET['id']))
             </div>
             <div class="col-sm-4">
                 <label>contacto de emergencia</label>
-                <input name="contacto_emergencia" value='<?php echo $nombre_emergencia;?>' type="text" class="form-control" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" placeholder="Correo" require>
+                <input name="contacto_emergencia" value='<?php echo $nombre_emergencia;?>' type="text" class="form-control" onkeypress="return (event.charCode==241 || event.charCode >= 97 && event.charCode <= 122)" placeholder="Correo" require>
             </div>
             <div class="col-sm-4">
                 <label>Numero de energencia</label>
@@ -328,11 +328,11 @@ else
         <div class="form-row">
             <div class="col-sm-4">
                 <label>Nombre</label>
-                <input name="nombre" type="text" class="form-control" placeholder="Nombre" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
+                <input name="nombre" type="text" class="form-control" placeholder="Nombre" onkeypress="return (event.charCode==241 || event.charCode==32 || event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
                 <label>Apellido</label>
-                <input name="apellido" type="text" class="form-control" placeholder="Apellido" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
+                <input name="apellido" type="text" class="form-control" placeholder="Apellido" onkeypress="return (event.charCode==241 || event.charCode==32 || event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
                 <label>No.DPI</label>
@@ -348,7 +348,7 @@ else
             </div>
             <div class="col-sm-4">
                 <label>contacto de emergencia</label>
-                <input name="contacto_emergencia" value='N/A' type="text" class="form-control" placeholder="Correo" onkeypress="return (event.charCode >= 97 && event.charCode <= 122)" require>
+                <input name="contacto_emergencia" value='N/A' type="text" class="form-control" placeholder="Correo" onkeypress="return (event.charCode==241 || event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
             <div class="col-sm-4">
                 <label>Numero de energencia</label>

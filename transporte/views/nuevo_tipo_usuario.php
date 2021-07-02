@@ -56,7 +56,7 @@ if(isset($_GET['id'])){
         <div class="form-row">
             <div class="col-sm-10">
             <label>Nombre del rol de usuario</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo $nombre?>" require>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo $nombre?>" onkeypress="return (event.charCode==209 || event.charCode==32 || event.charCode >= 65 && event.charCode <= 90)" require>
             </div>
                             
         </div>  
@@ -90,7 +90,7 @@ else
         <div class="form-row">
             <div class="col-sm-10">
             <label>Nombre</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre de Rol de Usuario" require>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre de Rol de Usuario" onkeypress="return (event.charCode==209 || event.charCode==165 || event.charCode==32 || event.charCode >= 65 && event.charCode <= 90)" require>
             </div>
             
 

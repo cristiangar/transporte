@@ -48,8 +48,9 @@
               <td>Saldo</td>
               <td>Fecha</td>
               <td>Estado de la Cuenta</td>
-              <!--<td>Detalles</td>
-              <td>Nuevo Detalle</td>-->
+              <td>Lista de Detalles</td>
+              <td>Agregar Detalle</td>
+              <td>Eliminar Detalle</td>
             </thead>
       <?php
           while ($row=mysqli_fetch_array($dt)) {
@@ -88,7 +89,7 @@
                     ?>
                     
                     <td><center><a href="lista_detalle.php?id=<?php echo $id?>&envio=<?php echo $envio;?>&datos=<?php echo $comprimida;?>"><button type="button" class="btn btn-info">Detalles</button></a></center></td>
-                    <td><center><a href="nuevo_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Nuevo Detalle</button></a></center></td>
+                    <td><center><a href="nuevo_detalle.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Agregar Detalle</button></a></center></td>
                     <td><a href="../controller/nuevoencabezado.php?id=<?php echo $id?>&es=E"><button type="button" class="btn btn-danger">Eliminar</button></a></td>
                   </tr>
                  </tbody>
