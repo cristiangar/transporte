@@ -40,8 +40,6 @@ boton6.addEventListener("click",(e) =>{
 	e.preventDefault();
 });*/
 
-
-
 function establecerMensaje8(mensaje) {
 	$mensajeRecibido8.value = mensaje;
 }
