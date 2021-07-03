@@ -170,7 +170,7 @@ else{
                 <?php
                 while($row=mysqli_fetch_array($dt)){
                     $valor=$row['id_rol_usuario'];
-                    $texto=$row['nombre'];
+                    $texto=$row['rol'];
                     echo '<option  value="'.$valor.'">'.$texto.'</option>';
                 }
                 ?>
