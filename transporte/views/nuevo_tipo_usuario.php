@@ -44,7 +44,7 @@ if(isset($_GET['id'])){
 
     while ($row=mysqli_fetch_array($dt)) {
             $id=$row['id_rol_usuario'];
-            $nombre=$row['nombre'];
+            $nombre=$row['rol'];
         }
 
         ?>

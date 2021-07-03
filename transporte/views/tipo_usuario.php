@@ -50,7 +50,7 @@
       <?php
           while ($row=mysqli_fetch_array($dt2)) {
             $id=$row['id_rol_usuario'];
-            $nombre=$row['nombre'];
+            $nombre=$row['rol'];
             
             ?>
                   <tbody id="myTable">

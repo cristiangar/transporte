@@ -74,7 +74,7 @@
                 echo '</table>';
             ?>
             <center>
-                 <a href="../views/nuevo_receptor.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                 
                 <!--<a href="datos.php"><button type="button" class="btn btn-warning" >Regresar</button></a>-->
             </center>
             <?php
@@ -90,7 +90,7 @@
       <br><br><br><br>
       <h1>No hay datos ingresados</h1>
       <br>
-      <a href="../view/nuevo_receptor.php"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
+      
     </center>
     <?php
   }

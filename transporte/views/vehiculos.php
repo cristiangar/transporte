@@ -113,9 +113,9 @@
           <br>
           <br>
           <br><br><br><br>
-          <h1>no hay datos ingresados</h1>
-          <a href="nuevo_vehiculo.php?P"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
-          <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+          <h1>No hay datos ingresados</h1>
+          <a href="nuevo_vehiculo.php?P"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
+          <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning btn-lg" >Regresar</button></a>
         </center>
         <?php
       }
@@ -194,9 +194,9 @@
           <br>
           <br>
           <br><br><br><br>
-          <h1>no hay datos ingresados</h1>
-          <a href="nuevo_vehiculo.php?C"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
-          <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+          <h1>No hay datos ingresados</h1>
+          <a href="nuevo_vehiculo.php?C"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
+          <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning btn-lg" >Regresar</button></a>
         </center>
           <?php
       }

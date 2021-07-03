@@ -101,7 +101,7 @@
               <div class="container-fluid">
                     <br>
                 <center>
-                    <a href="nuevo_vehiculo.php?P"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                    
                     
                     
                 </center>
@@ -120,7 +120,7 @@
       <br><br><br><br>
       <h1>No hay datos ingresados</h1>
       <br>
-      <a href="../view/nuevo_cliente.php"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
+      
     </center>
     <?php
   }
