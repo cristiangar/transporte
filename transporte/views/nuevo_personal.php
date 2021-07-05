@@ -97,7 +97,7 @@ if(isset($_GET['id'])){
             </div>
             <div class="col-sm-4">
             <label>Teléfono 1</label>
-                <input type="text" name="telefono" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13" value="<?php echo  $telefono?>" require>
+                <input type="text" name="telefono" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13" value=<?php echo  $telefono;?> require>
             </div>
             <div class="col-sm-4">
             <label>Teléfono 2</label>
@@ -105,11 +105,11 @@ if(isset($_GET['id'])){
             </div>
             <div class="col-sm-4">
             <label>No.DPI</label>
-                <input type="text" name='dpi' value=<?php echo $dpi;?> class="form-control" placeholder="Número de DPI" require>
+                <input type="text" name="dpi" value="<?php echo $dpi;?>" class="form-control" placeholder="Número de DPI" require>
             </div>
             <div class="col-sm-4">
             <label>Correo</label>
-                <input type="text" value=<?php echo $correo;?> name='correo' class="form-control" placeholder="Correo Electrónico" require>
+                <input type="text" value="<?php echo $correo;?>" name="correo" class="form-control" placeholder="Correo Electrónico" require>
             </div>
                 
         </div>
@@ -186,7 +186,7 @@ else{
             <center>
                 <input type="submit" class="btn btn-success" value="Aceptar">
                 <a href="personal.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-                <input type="submit" class="btn btn-danger" value="cancelar">
+                <input type="reset" class="btn btn-danger" value="cancelar">
                 
             </center>
             </div>

@@ -37,7 +37,7 @@
 <div class="container-fluid">
 
     <form method="POST" action="../controller/nuevo_cuenta_pagar.php" >
-      <h1>Nueva Cuenta</h1>
+      <h1>Nueva Cuenta por Pagar</h1>
       <br>
       <br>
       <h2>Seleccionar Viaje</h2>

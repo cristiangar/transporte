@@ -118,7 +118,7 @@
       <h1>No hay datos ingresados</h1>
       <br>
       <br>
-      <a href="../envio/nuevo_encabezado.php"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a> 
+      <a href="../envio/nuevo_cuenta_pagar.php"><button type="button" class="btn btn-success btn-lg" >Nueva Cuenta por Pagar</button></a> 
       <a href="secritaria.php"><button type="button" class="btn btn-warning btn-lg" >Regresar</button></a>
     </center>
     <?php

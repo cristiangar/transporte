@@ -98,7 +98,7 @@ class Personal
     {
         $db = new datos();
 		$db->conectar();
-		$consulta= "call ps_rol_usuario(0, 'n', 'S', @pn_respuesta);";
+		$consulta= "call ps_rol_usuario(0, 'n', 'S2', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;

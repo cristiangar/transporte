@@ -46,6 +46,7 @@ if (isset($_GET['id'])){
         $pwd=$row['clave'];
         $idus=$row['id_usuario'];
         $idrol=$row['id_rol_usuario'];
+        $rol=$row['rol'];
     }
 
     ?>
@@ -70,10 +71,12 @@ if (isset($_GET['id'])){
             <div class="col-sm-4">
                 <label>Puesto</label>
                 <select name="id_rol" id="" class="form-control">
+                    <?php echo '<option  value="'.$idrol.'">'.$rol.'</option>'; ?>
+                    
                 <?php
                 while($row=mysqli_fetch_array($dtr)){
                     $valor=$row['id_rol_usuario'];
-                    $texto=$row['nombre'];
+                    $texto=$row['rol'];
                     echo '<option  value="'.$valor.'">'.$texto.'</option>';
                 }
                 ?>
