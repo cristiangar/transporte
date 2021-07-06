@@ -210,6 +210,17 @@ if(isset($_SESSION['usuario']))
                 </div>
             </div>
         </div>
+
+        <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
+            <div id="formContent"><!--contenedor-->
+                <div class="fadeIn first">
+                    <a href="../Reportes/BusquedaReporte.php">
+                    <img class="img-fluid" src="../imagenes/Reporte.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
+                    </a>
+                    <h1>Reportes</h1>
+                </div>
+            </div>
+        </div>
         
     </div>
 </div>
