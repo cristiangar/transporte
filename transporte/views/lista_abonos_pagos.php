@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['usuario']))
+{
+    $rol=$_SESSION['rol'];
+    $us=$_SESSION['usuario'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +15,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="../css/index.css" rel="stylesheet"/>
     <script src="../js/jquery-3.3.1.min.js"></script>
-    <!--<script src="../js/index.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -21,7 +27,7 @@
         </a>
     <ul class="navbar-nav ml-auto">
         <li class="navbar-item">
-            <a class="nav-link" >Usuario: Admin</a>
+            <a class="nav-link" >Usuario: <?php $us;?></a>
         </li>
         <li class="navbar-item">
             <a class="nav-link" href="../index.php">Cerrar sesión</a>
@@ -57,11 +63,6 @@
             </thead>
           
       <?php
-          /*while ($row=mysqli_fetch_array($dt)) {
-            $id=$row['id_abonos']
-            $cantidad=$row['cantidad'];
-            $fecha=$row['fecha'];*/
-
             while ($row=mysqli_fetch_array($dt)) {
             $id2=$row['id_abono_cuenta_por_pagar'];
             $id=$row['id_cuentas_por_pagar'];
@@ -123,7 +124,11 @@
 
 </div>
 </body>
-
-
-
 </html>
+<?php
+}
+
+else{/**else de la session */
+    header("location: ../Index.php");
+}/**ses */
+?>

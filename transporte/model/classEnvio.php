@@ -1,6 +1,6 @@
 <?php 
 ob_start();
-session_start();
+//session_start();
 include ('../Configuracion/config.php');
 class Envio
 {

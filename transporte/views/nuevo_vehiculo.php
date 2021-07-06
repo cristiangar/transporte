@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['usuario']))
+{
+    $rol=$_SESSION['rol'];
+    $us=$_SESSION['usuario'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -524,3 +531,10 @@
 </div>
 </body>
 </html>
+<?php
+}
+
+else{/**else de la session */
+    header("location: ../Index.php");
+}/**ses */
+?>

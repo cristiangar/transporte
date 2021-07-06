@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['usuario']))
+{
+    $rol=$_SESSION['rol'];
+    $us=$_SESSION['usuario'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +28,7 @@
         </a>
     <ul class="navbar-nav ml-auto">
         <li class="navbar-item">
-            <a class="nav-link" >Usuario: Secretaria</a>
+            <a class="nav-link" >Usuario: <?php $us;?></a>
         </li>
         <li class="navbar-item">
             <a class="nav-link" href="../index.php">Cerrar sesión</a>
@@ -137,3 +144,10 @@ $(document).ready(function(){
 </script>
 
 </html>
+<?php
+}
+
+else{/**else de la session */
+    header("location: ../Index.php");
+}/**ses */
+?>

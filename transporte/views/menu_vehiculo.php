@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['usuario']))
+{
+    $rol=$_SESSION['rol'];
+    $us=$_SESSION['usuario'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +27,7 @@
     </a>
     <ul class="navbar-nav ml-auto">
         <li class="navbar-item">
-            <a class="nav-link" >Usuario: Secretaria</a>
+            <a class="nav-link" >Usuario: <?php $us;?></a>
         </li>
         <li class="navbar-item">
             <a class="nav-link" href="../index.php">Cerrar sesión</a>
@@ -61,16 +68,6 @@
             </div>
         </div>
 
-        <!--<div class="wrapper fadeInDown col-sm-4">!--efecto de caida--
-            <div id="formContent">--contenedor--
-                <div class="fadeIn first">
-                    <a href="vehiculos.php">
-                    <img class="img-fluid" src="../imagenes/camiones2.jpg" id="icon" alt="User Icon" style="max-width:50%;width:auto;height:auto;">
-                    </a>
-                    <h1>Camiones</h1>
-                </div>
-            </div>
-        </div>-->
         <div class="container-fluid wrapper fadeInDown col-sm-5">
                 <br>
             <center>
@@ -84,3 +81,10 @@
 </div>
 </body>
 </html>
+<?php
+}
+
+else{/**else de la session */
+    header("location: ../Index.php");
+}/**ses */
+?>
