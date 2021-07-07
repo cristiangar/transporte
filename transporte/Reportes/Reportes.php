@@ -64,7 +64,7 @@ if(isset($_SESSION['usuario']))
                 </select>
                 <br>
                 <center>
-                <input type="submit" class="btn btn-success" value="Aceptar">
+                <a href=""target='_blank'><input type="submit" class="btn btn-success" value="Aceptar"></a>
                 <a href="BusquedaReporte.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                 </center>
         </form>
