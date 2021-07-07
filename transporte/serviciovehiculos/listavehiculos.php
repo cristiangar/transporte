@@ -1,24 +1,14 @@
-<?php
-session_start();
-if(isset($_SESSION['usuario']))
-{
-    $rol=$_SESSION['rol'];
-    $us=$_SESSION['usuario'];
-?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vehículos</title>
+    <title>Pilotos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/imagen.css">
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/index.js"></script>
     <link href="../css/index.css" rel="stylesheet"/>
     <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/index.js"></script>
+        <script src="../js/index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -26,191 +16,300 @@ if(isset($_SESSION['usuario']))
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-  <a href="../views/secritaria.php">
-      <img src="../imagenes/logo.png" alt="HTML tutorial" style="width:52px;height:52px;">
-  </a>
     <ul class="navbar-nav ml-auto">
         <li class="navbar-item">
-            <a class="nav-link" >Lista de Veiculos</a>
-        </li>
-        <li class="navbar-item">
-            <a class="nav-link" >Usuario: <?php echo $us;?></a>
+            <a class="nav-link" >Usuario: Secretaria</a>
         </li>
         <li class="navbar-item">
             <a class="nav-link" href="../index.php">Cerrar sesión</a>
         </li>
-        
     </ul>
-</nav>
 
+</nav>
 <div class="container-fluid">
+<h1>Lista de Pilotos</h1>
 <br>
 <div class="container mt-3">
-<?php
-  if(isset($_GET['P'])){/**plataforma */
-    include_once('../controller/plataforma.php');
-    $resultado=$dt->num_rows;
-      if($resultado>0){
-        ?>
-          <h1>Listas de Equipo Especial</h1>
-          <input class="form-control" id="myInput" type="text" placeholder="buscar..">
-          <br>
+<input class="form-control" id="myInput" type="text" placeholder="buscar..">
+<br>
+<table class="table table-bordered" border="1" id="tabla_paginada">
+      <thead>
+        <td>Placa</td>
+        <td>Tipo</td>
+        <td>Marca</td>
+        <td>Modelo</td>
+        <td>Detalle</td>
+        <td>Agregar Servicio</td>
+      </thead>
+      <tbody id="myTable">
+        <tr>
+          <td>P-012JKL</td>
+          <td>Camion</td>
+          <td>Keywork</td>
+          <td>2005</td>
+          <td><center>
+            <a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a>
+          </center></td>
+          <td><center><a href="nuevoservicio.php"><button type="button" class="btn btn-info">Nuevo Servicio</button></a></center></td>
+        </tr>
+        <tr>
+          <td>P-456GHW</td>
+          <td>Camion</td>
+          <td>Hyudai</td>
+          <td>2008</td>
+           <td><center>
+            <a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a>
+          </center></td>
+          <td><center><a href="nuevoservicio.php"><button type="button" class="btn btn-info">Nuevo Servicio</button></a></center></td>
+        </tr>
+        <tr>
+          <td>C-054MLW</td>
+          <td>Cabezal</td>
+          <td>Hyno</td>
+          <td>2002</td>
+           <td><center>
+            <a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a>
+          </center></td>
+          <td><center><a href="nuevoservicio.php"><button type="button" class="btn btn-info">Nuevo Servicio</button></a></center></td>
+        </tr>
+        <tr>
+          <td>C-065BCS</td>
+          <td>Plataforma</td>
+          <td>Toyota</td>
+          <td>N/A</td>
+           <td><center>
+            <a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a>
+          </center></td>
+          <td><center><a href="nuevoservicio.php"><button type="button" class="btn btn-info">Nuevo Servicio</button></a></center></td>
+        </tr>
+        <tr>
+          <td>Mario</td>
+          <td>Ruiz</td>
+          <td>2415-8974</td>
+          <td>Disponible</td>
+          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
 
-          <table class="table table-dark table-striped table-hover table-responsive-sm" border="1" id="tabla_paginada">
-                <thead>
-                  <td>No.placa</td>
-                  <td>tipo remolque</td>
-                  <td>Modelo</td>
-                  <td>Marca</td>
-                  
-                  <td>Detalle</td>
-                  <td>Eliminar</td>
-                </thead>
-                <tbody id="myTable">
-                  <?php
-                  while($row=mysqli_fetch_array($dt) )
-                  {
-                    $id=$row['id_plataforma'];
-                    $tipo=$row['tipo'];
-                    $estado=$row['estado_uso'];
-                    $placa=$row['placa'];
-                    $propiedad=$row['tipo_interno_externo'];
-                    $modelo=$row['modelo'];
-                    $marca=$row['marca'];
+        </tr>
+        <tr>
+          <td>José</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>NO Disponible</td>
+          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
+        </tr>
+        <tr>
+          <td>José</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>NO Disponible</td>
+          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
+        </tr>
+        <tr>
+          <td>José</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>NO Disponible</td>
+          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
+        </tr>
+        <tr>
+          <td>José</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>NO Disponible</td>
+          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
+        </tr>
+        <tr>
+          <td>José</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>NO Disponible</td>
+          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
+        </tr>
+        <tr>
+          <td>José</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>NO Disponible</td>
+          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
+        </tr>
+        <tr>
+          <td>José</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>NO Disponible</td>
+          <td><center><button type="button" class="btn btn-info">Detalle</button></center></td>
+        </tr>
+        <tr>
+          <td>Jorge</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>Disponible</td>
+          <td><center><a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
+        </tr>
+        <tr>
+          <td>Jorge</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>Disponible</td>
+          <td><center><a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
+        </tr>
+        <tr>
+          <td>Jorge</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>Disponible</td>
+          <td><center><a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
+        </tr>
+        <tr>
+          <td>Jorge</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>Disponible</td>
+          <td><center><a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
+        </tr>
+        <tr>
+          <td>Jorge</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>Disponible</td>
+          <td><center><a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
+        </tr>
+        <tr>
+          <td>Jorge</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>Disponible</td>
+          <td><center><a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
+        </tr>
+        <tr>
+          <td>Jorge</td>
+          <td>Campos</td>
+          <td>4088-1056</td>
+          <td>Disponible</td>
+          <td><center><a href="detalle_piloto.php"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
+        </tr>
+        <tr>
+          <td>Campo 1 - 20</td>
+          <td>Campo 2 - 20</td>
+          <td>Campo 3 - 20</td>
 
-                    ?>
-                    <tr>
-                    <td><?php echo $placa;?></td>
-                    <td><?php echo $tipo;?></td>
-                    <td><?php echo $modelo;?></td>
-                    <td><?php echo $marca;?></td>
-                    
-                    
-                    <td><center><a href="detalle_vehiculo.php?id=<?php echo $id?>&P"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-                    <td><center><a href="../controller/plataforma.php?id=<?php echo $id?>&es"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
-                    </tr>
-                    <?php
-                  }       
-                  ?> 
-                </tbody>
-                <tfoot>
-                  <td><input type="button" id="cargar_primera_pagina" value="<< Primero"/></td>
-                  <td><input type="button" id="cargar_anterior_pagina" value="< Anterior"/></td>
-                  <td id="indicador_paginas"></td>
-                  <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >"/></td>
-                  <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>
-                </tfoot>
-              </table>
-              <div class="container-fluid">
-                    <br>
-                <center>
-                    <a href="nuevo_vehiculo.php?P"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
-                    <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-                    
-                </center>
-                </div>
-        <?php
-      }
-      else{
-        ?> 
-        <center>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br><br><br><br>
-          <h1>No hay datos ingresados</h1>
-          <a href="nuevo_vehiculo.php?P"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
-          <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning btn-lg" >Regresar</button></a>
-        </center>
-        <?php
-      }
-  }
-  else{
-    if(isset($_GET['C'])){/**cabezal */
-      include_once('../controller/cabezales.php');
-      $resultado=$dt->num_rows;
-      if($resultado>0)
-      {
-        ?>
-          <h1>Vehiculos en Reparación</h1>
-          <input class="form-control" id="myInput" type="text" placeholder="buscar..">
-          <br>
+        </tr>
+        <tr>
+          <td>Campo 1 - 21</td>
+          <td>Campo 2 - 21</td>
+          <td>Campo 3 - 21</td>
+ 
+        </tr>
+        <tr>
+          <td>Campo 1 - 22</td>
+          <td>Campo 2 - 22</td>
+          <td>Campo 3 - 22</td>
 
-          <table class="table table-dark table-striped table-hover table-responsive-sm" border="1" id="tabla_paginada">
-                <thead>
-                  <td>Placas</td>
-                  <td>Marca</td>
-                  <td>Modelo</td>
-                  <td>Tipo</td> 
-                 
-                  <td>Detalle</td>
-                  <td>Eliminar</td>
-                </thead>
-                <tbody id="myTable">
-                  <?php
-                  while($row=mysqli_fetch_array($dt) )
-                  {
-                    $id=$row['id_vehiculo'];
-                    $marca=$row['marca'];
-                    $modelo=$row['modelo'];
-                    $placa=$row['no_placa'];
-                    $propiedad=$row['tipo_interno_externo'];
-                    $estado=$row['estado_vehiculo'];
-                    $tipo=$row['tipo_vehiculo']
-                    ?>
-                    <tr>
-                    <td><?php echo $placa;?></td>
-                    <td><?php echo $marca;?></td>
-                    <td><?php echo $modelo;?></td>
-                    <td><?php echo $tipo;?></td>
-                    
-                    
-                    <td><center><a href="detalle_vehiculo.php?id=<?php echo $id?>&C"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-                    <td><center><a href="nuevoservicio.php?id=<?php echo $id?>&es"><button type="button" class="btn btn-primary">Agregar Servicio</button></a></center></td>
-                    </tr>
-                    <?php
-                  }       
-                  ?> 
-                </tbody>
-                <tfoot>
-                  <td><input type="button" id="cargar_primera_pagina" value="<< Primero"/></td>
-                  <td><input type="button" id="cargar_anterior_pagina" value="< Anterior"/></td>
-                  <td id="indicador_paginas"></td>
-                  <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >"/></td>
-                  <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>
-                </tfoot>
-              </table>
-              <div class="container-fluid">
-                    <br>
-                <center>
-                    
-                    <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-                    
-                </center>
-                </div>
-        <?php
-      }
-      else{
-          ?>
-          <center>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br><br><br><br>
-          <h1>No hay datos ingresados</h1>
-          <a href="nuevo_vehiculo.php?C"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
-          <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning btn-lg" >Regresar</button></a>
-        </center>
-          <?php
-      }
-    }
-    
-  }
-?>
+        </tr>
+        <tr>
+          <td>Campo 1 - 23</td>
+          <td>Campo 2 - 23</td>
+          <td>Campo 3 - 23</td>
+
+        </tr>
+        <tr>
+          <td>Campo 1 - 24</td>
+          <td>Campo 2 - 24</td>
+          <td>Campo 3 - 24</td>
+
+        </tr>
+        <tr>
+          <td>Campo 1 - 25</td>
+          <td>Campo 2 - 25</td>
+          <td>Campo 3 - 25</td>
+
+        </tr>
+        <tr>
+          <td>Campo 1 - 26</td>
+          <td>Campo 2 - 26</td>
+          <td>Campo 3 - 26</td>
+
+        </tr>
+        <tr>
+          <td>Campo 1 - 27</td>
+          <td>Campo 2 - 27</td>
+          <td>Campo 3 - 27</td>
+
+        </tr>
+        <tr>
+          <td>Campo 1 - 28</td>
+          <td>Campo 2 - 28</td>
+          <td>Campo 3 - 28</td>
+
+        </tr>
+        <tr>
+          <td>Campo 1 - 29</td>
+          <td>Campo 2 - 29</td>
+          <td>Campo 3 - 29</td>
+
+          </tr>
+        <tr>
+          <td>Campo 1 - 30</td>
+          <td>Campo 2 - 30</td>
+          <td>Campo 3 - 30</td>
+
+        </tr>
+      </tbody>
+      <tfoot>
+        <td><input type="button" id="cargar_primera_pagina" value="<< Primero"/></td>
+        <td><input type="button" id="cargar_anterior_pagina" value="< Anterior"/></td>
+        <td id="indicador_paginas"></td>
+        <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >"/></td>
+        <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>
+      </tfoot>
+    </table>
+
+<!--<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>telefono</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>1234-45678</td>
+        <td>Disponible</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>1234-45678</td>
+        <td>Disponible</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>1234-45678</td>
+        <td>No disponible</td>
+      </tr>
+      <tr>
+        <td>Anja</td>
+        <td>Ravendale</td>
+        <td>1234-45678</td>
+        <td>No disponible</td>
+      </tr>
+    </tbody>
+  </table>-->
+</div>
+  
+  <div class="container-fluid">
+                <br>
+            <center>
+                <a href="generarchofer.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+                
+            </center>
+            </div>
 </div>
 </body>
 
@@ -224,13 +323,4 @@ $(document).ready(function(){
   });
 });
 </script>
-
-</body>
 </html>
-<?php
-}
-
-else{/**else de la session */
-    header("location: ../Index.php");
-}/**ses */
-?>

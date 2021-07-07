@@ -38,7 +38,7 @@ if(isset($_GET['cliente'])){
         $pdf->cell(30,5,utf8_decode($row['estado_factura']),1,0,'L',1);
         $pdf->cell(30,5,utf8_decode($row['total']),1,0,'L',1);
         $pdf->cell(30,5,utf8_decode($row['saldo']),1,0,'L',1);
-        $pdf->Cell(30,5,$row['abono'],1,1,'L',1);  
+        $pdf->Cell(30,5,$row['abonos'],1,1,'L',1);  
     }
     $pdf->SetX(115);
     $pdf->Output();
