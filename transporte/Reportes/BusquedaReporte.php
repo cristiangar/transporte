@@ -56,7 +56,7 @@ if(isset($_SESSION['usuario']))
         <div class="wrapper fadeInDown col-sm-4"><!--efecto de caida-->
             <div id="formContent"><!--contenedor-->
                 <div class="fadeIn first">
-                    <a href="Clientes.php">
+                    <a href="Reportes.php?cliente">
                     <img class="img-fluid" src="../imagenes/reporteclientes.png" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;">
                     </a>
                     <h1>Reporte de Clientes</h1>
