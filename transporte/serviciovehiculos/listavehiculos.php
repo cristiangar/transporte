@@ -168,7 +168,7 @@ if(isset($_SESSION['usuario']))
                     
                     
                     <td><center><a href="detalle_vehiculo.php?id=<?php echo $id?>&C"><button type="button" class="btn btn-info">Detalle</button></a></center></td>
-                    <td><center><a href="../controller/cabezales.php?id=<?php echo $id?>&es"><button type="button" class="btn btn-danger">Eliminar</button></a></center></td>
+                    <td><center><a href="nuevoservicio.php?id=<?php echo $id?>&es"><button type="button" class="btn btn-primary">Agregar Servicio</button></a></center></td>
                     </tr>
                     <?php
                   }       
@@ -185,7 +185,7 @@ if(isset($_SESSION['usuario']))
               <div class="container-fluid">
                     <br>
                 <center>
-                    <a href="nuevo_vehiculo.php?C"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
+                    
                     <a href="menu_vehiculo.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                     
                 </center>
