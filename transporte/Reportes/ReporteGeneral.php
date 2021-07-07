@@ -25,13 +25,13 @@ if(isset($_GET['cliente'])){
     $pdf->Cell(30,5,'abono',1,0,'L',1);
 
     $pdf->SetFont('Arial','',12);
-    $pdf->SetY(50);
+    $pdf->SetY(45);
 
     while ($row = mysqli_fetch_array($dt))
     {
-        $pdf->SetX(35);
+        $pdf->SetX(10);
         $pdf->cell(30,5,utf8_decode($row['codigo_envio']),1,0,'L',1);
-        $pdf->Cell(30,5,$row['fecha_envios'],1,1,'L',1);  
+        $pdf->Cell(30,5,$row['fecha_envio'],1,1,'L',1);  
     }
     $pdf->SetX(115);
 
