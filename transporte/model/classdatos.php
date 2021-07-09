@@ -1,6 +1,6 @@
 <?php 
 ob_start();
-//session_start();
+session_start();
 include ('../Configuracion/config.php');
 class envio
 {
@@ -72,19 +72,19 @@ class envio
 		$db = new datos();
 		$db->conectar();
 		$consulta= "select a.id_envio,a.codigo_envio,a.fecha_envio,a.fecha_entrega,a.autorizacion,
-    b.id_cliente,concat(b.nombre,' ',b.apellido) as cliente,b.telefono as tel_cliente,
-    c.id_receptor,concat(c.nombre,' ',c.apellido) as receptor,c.telefono as tel_receptor, 
-	d.id_paquete,d.descripcion as dpaquete,d.peso,d.direccion_entrega,d.direccion_envio,
-	e.id_ruta,e.codigo_ruta,e.pais_origen,e.pais_destino,
-	g.id_empleado,concat(g.nombre,' ',g.apellido) as piloto, g.telefono1
-	from solicitud_envio as a
-	inner join clientes as b on b.id_cliente=a.id_cliente
-	inner join receptor as c on c.id_receptor=a.id_receptor
-	inner join paquete as d on d.id_paquete=a.id_paquete
-	inner join ruta as e on d.id_ruta=e.id_ruta
-	inner join asignacion_vehiculo_empleado as f on f.id_asignacion_vehiculo=a.id_asignacion_vehiculo
-	inner join empleado as g on f.id_empleado=g.id_empleado
-	where a.autorizacion=1;";
+		b.id_cliente,concat(b.nombre,' ',b.apellido) as cliente,b.telefono as tel_cliente,
+		c.id_receptor,concat(c.nombre,' ',c.apellido) as receptor,c.telefono as tel_receptor, 
+		d.id_paquete,d.descripcion as dpaquete,d.peso,d.direccion_entrega,d.direccion_envio,
+		e.id_ruta,e.codigo_ruta,e.pais_origen,e.pais_destino,
+		g.id_empleado,concat(g.nombre,' ',g.apellido) as piloto, g.telefono1
+		from solicitud_envio as a
+		inner join clientes as b on b.id_cliente=a.id_cliente
+		inner join receptor as c on c.id_receptor=a.id_receptor
+		inner join paquete as d on d.id_paquete=a.id_paquete
+		inner join ruta as e on d.id_ruta=e.id_ruta
+		inner join asignacion_vehiculo_empleado as f on f.id_asignacion_vehiculo=a.id_asignacion_vehiculo
+		inner join empleado as g on f.id_empleado=g.id_empleado
+		where a.autorizacion=1;";
 		$dt8= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt8;

@@ -17,6 +17,9 @@ while($row=mysqli_fetch_array($dt))
     $id_receptor=$row['id_receptor'];
     $receptor=$row['receptor'];
     $tel_receptor=$row['tel_receptor'];
+    $imegen_dpi=$row['ruta_imagen_dpi'];
+    $imegen_licencia=$row['ruta_imagen_licencia'];
+    $imegen_pasaporte=$row['ruta_imagen_pasaporte'];
     /**datos del envio */
     $peso=$row['peso'];
     $direccion_entrega=$row['direccion_entrega'];
@@ -34,6 +37,7 @@ while($row=mysqli_fetch_array($dt))
     $interno_externo=$row['tipo_interno_externo'];
     $tipo_vehivulo=$row['tipo_vehiculo'];
     $descripcion=$row['descripcion'];
+    $imagen_tarjeta=$row['ruta_imagen_tarjeta'];
 
     if(($tipo_vehivulo=="Cabezal") or ($tipo_vehivulo=="cabezal")){
       $placa_plataforma=$row['placa'];
@@ -42,7 +46,8 @@ while($row=mysqli_fetch_array($dt))
       $tamanio_plataforma=$row['tamaño'];
       $descripcion_plataforma=$row['dplataforma'];
       $tplataforma=$row['tplataforma'];
-
+      $imagen_tarjeta_plataforma=$row['ruta_imagen_targeta'];
+      
       $activador=1;
     
     }
@@ -51,6 +56,8 @@ while($row=mysqli_fetch_array($dt))
       //echo 'es camion';
       $activador=0;
     }
+
+
     if($autorizacion==0){
       $au="Sin Autorizar";
     }
@@ -186,7 +193,42 @@ if($activador=="1"){
   $pdf->Sety(110);
   $pdf->SetX(10);
   $pdf->MultiCell(170,5,$descripcion_plataforma,0,'L',0);
-}    
+$pdf->AddPage();
+$pdf->SetFillColor(232,232,232);
+$pdf->SetFont('Arial','B',12);
+$pdf->MultiCell(75,10,'Imagenes documentos del piloto:',0,'C',0);
+
+$pdf->image($imegen_dpi,50,51,80); 
+$pdf->image($imegen_licencia,50,110,80); 
+$pdf->image($imegen_pasaporte,50,170,80); 
+
+$pdf->AddPage();
+$pdf->SetFillColor(232,232,232);
+$pdf->SetFont('Arial','B',12);
+$pdf->MultiCell(75,10,'Imagenes documentos del vehiculo:',0,'C',0);
+
+$pdf->image($imagen_tarjeta,50,51,130); 
+$pdf->image($imagen_tarjeta_plataforma,50,51,130); 
+
+}   
+
+$pdf->AddPage();
+$pdf->SetFillColor(232,232,232);
+$pdf->SetFont('Arial','B',12);
+$pdf->MultiCell(75,10,'Imagenes documentos del piloto:',0,'C',0);
+
+$pdf->image($imegen_dpi,50,51,80); 
+$pdf->image($imegen_licencia,50,110,80); 
+$pdf->image($imegen_pasaporte,50,170,80); 
+
+$pdf->AddPage();
+$pdf->SetFillColor(232,232,232);
+$pdf->SetFont('Arial','B',12);
+$pdf->MultiCell(75,10,'Imagenes documentos del vehiculo:',0,'C',0);
+
+$pdf->image($imagen_tarjeta,50,51,130); 
+
+
 $pdf->Output('Envio','I');
 
 ?>
