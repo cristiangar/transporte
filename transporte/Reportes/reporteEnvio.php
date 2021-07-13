@@ -193,21 +193,12 @@ if($activador=="1"){
   $pdf->Sety(110);
   $pdf->SetX(10);
   $pdf->MultiCell(170,5,$descripcion_plataforma,0,'L',0);
-$pdf->AddPage();
-$pdf->SetFillColor(232,232,232);
-$pdf->SetFont('Arial','B',12);
-$pdf->MultiCell(75,10,'Imagenes documentos del piloto:',0,'C',0);
 
-$pdf->image($imegen_dpi,50,51,80); 
-$pdf->image($imegen_licencia,50,110,80); 
-$pdf->image($imegen_pasaporte,50,170,80); 
 
 $pdf->AddPage();
 $pdf->SetFillColor(232,232,232);
 $pdf->SetFont('Arial','B',12);
-$pdf->MultiCell(75,10,'Imagenes documentos del vehiculo:',0,'C',0);
-
-$pdf->image($imagen_tarjeta,50,51,130); 
+$pdf->MultiCell(75,10,'Imagenes documentos del equipo de arrastre:',0,'C',0); 
 $pdf->image($imagen_tarjeta_plataforma,50,51,130); 
 
 }   
