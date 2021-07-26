@@ -31,7 +31,7 @@ class cuenta
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "select a.id_encabezado, a.total,c.saldo, c.fecha_inicio, a.estado_factura,concat(b.nombre,' ',b.apellido) as cliente,
+		$consulta= "select a.id_encabezado, a.total,c.saldo, c.fecha_inicio, a.estado_factura,b.nombre as cliente,
     		a.id_cliente,c.id_cxc,a.id_envio,d.codigo_envio 
     		from encabezado as a
 			inner join clientes as b on a.id_cliente=b.id_cliente 

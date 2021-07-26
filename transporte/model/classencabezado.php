@@ -31,7 +31,7 @@ class encabezado
 
         $db = new datos();
         $db->conectar();
-        $consulta= " select a.id_encabezado, a.total, d.saldo,a.fecha, a.estado_factura, a.id_cliente, concat(c.nombre,' ',c.apellido) as cliente, a.id_envio, e.codigo_envio 
+        $consulta= " select a.id_encabezado, a.total, d.saldo,a.fecha, a.estado_factura, a.id_cliente, c.nombre as cliente, a.id_envio, e.codigo_envio 
             from encabezado as a 
             inner join cxc as d on a.id_encabezado=d.id_encabezado
             inner join clientes as c on a.id_cliente=c.id_cliente
