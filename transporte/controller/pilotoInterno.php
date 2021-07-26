@@ -44,7 +44,7 @@ if (isset($_GET['id']))
 
             $licencia=$_POST['licencia'];
             $tlicencia=$_POST['tlicencia'];
-
+            $fecha_licencia=$_POST['fecha'];
             if(empty($_FILES['imglicencia']['name'])){/**licencia */
                 $ruta_licencia=$_POST['ruta_licencia'];
                 
@@ -70,7 +70,7 @@ if (isset($_GET['id']))
                 move_uploaded_file($archivo, $ruta_pasaporte);//mueve la imagen ala ruta*/
             }
             $au =new Piloto();
-            $au->Modificar($id,$nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia,$nombre_cuenta,$tipo_cuenta);
+            $au->Modificar($id,$nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia,$nombre_cuenta,$tipo_cuenta,$fecha_licencia);
     
 
         }
@@ -118,7 +118,7 @@ else
 
         $licencia=$_POST['licencia'];
         $tlicencia=$_POST['tlicencia'];
-
+        $fecha_licencia=$_POST['fecha'];
         if(empty($_FILES['imglicencia']['name'])){/**licencia */
             $ruta_licencia='N/A';
         }
@@ -142,9 +142,9 @@ else
             $ruta_pasaporte=$ruta_pasaporte."/".$nombreimgp;//la ruta de la imagen
             move_uploaded_file($archivo, $ruta_pasaporte);//mueve la imagen ala ruta*/
         }
-    
+        
         $au =new Piloto();
-        $au->Ingresar($nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia,$nombre_cuenta,$tipo_cuenta);
+        $au->Ingresar($nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia,$nombre_cuenta,$tipo_cuenta,$fecha_licencia);
 
     }
     else

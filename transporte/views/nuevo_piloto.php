@@ -101,6 +101,7 @@ if(isset($_GET['id']))
         $cargo=$row['cargo'];
         $nombre_cuenta=$row['nombre_cuenta'];
         $tipo_cuenta=$row['tipocuenta'];
+        $fecha_licencia=$row['fecha_licencia'];
 
     }
 ?>
@@ -211,6 +212,16 @@ if(isset($_GET['id']))
                     <option value='C'>C</option>
                 </select>
             </div>
+            <div class="col-sm-4">
+                <label>Fecha de vencimiento</label>
+                <input type="date" value='<?php echo date('Y-m-d',strtotime($fecha_licencia));?>' name="fecha" class="form-control" id="fecha" placeholder="Introduce una fecha" required min=<?php $hoy=date("Y-m-d"); echo $hoy;?> />
+            </div>
+
+            
+<script>
+    /**script de validacion de fecha */
+    document.getElementById('#fecha').value = new Date().toDateInputValue();
+</script>
 <?php
             if($ruta_imagen_licencia=="N/A")
             {
@@ -408,6 +419,10 @@ else
                 </select>
             </div>
             <div class="col-sm-4">
+                <label>Fecha de vencimiento</label>
+                <input type="date" name="fecha" class="form-control" id="fecha" placeholder="Introduce una fecha" required min=<?php $hoy=date("Y-m-d"); echo $hoy;?> />
+            </div>
+            <div class="col-sm-4">
                 <label>Imagen Licencia</label>
                 <div class="container-fluid">
                     <input type="file" name="imglicencia">
@@ -415,7 +430,9 @@ else
             </div>
         </div>
         <br>
-
+<script>
+    document.getElementById('#fecha').value = new Date().toDateInputValue();
+</script>
         <h1>Datos del Pasaporte</h1>
         <br>
         <div class="form-row">

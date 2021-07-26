@@ -69,6 +69,7 @@ while ($row=mysqli_fetch_array($dt)) {
   $numero_emergencia=$row['contacto_emergencia_numero'];
   $nombre_cuenta=$row['nombre_cuenta'];
   $tipo_cuenta=$row['tipocuenta'];
+  $fecha_licencia=$row['fecha_licencia'];
 
 
   }
@@ -95,6 +96,7 @@ while ($row=mysqli_fetch_array($dt)) {
             <div class="card-body">
                 <h2 class="card-title">No. licencia: <?php echo $licencia;?></h2>
                 <h2 class="card-title">Tipo de licencia: <?php echo $tipo_licencia;?></h2>
+                <h2 class="card-title">Fecha de vencimiento: <?php echo $fecha_licencia;?></h2>
             </div>
             <img src="<?php echo  $ruta_imagen_licencia;?>" style="width:100%" alt="">
         </div>
