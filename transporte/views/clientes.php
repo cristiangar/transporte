@@ -49,7 +49,7 @@ if(isset($_SESSION['usuario']))
       <br>
       <table class="table table-dark table-striped table-hover table-responsive-sm border="1" id="tabla_paginada">
             <thead>
-              <td>Nombre</td>
+              <td>Empresa</td>
               <td>Nit</td>
               <td>Telefono</td>
               <td>Teléfono 2</td>

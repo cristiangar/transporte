@@ -15,7 +15,6 @@ if (isset($_GET['id']))
         
         $id = $_GET['id'];
         $nombre=$_POST['nombre'];
-        $apellido=$_POST['apellido'];
         $telefono=$_POST['telefono'];
         $telefono2=$_POST['telefono2'];
         $correo=$_POST['correo'];
@@ -23,7 +22,7 @@ if (isset($_GET['id']))
         $cuenta=$_POST['cuenta'];
         $banco=$_POST['banco'];
         $au =new cliente();
-        $au->ModificarCliente($id,$nombre,$apellido,$telefono,$telefono2,$correo,$nit,$cuenta,$banco);
+        $au->ModificarCliente($id,$nombre,$telefono,$telefono2,$correo,$nit,$cuenta,$banco);
 
 
     }
@@ -34,7 +33,6 @@ else
     if(isset($_POST ['nombre'])){
 
     $nombre=$_POST['nombre'];
-    $apellido=$_POST['apellido'];
     $telefono=$_POST['telefono'];
     $telefono2=$_POST['telefono2'];
     $correo=$_POST['correo'];
@@ -43,7 +41,7 @@ else
     $banco=$_POST['banco'];
 
         $au =new cliente();
-        $au->Ingresarcliente($nombre,$apellido,$telefono,$telefono2,$correo,$nit,$cuenta,$banco);  
+        $au->Ingresarcliente($nombre,$telefono,$telefono2,$correo,$nit,$cuenta,$banco);  
 
     }
     else

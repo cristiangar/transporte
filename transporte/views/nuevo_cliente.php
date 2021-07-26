@@ -85,7 +85,6 @@ if(isset($_GET['id'])){
     while ($row=mysqli_fetch_array($dt)) {
             $id=$row['id_cliente'];
             $nombre=$row['nombre'];
-            $apellido=$row['apellido'];
             $telefono=$row['telefono'];
             $telefono2=$row['telefono2'];
             $correo=$row['correo'];
@@ -102,14 +101,10 @@ if(isset($_GET['id'])){
         <br>
         <div class="form-row">
             <div class="col-sm-4">
-            <label>Nombre</label>
+            <label>Empresa</label>
                 <input type="text" name="nombre" class="form-control" placeholder="Nombre" value="<?php echo $nombre?>" onkeypress="return (event.charCode==241 || event.charCode==32 || event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
-            <div class="col-sm-4">
-            <label>Apellido</label>
-                <input type="text" name="apellido" class="form-control" placeholder="Apellido" value="<?php echo 
-                $apellido?>" onkeypress="return (event.charCode==241 || event.charCode==32 || event.charCode <= 122)" require>
-            </div>
+            
             <div class="col-sm-4">
             <label>Teléfono 1</label>
             <input type="tel" name="telefono" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13" value="<?php echo  $telefono?>" require>
@@ -171,13 +166,10 @@ else
         <br>
         <div class="form-row">
             <div class="col-sm-4">
-            <label>Nombre</label>
+            <label>Empresa</label>
                 <input type="text" name="nombre" class="form-control" placeholder="Nombre" onkeypress="return (event.charCode==241 || event.charCode==32 || event.charCode >= 97 && event.charCode <= 122)" require>
             </div>
-            <div class="col-sm-4">
-            <label>Apellido</label>
-                <input type="text" name="apellido" class="form-control" placeholder="Apellido" onkeypress="return (event.charCode==241 || event.charCode==32 || event.charCode >= 97 && event.charCode <= 122)" require>
-            </div>
+            
             <div class="col-sm-4">
             <label>Teléfono 1</label>
                 <input type="text" name="telefono" class="form-control" placeholder="solo números"   onkeyup="Card(event, this)" maxlength="13"  require>

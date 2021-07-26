@@ -51,7 +51,7 @@ if(isset($_SESSION['usuario']))
                     <a href="vehiculos.php?P">
                         <img class="conimagen" id="conimg"src="../imagenes/plataforma2.jpg" id="icon" alt="User Icon" style="max-width:60%;width:auto;height:auto;"/>
                     </a>
-                    <h1>Equipo Especial</h1>
+                    <h1>Furgón / Plataforma / Caja Seca</h1>
                 </div>
             </div>
         </div>
