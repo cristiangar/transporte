@@ -40,6 +40,42 @@ if(isset($_SESSION['usuario']))
     </ul>
 
 </nav>
+
+    <script>
+                   function Card(event, el){//Validar nombre
+
+                        //Obteniendo posicion del cursor 
+                        var val = el.value;//Valor de la caja de texto
+                        var pos = val.slice(0, el.selectionStart).length;
+                        
+                        var out = '';//Salida
+                        var filtro = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890';
+                        var v = 0;//Contador de caracteres validos
+                        
+                        //Filtar solo los numeros
+                        for (var i=0; i<val.length; i++){
+                           if (filtro.indexOf(val.charAt(i)) != -1){
+                               v++;
+                               out += val.charAt(i);
+                               
+                               //Agregando un espacio cada 4 caracteres
+                               if((v==2) || (v==9))
+                                   out+='-';
+                           }
+                        }
+                        
+                        //Reemplazando el valor
+                        el.value = out;
+                        
+                        //En caso de modificar un numero reposicionar el cursor
+                        if(event.keyCode==8){//Tecla borrar precionada
+                            el.selectionStart = pos;
+                            el.selectionEnd = pos;
+                        }
+                    } 
+            </script>
+
+
     <div class="container-fluid">
     <?php
         if(isset($_GET['P']))/**plataforma */
@@ -76,7 +112,7 @@ if(isset($_SESSION['usuario']))
 
                                 <div class="col-sm-4">
                                 <label>Placa</label>
-                                        <input value="<?php echo $placa?>"  name='pplaca' type="text" class="form-control" placeholder="Número de placa" require>
+                                        <input value="<?php echo $placa?>"  name='pplaca' type="text" class="form-control" placeholder="Número de placa" onkeyup="Card(event, this)" maxlength="9" require>
                                 </div>
 
                                 <div class="col-sm-4">
@@ -228,7 +264,7 @@ if(isset($_SESSION['usuario']))
 
                         <div class="col-sm-4">
                             <label>Placa</label>
-                                <input  name='pplaca' type="text" class="form-control" placeholder="Número de placa" require>
+                                <input  name='pplaca' type="text" class="form-control" placeholder="Número de placa" onkeyup="Card(event, this)" maxlength="9" require>
                         </div>
 
                         <div class="col-sm-4">
@@ -349,7 +385,7 @@ if(isset($_SESSION['usuario']))
                     <div class='form-row'>
                             <div class="col-sm-4">
                                 <label>No.Placa</label>
-                                <input value='<?php echo $placa; ?>' name='placa' type="text" class="form-control" placeholder="Número de placa" require>
+                                <input value='<?php echo $placa; ?>' name='placa' type="text" class="form-control" placeholder="Número de placa" onkeyup="Card(event, this)" maxlength="9" require>
                             </div>
                             <div class="col-sm-4">
                                 <label>Marca</label>
@@ -453,7 +489,7 @@ if(isset($_SESSION['usuario']))
                     <div class='form-row'>
                             <div class="col-sm-4">
                                 <label>No.Placa</label>
-                                <input name='placa' type="text" class="form-control" placeholder="Número de placa" require>
+                                <input name='placa' type="text" class="form-control" placeholder="Número de placa" onkeyup="Card(event, this)" maxlength="9" require>
                             </div>
                             <div class="col-sm-4">
                                 <label>Marca</label>
