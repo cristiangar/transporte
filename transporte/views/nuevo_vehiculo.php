@@ -275,11 +275,12 @@ if(isset($_SESSION['usuario']))
                         <div class="col-sm-4">
                             <label>Tipo de Remolque</label>
                                 <select name="ptipo" id=""class="form-control">
-                                    <option value="portaautomoviles">portaautomoviles</option>
-                                    <option value="plataforma abierta">plataforma abierta</option>
-                                    <option value="plataforma cerrada">plataforma cerrada</option>
-                                    <option value="cisterna">cisterna</option>
-                                    <option value="plataforma refrigerada">plataforma refigerada</option>
+                                    <option value="Plataforma">Plataforma</option>
+                                    <option value="Cisterna">Cisterna</option>
+                                    <option value="Caja refrigerada">Caja refrigerada</option>
+                                    <option value="Caja seca">Caja seca</option>
+                                    <option value="Low Body">Low Body</option>
+                                    <option value="Cama baja">Cama baja</option>
                                 </select>
                         </div>
                     <div class="col-sm-4">
