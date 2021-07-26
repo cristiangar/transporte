@@ -4,11 +4,11 @@ include ('../Configuracion/config.php');
 class Piloto
 {
 
-	public function Ingresar($nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia,$nombre_cuenta,$tipo_cuenta)
+	public function Ingresar($nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia,$nombre_cuenta,$tipo_cuenta,$fecha_licencia)
 	{
         $bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_pilotos(0, '$nombre', '$apellido', '$dpi', '$telefono', '$whatsApp', '$licencia', '$tlicencia', '$pasaporte', '$ruta_licencia', '$ruta_pasaporte', '$ruta', 'Disponible',$id_tipo_empleado, '$cuenta', '$correo', '$banco', '$nombre_emergencia', '$numero_emergencia', '$nombre_cuenta','$tipo_cuenta','I', @pn_respuesta);";
+		$consulta= "call sp_pilotos(0, '$nombre', '$apellido', '$dpi', '$telefono', '$whatsApp', '$licencia', '$tlicencia', '$pasaporte', '$ruta_licencia', '$ruta_pasaporte', '$ruta', 'Disponible',$id_tipo_empleado, '$cuenta', '$correo', '$banco', '$nombre_emergencia', '$numero_emergencia', '$nombre_cuenta','$tipo_cuenta','$fecha_licencia','I', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -31,7 +31,7 @@ class Piloto
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_pilotos(0, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 0, '0', '0', '0', '0', '0','0','0','S', @pn_respuesta);";
+		$consulta= "call sp_pilotos(0, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 0, '0', '0', '0', '0', '0', '0', '0', '0', 'S', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -41,7 +41,7 @@ class Piloto
 	{
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_pilotos($id, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 0, '0', '0', '0', '0', '0', '0','0','S1', @pn_respuesta);";
+		$consulta= "call sp_pilotos($id, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 0, '0', '0', '0', '0', '0', '0', '0', '0', 'S1', @pn_respuesta);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -51,7 +51,7 @@ class Piloto
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_pilotos($id, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 0, '0', '0', '0', '0', '0','0','0', 'D', @pn_respuesta);";
+		$consulta= "call sp_pilotos($id, '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 0, '0', '0', '0', '0', '0','0','0','0', 'D', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -68,11 +68,11 @@ class Piloto
 
 	}
 
-    public function Modificar($id,$nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia,$nombre_cuenta,$tipo_cuenta)
+    public function Modificar($id,$nombre, $apellido, $dpi, $telefono, $whatsApp, $licencia, $tlicencia, $pasaporte, $ruta_licencia, $ruta_pasaporte, $ruta,$id_tipo_empleado, $cuenta, $correo, $banco, $nombre_emergencia, $numero_emergencia,$nombre_cuenta,$tipo_cuenta,$fecha_licencia)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_pilotos($id, '$nombre', '$apellido', '$dpi', '$telefono', '$whatsApp', '$licencia', '$tlicencia', '$pasaporte', '$ruta_licencia', '$ruta_pasaporte', '$ruta', 'Disponible',$id_tipo_empleado, '$cuenta', '$correo', '$banco', '$nombre_emergencia', '$numero_emergencia','$nombre_cuenta','$tipo_cuenta', 'U', @pn_respuesta);";
+		$consulta= "call sp_pilotos($id, '$nombre', '$apellido', '$dpi', '$telefono', '$whatsApp', '$licencia', '$tlicencia', '$pasaporte', '$ruta_licencia', '$ruta_pasaporte', '$ruta', 'Disponible',$id_tipo_empleado, '$cuenta', '$correo', '$banco', '$nombre_emergencia', '$numero_emergencia','$nombre_cuenta','$tipo_cuenta','$fecha_licencia','U', @pn_respuesta);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
