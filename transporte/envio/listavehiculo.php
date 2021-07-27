@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once('../controller/datos.php');
 if(isset($_SESSION['usuario']))
 {
     $rol=$_SESSION['rol'];
@@ -39,7 +39,6 @@ if(isset($_SESSION['usuario']))
 <div class="container-fluid">
 <?php
   /*if(isset($_GET['P'])){/**plataforma */
-    include_once('../controller/datos.php');
       $resultado=$dt4->num_rows;
       if($resultado>0)
       {

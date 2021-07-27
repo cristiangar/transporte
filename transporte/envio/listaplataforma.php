@@ -1,5 +1,5 @@
 <?php
-session_start();
+ include_once("../controller/datos.php");
 if(isset($_SESSION['usuario']))
 {
     $rol=$_SESSION['rol'];
@@ -38,7 +38,6 @@ if(isset($_SESSION['usuario']))
 </nav>
 <div class="container-fluid">
 <?php
-  include_once("../controller/datos.php");
   $resultado=$dt6->num_rows;
       if($resultado>0){
         ?>

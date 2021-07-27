@@ -26,15 +26,17 @@ if (isset($_GET['id']))
 else
 {
     
-    if(isset($_SESSION['pendiente'])and isset($_SESSION['adelanto'])){
-        $pendiente=$_SESSION['pendiente'];
-        $adelanto=$_SESSION['adelanto'];
+    if(isset($_POST['codigo'])){
+        $id_envio=$_POST['id_envio'];
+        $pendiente=$_POST['pendiente'];
+        $adelanto=$_POST['adelanto'];
         /*datos del cliente y envio*/        
-        $codviaje=$_SESSION['codviaje'];
-        $id_pilotoviaje=$_SESSION['idpilotoviaje'];
-
+        $codviaje=$_POST['codigo'];
+        $id_pilotoviaje=$_POST['id_piloto'];
+        echo $id_pilotoviaje;
         $au = new cuentapago();
         $au -> IngresarCuentaPagar($codviaje,$id_pilotoviaje,$pendiente,$adelanto);
+        $au -> actualizardeposito($id_envio);
     }
     else
     {

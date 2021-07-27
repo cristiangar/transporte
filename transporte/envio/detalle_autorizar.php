@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once("../controller/envio.php");
 if(isset($_SESSION['usuario']))
 {
     $rol=$_SESSION['rol'];
@@ -38,7 +38,7 @@ if(isset($_SESSION['usuario']))
 </nav>
 <div class='container-fluid'>
 <?php
-include_once("../controller/envio.php");
+
 while($row=mysqli_fetch_array($dt))
 {
     /**datos del envio */
@@ -194,7 +194,7 @@ while($row=mysqli_fetch_array($dt))
                 <div class="col-sm-4">
                 <label for="">Piloto</label>
                   <div class="input-group mb-3">
-                    <input value='<?php echo $piloto?>' type="text" class="form-control" placeholder="Piloto" id="pagina5" name="Piloto">
+                    <input value='<?php echo $piloto?>' type="text" class="form-control" placeholder="Piloto" id="pagina5" name="Piloto" readonly>
                     <div class="input-group-append">
                     <a href="detalle_piloto.php?id=<?php echo $id_piloto;?>&envio=<?php echo $id;?>"><button class="input-group-text btn-btn-primary" id="boton1">Detalle Piloto</button></a>
                     </div>

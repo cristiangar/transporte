@@ -49,7 +49,6 @@ if(isset($_SESSION['usuario']))
         /*}*/
 
         ?>
-        <form method="POST" action="../controller/cuentas.php?id2=<?php echo $id2?>">
           <center>
             <br>
           <h1>Listado de Abonos</h1>
@@ -69,9 +68,9 @@ if(isset($_SESSION['usuario']))
             $cantidad=$row['cantidad'];
             $fecha=$row['fecha_abono'];
             $descripcion=$row['descripcion'];
-            $total=$row['total_cancelar'];
+            /*$total=$row['total_cancelar'];
             $saldo=$row['saldo'];
-            $viaje=$row['codigo_de_envio']; 
+            $viaje=$row['codigo_de_envio']; */
             ?>
                   <tbody id="myTable">
                   <tr>
@@ -88,17 +87,10 @@ if(isset($_SESSION['usuario']))
                
                 echo '</table>';
             ?>
-            <b>No. de Viaje: </b><td><?php echo $viaje?></td>
-                <br>
-             <b>Pago de Viaje: </b><td><?php echo $total?></td>
-             <br>
-             <b>Saldo: </b><td><?php echo $saldo?></td>
-             <br>
             <center>
 
              <br>
-                <a href="nuevo_abono_pago.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Abonar</button></a>
-                
+                <a href="nuevo_abono_pago.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Abonar</button></a>   
                 <a href="pagos.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
                 
                 

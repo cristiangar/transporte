@@ -300,10 +300,10 @@ if(isset($_SESSION['usuario']))
                             <label>Número CAAT</label>
                                 <input value="N/A" name='pcaat' type="text" class="form-control" placeholder="Numero CAAT" require>
                         </div>
-                        <div class="col-sm-4">
-                    <br>
-                    <label>Documento CAAT</label>
-                    <input type="file" name="imagencaat">
+                    <div class="col-sm-4">
+                        <br>
+                        <label>Documento CAAT</label>
+                        <input type="file" name="imagencaat">
                     </div>
 
                         

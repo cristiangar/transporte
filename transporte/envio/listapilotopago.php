@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once("../controller/datos.php");
 if(isset($_SESSION['usuario']))
 {
     $rol=$_SESSION['rol'];
@@ -23,7 +23,7 @@ if(isset($_SESSION['usuario']))
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-        <a href="secritaria.php">
+        <a href="../views/secritaria.php">
         <img src="../imagenes/logo.png" alt="HTML tutorial" style="width:52px;height:52px;">
         </a>
     <ul class="navbar-nav ml-auto">
@@ -38,17 +38,53 @@ if(isset($_SESSION['usuario']))
 </nav>
 <div class="container-fluid">
 <?php
-  include_once("../controller/datos.php");
    $resultado=$dt9->num_rows;
   if($resultado>0){
 
     ?>
-      <h1>Viajes Autorizados</h1>
       <br>
-      <div class="container mt-3">
+      <div class="container-fluid">
+      <?php
+    
+    if (isset($_GET['id'])){
+      $id_envio=$_GET['d'];
+      $valor=$_GET['id'];
+      $nombre=$_GET['no'];
+      $valor2=$_GET['idp'];
+      $adelanto=$_GET['ad'];
+      $pendiente=$_GET['pe'];
+      $total=$adelanto+$pendiente;
+      ?>
+
+      <form method="POST" action="../controller/nuevo_cuenta_pagar.php">
+          <h2>Viaje seleccionado: <?php echo $valor?></h2>
+          <input value='<?php echo $id_envio;?>' name="id_envio" type="text" class="form-control" hidden>
+          <input value='<?php echo $valor2;?>' name="id_piloto" type="text" class="form-control" hidden>
+          <label for="">codigo de envio:</label>
+          <input value='<?php echo $valor;?>' name="codigo" type="text" class="form-control" readonly>
+          <label for="">Nombre operador:</label>
+          <input value='<?php echo $nombre;?>' name="piloto" type="text" class="form-control" readonly>
+          <label for="">Adelanto:</label>
+          <input value='<?php echo $adelanto;?>' name="adelanto" type="text" class="form-control" readonly>
+          <label for="">Pendiente:</label>
+          <input value='<?php echo $pendiente;?>' name="pendiente" type="text"class="form-control" readonly>
+          <label for="">Total del deposito:</label>
+          <input value='<?php echo $total;?>' type="text"class="form-control" readonly>
+
+          <br>
+          <label for="">Precione el boton aceptar para continuar</label> <br>
+          <input type="submit" class="btn btn-success" value="Aceptar">
+          <a href="listapilotopago.php"class="btn btn-danger">Cancelar</a>
+      </form>
+      <?php
+    }
+    ?>
+    <br>
+    <h1>Viajes listos para depositar</h1>
+    <br>
       <input class="form-control" id="myInput" type="text" placeholder="buscar..">
       <br>
-      <table class="table table-dark table-striped table-hover table-responsive-sm" border="1" id="tabla_paginada" >
+      <table class="table table-dark table-striped table-hover table-responsive-sm " border="1" id="tabla_paginada" >
             <thead>
               <td>No. de Viaje</td>
               <td>Nombre de Operador</td>
@@ -63,6 +99,7 @@ if(isset($_SESSION['usuario']))
               <td>Cuenta Numero</td>
               <td>Cuentahabiente</td>
               <td>Telefono</td>
+              <td>depositar</td>
               
             </thead>
       <?php
@@ -100,7 +137,7 @@ if(isset($_SESSION['usuario']))
                     <td><?php echo $cuentabancaria?></td>
                     <td><?php echo $nombrecuentah?></td>
                     <td><?php echo $telefono?></td>
-                    <td><center><a href="listapilotopago.php?id=<?php echo $id?>&no=<?php echo $nombre?>&idp=<?php echo $idp?>&ad=<?php echo $adelanto?>&pe=<?php echo $pendiente?>"><button type="button" class="btn btn-primary">Seleccionar</button></a></center></td>
+                    <td><center><a href="listapilotopago.php?id=<?php echo $id?>&no=<?php echo $nombre?>&idp=<?php echo $idp?>&ad=<?php echo $adelanto?>&pe=<?php echo $pendiente?>&d=<?php echo $idenvio;?>"><button type="button" class="btn btn-primary">Seleccionar</button></a></center></td>
                   </tr>
                  </tbody>
                  <?php
@@ -114,12 +151,10 @@ if(isset($_SESSION['usuario']))
                 <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >"/></td>
                 <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>"/></td>
                 </tfoot>
-      </table>            
-            <center>
-                 
-                    
-            </center>
-
+      </table>        
+      <center>
+      <a href="../views/secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
+      </center>    
             <?php
   }
   else{
@@ -132,6 +167,7 @@ if(isset($_SESSION['usuario']))
       <br>
       <br><br><br><br>
       <h1>No hay datos ingresados</h1>
+      <a href="../views/secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
       <br>
       
     </center>
@@ -155,33 +191,6 @@ $(document).ready(function(){
 
 
 <br>
-<?php
-    
-    if (isset($_GET['id'])){
-      
-      $valor=$_GET['id'];
-      $nombre=$_GET['no'];
-      $valor2=$_GET['idp'];
-      $adelanto=$_GET['ad'];
-      $pendiente=$_GET['pe'];
-      $_SESSION['codviaje']=$valor;
-      $_SESSION['idpilotoviaje']=$valor2;
-      $_SESSION['adelanto']=$adelanto;
-      $_SESSION['pendiente']=$pendiente;
-      ?>
-          <h2>Viaje seleccionado: <?php echo $valor?></h2>
-          <input value='<?php echo $valor;?>' type="text" id="P9" placeholder="Enviar al padre" hidden>&nbsp;
-          <input value='<?php echo $nombre;?>' type="text" id="P10" placeholder="Enviar al padre" hidden>&nbsp;
-          <input value='<?php echo $adelanto;?>' type="text" id="P11" placeholder="Enviar al padre" hidden>&nbsp;
-          <input value='<?php echo $pendiente;?>' type="text" id="P12" placeholder="Enviar al padre" hidden>&nbsp;
-          <label for="">Precione el boton aceptar para continuar</label> <br>
-          <button class='btn btn-success btn-lg' id="btnp9" onclick="window.close();">Aceptar</button>
-      <?php
-    }
-    ?>
-    <br>
-    <script src="../js/hija9.js"></script>
-
 </html>
 <?php
 }

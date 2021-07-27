@@ -18,18 +18,20 @@ class cuentapago
         $bd->desconectar();
 
         $res=mysqli_fetch_array($consultar);
-
-        unset($_SESSION['id_pilotoviaje']);
-        unset($_SESSION['pendiente']);
-        unset($_SESSION['adelanto']);
-        unset($_SESSION['codviaje']);
         //
         $texto=$res['@pn_respuesta'];
         echo'<script language = javascript>
                         alert("'.$texto.'")
                         self.location="../views/pagos.php" </script>';
+    }
 
-
+    public function actualizardeposito($id_envio)
+    {
+        $bd = new datos();
+        $bd->conectar();
+        $consulta= "UPDATE solicitud_envio SET deposito = 1 where id_envio=$id_envio;";
+        $dt= mysqli_query($bd->objetoconexion,$consulta);
+        $bd->desconectar();
     }
 
         
