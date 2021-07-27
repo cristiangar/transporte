@@ -28,9 +28,10 @@ if (isset($_GET['id']))
             $pcaat=$_POST['pcaat'];
             $codaduanero=$_POST['codaduanero'];
             $codtransporte=$_POST['codtransporte'];
+            
 
         if(empty($_FILES['imagencaat']['name'])){
-            $pimagencaat='N/A';
+            $pimagencaat=$_POST['ruta_caat'];
         }
         else{
             $nombreimcaat=$_FILES['imagencaat']['name'];//carga el nombre de la imagen
@@ -52,7 +53,7 @@ if (isset($_GET['id']))
             
             }
             $cabezal=new Cabezal();
-            $cabezal->Modificar($id,$marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$tamaño,$ejes,$color,$pcaat,$codaduanero,$codtransporte,$pimagencaat);
+            $cabezal->Modificar($id,$marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$tamaño,$ejes,$color,$pimagencaat,$pcaat,$codaduanero,$codtransporte);
 
         }
         else{
@@ -105,7 +106,7 @@ else
         
         }
         $cabezal=new Cabezal();
-        $cabezal->Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$ejes,$color,$pcaat,$codaduanero,$codtransporte,$pimagencaat);
+        $cabezal->Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$ejes,$color,$pimagencaat,$pcaat,$codaduanero,$codtransporte);
 
     }
     else

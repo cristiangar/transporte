@@ -475,7 +475,7 @@ if(isset($_SESSION['usuario']))
 
                                 <div class="col-sm-4">
                                     <label>Código De Transporte</label>
-                                        <input value="<?php echo $codtransporte?>" name='codgtransporte' type="text" class="form-control" placeholder="códio de transporte " require>
+                                        <input value="<?php echo $codtransporte?>" name='codtransporte' type="text" class="form-control" placeholder="códio de transporte " require>
                                 </div>
 
                                 <br><br>
@@ -520,7 +520,7 @@ if(isset($_SESSION['usuario']))
                             <div class="col-sm-4">
                                 <label>descripcion</label>
                                 <br>
-                                <textarea value='<?php echo $descripcion; ?>' calss='form-control' name="descripcion" id="" cols="200" rows="3"><?php echo $descripcion; ?></textarea>
+                                <textarea value='<?php echo $descripcion; ?>' calss='form-control' name="descripcion" id="" cols="160" rows="3"><?php echo $descripcion; ?></textarea>
                             </div>
                     </div>
                         <br>
