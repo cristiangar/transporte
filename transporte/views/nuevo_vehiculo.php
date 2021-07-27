@@ -377,6 +377,11 @@ if(isset($_SESSION['usuario']))
                         $tamaño=$row['tamaño'];
                         $ejes=$row['ejes'];
                         $color=$row['color'];
+                        $ruta_imagen_caat=$row['ruta_imagen_caat'];
+                        $caat=$row['caat'];
+                        $codaduanero=$row['cod_aduanero'];
+                        $codtransporte=$row['cod_transporte'];
+
                         }   
                     /**formulario para modificar */
                     ?>
@@ -461,6 +466,57 @@ if(isset($_SESSION['usuario']))
                             <input value='<?php echo $ruta_imagen_targeta;?>' name="ruta" type="hidden">
                             <br>
                             <br>
+
+
+                            <div class="col-sm-4">
+                                    <label>Código Aduanero</label>
+                                        <input value="<?php echo $codaduanero?>" name='codaduanero' type="text" class="form-control" placeholder="códio aduanero" require>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label>Código De Transporte</label>
+                                        <input value="<?php echo $codtransporte?>" name='codgtransporte' type="text" class="form-control" placeholder="códio de transporte " require>
+                                </div>
+
+                                <br><br>
+                                <div class="col-sm-4">
+                                <label>Número CAAT</label>
+                                <input value="<?php echo $caat?>" name='pcaat' type="text" class="form-control" placeholder="Numero CAAT" require>
+                                </div>
+                            <?php
+                            if($ruta_imagen_caat=="N/A"){/**valida si hay imagen o no */
+                                ?>
+                                <div class="col-sm-4">
+                                <br>
+                                <label>Documento CAAT</label>
+                                <input type="file" name="imagencaat">
+                                </div>
+                                <?php
+                            }
+                            else
+                            {
+                                ?>
+                            <div class="col-sm-4">
+                            <label>Documento actual</label><br>
+                                <div class="container-fluid">
+                                <a href="<?php echo  $ruta_imagen_caat;?>" download="Codigo CAAT">Descargar CAAT</a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <br>
+                                <label>Documento CAAT</label>
+                                <br>
+                                <input type="file" name="imagencaat">
+                            </div>
+                            <input value='<?php echo $ruta_imagen_caat;?>' name="ruta_caat" type="hidden">
+
+                                <?php
+                            }
+                            ?>
+                                <br>
+
+
                             <div class="col-sm-4">
                                 <label>descripcion</label>
                                 <br>
@@ -535,13 +591,36 @@ if(isset($_SESSION['usuario']))
                                 <div class="container-fluid">
                                 <input type="file" name="imgTargetaVeiculo">
                                 </div>
+                                <br>
                             </div>
                             <br>
                             <br>
+                            <br>
                             <div class="col-sm-4">
-                                <label>descripcion</label>
+                            <label>Código Aduanero</label>
+                                <input value="N/A" name='codaduanero' type="text" class="form-control" placeholder="codigo aduanero" require>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>Código de Transporte</label>
+                                <input value="N/A" name='codtransporte' type="text" class="form-control" placeholder="Codigo de Transporte" require>
+                        </div>
+                            <div class="col-sm-4">
+                            <label>Número CAAT</label>
+                                <input value="N/A" name='pcaat' type="text" class="form-control" placeholder="Numero CAAT" require>
+                        </div>
+                        <div class="col-sm-4">
+                    <br>
+                    <label>Documento CAAT</label>
+                    <input type="file" name="imagencaat">
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                            <div class="col-sm-4">
+                                <label>Descripcion</label>
                                 <br>
-                                <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="135" rows="3"></textarea>
+                                <textarea value='N/A' calss='form-control' name="descripcion" id="" cols="110" rows="3"></textarea>
                             </div>
                     </div>
                         <br>

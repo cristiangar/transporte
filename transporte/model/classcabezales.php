@@ -4,11 +4,11 @@ include ('../Configuracion/config.php');
 class Cabezal
 {
 
-		public function Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$ejes,$color)
+		public function Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$ejes,$color,$pimagencaat,$pcaat,$codaduanero,$codtransporte)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_vehiculos(0, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, '$tipo_vehiculo', 1, 'N/A', '$ejes', '$color', 'I2', @pn_respuesta,@pn_id_vehiculo);";
+		$consulta= "call sp_vehiculos(0, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, '$tipo_vehiculo', 1, 'N/A', '$ejes', '$color',$pimagencaat,$pcaat,$codaduanero,$codtransporte, 'I2', @pn_respuesta,@pn_id_vehiculo);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -31,7 +31,7 @@ class Cabezal
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_vehiculos(0, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'S', @pn_respuesta, @pn_id_vehiculo);";
+		$consulta= "call sp_vehiculos(0, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'S', '0', '0', '0', '0', @pn_respuesta, @pn_id_vehiculo);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;
@@ -42,7 +42,7 @@ class Cabezal
 
 		$db = new datos();
 		$db->conectar();
-		$consulta= "call sp_vehiculos($id, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'S1', @pn_respuesta, @pn_id_vehiculo);";
+		$consulta= "call transporte.sp_vehiculos($id, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'S1', '0', '0', '0', '0', @pn_respuesta, @pn_id_vehiculo);";
 		$dt= mysqli_query($db->objetoconexion,$consulta);
 		$db->desconectar();
 		return $dt;

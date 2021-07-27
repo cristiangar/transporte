@@ -145,7 +145,10 @@ else
     //$tamaño=$row['tamaño'];
     $ejes=$row['ejes'];
     $color=$row['color'];
-   
+    $caat=$row['caat'];
+    $ruta_imagen_caat=$row['ruta_imagen_caat'];
+    $codaduanero=$row['cod_aduanero'];
+    $codtransporte=$row['cod_transporte'];
     }
     ?>
     <h1>Datos del Vehiculo <?php ?></h1>
@@ -158,6 +161,9 @@ else
                     <!--<h2 class="card-title">Tamaño:</h2>-->
                     <h2 class="card-title">Ejes: <?php echo $ejes;  ?></h2>
                     <h2 class="card-title">Color: <?php echo $color;  ?></h2>
+                    <h2 class="card-title">Caat: <?php echo $caat;  ?></h2>
+                    <h2 class="card-title">Código Aduanero: <?php echo $codaduanero;  ?></h2>
+                    <h2 class="card-title">Código Transporte: <?php echo $codtransporte;  ?></h2>
                     <?php
                     if($tipo=='1')
                     {
@@ -174,6 +180,17 @@ else
                     <h2 class="card-title">Descripcion: <?php echo $descripcion; ?></h2>
                 </div>
                 <img src="<?php echo $ruta_imagen_targeta; ?>" style="width:100%" alt="">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <a href="<?php echo  $ruta_imagen_caat;?>" download="Codigo CAAT">
+                <button type="button" class="btn btn-primary">Descargar CAAT</button>
+                </a>
             </div>
             <br>
             <br>

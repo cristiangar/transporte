@@ -25,6 +25,21 @@ if (isset($_GET['id']))
             $ejes=$_POST['ejes'];
             $propiedad=$_POST['propiedad'];
             $tipo_vehiculo=$_POST['tipo_vehiculo'];
+            $pcaat=$_POST['pcaat'];
+            $codaduanero=$_POST['codaduanero'];
+            $codtransporte=$_POST['codtransporte'];
+
+        if(empty($_FILES['imagencaat']['name'])){
+            $pimagencaat='N/A';
+        }
+        else{
+            $nombreimcaat=$_FILES['imagencaat']['name'];//carga el nombre de la imagen
+            $archivocaat=$_FILES['imagencaat']['tmp_name'];//carga el archivo
+            $pimagencaat="../imagen_caat";//es el nbombre de la carpeta
+            $pimagencaat=$pimagencaat."/".$nombreimcaat;//la ruta de la imagen
+            move_uploaded_file($archivocaat, $pimagencaat);//mueve la imagen ala ruta*/
+        
+        }
             if(empty($_FILES['imgTargetaVeiculo']['name'])){
                 $ruta_tarjeta=$_POST['ruta'];
             }
@@ -37,7 +52,7 @@ if (isset($_GET['id']))
             
             }
             $cabezal=new Cabezal();
-            $cabezal->Modificar($id,$marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$tamaño,$ejes,$color);
+            $cabezal->Modificar($id,$marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$tamaño,$ejes,$color,$pcaat,$codaduanero,$codtransporte,$pimagencaat);
 
         }
         else{
@@ -63,6 +78,21 @@ else
         $ejes=$_POST['ejes'];
         $propiedad=$_POST['propiedad'];
         $tipo_vehiculo=$_POST['tipo_vehiculo'];
+        $pcaat=$_POST['pcaat'];
+            $codaduanero=$_POST['codaduanero'];
+            $codtransporte=$_POST['codtransporte'];
+
+        if(empty($_FILES['imagencaat']['name'])){
+            $pimagencaat='N/A';
+        }
+        else{
+            $nombreimcaat=$_FILES['imagencaat']['name'];//carga el nombre de la imagen
+            $archivocaat=$_FILES['imagencaat']['tmp_name'];//carga el archivo
+            $pimagencaat="../imagen_caat";//es el nbombre de la carpeta
+            $pimagencaat=$pimagencaat."/".$nombreimcaat;//la ruta de la imagen
+            move_uploaded_file($archivocaat, $pimagencaat);//mueve la imagen ala ruta*/
+        
+        }
         if(empty($_FILES['imgTargetaVeiculo']['name'])){
             $ruta_tarjeta='N/A';
         }
@@ -75,7 +105,7 @@ else
         
         }
         $cabezal=new Cabezal();
-        $cabezal->Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$ejes,$color);
+        $cabezal->Ingresar($marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$ejes,$color,$pcaat,$codaduanero,$codtransporte,$pimagencaat);
 
     }
     else
