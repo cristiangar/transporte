@@ -188,9 +188,19 @@ else
                 <br>
                 <br>
                 <br>
+                <?php if($ruta_imagen_caat=="N/A"){  ?>
+                    <h2 class="card-title">- Sin documento CAAT -</h2>
+                <?php
+                }
+                else
+                {
+                ?>
                 <a href="<?php echo  $ruta_imagen_caat;?>" download="Codigo CAAT">
                 <button type="button" class="btn btn-primary">Descargar CAAT</button>
                 </a>
+                <?php
+                }
+                ?>
             </div>
             <br>
             <br>

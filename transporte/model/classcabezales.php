@@ -8,7 +8,8 @@ class Cabezal
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_vehiculos(0, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, '$tipo_vehiculo', 1, 'N/A', '$ejes', '$color',$pimagencaat,$pcaat,$codaduanero,$codtransporte, 'I2', @pn_respuesta,@pn_id_vehiculo);";
+		$consulta= "call sp_vehiculos(0, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, '$tipo_vehiculo', 1, 'N/A', '$ejes', '$color','I2','$pimagencaat','$pcaat','$codaduanero','$codtransporte', @pn_respuesta,@pn_id_vehiculo);";
+
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -53,7 +54,7 @@ class Cabezal
 
 		$bd = new datos();
 		$bd->conectar();
-		$consulta= "call sp_vehiculos($id, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'D', @pn_respuesta, @pn_id_vehiculo);";
+		$consulta= "call sp_vehiculos($id, '0', '0', '0', '0', '0', '0', 0, '0', 0, '0', '0', '0', 'D', '0', '0', '0', '0', @pn_respuesta, @pn_id_vehiculo);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
@@ -72,11 +73,11 @@ class Cabezal
 
 				
 
-		public function Modificar($id,$marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$tamaño,$ejes,$color)
+		public function Modificar($id,$marca,$modelo,$tonelaje,$ruta_tarjeta,$placa,$descripcion,$propiedad,$tipo_vehiculo,$tamaño,$ejes,$color,$pimagencaat,$pcaat,$codaduanero,$codtransporte)
 	{
 		$bd = new datos();
 		$bd->conectar();
-		$consulta="call sp_vehiculos($id, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, '$tipo_vehiculo', 1, '$tamaño', '$ejes', '$color', 'U', @pn_respuesta,@pn_id_vehiculo);";
+		$consulta="call sp_vehiculos($id, '$marca', '$modelo', '$tonelaje', '$ruta_tarjeta', '$placa', '$descripcion', $propiedad, '$tipo_vehiculo', 1, '$tamaño', '$ejes', '$color', 'U','$pimagencaat','$pcaat','$codaduanero','$codtransporte', @pn_respuesta,@pn_id_vehiculo);";
 		$dt= mysqli_query($bd->objetoconexion,$consulta);
 
 		$salida="SELECT @pn_respuesta";
