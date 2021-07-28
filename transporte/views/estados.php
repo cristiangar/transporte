@@ -70,6 +70,7 @@ if(isset($_SESSION['usuario']))
             $cliente=$row['cliente'];
             $receptor=$row['receptor'];
             $autorizacion=$row['autorizacion'];
+            $estado_envio=$row['estado']
             ?>
                   <tbody id="myTable">
                   <tr>
@@ -78,15 +79,7 @@ if(isset($_SESSION['usuario']))
                     <td><?php echo $fentrega?></td>
                     <td><?php echo $cliente?></td>
                     <td><?php echo $receptor?></td>
-                    <?php
-                    if($autorizacion=='0')
-                    {
-                      echo '<td>sin Autorizar</td>';
-                    }
-                    else{
-                      echo '<td>Autorizado</td>';
-                    }
-                    ?>
+                    <td><?php echo $estado_envio?></td>
                     <td><center><a href="detalleEnvio.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Detalle</button></a></center></td>
 
                   </tr>

@@ -54,33 +54,25 @@ if(isset($_SESSION['usuario']))
               <td>Codigo envio</td>
               <td>Estado</td>
               <td>Piloto</td>
+              <center>
+              <td>iniciar viaje</td>
+              </center>
             </thead>
       <?php
           while ($row=mysqli_fetch_array($dt)) {
             $id=$row['id_envio'];
             $codigo=$row['codigo_envio'];
             $estado=$row['estado_envio'];
-            $fentrega=$row['fecha_entrega'];
-            $cliente=$row['cliente'];
-            $receptor=$row['receptor'];
+            $piloto=$row['piloto'];
+            $id_asignacion=$row['id_asignacion_vehiculo'];
+            $id_piloto=$row['id_empleado'];
             ?>
                   <tbody id="myTable">
                   <tr>
                     <td><?php echo $codigo?></td>
-                    <td><?php echo $fenvio?></td>
-                    <td><?php echo $fentrega?></td>
-                    <td><?php echo $cliente?></td>
-                    <td><?php echo $receptor?></td>
-                    <?php
-                    if($autorizacion=='0')
-                    {
-                      echo '<td>sin Autorizar</td>';
-                    }
-                    else{
-                      echo '<td>Autorizado</td>';
-                    }
-                    ?>
-                    <td><center><a href="detalleEnvio.php?id=<?php echo $id?>"><button type="button" class="btn btn-primary">Detalle</button></a></center></td>
+                    <td><?php echo $piloto?></td>
+                    <td><?php echo $estado?></td>
+                    <td><center><a href="../controller/iniciar.php?id=<?php echo $id?>&I"><button type="button" class="btn btn-success">Iniciar viaje</button></a></center></td>
 
                   </tr>
                  </tbody>
@@ -97,11 +89,7 @@ if(isset($_SESSION['usuario']))
                 echo '</table>';
                 ?>
             <center>
-                 <a href="../envio/datos.php"><button type="button" class="btn btn-success" >Agregar Nuevo</button></a>
-                
-                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>
-                
-                
+                <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>  
             </center>
             <?php
   }
@@ -116,7 +104,7 @@ if(isset($_SESSION['usuario']))
       <br><br><br><br>
       <h1>No hay datos ingresados</h1>
       <br>
-      <a href="nuevo_cliente.php"><button type="button" class="btn btn-success btn-lg" >Agregar Nuevo</button></a>
+      <a href="secritaria.php"><button type="button" class="btn btn-warning" >Regresar</button></a>  
     </center>
     <?php
   }

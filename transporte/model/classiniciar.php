@@ -2,7 +2,7 @@
 ob_start();
 //session_start();
 include ('../Configuracion/config.php');
-class Iniciar
+class Iniciar_envio
 {
 	public function Ver()
 	{
